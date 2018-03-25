@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI \discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI \discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Berger99a}
+M.A. {Berger}, in \emph{Magnetic Helicity in Space and Laboratory Plasmas}, ed.
+  by M.~{Brown}, R.~{Canfield}, A.~{Pevtsov} (Geophys. Monogr. Ser. 111, AGU,
+  1999), pp. 1--9
+
+\end{thebibliography}
