@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  27 MAR 2018 14:23
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  25 MAR 2018 15:12
+>>>>>>> b5f49ed546b6ec2d4cd1acda3e4fafa1202004fc
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -264,7 +268,11 @@ public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti8.pfb>
+<<<<<<< HEAD
 Output written on main.pdf (3 pages, 129381 bytes).
+=======
+Output written on main.pdf (3 pages, 129504 bytes).
+>>>>>>> b5f49ed546b6ec2d4cd1acda3e4fafa1202004fc
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
