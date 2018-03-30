@@ -60,4 +60,19 @@ R.~G{\"a}mperle, S.D. M{\"u}ller, P.~Koumoutsakos, A parameter study for
   differential evolution, Advances in intelligent systems, fuzzy systems,
   evolutionary computation \textbf{10}(10), 293 (2002)
 
+\bibitem{brest2006self}
+J.~Brest, S.~Greiner, B.~Boskovic, M.~Mernik, V.~Zumer, Self-adapting control
+  parameters in differential evolution: A comparative study on numerical
+  benchmark problems, IEEE transactions on evolutionary computation
+  \textbf{10}(6), 646 (2006)
+
+\bibitem{zhang2009jade}
+J.~Zhang, A.C. Sanderson, Jade: adaptive differential evolution with optional
+  external archive, IEEE Transactions on evolutionary computation
+  \textbf{13}(5), 945 (2009)
+
+\bibitem{lampinen2000stagnation}
+J.~Lampinen, I.~Zelinka, et~al., in \emph{Proceedings of MENDEL} (2000), pp.
+  76--83
+
 \end{thebibliography}
