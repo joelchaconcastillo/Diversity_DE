@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -6,9 +6,58 @@
   \providecommand{\doi}{DOI \discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem{Berger99a}
-M.A. {Berger}, in \emph{Magnetic Helicity in Space and Laboratory Plasmas}, ed.
-  by M.~{Brown}, R.~{Canfield}, A.~{Pevtsov} (Geophys. Monogr. Ser. 111, AGU,
-  1999), pp. 1--9
+\bibitem{noman2008differential}
+N.~Noman, H.~Iba, Differential evolution for economic load dispatch problems,
+  Electric Power Systems Research \textbf{78}(8), 1322 (2008)
+
+\bibitem{chakraborty2008advances}
+U.K. Chakraborty, \emph{Advances in differential evolution}, vol. 143
+  (Springer, 2008)
+
+\bibitem{srinivas1994genetic}
+M.~Srinivas, L.M. Patnaik, Genetic algorithms: A survey, computer
+  \textbf{27}(6), 17 (1994)
+
+\bibitem{schwefel1977numerische}
+H.P. Schwefel, Numerische optimierung von computer-modellen (phd thesis),
+  Reprinted by Birkhuser  (1977)
+
+\bibitem{john1992holland}
+H.~John.
+\newblock Holland, adaptation in natural and artificial systems: An
+  introductory analysis with applications to biology, control and artificial
+  intelligence (1992)
+
+\bibitem{koza1992genetic}
+J.R. Koza, \emph{Genetic Programming II, Automatic Discovery of Reusable
+  Subprograms} (MIT Press, Cambridge, MA, 1992)
+
+\bibitem{fogel1991meta}
+D.B. Fogel, L.J. Fogel, J.W. Atmar, in \emph{Signals, systems and computers,
+  1991. 1991 Conference record of the twenty-fifth asilomar conference on}
+  (IEEE, 1991), pp. 540--545
+
+\bibitem{storn1997differential}
+R.~Storn, K.~Price, Differential evolution--a simple and efficient heuristic
+  for global optimization over continuous spaces, Journal of global
+  optimization \textbf{11}(4), 341 (1997)
+
+\bibitem{das2011differential}
+S.~Das, P.N. Suganthan, Differential evolution: A survey of the
+  state-of-the-art, IEEE transactions on evolutionary computation
+  \textbf{15}(1), 4 (2011)
+
+\bibitem{nelder1965simplex}
+J.A. Nelder, R.~Mead, A simplex method for function minimization, The computer
+  journal \textbf{7}(4), 308 (1965)
+
+\bibitem{price1983global}
+W.~Price, Global optimization by controlled random search, Journal of
+  Optimization Theory and Applications \textbf{40}(3), 333 (1983)
+
+\bibitem{gamperle2002parameter}
+R.~G{\"a}mperle, S.D. M{\"u}ller, P.~Koumoutsakos, A parameter study for
+  differential evolution, Advances in intelligent systems, fuzzy systems,
+  evolutionary computation \textbf{10}(10), 293 (2002)
 
 \end{thebibliography}

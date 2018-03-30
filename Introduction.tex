@@ -1,6 +1,28 @@
-*Sub-introduction generally speakin of Evolutionary Algorithms.
-*Brief history of the Differential Evolution, described in the Lampinen book.
-*Importance of the weakness in Differential Evolution:
-  +Premature convergence and loss of diversity
-  +Influence of parametrization (A Parameter Study for Differential Evolution)
+Evolutionary Algorithms (EAs) are built to deal with optimization problems, which are designed from many scientific and application fields, such as science, economic and engineering \cite{noman2008differential, chakraborty2008advances}.
+%
+Principally, EAs can be classified into following categories, such as Genetic Algorithms (GAs) \cite{srinivas1994genetic, schwefel1977numerische} , Evolutionary Strategies (ESs) \cite{john1992holland}, Genetic Programming (GP) \cite{koza1992genetic}, Evolutionary Programing (EP) \cite{fogel1991meta}, Differential Evolution (DE) \cite{storn1997differential} and other natural-inspired algorithms \cite{das2011differential}.
+%
+%
+DE was introduced by Storn and Price \cite{storn1997differential}, also is cosidered as one of the most effective EAs used to deal with real-world optimization problems, mainly for its convergency properties.
+%
+Similarly than with other EAs, DE follows the natural evolution process which involves mutation, recombination and selection to evolve a population throuth an iterative progress until the criteria stop is reached.
+%
+However, the peculiarity of DE is that employs the difference of vectors parameters to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controled Random Search (CRS) \cite{price1983global}.
+%
+In spite of the popularity and effectiveness of DE, there exists several weakness that had been partially solved througth learning techniques.
+%
+One of the first weakness and possibly the most important is that the performance of DE is very sensitive to choice of the strategy parameters depending in the objective function \cite{gamperle2002parameter}.
+%
+Several strategies as adaptive and self adaptive have been proposed to alliviate this drawback \cite{brest2006self, zhang2009jade}.
+%
+However, none of these strategies has shown superior results than the rest.
+
+
+
+**The strength is internally induces, the mutation depends  on the content of the population, due the limited number of different trial slutions within one generation, producing a stagnatin ref 19.
+**Influence of the population size and stagnation ref20
+**Premature loss of diversity ref 2.
+   **Techniques to deal with this hybridization with anneling procedures to reduce the selection pressure ref37
+   **Generational replacement ref3.
+   **Incrementing the population size ref19.
 **Organization of the paper.

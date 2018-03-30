@@ -46,6 +46,8 @@ grestore
 \smartqed  % flush right qed marks, e.g. at end of proof
 %
 \usepackage{graphicx}
+\usepackage{cite}
+%\usepackage{natbib}
 %
 % \usepackage{mathptmx}      % use Times fonts if available on your TeX system
 %
@@ -123,7 +125,7 @@ subject classification numbers as needed.
 \label{sec:Conclusion}
 \input{Conclusion.tex}
 
-Text with citations \cite{RefB} and \cite{RefJ}.
+%Text with citations \cite{RefB} and \cite{RefJ}.
 \subsection{Subsection title}
 \label{sec:2}
 as required. Don't forget to give each section
@@ -168,7 +170,6 @@ number & number & number \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-\cite{Berger99a}
 
 %\begin{acknowledgements}
 %If you'd like to thank anyone, place your comments here
@@ -183,19 +184,19 @@ number & number & number \\
 \bibliography{example}                % name your BibTeX data base
 
 % Non-BibTeX users please use
-\begin{thebibliography}{}
-%
-% and use \bibitem to create references. Consult the Instructions
-% for authors for reference list style.
-%
-\bibitem{RefJ}
-% Format for Journal Reference
-Author, Article title, Journal, Volume, page numbers (year)
-% Format for books
-\bibitem{RefB}
-Author, Book title, page numbers. Publisher, place (year)
-% etc
-\end{thebibliography}
+%\begin{thebibliography}{}
+%%
+%% and use \bibitem to create references. Consult the Instructions
+%% for authors for reference list style.
+%%
+%\bibitem{RefJ}
+%% Format for Journal Reference
+%Author, Article title, Journal, Volume, page numbers (year)
+%% Format for books
+%\bibitem{RefB}
+%Author, Book title, page numbers. Publisher, place (year)
+%% etc
+%\end{thebibliography}
 
 \end{document}
 % end of file template.tex

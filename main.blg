@@ -3,47 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: spphys.bst
 Database file #1: example.bib
-Warning--I didn't find a database entry for "RefB"
-Warning--I didn't find a database entry for "RefJ"
-You've used 1 entry,
+You've used 12 entries,
             2815 wiz_defined-function locations,
-            606 strings with 4546 characters,
-and the built_in function-call counts, 658 in all, are:
-= -- 59
-> -- 13
-< -- 1
-+ -- 7
-- -- 4
-* -- 33
-:= -- 67
-add.period$ -- 0
-call.type$ -- 1
-change.case$ -- 0
+            669 strings with 6230 characters,
+and the built_in function-call counts, 4240 in all, are:
+= -- 320
+> -- 75
+< -- 2
++ -- 39
+- -- 21
+* -- 209
+:= -- 436
+add.period$ -- 1
+call.type$ -- 12
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 73
-empty$ -- 57
-format.name$ -- 5
-if$ -- 143
+cite$ -- 12
+duplicate$ -- 511
+empty$ -- 459
+format.name$ -- 28
+if$ -- 965
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 11
-newline$ -- 11
-num.names$ -- 2
-pop$ -- 33
+int.to.str$ -- 12
+missing$ -- 107
+newline$ -- 45
+num.names$ -- 12
+pop$ -- 213
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 32
+skip$ -- 154
 stack$ -- 0
-substring$ -- 21
-swap$ -- 59
-text.length$ -- 1
+substring$ -- 120
+swap$ -- 329
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 5
-width$ -- 2
-write$ -- 15
-(There were 2 warnings)
+while$ -- 23
+width$ -- 14
+write$ -- 109

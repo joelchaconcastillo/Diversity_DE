@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  25 MAR 2018 15:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  29 MAR 2018 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -113,23 +113,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 ))
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 Unknown journal: specify \journalname{<name of your journal>} in preambel
 
@@ -196,18 +201,18 @@ e
 ))
 SVJour3 warning: Missing \journalname
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 92.
+(Font)              <7> on input line 94.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 92.
+(Font)              <5> on input line 94.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 92.
+(Font)              <8> on input line 94.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 92.
-(./Introduction.tex) (./Literature.tex) (./Trends.tex) (./Proposal.tex)
-(./ExperimentalStudy.tex) (./Conclusion.tex) [1{/var/lib/texmf/fonts/map/pdftex
-/updmap/pdftex.map}]
+(Font)              <6> on input line 94.
+(./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(./Literature.tex) (./Trends.tex) (./Proposal.tex) (./ExperimentalStudy.tex)
+(./Conclusion.tex)
 
-LaTeX Warning: Reference `sec:1' on page 2 undefined on input line 130.
+LaTeX Warning: Reference `sec:1' on page 2 undefined on input line 132.
 
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-06 22:04:18
@@ -217,13 +222,13 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 140.
+(epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 <example-eps-converted-to.pdf, id=12, 202.7575pt x 202.7575pt>
 File: example-eps-converted-to.pdf Graphic file (type pdf)
 
 <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 140.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 142.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-06 22:04:18
@@ -233,26 +238,26 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 150.
+(epstopdf)             \includegraphics on input line 152.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
  <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 150.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 152.
 (pdftex.def)             Requested size: 253.5pt x 253.50812pt.
 
-(./main.bbl [2 <./example-eps-converted-to.pdf>]) [3] (./main.aux)
+(./main.bbl [2] [3 <./example-eps-converted-to.pdf>]) [4] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2226 strings out of 493304
- 33135 string characters out of 6139871
- 87600 words of memory out of 5000000
- 5658 multiletter control sequences out of 15000+600000
+ 2331 strings out of 493304
+ 34557 string characters out of 6139871
+ 90494 words of memory out of 5000000
+ 5760 multiletter control sequences out of 15000+600000
  9832 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,7n,23p,232b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,23p,485b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -264,10 +269,10 @@ public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti8.pfb>
-Output written on main.pdf (3 pages, 129504 bytes).
+Output written on main.pdf (4 pages, 142452 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
