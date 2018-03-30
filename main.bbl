@@ -71,8 +71,16 @@ J.~Zhang, A.C. Sanderson, Jade: adaptive differential evolution with optional
   external archive, IEEE Transactions on evolutionary computation
   \textbf{13}(5), 945 (2009)
 
+\bibitem{sa2008exploration}
+{\^A}.A. S{\'a}, A.O. Andrade, A.B. Soares, S.J. Nasuto, in \emph{AISB 2008
+  Convention Communication, Interaction and Social Intelligence}, vol.~1
+  (2008), vol.~1, p.~57
+
 \bibitem{lampinen2000stagnation}
 J.~Lampinen, I.~Zelinka, et~al., in \emph{Proceedings of MENDEL} (2000), pp.
   76--83
+
+\bibitem{zaharie2003control}
+D.~Zaharie, in \emph{Proc. of MENDEL}, vol.~9 (2003), vol.~9, pp. 41--46
 
 \end{thebibliography}

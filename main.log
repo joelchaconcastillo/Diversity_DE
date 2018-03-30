@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  30 MAR 2018 12:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  30 MAR 2018 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -214,6 +214,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 LaTeX Warning: Reference `sec:1' on page 2 undefined on input line 132.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-27 14:19:55
 (epstopdf)                    size: 286 bytes
@@ -224,13 +228,13 @@ Package epstopdf Info: Source file: <example.eps>
 df example.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
-<example-eps-converted-to.pdf, id=12, 202.7575pt x 202.7575pt>
+
+<example-eps-converted-to.pdf, id=15, 202.7575pt x 202.7575pt>
 File: example-eps-converted-to.pdf Graphic file (type pdf)
 
 <use example-eps-converted-to.pdf>
 Package pdftex.def Info: example-eps-converted-to.pdf used on input line 142.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
- [2]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-27 14:19:55
 (epstopdf)                    size: 286 bytes
@@ -246,19 +250,19 @@ File: example-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: example-eps-converted-to.pdf used on input line 152.
 (pdftex.def)             Requested size: 253.5pt x 253.50812pt.
 
-(./main.bbl [3 <./example-eps-converted-to.pdf>]) [4] (./main.aux)
+(./main.bbl [3 <./example-eps-converted-to.pdf>] [4]) [5] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2334 strings out of 493304
- 34611 string characters out of 6139871
- 90506 words of memory out of 5000000
- 5763 multiletter control sequences out of 15000+600000
+ 2338 strings out of 493304
+ 34666 string characters out of 6139871
+ 90514 words of memory out of 5000000
+ 5767 multiletter control sequences out of 15000+600000
  9832 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,7n,23p,485b,305s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,23p,485b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -270,10 +274,10 @@ public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti8.pfb>
-Output written on main.pdf (4 pages, 144690 bytes).
+Output written on main.pdf (5 pages, 146643 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
