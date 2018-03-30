@@ -18,25 +18,44 @@ Several strategies as adaptive and self adaptive have been proposed to alliviate
 However, none of these strategies has shown superior results than the rest.
 %
 
-A second weakness of DE algorithms reside in the reproduction process, since that are based in vector differences it depends on the content of the population and the search process is affected, therefore a limited number of solutions can be produced.
+A second weakness of DE algorithms resides in the reproduction phase.
 %
-In fact, this transformation of a continuous to discrete problem can lead to converge to local optima or lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
+In DE this phase is involves the vector differences, therefore it depends on the content of the population affecting the search process, as result a limited number of solutions are produced.
+%
+In fact, this issue can lead to converge into a local optima or lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
 %
 On the other hand, there exist situations where the search process could not progress and the population remains diverse, this phenomena is known as stagnation \cite{lampinen2000stagnation}.
 %
-Its well known that stagnation ocurrs with small population size.
+Its well known that stagnation ocurrs with small populations size.
 %
-However, large populations are not prone to stagnate it involves more evaluation functions.
+Although that large populations are not prone to stagnate, it involves more evaluation functions and in certain situations is not available a large population e.g. expensive optimization problems ref CEC.
 
 %
-The last one drawback is highly related with the diversity issues.
+The last one drawback is highly related with the diversity of the population.
 %
-The search process of all the EAs involves the following two process: the exploration and intensification.
+Generally speaking, the search process of all the EAs involves two process: exploration and intensification.
 %
-A desirable behavior of an algorithm is to obtain a balance between these process.
+A desirable behavior of an algorithm is to produce a proper balance between these two process.
 %
-Thus, at first stages is induced a exploration process in the search space and at the last stages is applied an explotation of the knowledge gathered during the search process \cite{zaharie2003control}.
+So that first it induces an exploration in the search space and after that an exploitation of the knowledge gathered during the search process \cite{zaharie2003control}.
 %
+Both exploration as exploitation are equally important, since that with a excessive exploitation, the population loses its diversity and the populations members can be located in a reduced sub-optimal region of the search space.
+%
+On the other hand, if the exploration is dominant, the algorithm focus resources on uninteresting regions, resulting in too slow convergence and in poor quality-solutions.
+%
+Principally, DE algorithms are ver likely to prematurely converge, since that introduce a high selection pressure \cite{sa2008exploration}.
+%
+
+To deal with the 
+Once known the previous drawbacks, in this paper is proposed a novel DE algorithm, which is based in the classical DE scheme.
+%
+
+
+
+In our proposal is introduced a similar paradigm showed segura2016novel
+%
+
+
 
 The rest of the paper is organized as follows.
 %
