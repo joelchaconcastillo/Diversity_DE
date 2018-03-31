@@ -83,4 +83,9 @@ J.~Lampinen, I.~Zelinka, et~al., in \emph{Proceedings of MENDEL} (2000), pp.
 \bibitem{zaharie2003control}
 D.~Zaharie, in \emph{Proc. of MENDEL}, vol.~9 (2003), vol.~9, pp. 41--46
 
+\bibitem{yang2015differential}
+M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
+  population diversity, IEEE transactions on cybernetics \textbf{45}(2), 302
+  (2015)
+
 \end{thebibliography}

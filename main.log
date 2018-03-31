@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  30 MAR 2018 17:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  30 MAR 2018 18:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -208,9 +208,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 94.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 94.
-(./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(./Literature.tex) [2] (./Trends.tex) (./Proposal.tex) (./ExperimentalStudy.tex
-) (./Conclusion.tex)
+(./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `zaharie2003control' on page 2 undefined on input line
+ 48.
+
+) (./Literature.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2])
+(./Trends.tex) (./Proposal.tex) (./ExperimentalStudy.tex) (./Conclusion.tex)
 
 LaTeX Warning: Reference `sec:1' on page 3 undefined on input line 132.
 
@@ -251,13 +258,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2338 strings out of 493304
- 34666 string characters out of 6139871
- 90514 words of memory out of 5000000
- 5767 multiletter control sequences out of 15000+600000
+ 2340 strings out of 493304
+ 34708 string characters out of 6139871
+ 90518 words of memory out of 5000000
+ 5769 multiletter control sequences out of 15000+600000
  9832 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,7n,23p,485b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,23p,485b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -269,7 +276,7 @@ public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti8.pfb>
-Output written on main.pdf (5 pages, 147504 bytes).
+Output written on main.pdf (5 pages, 148090 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream

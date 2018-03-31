@@ -41,10 +41,13 @@ So that first it induces an exploration in the search space and after that an ex
 %
 Both exploration as exploitation are equally important, since that with a excessive exploitation, the population loses its diversity and the populations members can be located in a reduced sub-optimal region of the search space.
 %
-On the other hand, if the exploration is dominant, the algorithm focus resources on uninteresting regions, resulting in too slow convergence and in poor quality-solutions.
+On the other hand, if the exploration is dominant, the algorithm waste resources on uninteresting regions, resulting in too slow convergence and in poor quality-solutions.
 %
-Principally, DE algorithms are ver likely to prematurely converge, since that introduce a high selection pressure \cite{sa2008exploration}.
+Principally, DE algorithms are very likely to prematurely converge, since that introduce a high selection pressure \cite{sa2008exploration}.
 %
+Several strategies have been proposed in DE to deal with premature convergence, as parameter adaptation based on the idea of controlling the population diversity \ref{zaharie2003control}, autho-enhanced population diversity mechanism \cite{yang2015differential}, alternative selection strategy \cite{sa2008exploration} 
+
+
 
 To deal with the 
 Once known the previous drawbacks, in this paper is proposed a novel DE algorithm, which is based in the classical DE scheme.
