@@ -88,4 +88,9 @@ M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
   population diversity, IEEE transactions on cybernetics \textbf{45}(2), 302
   (2015)
 
+\bibitem{segura2016novel}
+C.~Segura, C.A.C. Coello, E.~Segredo, A.H. Aguirre, A novel diversity-based
+  replacement strategy for evolutionary algorithms, IEEE transactions on
+  cybernetics \textbf{46}(12), 3233 (2016)
+
 \end{thebibliography}

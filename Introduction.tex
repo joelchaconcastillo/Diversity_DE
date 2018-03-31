@@ -7,20 +7,20 @@ DE was introduced by Storn and Price \cite{storn1997differential}, also is cosid
 %
 Similarly than with other EAs, DE follows the natural evolution process which involves mutation, recombination and selection to evolve a population throuth an iterative progress until the criteria stop is reached.
 %
-However, the peculiarity of DE is that employs the difference of vectors parameters to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controled Random Search (CRS) \cite{price1983global}.
+However, the peculiarity of DE resides in considering difference of vectors parameters to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controled Random Search (CRS) \cite{price1983global}.
 %
 In spite of the popularity and effectiveness of DE, there exists several weakness that had been partially solved througth learning techniques.
 %
-One of the first weakness and possibly the most important is that the performance of DE is very sensitive to choice of the strategy parameters depending in the objective function \cite{gamperle2002parameter}.
+One of the first weakness and possibly the most important, is the performance of DE which is very sensitive to choice of the strategy parameters depending in the objective function \cite{gamperle2002parameter}.
 %
-Several strategies as adaptive and self adaptive have been proposed to alliviate this drawback \cite{brest2006self, zhang2009jade}.
+Several strategies as adaptive and self-adaptive have been proposed to alliviate this drawback \cite{brest2006self, zhang2009jade}.
 %
-However, none of these strategies has shown superior results than the rest.
+However, none of them has shown superior results than the rest.
 %
 
 A second weakness of DE algorithms resides in the reproduction phase.
 %
-In DE this phase is involves the vector differences, therefore it depends on the content of the population affecting the search process, as result a limited number of solutions are produced.
+In DE this phase involves the vector differences, therefore it depends on the content of the population affecting the search process, as result a limited number of solutions are produced.
 %
 In fact, this issue can lead to converge into a local optima or lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
 %
@@ -45,18 +45,19 @@ On the other hand, if the exploration is dominant, the algorithm waste resources
 %
 Principally, DE algorithms are very likely to prematurely converge, since that introduce a high selection pressure \cite{sa2008exploration}.
 %
-Several strategies have been proposed in DE to deal with premature convergence, as parameter adaptation based on the idea of controlling the population diversity \ref{zaharie2003control}, autho-enhanced population diversity mechanism \cite{yang2015differential}, alternative selection strategy \cite{sa2008exploration} 
+Several strategies have been proposed in DE to deal with premature convergence, as parameter adaptation based on the idea of controlling the population diversity \ref{zaharie2003control}, autho-enhanced population diversity mechanism \cite{yang2015differential}, alternative selection strategy \cite{sa2008exploration}.
 
 
-
-To deal with the 
-Once known the previous drawbacks, in this paper is proposed a novel DE algorithm, which is based in the classical DE scheme.
+A recient and novel approach to deal with these diversity issues, is through a sopisticated replacement strategy that explictly preserves the diversity \cite{segura2016novel}.
+%
+This method trnasforms a single-objective problem into a multi-objective one, by considereing diversity as an explicit objective, with the idea of adapting the balance induced between exploration and exploitation to various optimization stages.
+%
+Thus, the ideal balance is reached considering the criteria stop of the algorithm.
 %
 
-
-
-In our proposal is introduced a similar paradigm showed segura2016novel
+Our proposal follows a similar guideline, where it aims an ideal balance between exploration and exploitation considering the criteria stop.
 %
+However, we keep the single-objective context and focus in DE algorithms.
 
 
 
