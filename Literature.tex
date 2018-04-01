@@ -9,16 +9,17 @@ Usually, the parameters governing the system performance are presented in a vect
 Particularly, for real parameter optimization each parameter $x_i$ is a real number.
 %
 
-In single-objective optimization, the aim is to obtain the vector $\vec{X}^*$ wich minimizes (or maximize) an defined objective function, mathecally denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$. where $\Omega$ is a non-empty large finite set identified as the domain of the search.
+In single-objective optimization, the aim is to obtain the vector $\vec{X}^*$ wich minimizes (or maximize) a defined objective function, mathecally denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$, where $\Omega$ is a non-empty large finite set identified as the domain of the search.
 %
 
-The basic scheme of DE consists that in given the target parameter vectors (each vector of the population), a new mutant (or donant) vector is created using a vector generation strategy.
+The basic scheme of DE consists that given the target parameter vectors (each vector of the population), a new mutant (or donant) vector is created using a vector generation strategy.
 %
 After that, the mutant vector is combined with the target vector to generate the trial vector.
 %
 In the same vein, each one of the trial vectors is compared with the correspond target vector, and the vector with the best fitness is select to survive as trial vector of the next generation.
 %
-In case of tie, the 
+In case of tie, the new generated trial vector survives.
+
 
 \subsection{Initialization}
 
@@ -42,17 +43,64 @@ X_{j,i,0} = x_{j,min} + rand_{i,j}[0,1] (x_{j,max} - x_{j_min})
 where $rand_{i,j}[0,1]$ is a uniformly distribuited random number lying between $0$ and $1$.
 
 \subsection{Mutation}
-For each ta
+The mutation can be seen as a change or perturbation with a random element.
+%
+Particularly, in DE a parent vector called \textit{target} vector is combined through a defined strategy to form the \textit{donor} vector.
+%
+In one simple form, a mutant vector $V_{i,G}$ is created from the $i$th target vector and is stablished as follows:
+\begin{equation}
+\vec{V}_{i,G} = \vec{X}_{r1, G} + F(\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
+\end{equation}
+%
+The indices $r1, r2, r3 \in [1,NP]$ are mutually exclusive integers randomly chosen from the range $[1, NP]$.
+%
+It is important take into account that the difference of any two vectors is scaled by a scalar number F and usually is defined in the interval $[0.4, 1]$, also the scale difference is added to the third one.
+%
 
 \subsection{Crossover}
 
+In order to increase the diversity of the perturbed parameter vectors, a crossover operation is aplied to the generated donor vector.
+%
+Accordingly this, the target vector is mixed with the mutated vector to form the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
+%
+In the DE-context are present two kinds of crossover methods --\textit{exponential} and \textit{binomial}(or uniform), however in this paper only is considered the binomial crossover.
+%
+In the binomial crossover strategy, the trial vector $\vec{U}_{i,G}$ is generated as follows:
+%
+\begin{equation}
+\vec{U}_{j,i,G}= 
+\begin{cases}
+    \vec{V}_{j,i,G},& \text{if} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
+    \vec{X}_{j,i,G},              & \text{otherwise}
+\end{cases}
+\end{equation}
+where $rand_{i,j}[0,1]$ is a uniformly distribuited random number, which is generated for each $j$th component of the $i$th vector parameter.
+%
+$j_{rand}$ is a randomly chosen index, which ensures that $\vec{U}_{i,G}$ has at least one component from $\vec{V}_{i,G}$.
+%
+$CR$ is the crossover constant $\in [0,1]$, which has to be determined by the user.
+
+
 \subsection{Selection}
-
+Once generated the trial vectors, is performed a greedy selection scheme.
 %
+This selection determine wheter the target or the trial vector survives to the next generation, and is described as follows:
+
+\begin{equation}
+\vec{X}_{j,i,G+1}= 
+\begin{cases}
+    \vec{U}_{i,G},& \text{if} \quad f(\vec{U}_{i,G}) \leq f(\vec{X}_{i,G})  \\
+    \vec{X}_{i,G},              & \text{otherwise}
+\end{cases}
+\end{equation}
+
+where $f(\vec{X})$ is the objective function to be minimized.
 %
+Hence, the population eigher gets better or remains the same fitness status, but never deteriorates.
 
-
-
+The mutation scheme decribed with the crossover proposed is refered as DE/rand/1/bin.
+%
+The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``differential evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
 ------Diversity Revision
 *Explain the influence of the paramters.
