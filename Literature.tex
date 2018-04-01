@@ -1,9 +1,58 @@
-*Fundamentals. - Fully description of Differential Evolution.
------- Description of differential evolution.
-*Decription of the single-objective problem.
-*Explain each stage in DE.
-*
-*
+In the literature are present several variants of DE ref1 ref8.
+%
+For simplicity, in this work is used the classic DE scheme references... "survey-state-art"
+%
+Origininally DE was proposed as direct search method for single-objective continuous optimization problems ref44(improving).
+%
+Usually, the parameters governing the system performance are presented in a vector like $\vec{X} = [x_1, x_2, ..., x_D ]^T$, which is identified as an individual.
+%
+Particularly, for real parameter optimization each parameter $x_i$ is a real number.
+%
+
+In single-objective optimization, the aim is to obtain the vector $\vec{X}^*$ wich minimizes (or maximize) an defined objective function, mathecally denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$. where $\Omega$ is a non-empty large finite set identified as the domain of the search.
+%
+
+The basic scheme of DE consists that in given the target parameter vectors (each vector of the population), a new mutant (or donant) vector is created using a vector generation strategy.
+%
+After that, the mutant vector is combined with the target vector to generate the trial vector.
+%
+In the same vein, each one of the trial vectors is compared with the correspond target vector, and the vector with the best fitness is select to survive as trial vector of the next generation.
+%
+In case of tie, the 
+
+\subsection{Initialization}
+
+
+The DE algorithms as is usual begins with a randomly initiated population of $NP$ parameter vectors.
+%
+Subsequent generations in DE are denoted by $G= 0,1, ..., G_{max}$.
+%
+The $i$th vector of the population at the current generation is denoted as:
+\begin{equation}
+\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}].
+\end{equation}
+%
+
+The initial population should cover a bounded range and is reached by uniformly randomizing individuals within the search space constrained by the prescribed minimum and maximum bounds.
+%
+Hence, each $j$th component of the $i$th vector is initialized as follow:
+\begin{equation}
+X_{j,i,0} = x_{j,min} + rand_{i,j}[0,1] (x_{j,max} - x_{j_min})
+\end{equation}
+where $rand_{i,j}[0,1]$ is a uniformly distribuited random number lying between $0$ and $1$.
+
+\subsection{Mutation}
+For each ta
+
+\subsection{Crossover}
+
+\subsection{Selection}
+
+%
+%
+
+
+
 
 ------Diversity Revision
 *Explain the influence of the paramters.
