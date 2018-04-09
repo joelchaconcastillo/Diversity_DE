@@ -1,0 +1,34 @@
+Our proposal has a similar direction that the one described by Carlos Segura et. al., where is proposed a multi-objective replacement strategy.
+%
+The main advantage of the new proposal is that the balance between exploration and exploitation is automatically adjusted based on the given stopping criterion.
+%
+Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy, which is one of the novelties of the new design.
+%
+In this way, for shorter stoping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
+
+
+One of the basic principles behind the development of the replacement strategy devised in this paper  is that ndividuals that contribute too little to diversity --the contribution is measured with the DCN value-- should not be accepted regardless of their original objective value.
+%
+In out approach, individuals that contribute too little are penalized.
+%
+The value $D$ represent the minimum DCN required to avoid being penalized.
+%
+Any individual whose DCN value is lower than this threshold value is penalized.
+%
+The key principle residesin how to evaluate wheter an individual contributes enough or not, i.e., how to set the value $D$.
+%
+The value of $D$ should depend on the optimization stage.
+%
+Specifically, this value should be rediced as the stopping criterion is approached.
+%
+In our scheme, an initial $D_I$ value must be set.
+%
+Then, a linear reduction of $D$ is done.
+%
+The reduction is calculated in such way that by the end of the xecution, the resulting value is $0$.
+%
+In this work, the stopping criterion is set by function evaluations (nfes).
+%
+Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D$ can be calculated as $D=D_I - D_I *(nfes/max\_nfes)$.
+%
+According to REFERENCE updating $D$ is more approiate through a linear reduction.
