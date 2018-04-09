@@ -32,3 +32,35 @@ In this work, the stopping criterion is set by function evaluations (nfes).
 Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D$ can be calculated as $D=D_I - D_I *(nfes/max\_nfes)$.
 %
 According to REFERENCE updating $D$ is more approiate through a linear reduction.
+%
+This process is formulated as
+\begin{equation}
+arg_{x_j \in C_i} \quad min \quad dist(x_j, o_i) \ \sqrt{ \sum_{d=1}^D ( x_j^d - o_i^d )}
+\end{equation}
+
+\begin{equation}
+S_i = \left \{ \sqrt{ \sum_{d=1}^D (x_{seed}^d - x_i^d )  } \leq r \right \}
+\end{equation}
+
+\begin{algorithm}[H]
+\algsetup{linenosize=\tiny}
+  \scriptsize
+	\caption{Replacement Phase} 
+	\begin{algorithmic}[1]
+	\STATE $Survivors = Penalized = \emptyset$.
+	\STATE $Current = Population \cup Offspring \cup Elite$.
+	\STATE Sort $Current$ according to fitness.
+	\WHILE{ $Survivos < pop\_size$ }
+	   \STATE Select the best individual $Current_best$ in $Current$ as a new seed.
+	   \STATE Find the other individuals nearest according to Eq. DISTANCE and move to $Penalized$.
+	   \STATE Move the best individual $Current_best$ to $Survivors$.
+	\ENDWHILE
+	\WHILE{ $Survivos < pop\_size$ }
+	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
+	   \STATE Move individual $Penalized$ to $Survivors$.
+	\ENDWHILE
+    \label{alg:Fase_Remplazo_VSD-MOEAD}
+\end{algorithmic}
+\end{algorithm}
+
+
