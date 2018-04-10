@@ -1,0 +1,17 @@
+ P1=              0.10000E+03                ! Number of particles                                          
+ P2=              0.82733E+00                ! Initial portion of good particles                            
+ P3=              0.45667E+00                ! Final portion of good particles                              
+ P4=              0.50000E+01                ! Archive size                                                 
+ P5=              0.10000E+01                ! Initial number for variables selected for mutation           
+ P6=              0.10000E+01                ! Final number for variables selected for mutation             
+ P7=              0.98734E+00                ! Initial fs-factor                                            
+ P8=              0.46405E+02                ! Final fs-factor                                              
+ P9=              0.10000E+03                ! Local search probability factor                              
+ P10=             0.35199E+00                ! Begin of local search                                        
+ P11=             0.10500E+03                ! max number of local search                                   
+ P12=             0.85784E+01                ! alpha-factor                                                 
+ P13=             0.15000E+01                ! method of num. derivative,  1 single side or 2 both side     
+ P14=             0.00000E+00                ! yes or no to Pre-Local Search using only one iteration step  
+ P15=             0.13465E+00                ! Begin of Pre-Local Search using only one iteration step      
+ P16=             0.50000E+01                ! max number of Pre-Local Search runs                          
+ P17=             0.20690E+04                ! Repetition of local search (0 - not limited; yes if number>0)             

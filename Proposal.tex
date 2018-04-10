@@ -42,6 +42,28 @@ arg_{x_j \in C_i} \quad min \quad dist(x_j, o_i) \ \sqrt{ \sum_{d=1}^D ( x_j^d -
 S_i = \left \{ \sqrt{ \sum_{d=1}^D (x_{seed}^d - x_i^d )  } \leq r \right \}
 \end{equation}
 
+
+\begin{algorithm}[H]
+\algsetup{linenosize=\tiny}
+  \scriptsize
+	\caption{DE scheme} 
+	\begin{algorithmic}[1]
+	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distirbuited.
+	\WHILE{ stopping criterion is nor satisfied}
+	   \FOR{ $i=1$ to $NP$} 
+		\STATE 	Mutation: Generate the Donor vector according Eq. (\ref{eqn:mutation})
+		\STATE Crossover: Recombine the mutate vector according Eq. (\ref{eqn:crossover})
+		\STATE Selection: Update the parent vector according  Eq. (\ref{eqn:selection})
+		\STATE Replacement: 
+	   \ENDFOR
+	\ENDWHILE
+    \label{alg:Fase_Remplazo_VSD-MOEAD}
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
 \begin{algorithm}[H]
 \algsetup{linenosize=\tiny}
   \scriptsize

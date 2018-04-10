@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  5 APR 2018 17:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  9 APR 2018 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -183,50 +183,81 @@ LaTeX Info: Redefining \] on input line 2666.
 ) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen125
 )
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count118
+\float@exts=\toks22
+\float@box=\box31
+\@float@everytoks=\toks23
+\@floatcapt=\box32
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks24
+\c@algorithm=\count119
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count120
+\c@ALC@line=\count121
+\c@ALC@rem=\count122
+\c@ALC@depth=\count123
+\ALC@tlm=\skip46
+\algorithmicindent=\skip47
+)
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box31
-\UL@hyphenbox=\box32
-\UL@skip=\skip46
-\UL@hook=\toks22
+\UL@box=\box33
+\UL@hyphenbox=\box34
+\UL@skip=\skip48
+\UL@hook=\toks25
 \UL@height=\dimen126
-\UL@pe=\count118
+\UL@pe=\count124
 \UL@pixel=\dimen127
-\ULC@box=\box33
+\ULC@box=\box35
 Package: ulem 2012/05/18
 \ULdepth=\dimen128
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `alg:Fase_Remplazo_VSD-MOEAD' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
 
 Unknown journal: specify \journalname{<name of your journal>} in preambel
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count125
 \scratchdimen=\dimen129
-\scratchbox=\box34
-\nofMPsegments=\count120
-\nofMParguments=\count121
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count122
+\scratchbox=\box36
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count128
 \MPscratchDim=\dimen130
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks24
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -276,71 +307,32 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 SVJour3 warning: Missing \journalname
-(./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-[2] (./Literature.tex [3]
-Overfull \hbox (2.8616pt too wide) in paragraph at lines 62--70
+(./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2]) (./Literature.tex [3]
+Overfull \hbox (2.8616pt too wide) in paragraph at lines 63--71
 \OT1/cmr/m/n/10 In or-der to in-crease the di-ver-sity of the per-turbed pa-ram
 -e-ter vec-tors, a crossover
  []
 
-[4]) (./Trends.tex
+[4]) (./Trends.tex [5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 17.
+               Default added (so using `tbp') on input line 23.
 
-) (./Proposal.tex) (./ExperimentalStudy.tex) (./Conclusion.tex)
+) (./Proposal.tex [6]) (./ExperimentalStudy.tex) (./Conclusion.tex) (./main.bbl
+[7]) [8] (./main.aux)
 
-LaTeX Warning: Reference `sec:1' on page 5 undefined on input line 139.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-Package epstopdf Info: Source file: <example.eps>
-(epstopdf)                    date: 2018-03-27 14:19:55
-(epstopdf)                    size: 286 bytes
-(epstopdf)             Output file: <example-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-27 14:19:55
-(epstopdf)                    size: 2431 bytes
-(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
-df example.eps>
-(epstopdf)             \includegraphics on input line 149.
-Package epstopdf Info: Output file is already uptodate.
-
-<example-eps-converted-to.pdf, id=36, 202.7575pt x 202.7575pt>
-File: example-eps-converted-to.pdf Graphic file (type pdf)
-
-<use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 149.
-(pdftex.def)             Requested size: 202.757pt x 202.757pt.
-Package epstopdf Info: Source file: <example.eps>
-(epstopdf)                    date: 2018-03-27 14:19:55
-(epstopdf)                    size: 286 bytes
-(epstopdf)             Output file: <example-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-27 14:19:55
-(epstopdf)                    size: 2431 bytes
-(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
-df example.eps>
-(epstopdf)             \includegraphics on input line 159.
-Package epstopdf Info: Output file is already uptodate.
-File: example-eps-converted-to.pdf Graphic file (type pdf)
- <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 159.
-(pdftex.def)             Requested size: 253.5pt x 253.50812pt.
-
-(./main.bbl [6 <./example-eps-converted-to.pdf>] [7]) [8] (./main.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3037 strings out of 493304
- 42552 string characters out of 6139871
- 114092 words of memory out of 5000000
- 6439 multiletter control sequences out of 15000+600000
+ 3313 strings out of 493304
+ 45929 string characters out of 6139871
+ 116623 words of memory out of 5000000
+ 6701 multiletter control sequences out of 15000+600000
  10842 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,11n,23p,485b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,23p,611b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -353,16 +345,17 @@ c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
 mib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (8 pages, 228938 bytes).
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (8 pages, 262208 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
