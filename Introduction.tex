@@ -7,7 +7,7 @@ DE was introduced by Storn and Price \cite{storn1997differential}, also is cosid
 %
 Similarly than with other EAs, DE follows the natural evolution process which involves mutation, recombination and selection to evolve a population throuth an iterative progress until the criteria stop is reached.
 %
-However, the peculiarity of DE resides in considering difference of vectors parameters to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controled Random Search (CRS) \cite{price1983global}.
+However, the peculiarity of DE resides in considering difference of vectors parameters to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controlled Random Search (CRS) \cite{price1983global}.
 %
 In spite of the popularity and effectiveness of DE, there exists several weakness that had been partially solved througth learning techniques.
 %
@@ -20,15 +20,15 @@ However, none of them has shown superior results than the rest.
 
 A second weakness of DE algorithms resides in the reproduction phase.
 %
-In DE this phase involves the vector differences, therefore it depends on the content of the population affecting the search process, as result a limited number of solutions are produced.
+In DE this phase involves the vector differences, therefore it depends on the content of the population affecting the search process, therefore a limited number of solutions are produced.
 %
-In fact, this issue can lead to converge into a local optima or lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
+In fact, this issue can lead to the converge into a local optima or the lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
 %
 On the other hand, there exist situations where the search process could not progress and the population remains diverse, this phenomena is known as stagnation \cite{lampinen2000stagnation}.
 %
 Its well known that stagnation ocurrs with small populations size.
 %
-Although that large populations are not prone to stagnate, it involves more evaluation functions and in certain situations is not available a large population e.g. expensive optimization problems ref CEC.
+Although that large populations are not prone to stagnate, it involves more evaluation functions and in some scenarios might not converge, also in certain situations is not available a large population e.g. expensive optimization problems \cite{chen2014problem}.
 
 %
 The last one drawback is highly related with the diversity of the population.

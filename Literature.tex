@@ -110,4 +110,14 @@ The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicate
 
 
 
-\subsection{Diversity Work with Differential Evolution}
+\subsection{Differential Evolution and Diversity techniques}
+
+Generally speaking the EAs suffer of diversity issues, been more present in DE.
+%
+This is due the high selection pressure, provoking a greedy behaviour.
+%
+To deal with this drawback in \cite{sa2008exploration} is proposed a modification of the selection used in the classical DE, where the seleciton pressure is relaxed, thus is implemented a probabilistic selection to maintain the population diversity and consequently to allow scape from basin of attraction of local optima, however to compute the probabilistic selection is considered the fitness therefore it depends in the cost funcition.
+%
+In 2003 Zaharie et al.  \cite{zaharie2003control} estimated the theorical variance and proposes a parameter adaptation througth two critical equations based on the idea of controlling the population diversity.
+%
+

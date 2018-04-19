@@ -80,6 +80,14 @@ J.~Zhang, A.C. Sanderson, Jade: adaptive differential evolution with optional
 J.~Lampinen, I.~Zelinka, et~al., in \emph{Proceedings of MENDEL} (2000), pp.
   76--83
 
+\bibitem{chen2014problem}
+Q.~Chen, B.~Liu, Q.~Zhang, J.~Liang, P.~Suganthan, B.~Qu, Problem definition
+  and evaluation criteria for cec 2015 special session and competition on bound
+  constrained single-objective computationally expensive numerical
+  optimization, Computational Intelligence Laboratory, Zhengzhou University,
+  China and Nanyang Technological University, Singapore, Technical report
+  (2014)
+
 \bibitem{zaharie2003control}
 D.~Zaharie, in \emph{Proc. of MENDEL}, vol.~9 (2003), vol.~9, pp. 41--46
 
@@ -92,5 +100,11 @@ M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
 C.~Segura, C.A.C. Coello, E.~Segredo, A.H. Aguirre, A novel diversity-based
   replacement strategy for evolutionary algorithms, IEEE transactions on
   cybernetics \textbf{46}(12), 3233 (2016)
+
+\bibitem{Joel:StatisticalTest}
+J.J. Durillo, A.J. Nebro, C.A.C. Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba, {A
+  Study of Multiobjective Metaheuristics When Solving Parameter Scalable
+  Problems}, IEEE Transactions on Evolutionary Computation \textbf{14}(4), 618
+  (2010)
 
 \end{thebibliography}
