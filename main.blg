@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: spphys.bst
 Database file #1: example.bib
-You've used 24 entries,
+You've used 25 entries,
             2815 wiz_defined-function locations,
-            743 strings with 8872 characters,
-and the built_in function-call counts, 11165 in all, are:
-= -- 987
-> -- 216
-< -- 12
-+ -- 116
-- -- 64
-* -- 540
-:= -- 1040
+            748 strings with 9079 characters,
+and the built_in function-call counts, 12316 in all, are:
+= -- 1141
+> -- 229
+< -- 13
++ -- 129
+- -- 68
+* -- 582
+:= -- 1117
 add.period$ -- 1
-call.type$ -- 24
+call.type$ -- 25
 change.case$ -- 15
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 1344
-empty$ -- 1045
-format.name$ -- 81
-if$ -- 2515
+cite$ -- 25
+duplicate$ -- 1484
+empty$ -- 1116
+format.name$ -- 86
+if$ -- 2770
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 243
-newline$ -- 81
-num.names$ -- 24
-pop$ -- 549
+int.to.str$ -- 25
+missing$ -- 253
+newline$ -- 84
+num.names$ -- 25
+pop$ -- 615
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 525
+skip$ -- 602
 stack$ -- 0
-substring$ -- 401
-swap$ -- 982
-text.length$ -- 12
+substring$ -- 471
+swap$ -- 1113
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 61
-width$ -- 26
-write$ -- 212
+while$ -- 66
+width$ -- 27
+write$ -- 220
