@@ -112,12 +112,24 @@ The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicate
 
 \subsection{Differential Evolution and Diversity techniques}
 
-Generally speaking the EAs suffer of diversity issues, been more present in DE.
+DE is highly susceptible to the diversity drawbacks generally seen in EAs.
 %
-This is due the high selection pressure, provoking a greedy behaviour.
+This fact is since the selection pressure is very aggresive, well known as a greedy strategy.
 %
-To deal with this drawback in \cite{sa2008exploration} is proposed a modification of the selection used in the classical DE, where the seleciton pressure is relaxed, thus is implemented a probabilistic selection to maintain the population diversity and consequently to allow scape from basin of attraction of local optima, however to compute the probabilistic selection is considered the fitness therefore it depends in the cost funcition.
+However througth the last decade has developed several analyses and strategies to deal with these drawbacks.
 %
-In 2003 Zaharie et al.  \cite{zaharie2003control} estimated the theorical variance and proposes a parameter adaptation througth two critical equations based on the idea of controlling the population diversity.
+One of them is proposed in 2003 by Zaharie et al.  \cite{zaharie2003control} estimated the theorical variance and proposes a parameter adaptation througth two critical equations based on the idea of controlling the population diversity.
+%
+In 2009 James Montgomery \cite{montgomery2009differential} analyses the effect of the difference vectors showing that small differences vectors applied to solutions in one cluster can produce improvementes, thus movements produced by large difference vectors are wasted.
+%
+After that in 2010 Montgomery shows a study where are analyzed the DE parameters, principally is empirically demostrated the effect of the crossover probability.
+%
+In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it prevents the movements that are below a threshold and it decreases over the algorithm's run.
+%
+Also in 2013 derived of this strategy is proposed an adaptive thresheld convergence mechanism by Antonio et al. \cite{bolufe2013differential}.
+%
+One of them, proposed in \cite{sa2008exploration} by Angela et al. suggest a modification of the selection used in the classical DE, where the seleciton pressure is relaxed, thus is implemented a probabilistic selection to maintain the population diversity and consequently to allow scape from basin of attraction of local optima, however to compute the probabilistic selection is considered the fitness therefore it depends in the cost funcition.
+%
+
 %
 
