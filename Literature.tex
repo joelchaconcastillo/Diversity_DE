@@ -103,13 +103,6 @@ The mutation scheme decribed with the crossover proposed is refered as DE/rand/1
 %
 The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``differential evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
-------Diversity Revision
-*Explain the influence of the paramters.
-*Show the implication of these operators with the population diversity.
-*Talk about hybrid and adaptive strategies.
-
-
-
 \subsection{Differential Evolution and Diversity techniques}
 
 DE is highly susceptible to the diversity drawbacks generally seen in EAs.
@@ -124,15 +117,25 @@ In 2009 James Montgomery \cite{montgomery2009differential} analyses the effect o
 %
 After that in 2010 Montgomery shows a study where are analyzed the DE parameters, principally is empirically demostrated the effect of the crossover probability.
 %
-In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it prevents the movements that are below a threshold and it decreases over the algorithm's run.
+In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it prevents the movements that are below a threshold and it decreases over the algorithm's run, however this strategy only slow down the convergency since that only is considered the distance bewteen the base vector and the trial vector but the distance between the trial vector and the target vector is not considered.
 %
 Also in 2013 derived of this strategy is proposed an adaptive thresheld convergence mechanism by Antonio et al. \cite{bolufe2013differential}.
 %
-One of them, proposed in \cite{sa2008exploration} by Angela et al. suggest a modification of the selection used in the classical DE, where the seleciton pressure is relaxed, thus is implemented a probabilistic selection to maintain the population diversity and consequently to allow scape from basin of attraction of local optima, however to compute the probabilistic selection is considered the fitness therefore it depends in the cost funcition.
+
+A similar work is proposed  by Angela et al. \cite{sa2008exploration}, which suggests a modification of the selection operator of the classical DE.
+%
+Particularly,  the seleciton pressure is relaxed througth a probabilistic selection to maintain the population diversity and consequently to allow scape from basin of attraction of local optima, however to compute the probabilistic selection is considered the fitness therefore it depends in the cost funcition.
 %
 
 Ming Yang et al. (2013) \cite{yang2015differential} proposed a mechanism named \textit{Auto-Enhanced Population Diversity} (AEPD) where are identified the moments when a population becomes converging or stagnating by measuirng the distribution of the population in each dimension and diversing at the dimensional level.
 %
 Similar strategies has been proposed as the one by Zhao Li et al. in 2016 \cite{zhao2016differential} where are variated the assembling positions of the premature individuals by mutation operation.
 
-Despite the fact that are developed techinques where is explicitly induced a balance between explotation and exploration through a threshold of diversity (Montgomery), and mechanisms that modify the selection of differential evolution, there is not present a strategies with both principles.
+
+Our proposal is based in several ideas of the previously mentioned works, specifically the following:
+\begin{itemize}
+\item Is considered a threshold to control explicitly the convergency of the solutions.
+\item This threshold decreases over the algorithm run.
+\item The selection operator should be relaxed. 
+\end{itemize}
+
