@@ -101,6 +101,19 @@ C.~Segura, C.A.C. Coello, E.~Segredo, A.H. Aguirre, A novel diversity-based
   replacement strategy for evolutionary algorithms, IEEE transactions on
   cybernetics \textbf{46}(12), 3233 (2016)
 
+\bibitem{montgomery2009differential}
+J.~Montgomery, in \emph{Evolutionary Computation, 2009. CEC'09. IEEE Congress
+  on} (IEEE, 2009), pp. 2833--2840
+
+\bibitem{montgomery2012simple}
+J.~Montgomery, S.~Chen, in \emph{Evolutionary Computation (CEC), 2012 IEEE
+  Congress on} (IEEE, 2012), pp. 1--8
+
+\bibitem{bolufe2013differential}
+A.~Boluf{\'e}-R{\"o}hler, S.~Est{\'e}vez-Velarde, A.~Piad-Morffis, S.~Chen,
+  J.~Montgomery, in \emph{Evolutionary Computation (CEC), 2013 IEEE Congress
+  on} (IEEE, 2013), pp. 40--47
+
 \bibitem{Joel:StatisticalTest}
 J.J. Durillo, A.J. Nebro, C.A.C. Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba, {A
   Study of Multiobjective Metaheuristics When Solving Parameter Scalable
