@@ -3,50 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: spphys.bst
 Database file #1: example.bib
-Warning--I didn't find a database entry for "CEC2006"
-Warning--I didn't find a database entry for "CEC2007"
-Warning--I didn't find a database entry for "CEC2008"
-Warning--I didn't find a database entry for "segura2015improving"
-Warning--I didn't find a database entry for "CEC2010"
-You've used 26 entries,
+You've used 36 entries,
             2815 wiz_defined-function locations,
-            765 strings with 9479 characters,
-and the built_in function-call counts, 12763 in all, are:
-= -- 1163
-> -- 251
+            810 strings with 12335 characters,
+and the built_in function-call counts, 15853 in all, are:
+= -- 1319
+> -- 375
 < -- 13
-+ -- 137
-- -- 75
-* -- 611
-:= -- 1170
++ -- 185
+- -- 113
+* -- 777
+:= -- 1544
 add.period$ -- 1
-call.type$ -- 26
-change.case$ -- 16
+call.type$ -- 36
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 1533
-empty$ -- 1158
-format.name$ -- 94
-if$ -- 2868
+cite$ -- 36
+duplicate$ -- 1917
+empty$ -- 1498
+format.name$ -- 141
+if$ -- 3547
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 268
-newline$ -- 87
-num.names$ -- 26
-pop$ -- 635
+int.to.str$ -- 36
+missing$ -- 371
+newline$ -- 117
+num.names$ -- 36
+pop$ -- 822
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 612
+skip$ -- 671
 stack$ -- 0
-substring$ -- 484
-swap$ -- 1144
+substring$ -- 494
+swap$ -- 1338
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 68
-width$ -- 28
-write$ -- 229
-(There were 5 warnings)
+while$ -- 79
+width$ -- 38
+write$ -- 311

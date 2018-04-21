@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  21 APR 2018 12:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  21 APR 2018 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -223,10 +223,10 @@ Package: ulem 2012/05/18
 \ULdepth=\dimen128
 ) (./main.aux
 
-LaTeX Warning: Label `alg:Fase_Remplazo_VSD-MOEAD' multiply defined.
-
-
 LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `alg:Fase_Remplazo_VSD-MOEAD' multiply defined.
 
 
 LaTeX Warning: Label `my-label' multiply defined.
@@ -323,46 +323,15 @@ Overfull \hbox (2.8616pt too wide) in paragraph at lines 63--71
 -e-ter vec-tors, a crossover
  []
 
-[4] [5]) (./Trends.tex
+[4] [5]) (./Trends.tex [6]) (./Proposal.tex [7]
+Underfull \vbox (badness 1297) has occurred while \output is active []
 
-LaTeX Warning: Citation `CEC2006' on page 6 undefined on input line 12.
-
-
-LaTeX Warning: Citation `CEC2007' on page 6 undefined on input line 15.
-
-
-LaTeX Warning: Citation `CEC2008' on page 6 undefined on input line 18.
-
-
-LaTeX Warning: Citation `segura2015improving' on page 6 undefined on input line
- 18.
-
-
-LaTeX Warning: Citation `CEC2010' on page 6 undefined on input line 20.
-
-[6]
-Overfull \hbox (0.6651pt too wide) in paragraph at lines 30--36
-\OT1/cmr/m/n/10 adap-ta-tion ES (CMA-ES) yielded bet-ter re-sults than clas-si-
-cal and self-adaptive
- []
-
-)
-Overfull \hbox (5.3885pt too wide) in paragraph at lines 38--144
-\OT1/cmr/m/n/10 prin-ci-pal DE vari-ants: adap-tive con-trol pa-ram-e-ters, Hy-
-brid and Multi-Operator.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--144
-
- []
-
-(./Proposal.tex [7]) (./ExperimentalStudy.tex
+ [8])
+(./ExperimentalStudy.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 15.
 
-[8]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 34.
@@ -375,22 +344,23 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 96.
 
-) (./Conclusion.tex) (./main.bbl [9] [10] [11]) [12] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
+) (./Conclusion.tex) [9] (./main.bbl [10] [11]
+Missing character: There is no â in font cmr8!
+Missing character: There is no € in font cmr8!
+Missing character: There is no ™ in font cmr8!
+ [12]) [13] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3327 strings out of 493304
- 46146 string characters out of 6139871
- 151653 words of memory out of 5000000
- 6715 multiletter control sequences out of 15000+600000
+ 3333 strings out of 493304
+ 46206 string characters out of 6139871
+ 154693 words of memory out of 5000000
+ 6721 multiletter control sequences out of 15000+600000
  10842 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,17n,23p,611b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,17n,23p,612b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -411,10 +381,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (12 pages, 295659 bytes).
+Output written on main.pdf (13 pages, 299961 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
