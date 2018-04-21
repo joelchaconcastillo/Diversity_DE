@@ -1,38 +1,63 @@
-Our proposal has a similar direction that the one described by Carlos Segura et. al., where is proposed a multi-objective replacement strategy.
+Our proposal is principally based in two works.
 %
-The main advantage of the new proposal is that the balance between exploration and exploitation is automatically adjusted based on the given stopping criterion.
+The first one that is delimited for DE algorithms is shown by Montgomery et al. \cite{montgomery2012simple} where are prevented the movements vectors that could provoke premature convergence.
 %
-Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy, which is one of the novelties of the new design.
+The second one, which is a generalization of EAs, it is proposed by Carlos Segura et al. and it transforms the single objecttive to multi-objective \cite{segura2016novel}, where the first of them is the single objective fitness and the last one is a diversity measurement.
+%
+
+In this fashion, our proposal induces a balance between exploration and exploitation that is automatically adjusted on the given stopping criterion.
+%
+Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy.
 %
 In this way, for shorter stoping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
-
-
-One of the basic principles behind the development of the replacement strategy devised in this paper  is that ndividuals that contribute too little to diversity --the contribution is measured with the DCN value-- should not be accepted regardless of their original objective value.
 %
-In out approach, individuals that contribute too little are penalized.
+To achieve such balance are considered three populations, parent vectors, child vectors and elite vectors, which is one of the novelties of the new design.
+%
+
+One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbour (DCN) value-- should not be accepted as be part of the parent vectors, instead based in the fitness could replace one of the elite vectors.
+%
+
+In our approach, individuals that contribute too little are penalized.
 %
 The value $D$ represent the minimum DCN required to avoid being penalized.
 %
 Any individual whose DCN value is lower than this threshold value is penalized.
 %
-The key principle residesin how to evaluate wheter an individual contributes enough or not, i.e., how to set the value $D$.
+The key principle resides in how to evaluate wheter an individual contributes enough or not, i.e., how to set the value $D$.
 %
 The value of $D$ should depend on the optimization stage.
 %
-Specifically, this value should be rediced as the stopping criterion is approached.
+Specifically, this value should be reduced as the stopping criterion is approached.
 %
 In our scheme, an initial $D_I$ value must be set.
 %
 Then, a linear reduction of $D$ is done.
 %
-The reduction is calculated in such way that by the end of the xecution, the resulting value is $0$.
+The reduction is calculated in such way that approximately by the end of the execution, the resulting $D$ value is $0$ to $95\%$ of maximum number evaluations.
 %
-In this work, the stopping criterion is set by function evaluations (nfes).
+Particularly, in this work, the stopping criterion is set by function evaluations (nfes).
 %
-Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D$ can be calculated as $D=D_I - D_I *(nfes/max\_nfes)$.
+Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D$ can be calculated as $D=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
-According to REFERENCE updating $D$ is more approiate through a linear reduction.
+According to Segura et al. \cite{segura2016novel} updating $D$ is more appropiate through a linear reduction.
 %
+
+
+%
+To achieve this is used a popular niche-strategy known as \textit{Specation} \cite{yang2017multimodal}.
+%
+Thus, firstly given a radius are identified the seeds, which are the vectors with best fitness and whose minimal distance is determined by the radius.
+%
+Therefore, the vectors that have a lowest radius distance to any seed are moved to the penalized set.
+%
+In this way are preserved the best fitness vectors and at same time the diversity of the solutions.:
+%
+After that, are selected the penalized vectors whose contribution to diversity considering the seeds is maximal.
+%
+
+Particularly, the replacement strategy is showed in the algorithm \ref{alg:Replacement}.
+
+
 This process is formulated as
 \begin{equation}
 arg_{x_j \in C_i} \quad min \quad dist(x_j, o_i) \ \sqrt{ \sum_{d=1}^D ( x_j^d - o_i^d )}
@@ -81,7 +106,7 @@ S_i = \left \{ \sqrt{ \sum_{d=1}^D (x_{seed}^d - x_i^d )  } \leq r \right \}
 	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
 	   \STATE Move individual $Penalized$ to $Survivors$.
 	\ENDWHILE
-    \label{alg:Fase_Remplazo_VSD-MOEAD}
+    \label{alg:Replacement}
 \end{algorithmic}
 \end{algorithm}
 
