@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  20 APR 2018 19:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  21 APR 2018 12:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -234,9 +234,6 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-
-LaTeX Warning: Label `my-label' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -328,18 +325,44 @@ Overfull \hbox (2.8616pt too wide) in paragraph at lines 63--71
 
 [4] [5]) (./Trends.tex
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 23.
+LaTeX Warning: Citation `CEC2006' on page 6 undefined on input line 12.
 
-) (./Proposal.tex [6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7])
-(./ExperimentalStudy.tex
+LaTeX Warning: Citation `CEC2007' on page 6 undefined on input line 15.
+
+
+LaTeX Warning: Citation `CEC2008' on page 6 undefined on input line 18.
+
+
+LaTeX Warning: Citation `segura2015improving' on page 6 undefined on input line
+ 18.
+
+
+LaTeX Warning: Citation `CEC2010' on page 6 undefined on input line 20.
+
+[6]
+Overfull \hbox (0.6651pt too wide) in paragraph at lines 30--36
+\OT1/cmr/m/n/10 adap-ta-tion ES (CMA-ES) yielded bet-ter re-sults than clas-si-
+cal and self-adaptive
+ []
+
+)
+Overfull \hbox (5.3885pt too wide) in paragraph at lines 38--144
+\OT1/cmr/m/n/10 prin-ci-pal DE vari-ants: adap-tive con-trol pa-ram-e-ters, Hy-
+brid and Multi-Operator.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--144
+
+ []
+
+(./Proposal.tex [7]) (./ExperimentalStudy.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 15.
 
+[8]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 34.
@@ -352,20 +375,19 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 96.
 
-) (./Conclusion.tex [8] [9]) (./main.bbl
-Underfull \vbox (badness 4013) has occurred while \output is active []
+) (./Conclusion.tex) (./main.bbl [9] [10] [11]) [12] (./main.aux)
 
- [10])
-[11] (./main.aux)
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3321 strings out of 493304
- 46080 string characters out of 6139871
- 157650 words of memory out of 5000000
- 6709 multiletter control sequences out of 15000+600000
+ 3327 strings out of 493304
+ 46146 string characters out of 6139871
+ 151653 words of memory out of 5000000
+ 6715 multiletter control sequences out of 15000+600000
  10842 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,17n,23p,611b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -377,23 +399,22 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
-mib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti8.pfb>
-Output written on main.pdf (11 pages, 301983 bytes).
+c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cme
+xtra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (12 pages, 295659 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

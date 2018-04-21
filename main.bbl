@@ -118,6 +118,11 @@ A.~Boluf{\'e}-R{\"o}hler, S.~Est{\'e}vez-Velarde, A.~Piad-Morffis, S.~Chen,
 L.~Zhao, C.j. Sun, X.c. Huang, B.x. Zhou, in \emph{Control Conference (CCC),
   2016 35th Chinese} (IEEE, 2016), pp. 2784--2787
 
+\bibitem{CEC2005}
+P.N. Suganthan, N.~Hansen, J.J. Liang, K.~Deb, Y.P. Chen, A.~Auger, S.~Tiwari,
+  Problem definitions and evaluation criteria for the cec 2005 special session
+  on real-parameter optimization, KanGAL report \textbf{2005005}, 2005 (2005)
+
 \bibitem{Joel:StatisticalTest}
 J.J. Durillo, A.J. Nebro, C.A.C. Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba, {A
   Study of Multiobjective Metaheuristics When Solving Parameter Scalable

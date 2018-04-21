@@ -1,77 +1,38 @@
-In the last decade, DE has been recognized as one of the most eficient and simple algorithm.
+In the last decade, DE has been recognized as one of the most promising EAs, likely for its eficient and simple approach to solve optimization problems.
 %
-Particularly, the algorithms derivated from DE have obtained one of the top rank in the Congress on Evolutionary Computation (CEC).
+Specifically, the DE variants have been highly present in several optimization competitions, principally in the Congress on Evolutionary Computation (CEC).
 %
-In this work we are interested in the bias of DE algorithms and CEC competitions problems througth the last years.
+In fact DE occuped the top places in several optimization scenarios as are single-objective, multi-objective, contrained problems, large scale problems, dynamic problems, multi-niche landscape problemas and learned based problems.
 %
-It is important to take into account that althougth the kind of problems have changed, the DE are in the top rank.
+In this work we are interested in the bias of designed of DE algorithms and CEC competitions problems througth the last years.
 %
-In 2005 CEC competition on real parameter optimization, on 10-D problems classical DE secured 2nd rank and a self-adaptive DE variant called SaDE secured third rank although they performed poorly over 30-D problems.
+
+In CEC 2005 competition on real parameter optimization \cite{CEC2005}, on 10-D problems classical DE secured 2nd rank and a self-adaptive DE variant called SaDE secured third rank although they performed poorly over 30-D problems.
 %
-Although a powerful variant of ES, known as restart covariance matrix adaptation ES (CMA-ES) yielded better results than classical and self-adaptiveDE, later on many improver DE variants were proposed in the period 2006-2009.
+Later in CEC 2006 on constrained problems \cite{CEC2006} DE algorithms obtained first with $\epsilon$ constrained Rank-based Differential Evolution ($\epsilon$ RDE) and third place with SaDE.
+%
+
+Multi-objective optimization problems were proposed in CEC 2007 \cite{CEC2007} where DE obtained the second place with the based DE Generalized Differential Evolution 3 (GDE3), it is importat take into account that later in CEC 2009 the first place was reached by the Multi-Objective Evolutionary Algorithm Based in Decomposition (MOEA/D) which applies the DE operators instead of its old version (used genetic operators - SBX).
+
+%
+In the large scale global optimization (CEC 2008) \cite{CEC2008} a Self-adaptive DE (jDEdynNP-F) reached the third place, unfortunately int later competitions (CEC 2010) DE algorithms were not in the top rank, this could be an indicator of the weakness of DE in large scale problems \cite{segura2015improving}.
+
+In CEC 2010 competition on constrained real-parameter optimization \cite{CEC2010} the first place was reached by the $\epsilon$ Constrained DE with gradient based mutation ($\epsilon$ Deg) and the third place by the Self-adaptive DE for solving constrained optimization (jDEsoco).
+
+In CEC 2011 competition with real world optimization problems the second and third places were reached by Hybrid DE (DE-$\Lambda_{CR}$) and Self-adaptive Multi-Operator DE (SAMODE).
+%
+%
+Later in CEC 2014 the first place was reached by the Linear Population Size Reduction Success-History Based Adaptive DE with Linear Population Size Reduction (L-SHAE) in the single objective real parameter optimization scenario.
+%
+
+
+
+Although a powerfull variant of ES, known as restart covariance matrix adaptation ES (CMA-ES) yielded better results than classical and self-adaptive DE, later on many improver DE variants were proposed in the period 2006-2017.
 %
 Hence, another rigorous comparison is needed to determine how well these variants might compete against the restart CMA-ES and many othe real parameter optimizers over the standard numerical benchmarks.
 %
 It is also interesting to note that the variants of DE continued to secure front ranks in the subsequent CEC competitions like CEC 2006 competition on constrained real parameter optimization (first rank), CEC 2007 competition on multi-objective optimization (second rank), CEC 2008 competition on large scale global optimization (third rank), CEC 2009 competition on multi-objective optimization (first rank was taken by a DE-based algorithm MOEA/D for unconstrained problems), and CEC 2009 competition on evolutionary computation in dynamic and uncertain enviroments (first rank).
 %
 
-Some of the CEC competitions are described as follows:
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
-% \usepackage[normalem]{ulem}
-% \useunder{\uline}{\ul}{}
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lll}
-Year & Topic & Places \\
-2005 & Single Objective Real-Parameter Optimization & 1th Restart Covariance Matrix Adaptation (IPOP-CMA-ES) \\
- &  & 2th Estimation of Distribution Algorithm (EDA) \\
- &  & 3th Real Coded Memetic Algorithm (RCMA) \\
-2006 & Constrained Real-Parameter Optimization & 1th $\epsilon$ Constrained Based DE ($\epsilon$ RDE) \\
- &  & 2th Dynamic Multi-swarm Optimizer (DMS-PSO) \\
- &  & 3th Self-adaptive Differential Evolution (SaDE) \\
-2008 & Large Scale Global Optimization & 1th Multiple Trayectory Search (MTS) \\
- &  & 2th Dynamic Multi-swarm Optimizer (DMS-PSO) \\
- &  & 3th Self-adaptive DE (jDEdynNP-F) \\
-2009 & Dynamic Optimization & 1th Self-adaptive DE (jDE) \\
-2010 & Constrained Real-Parameter Optimization & 1th $\epsilon$ Constrained DE with gradient based mutation ($\epsilon$ Deg) \\
- &  & 2th Ensemble of Constraint Handling Techniques (ECHT) \\
- &  & 3th Self-adaptive DE (jDEsoco) \\
- & Large Scale Global Optimization & 1th Memetic Algorithm Based on Local Search Chains (MA-SW-Chains) \\
- &  & 2th Two Stage Based Ensemble Optimization Evolutionary Algorithm (EOEA) \\
- &  & 3th Dynamic Multi-Swarm Particle Swarm Optimizer (DMS-PSO) \\
-2011 & Real World Optimization Problems & 1th Genetic Algorithm with Multi-parent Crossover (GA-MPC) \\
- &  & 2th Hybrid DE (DE-$\Lambda_{CR}$) \\
- &  & 3th Self-adaptive Multi-Operator DE (SAMODE) \\
-2013 & Single Objective Real-Parameter Optimization & 1th Restart Covariance Matrix Adaptation (NBIPOPaCMA) \\
- &  & 2th Hybrind CMA-ES and Iterated Local Search (iCMAES-ILS) \\
- &  & 3th Dynamically updated Region-based Memetic Algorithm with Local Search Chaining and CMA-ES (DRMA-LSCh-CMA) \\
-2014 & Single Objective Real-Parameter Optimization & 1th $\epsilon$ Constrained Based DE ($\epsilon$ RDE) \\
- & Computationally Expensive Optimization & 1th Mean Variance Mapping Optimization (MVMO) \\
- &  & 2th Surrogate-assited Optimization with Memetic Optimization Dimensionally-controled Search (SO-MODS) \\
- &  & 3th Simple Algorithm Withouth Approximation (WA) \\
-2015 & Learned Based Single Objective Real-Parameter Optimization & 1th Succesful Parent Selecting L-SHADE with Eigenvector-Based Crossover (SPS-L-SHADE-EIG) \\
- &  & 2th DE with success Parameter Adaptation (DesPA) \\
- &  & 3th Mean Variance Mapping Optimization (MVMO) and Neurodynamic L-SHADE (LSHADE-ND) \\
- & Multi-Niche Single Objective Real-Parameter Optimization & 1th Algorithm Based on Decomposition \\
- &  & 2th Particle Swarm Optimization (PSO) \\
- &  & 3th Neighborhood Based Speciation Differential Evolution (NSDE) \\
- & Computationally Expensive Optimization & 1th Mean Variance Mapping Optimization (MVMO) \\
- &  & 2th Parameter Tuned CMA-ES \\
-2016 & Learned Based Single Objective Real-Parameter Optimization & 1th Mean-Variance Mapping Optimization (MVMO-PHM) \\
- &  & 2th Cooperative Co-evolution L-SHADE with Restarts (CCL-SHADE) \\
- &  & 3th L-SHADE with four strategies (L-SHADE44) \\
- & Single Objective Real-Parameter Optimization & 1th United Multi-Operator Evolutionary Algorithms (UMOEAs-II) \\
- &  & 2th Ensemble Sinusoidal Parameter Adaptation with L-SHADE (L-SHADE-EpSin) \\
- &  & 3th Improved L-SHADE (iL-SHADE) \\
- & Computationally Expensive Optimization & 1th Mean Variance Mapping Optimization (MVMO) \\
- &  & 2th Artificial super-Bee enhanced Colony (AsBeC) \\
- &  & 3th Reduced Yin-Yang-Pair Optimization (RYYPO) \\
-2017 & Single Objective Real-Parameter Optimization & 1th Effective Butterfly Optimizer with Covariance Matrix Adapted Retreat Phase (EBOwithCMAR) \\
- &  & 3th Ensemble Sinusoidal DE Covariance Matrix Adaptation with Euclidean Neighborhood (L-SHADE-cnEpSin)
-\end{tabular}%
-}
-\end{table}
+
+It is important take into account that present three imporant categories principal DE variants: adaptive control parameters, Hybrid and Multi-Operator.
