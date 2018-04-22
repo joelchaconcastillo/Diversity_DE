@@ -1,29 +1,29 @@
-Our proposal is principally based in two works.
+Principally, our proposal is  based in the following two works.
 %
-The first one that is delimited for DE algorithms is shown by Montgomery et al. \cite{montgomery2012simple} where are prevented the movements vectors that could provoke premature convergence.
+The first one that is delimited for DE algorithms, it is shown by Montgomery et al. \cite{montgomery2012simple} where is suggested a strategy to prevented the premature caused by the displacemendisplacement of the mutation.
 %
-The second one, which is a generalization of EAs, it is proposed by Carlos Segura et al. and it transforms the single objecttive to multi-objective \cite{segura2016novel}, where the first of them is the single objective fitness and the last one is a diversity measurement.
+The second one that is a generalization of EAs, it is proposed by Carlos Segura et al. \cite{segura2016novel} and it transforms the single objective optimization problem to multiple objectives where one of them is the fitness and the other one is a diversity measurement, similarly is used a threshold which is decreased as the criteria stop is reached.
 %
 
-In this fashion, our proposal induces a balance between exploration and exploitation that is automatically adjusted on the given stopping criterion.
+Particularly, our proposal induces a balance between exploration and exploitation that is automatically adjusted on the given stopping criterion.
 %
 Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy.
 %
 In this way, for shorter stoping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
 %
-To achieve such balance are considered three populations, parent vectors, child vectors and elite vectors, which is one of the novelties of the new design.
+To achieve such balance are considered three populations, parent vectors, offspring vectors and elite vectors, being one of the novelties of the new design.
 %
 
-One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbour (DCN) value-- should not be accepted as be part of the parent vectors, instead based in the fitness could replace one of the elite vectors.
+One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbour (DCN) value-- should not be accepted as be part of the parent vectors, instead it could replace one of the elite vectors.
 %
 
-In our approach, individuals that contribute too little are penalized.
+In our approach, vector that contribute too little are penalized.
 %
 The value $D$ represent the minimum DCN required to avoid being penalized.
 %
-Any individual whose DCN value is lower than this threshold value is penalized.
+Any vector whose DCN value is lower than this threshold value is penalized.
 %
-The key principle resides in how to evaluate wheter an individual contributes enough or not, i.e., how to set the value $D$.
+The key principle resides in how to evaluate wheter an vector contributes enough or not, i.e., how to set the value $D$.
 %
 The value of $D$ should depend on the optimization stage.
 %
@@ -33,9 +33,9 @@ In our scheme, an initial $D_I$ value must be set.
 %
 Then, a linear reduction of $D$ is done.
 %
-The reduction is calculated in such way that approximately by the end of the execution, the resulting $D$ value is $0$ to $95\%$ of maximum number evaluations.
-%
 Particularly, in this work, the stopping criterion is set by function evaluations (nfes).
+%
+The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D$ value is $0$, and the rest is present a similar behaviour of the classical DE.
 %
 Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D$ can be calculated as $D=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
@@ -44,42 +44,70 @@ According to Segura et al. \cite{segura2016novel} updating $D$ is more appropiat
 
 
 %
-To achieve this is used a popular niche-strategy known as \textit{Specation} \cite{yang2017multimodal}.
+Specifically, the previously strategy is implemented in the replacement phase (algorithm \ref{alg:Replacement}) where is used a popular niche-strategy known as \textit{Speciation} \cite{yang2017multimodal}.
 %
-Thus, firstly given a radius are identified the seeds, which are the vectors with best fitness and whose minimal distance is determined by the radius.
-%
-Therefore, the vectors that have a lowest radius distance to any seed are moved to the penalized set.
-%
-In this way are preserved the best fitness vectors and at same time the diversity of the solutions.:
-%
-After that, are selected the penalized vectors whose contribution to diversity considering the seeds is maximal.
-%
+Initially, based in a niche-radius ($D$) and a defined distance\footnote{For simplicity we use euclidean distance, however can be user other distance as the mahalanobis distance.} (\ref{eqn:distance}), in an iterative process the seeds (or survivors) are identified, these are the vectors with best fitness and whose minimal DCN is not lower than the one determined by the $D$ value.
 
-Particularly, the replacement strategy is showed in the algorithm \ref{alg:Replacement}.
-
-
-This process is formulated as
-\begin{equation}
-arg_{x_j \in C_i} \quad min \quad dist(x_j, o_i) \ \sqrt{ \sum_{d=1}^D ( x_j^d - o_i^d )}
+\begin{equation}\label{eqn:distance}
+d ( x_{seed}, x_j ) = \sqrt{ \sum_{d=1}^D (x_{seed}^d - x_j^d )  } 
 \end{equation}
 
-\begin{equation}
-S_i = \left \{ \sqrt{ \sum_{d=1}^D (x_{seed}^d - x_i^d )  } \leq r \right \}
-\end{equation}
+%
+Therefore, the vectors that have a lowest distance to any seed than $D$ are moved to the penalized set.
+%
+In this way are preserved the best fitness vectors and simultaneously the diversity is maintained in some level.
+%
+It is important to take into account that if the niche-radio is too high, just one seed or survivor will be selected.
+%
+In this scenario the rest of parent vectors are selected from the penalized vectors.
+%
+Thus, are selected the penalize vectors that considering the selected seeds vectors have the maximum constribution to diversity.
+%
+Although that in the literature exist several diversity measures, we consider the DCN.
+%
+According this, in an iterative process is selected as survivor the penalized vector that has the maximum DCN.
+
+\begin{algorithm}[H]
+\algsetup{linenosize=\tiny}
+  \scriptsize
+	\caption{Replacement Phase} \label{alg:Replacement}
+	\begin{algorithmic}[1]
+	\STATE $Survivors = Penalized = \emptyset$.
+	\STATE $Current = Population \cup Offspring \cup Elite$.
+	\STATE Sort $Current$ according to fitness.
+	\WHILE{ $Survivors < pop\_size$ }
+	   \STATE Select the best individual $Current_{best}$ of $Current$ as a new seed.
+	   \STATE Find the other individuals nearest according to Eq. (\ref{eqn:distance}) and move to $Penalized$.
+	   \STATE Move the best individual $Current_{best}$ to $Survivors$.
+	\ENDWHILE
+	\WHILE{ $Survivors < pop\_size$ }
+	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
+	   \STATE Move individual $Penalized$ to $Survivors$.
+	\ENDWHILE
+       \RETURN $Current$
+\end{algorithmic}
+\end{algorithm}
+
+On the other hand, since that the diversity in the parent vectors should be kept, the selection operator indicated in the equation (\ref{eqn:selection}) is modified.
+%
+Thus, instead of made a comparison between the target or parent vectors and the trial or offspring vectors, is applied a comparison between the offspring vectors with the elite vectors.
+%
+Hence, the elite vectors record the best individuals obtained among the optimization process.
+%
 
 
 \begin{algorithm}[H]
 \algsetup{linenosize=\tiny}
   \scriptsize
-	\caption{DE scheme} 
+	\caption{General scheme of DE considering diversity} 
 	\begin{algorithmic}[1]
 	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distirbuited.
 	\WHILE{ stopping criterion is nor satisfied}
 	   \FOR{ $i=1$ to $NP$} 
-		\STATE 	Mutation: Generate the Donor vector according Eq. (\ref{eqn:mutation})
+		\STATE Mutation: Generate the donor vector according Eq. (\ref{eqn:mutation})
 		\STATE Crossover: Recombine the mutate vector according Eq. (\ref{eqn:crossover})
 		\STATE Selection: Update the parent vector according  Eq. (\ref{eqn:selection})
-		\STATE Replacement: 
+		\STATE Replacement: Select the parent vectors according to algorithm \ref{alg:Replacement}
 	   \ENDFOR
 	\ENDWHILE
     \label{alg:Fase_Remplazo_VSD-MOEAD}
@@ -89,25 +117,5 @@ S_i = \left \{ \sqrt{ \sum_{d=1}^D (x_{seed}^d - x_i^d )  } \leq r \right \}
 
 
 
-\begin{algorithm}[H]
-\algsetup{linenosize=\tiny}
-  \scriptsize
-	\caption{Replacement Phase} 
-	\begin{algorithmic}[1]
-	\STATE $Survivors = Penalized = \emptyset$.
-	\STATE $Current = Population \cup Offspring \cup Elite$.
-	\STATE Sort $Current$ according to fitness.
-	\WHILE{ $Survivos < pop\_size$ }
-	   \STATE Select the best individual $Current_best$ in $Current$ as a new seed.
-	   \STATE Find the other individuals nearest according to Eq. DISTANCE and move to $Penalized$.
-	   \STATE Move the best individual $Current_best$ to $Survivors$.
-	\ENDWHILE
-	\WHILE{ $Survivos < pop\_size$ }
-	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
-	   \STATE Move individual $Penalized$ to $Survivors$.
-	\ENDWHILE
-    \label{alg:Replacement}
-\end{algorithmic}
-\end{algorithm}
 
 
