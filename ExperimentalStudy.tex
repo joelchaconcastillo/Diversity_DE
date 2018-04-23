@@ -1,8 +1,10 @@
-In this section the experimental validation of our proposal is showed that controlling the diverity in a classic DE, is a way to improve further some of the results obtained by the state-of-the-art algorithms.
+In this section the experimental validation is carried out.
 %
-Particularly, the benchmarks of CEC 2016 and CEC 2017 are considered, each ome of them is composed of thirty different problems.
+Specifically is showed that controlling the diverity in a classic DE, is a way to improve further some of the results obtained by the state-of-the-art algorithms.
 %
-As the state-of-the-art are used the algorithms that belong to the first two places.
+Particularly, the benchmarks of CEC 2016 and CEC 2017 are considered, each one of them is composed of thirty different problems.
+%
+The state-of-the-art is composed by the algorithms that correspond to the first places of each year.
 %
 Thus, the algorithms considered from the CEC 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that are the first and second place respectively.
 %
@@ -10,22 +12,28 @@ Also the top algorithms from CEC 2017 are EBOwithCMAR \cite{kumar2017improving} 
 %
 It is interesting to take into account that EBOwithCMAR is an improvement of the UMOEAs-II.
 %
-Also, jSO and L-SHADE-EpSin are from SHADE's family.
+Also, jSO and L-SHADE-EpSin are considered from the SHADE's family.
 
 
 Given that all of them are stochastic algorithms, each execution was repeated 51 times with differents seeds.
 %
 The stopping criterion was set to 25,000,000 functions evaluations.
 %
-Also a problem is considered as solved (error zero) if its difference with the true optinal is below of $1e-8$.
+We performed our evaluation following the guidelines of CEC benchmark competitions.
+%
+According this, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller the error is treated as $0$.
+%
+%The minimal tolerance to consider a determined problem solved is $1e-8$, hence if the difference of the optimal obtained and the true optinal is below this tolerance then the error is zero.
 %
 The parametrization specific of each of the tested algorithms is as follows:
 \begin{itemize}
-\item \textbf{EBOwithCMAR}:
-\item \textbf{UMOEAs-II}:
-\item \textbf{jSO}:
-\item \textbf{L-SHADE-EpSin}:
+\item \textbf{EBOwithCMAR}: For EBO maximum population size of $S_1 = 18D$, minimum popluation size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum popluation size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
+\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum popluation size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$.For local search, $cfe_{ls} = 0.2 * FE_{max}$.
+\item \textbf{jSO}: Initial population size (N) = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, maximum population size = $N$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
+\item \textbf{L-SHADE-EpSin}: Initial population size (N) = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequence $\mu_F = 0.5$, maximum population size = $N$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
+\item \textbf{Diversity-DE}: Initial niche radius $D_I = 0.3*\sqrt{D}$, population size = $250$, $F = Cauchy(0.5, nfes/max\_nfes)$.
 \end{itemize}
+%
 
 Our experimental analyzes has been performed in base of the error between the true optimal and the optimal obtained.
 %
@@ -41,10 +49,43 @@ For non-Gaussian distributions, the nonparametric Kruskal-Wallis test was used t
 %
 An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, if the mean and median obtained by $X$ are higher than the mean and median achieved by $Y$.
 
-In the tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} are showed the sumary of CEC 2016 and CEC 2017 respectively.
+In the tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} are showed the summary of CEC 2016 and CEC 2017 respectively.
 %
-The statistical tests indicate that the diversity DE algorithm provides significantly better results that the state-of-the-art algorithms.
+The statistical tests indicate that the diversity DE algorithm provides significantly better results that the state-of-the-art algorithms in both benchmarks.
 %
+Although that our proposal loses with the functions $\{f_6, f_7, f_{13}, f_{14}, f_{28}\}$ in CEC 2016 and $\{ f_{12}, f_{16}, f_{18} \}$ for CEC 2017, it is important to take into account that our proposal provides acceptable and in some problems reach to the optimal.
+%
+In fact based in a preliminar study this functions are solved at least one time with different configurations (radius niche and populations).
+%
+The column named ``Always Solved'' indicates the number of functions that have a zero error in the 51 runs and the column named ``At least one time solved'' indicate the number of functions that reach to the optimal at least with one run.
+%
+Almost all functions were solved in CEC 2017 with our proposal (28 functions) and more than a half in CEC 2016, however the state-of-the-art only were able to reach the optimal values in approximately a half of the functions in both years.
+
+Based in the guideline of the CEC, the ``Score'' is computed as follows.
+%
+The valuation method combines two scores defined in the equation (\ref{eqn:total_scores}).
+%
+Thus the final score is composed by the sum $Score = Score_1 + Score_2$.
+%
+\begin{equation}\label{eqn:total_scores}
+\begin{split}
+Score_1 &= \left (1 - \frac{SE - SE_{min}}{SE} \right) \times 50, \\
+Score_2 &= \left  (1 - \frac{SR - SR_{min}}{SR} \right ) \times 50, \\
+\end{split}
+\end{equation}
+Here, $SE_{min}$ is the minimal sum of errors from all the algorithms, and $SE$ is the sum of error values for all dimensions $SE = \sum_{i=1}^{30} error\_f_i$.
+%
+Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, is the sum of the each rank in each function for the considered algorithms $SE = \sum_{i=1}^{30} error\_f_i$.
+%
+Based in the final score the results provided for our proposal are superior in both years.
+%
+Moreover, in both years the SHADE's algorithms have a superior score than the multi-operator algorithms, although that the multi-operator algorithms were ranked in the first place.
+%
+This is an indicator that the multi-operator algorithms could suffer more of premature convergency than SHADE's algorithms in long-term executions.
+%
+Probably, this can be caused by the parametrization, which is difficult since that several need to be setted.
+%
+
 
 
 
@@ -81,9 +122,19 @@ The statistical tests indicate that the diversity DE algorithm provides signific
 }
 \end{table}
 
+The error values between the best fitness values found in each run out of 51 runs and true optimal value are calculated and then best, worst, median, mean, standard deviation and success ratio of the error values are presented in each column in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017}.
+%
+These tables shows that all unimodal functions and almost all the hybrid functions were solved.
+%
+Approximately a half of the composition functions are solved with at least one run.
+%
+However our proposal has problems solving the multi-modal functions, this can be provoked since for the distribution of difference vectors.
+%
+Since that the algorithm finds some niches through the optimization process, the mutation can provokes high displacements, that as result some regions are not analyzed properly.
+%
+To deal with the previously issue, we sugges apply a matting restriction or implement a local search, wich could further a better convergency.
 
-
-\begin{table}[]
+\begin{table}[t]
 \centering
 \caption{Results for DE based diversity CEC 2016 problems}
 \label{tab:Results_CEC2016}
@@ -125,7 +176,7 @@ $f_{30}$ & 1.84E+02 & 1.84E+02 & 1.84E+02 & 1.84E+02 & 3.25E-02 & 0.00E+00 \\ \h
 }
 \end{table}
 
-\begin{table}[]
+\begin{table}[t]
 \centering
 \caption{Results for DE based diversity CEC 2017 problems}
 \label{tab:Results_CEC2017}
@@ -167,10 +218,32 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 }
 \end{table}
 
-\subsection{Sensitive analyses of the radius niche}
-\begin{figure}
-	\center
+\subsection{Sensitive analyses of the initial radius niche}
+
+In our proposal the diversity is explicitly promoted through several stages given an initial radius niche or distance factor $D_I$.
+%
+Therefore, the robustenes of this parameter is analyzed as follows.
+%
+Based in the configurations of the experimental validation are runned several distance factors configurations ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+%
+
+\begin{figure}[t]
+\centering
   \includegraphics[scale=0.3, angle=-90]{img/Tuning_CEC.eps}
 \caption{Average success rate with different initial distance factors in the benchmark of CEC 2016 and CEC 2017, is considered a population size of 250 and 25000000 funtion evaluations.}
-\label{fig:1}       % Give a unique label
+\label{fig:one}
 \end{figure}
+
+In the figure \ref{fig:one} is showed the average success ratio vs. the initial distance factor $D_I$.
+%
+The main conclusions obtianed are as follows:
+\begin{itemize}
+\item If the diversity is not promoted ($D_I = 0.0 $) the preformance of the algorithms is seriously implicated.
+\item In this scenario the ideal configuration $D_I=0.3$, although the range $[0.1, 0.4]$ also provide quality solutions.
+\item As the diversity promoted increases the quality of the solutions are implicated.
+\end{itemize}
+
+Finally, its important stand out that the solutions are less affected by the population size, however there is a relation between the $D_I$ and the population size.
+%
+
+
