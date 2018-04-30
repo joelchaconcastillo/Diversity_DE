@@ -2,14 +2,14 @@
 %
 Although that in the literature are present several variants of DE, for simplicity in this work is used the classic DE scheme \cite{das2011differential}
 %
-Originally DE was proposed as direct search method for single-objective continuous optimization problems.
+Origininally DE was proposed as direct search method for single-objective continuous optimization problems.
 %
 Usually, the parameters governing the system performance are presented in a vector like $\vec{X} = [x_1, x_2, ..., x_D ]^T$, which is identified as an individual.
 %
 Particularly, for real parameter optimization each parameter $x_i$ is a real number.
 %
 
-In single-objective optimization, the aim is to obtain the vector $\vec{X}^*$ which minimizes (or maximize) a defined objective function, mathematically denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$, where $\Omega$ is a non-empty large finite set identified as the domain of the search.
+In single-objective optimization, the aim is to obtain the vector $\vec{X}^*$ wich minimizes (or maximize) a defined objective function, mathematically denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$, where $\Omega$ is a non-empty large finite set identified as the domain of the search.
 %
 
 The basic scheme of DE consists that given the target parameter vectors (each vector of the population), a new mutant (or donant) vector is created using a vector generation strategy.
@@ -40,14 +40,14 @@ Hence, each $j$th component of the $i$th vector is initialized as follows:
 \begin{equation}
 X_{j,i,0} = x_{j,min} + rand_{i,j}[0,1] (x_{j,max} - x_{j_min})
 \end{equation}
-where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
+where $rand_{i,j}[0,1]$ is an uniformly distribuited random number lying between $0$ and $1$.
 
 \subsubsection{Mutation}
 The mutation can be seen as a change or perturbation with a random element.
 %
 Particularly, in DE a parent vector called \textit{target} vector is combined through a defined strategy to form the \textit{donor} vector.
 %
-In one simple form, a mutant vector $V_{i,G}$ is created from the $i$th target vector and is established as follows:
+In one simple form, a mutant vector $V_{i,G}$ is created from the $i$th target vector and is stablished as follows:
 \begin{equation}\label{eqn:mutation}
 \vec{V}_{i,G} = \vec{X}_{r1, G} + F(\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
 \end{equation}
@@ -59,7 +59,7 @@ It is important to take into account that the difference of any two vectors is s
 
 \subsubsection{Crossover}
 
-In order to increase the diversity of the perturbed parameter vectors, a crossover operation is applied to the generated donor vector.
+In order to increase the diversity of the perturbed parameter vectors, a crossover operation is aplied to the generated donor vector.
 %
 Accordingly this, the target vector is mixed with the mutated vector to form the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
 %
@@ -74,7 +74,7 @@ In the binomial crossover strategy, the trial vector $\vec{U}_{i,G}$ is generate
     \vec{X}_{j,i,G},              & \text{otherwise}
 \end{cases}
 \end{equation}
-where $rand_{i,j}[0,1]$ is a uniformly distributed random number, which is generated for each $j$th component of the $i$th vector parameter.
+where $rand_{i,j}[0,1]$ is a uniformly distribuited random number, which is generated for each $j$th component of the $i$th vector parameter.
 %
 $j_{rand}$ is a randomly chosen index, which ensures that $\vec{U}_{i,G}$ has at least one component from $\vec{V}_{i,G}$.
 %
@@ -84,7 +84,7 @@ $CR$ is the crossover constant $\in [0,1]$, which has to be determined by the us
 \subsubsection{Selection}
 Once generated the trial vectors, is performed a greedy selection scheme.
 %
-This selection determine whether the target or the trial vector survives to the next generation, and it is described as follows:
+This selection determine wheter the target or the trial vector survives to the next generation, and it is described as follows:
 
 \begin{equation} \label{eqn:selection}
 \vec{X}_{j,i,G+1}= 
@@ -96,9 +96,9 @@ This selection determine whether the target or the trial vector survives to the 
 
 where $f(\vec{X})$ is the objective function to be minimized.
 %
-Hence, the population either gets better or remains the same fitness status, but never deteriorates.
+Hence, the population eigher gets better or remains the same fitness status, but never deteriorates.
 
-The mutation scheme described with the crossover proposed is referred as DE/rand/1/bin.
+The mutation scheme decribed with the crossover proposed is refered as DE/rand/1/bin.
 %
 The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
@@ -108,32 +108,32 @@ DE is highly susceptible to the diversity drawbacks generally seen in EAs.
 %
 This fact resides in the selection operator due that it is a greedy strategy.
 %
-However through the last decade has been developing several analyses and strategies to deal with these drawbacks.
+However througth the last decade has been developing several analyses and strategies to deal with these drawbacks.
 %
-One of them is proposed in 2003 by Zaharie et al.  \cite{zaharie2003control} where is estimated the theoretical variance and is developed a parameter adaptation based in two critical equations oriented on the idea of controlling the population diversity.
+One of them is proposed in 2003 by Zaharie et al.  \cite{zaharie2003control} where is estimated the theorical variance and is developed a parameter adaptation based in two critical equations oriented on the idea of controlling the population diversity.
 %
-In 2009 James Montgomery \cite{montgomery2009differential} analyses the effect of the difference vectors showing that small differences vectors applied to solutions in one cluster can produce improvements, thus movements produced by large difference vectors are wasted.
+In 2009 James Montgomery \cite{montgomery2009differential} analyses the effect of the difference vectors showing that small differences vectors applied to solutions in one cluster can produce improvementes, thus movements produced by large difference vectors are wasted.
 %
 After that in 2010 Montgomery shows a study where are analyzed the DE parameters, principally it shows empirically the effect of the crossover probability.
 %
-In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it prevents the movements that are below a threshold and it decreases over the algorithm's run, however this strategy only slow down the convergence since that only is considered the distance between the base vectors and the trial vectors but the distance between the trial vector and the target vector is not considered.
+In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it prevents the movements that are below a threshold and it decreases over the algorithm's run, however this strategy only slow down the convergency since that only is considered the distance bewteen the base vectors and the trial vectors but the distance between the trial vector and the target vector is not considered.
 %
 After that, in 2013 Antonio Bolufé et al. proposed an adaptive threshold convergence mechanism \cite{bolufe2013differential}.
 %
 
 A similar work is proposed  by Angela et al. \cite{sa2008exploration}, which suggests a modification of the selection operator of the classical DE.
 %
-Particularly,  the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently to allow escape from basin of attraction of local optima, however it considers the fitness in a defined probabilistic selection, thus it depends in the cost function.
+Particularly,  the seleciton pressure is relaxed througth a probabilistic selection to maintain the population diversity and consequently to allow scape from basin of attraction of local optima, however it considers the fitness in a defined probabilistic selection, thus it depends in the cost function.
 %
 
-Ming Yang et al. (2013) \cite{yang2015differential} proposed a mechanism named \textit{Auto-Enhanced Population Diversity} (AEPD) where are identified the moments when a population becomes converging or stagnating by measuring the distribution of the population in each dimension and diversifying at the dimensional level.
+Ming Yang et al. (2013) \cite{yang2015differential} proposed a mechanism named \textit{Auto-Enhanced Population Diversity} (AEPD) where are identified the moments when a population becomes converging or stagnating by measuirng the distribution of the population in each dimension and diversing at the dimensional level.
 %
-Similar strategies has been proposed as the one by Zhao Li et al. in 2016 \cite{zhao2016differential} where are varied the assembling positions of the premature individuals by mutation operation.
+Similar strategies has been proposed as the one by Zhao Li et al. in 2016 \cite{zhao2016differential} where are variated the assembling positions of the premature individuals by mutation operation.
 
 
 Our proposal is based in several ideas of the previously mentioned works, specifically the following:
 \begin{itemize}
-\item Is considered a threshold to control explicitly the convergence of the solutions.
+\item Is considered a threshold to control explicitly the convergency of the solutions.
 \item This threshold decreases over the algorithm's run.
 \item The selection operator is relaxed. 
 \end{itemize}

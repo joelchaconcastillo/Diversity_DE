@@ -1,10 +1,10 @@
-In the last decade, DE has been recognized as one of the most promising EAs, likely for its efficient and simple approach to solve optimization problems.
+In the last decade, DE has been recognized as one of the most promising EAs, likely for its eficient and simple approach to solve optimization problems.
 %
 Specifically, the DE variants have been highly present in several optimization competitions, principally in the Congress on Evolutionary Computation (CEC).
 %
-In fact DE occupied the top places in several optimization scenarios as are single-objective, multi-objective, constrained problems, large scale problems, dynamic problems, multi-niche landscape problems and learned based problems.
+In fact DE occuped the top places in several optimization scenarios as are single-objective, multi-objective, contrained problems, large scale problems, dynamic problems, multi-niche landscape problems and learned based problems.
 %
-In this work we are interested in the design tendency of DE algorithms in the CEC competitions problems through the last years.
+In this work we are interested in the design tendency of DE algorithms in the CEC competitions problems througth the last years.
 %
 
 In CEC 2005 competition on real parameter optimization \cite{CEC2005}, on 10-D problems classical DE secured 2nd rank and a self-adaptive DE variant called SaDE secured third rank although they performed poorly over 30-D problems.
@@ -12,7 +12,7 @@ In CEC 2005 competition on real parameter optimization \cite{CEC2005}, on 10-D p
 Later in CEC 2006 on constrained problems \cite{CEC2006} DE algorithms obtained first place with $\epsilon$ constrained Rank-based Differential Evolution ($\epsilon$ RDE) and third place with SaDE.
 %
 
-Multi-objective optimization problems were proposed in CEC 2007 \cite{CEC2007} competition, where DE obtained the second place with the based Generalized Differential Evolution 3 (GDE3), it is important take into account that later in CEC 2009 the first place was reached by the Multi-Objective Evolutionary Algorithm Based in Decomposition (MOEA/D) which implements the DE operators instead of its old version that use the genetic operators (Simulated Binary Crossover).
+Multi-objective optimization problems were proposed in CEC 2007 \cite{CEC2007} competition, where DE obtained the second place with the based Generalized Differential Evolution 3 (GDE3), it is importat take into account that later in CEC 2009 the first place was reached by the Multi-Objective Evolutionary Algorithm Based in Decomposition (MOEA/D) which implements the DE operators instead of its old version that use the genetic operators (Simulated Binary Crossover).
 
 %
 However, in the large scale global optimization (CEC 2008) \cite{CEC2008} a Self-adaptive DE (jDEdynNP-F) reached the third place, unfortunately in later competitions (CEC 2010) DE algorithms did not reach the top rank, this could be an indicator of the weakness of DE in large scale problems \cite{segura2015improving}.
@@ -28,7 +28,7 @@ In CEC 2015 with the scenario of learned based single-objective \cite{CEC2015} D
 %
 DE was also ranked in the scenario of multi-niche single objective optimization in the third place with Neighborhood based Speciation Differential Evolution (NSDE).
 %
-In CEC 2016 competition in single objective optimization \cite{CEC2015} the first place was reached with the United Multi-Operator Evolutionary Algorithm (UMOEAs-II), the second place was reached by Ensemble Sinusoidal Differential Covariance Matrix Adaptation with Euclidean Neighborhood (L-SHADE-EpSin) and in the third place Improved L-SHADE (iL-SHADE), all of them applied DE operators.
+In CEC 2016 competition in single objective optimization \cite{CEC2015} the first place was reached with the United Multi-Operator Evolutionry Algorithm (UMOEAs-II), the second place was reached by Ensemble Sinusoidal Differential Covariance Matrix Adaptation with Euclidean Neighborhood (L-SHADE-EpSin) and in the third place Improved L-SHADE (iL-SHADE), all of them applied DE operators.
 %
 In the scenario of learned based single objective optimization \cite{CEC2016_learn}, the second and third places were reached by Cooperative Co-evolution L-SHADE with restarts (CCL-SHADE) and L-SHADE with four strategies (L-SAHDE44) respectively.
 
@@ -40,7 +40,7 @@ It is important take into account two dominant approaches in the described compe
 Also it seems that in the last algorithms the criteria stop is considered to control the convergence level either explicitly or implicitly, such as Linear Population Size Reduction (LPSR), decreasing $p$Best mutation strategy, local search in the last stages, among others.
 %
 
-In the competitions of the last years SHADE's family algorithms seems to be more participatory, however based in that the ability exploration of DE is highly affected by the population size, usually the search is complemented with a Covariance Matrix Adaptation variant as is showed in the UMOEAs-II and L-SHADE-EpSin algorithms.
+In the competitions of the last years SHADE's family algorithms seems to be more participative, however based in that the ability exploration of DE is highly affected by the population size, usually the search is complemented with a Covariance Matrix Adaptation variant as is showed in the UMOEAs-II and L-SHADE-EpSin algorithms.
 %
 %It is also interesting to note that the variants of DE continued to secure front ranks in the subsequent CEC competitions like CEC 2006 competition on constrained real parameter optimization (first rank), CEC 2007 competition on multi-objective optimization (second rank), CEC 2008 competition on large scale global optimization (third rank), CEC 2009 competition on multi-objective optimization (first rank was taken by a DE-based algorithm MOEA/D for unconstrained problems), and CEC 2009 competition on evolutionary computation in dynamic and uncertain enviroments (first rank).
 %

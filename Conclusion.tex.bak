@@ -1,16 +1,16 @@
 From the experimental results in this paper, several conclusions can be drawn.
 %
 
-Firstly, from experimental investigation on the working mechanism, it can be seen that our proposal is able to relieve the premature convergence to several optimization levels.
+Firstly, from experimental investigation on the working mechanism, it can be seen that our proposal is able to relieve the premature convergency to several optimization levels.
 %
-Secondly, our proposal is able to enhance the performance of DE algorithms, in particular when the search space is large.
+Secondly, our proposal is able to enhance the perforamence of DE algorithms, in particular when the search space is large.
 %
 Third, it is also less sensitive to the parameter of population size, so our proposal can also be competitive even if the population size is small.
 %
 Fourth, it seems that our proposal has some drawback in relation with the proportion of difference vectors.
 
 
-For future work of this paper, two interesting issues should be addressed for our proposal.
+For future work of this paper, two intersting issues should be addressed for our proposal.
 %
 The first one is that explored areas in the search space should be avoided to save computing resources.
 %
@@ -20,6 +20,6 @@ Explore the possibility of implement a local search scheme with two goals, save 
 %
 Applying our proposal to real-world problems should be an interesting topic.
 %
-Based in several analyzes the mutation factor could be selected inside the distance factor, then develop a strategy where this parameter is no required.
+Based in several analyzes the mutation factor could be selected inside the distance factor, then explorate a strategy where this parameter is no required.
 %
-Generate a theoretical model to select the adequately population size given a initial distance factor.
+Generate a teorical model to select the adequatly population size given a initial distance factor.

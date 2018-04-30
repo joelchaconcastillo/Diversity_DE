@@ -111,7 +111,7 @@ Differential evolution is a popular evolutionary algorithm widely used in optimi
 %
 However, it is well known that the performance of differential evolution is affected by the premature convergence.
 %
-An alternative to alleviate this drawback is to explicitly try to maintain proper diversity.
+An alternative to alliviate this drawback is to explicitly try to maintain proper diversity.
 %
 In this paper is proposed a replacement strategy that preserves useful diversity.
 %
@@ -123,7 +123,7 @@ The concept is oriented in the speciation concept, which is based on calculate d
 %
 The experimental validation is carry out with several benchmark tests and the top-rank algorithms of the competitions organized in the Congress on Evolutionary Computation.
 %
-The results illustrate the usefulness of the proposal.
+The restults illustrate the usefulness of the proposal.
 %
 The new method significantly improves on the best results of the state-of-the-art.
 

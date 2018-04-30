@@ -9,21 +9,21 @@ Particularly, our proposal induces a balance between exploration and exploitatio
 %
 Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy.
 %
-In this way, for shorter stopping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
+In this way, for shorter stoping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
 %
 To achieve such balance are considered three populations, parent vectors, offspring vectors and elite vectors, being one of the novelties of the new design.
 %
 
-One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbor (DCN) value-- should not be accepted as be part of the parent vectors, instead it could replace one of the elite vectors.
+One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbour (DCN) value-- should not be accepted as be part of the parent vectors, instead it could replace one of the elite vectors.
 %
 
-In our approach, the vectors that contribute too little to the diversity are penalized.
+In our approach, the vectors that contribute too little to the diversiy are penalized.
 %
 The value $D_t$\footnote{Do not confuse the threshold distance $D_t$ with the dimension $D$. } represent the minimum DCN required to avoid being penalized.
 %
 Any vector whose DCN value is lower than this threshold value is penalized.
 %
-The key principle resides in how to evaluate whether an vector contributes enough or not, i.e., how to set the value $D_t$.
+The key principle resides in how to evaluate wheter an vector contributes enough or not, i.e., how to set the value $D_t$.
 %
 The value of $D_t$ should depend on the optimization stage.
 %
@@ -35,11 +35,11 @@ Then, a linear reduction of $D_t$ is done.
 %
 Particularly, in this work, the stopping criterion is set by function evaluations (nfes).
 %
-The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$, and the rest is present a similar behavior of the classical DE.
+The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$, and the rest is present a similar behaviour of the classical DE.
 %
 Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
-According to Segura et al. \cite{segura2016novel} updating $D_t$ is more appropriate through a linear reduction.
+According to Segura et al. \cite{segura2016novel} updating $D_t$ is more appropiate through a linear reduction.
 %
 
 
@@ -63,7 +63,7 @@ It is important to take into account that if the niche-radio is too high, just o
 %
 In this scenario the rest of parent vectors are selected from the penalized vectors.
 %
-Thus, are selected the penalize vectors that considering the selected seeds vectors have the maximum contribution to diversity.
+Thus, are selected the penalize vectors that considering the selected seeds vectors have the maximum constribution to diversity.
 %
 Although that in the literature exist several diversity measures, we consider the DCN.
 %
@@ -103,7 +103,7 @@ Hence, the elite vectors record the best individuals obtained among the optimiza
   \scriptsize
 	\caption{General scheme of DE considering diversity} 
 	\begin{algorithmic}[1]
-	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
+	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distirbuited.
 	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	\WHILE{ stopping criterion is nor satisfied}
 	   \FOR{ $i=1$ to $NP$} 
@@ -118,13 +118,13 @@ Hence, the elite vectors record the best individuals obtained among the optimiza
 \end{algorithm}
 
 
-An advantage of our proposal is that it alleviates one critical weakness of the DE algorithms.
+An advantage of our proposal is that it alliviates one critical weakness of the DE algorithms.
 %
 These are the control parameters both crossover probability ($CR$) and mutation factor ($F$).
 %
 Based in several studies showed by Montgomery et al. \cite{montgomery2010analysis}, $CR$ is perhaps the most important.
 %
-Extremes $CR$ values leads to vastly different search behaviors.
+Extremes $CR$ values leads to vastly different search behaviours.
 %
 Low values of $CR$ result in a search that is not just aligned with a small number of search space axes, but which is gradual, slow and robust.
 %
@@ -145,5 +145,5 @@ On the other hand, the mutation factor $F$ is computed as follows.
 %
 For each vector is sampled a $F$ value with a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
 %
-In this way the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
+In this way the shape of the distribution increases with the function evaluations and therefore are generated more extremal values at the end of execution, this aims avoid stagnation in differents stages of the algorithm.
 %
