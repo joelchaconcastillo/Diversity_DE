@@ -2,7 +2,7 @@ Principally, our proposal\footnote{The code in C++ can be consulted in the next 
 %
 The first one that is delimited for DE algorithms, it is shown by Montgomery et al. \cite{montgomery2012simple} where is suggested a strategy to prevented the premature caused by the displacement of the mutation operator.
 %
-The second one that is a generalization of EAs, it is proposed by Carlos Segura et al. \cite{segura2016novel} and it transforms the single objective optimization problem to multiple objectives where one of them is the fitness and the other one is a diversity measurement, similarly is used a threshold which is decreased as the criteria stop is reached.
+The second one is a generalization of EAs, it is proposed by Carlos Segura et al. \cite{segura2016novel} and it transforms the single objective optimization problem to multiple objectives where one of them is the fitness and the other one is a diversity measurement, similarly is used a threshold which is decreased as the criteria stop is reached.
 %
 
 Particularly, our proposal induces a balance between exploration and exploitation that is automatically adjusted on the given stopping criterion.
@@ -19,7 +19,7 @@ One of the basic principles behind the development of the replacement strategy d
 
 In our approach, the vectors that contribute too little to the diversity are penalized.
 %
-The value $D_t$\footnote{Do not confuse the threshold distance $D_t$ with the dimension $D$. } represent the minimum DCN required to avoid being penalized.
+The value $D_t$\footnote{Do not confuse the threshold distance $D_t$ with the dimension $D$. } represents the minimum DCN required to avoid being penalized.
 %
 Any vector whose DCN value is lower than this threshold value is penalized.
 %
@@ -63,7 +63,7 @@ It is important to take into account that if the niche-radio is too high, just o
 %
 In this scenario the rest of parent vectors are selected from the penalized vectors.
 %
-Thus, are selected the penalize vectors that considering the selected seeds vectors have the maximum contribution to diversity.
+Thus, are selected the penalize vectors that have the maximum contribution to diversity considering the selected seeds vectors.
 %
 Although that in the literature exist several diversity measures, we consider the DCN.
 %
@@ -74,6 +74,7 @@ According this, in an iterative process is selected as survivor the penalized ve
   \scriptsize
 	\caption{Replacement Phase} \label{alg:Replacement}
 	\begin{algorithmic}[1]
+	\STATE Input: $D_I$, $Population$, $Offspring$ and $Elite$
 	\STATE $Survivors = Penalized = \emptyset$.
 	\STATE $Current = Population \cup Offspring \cup Elite$.
 	\STATE Sort $Current$ according to fitness.

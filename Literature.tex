@@ -1,6 +1,6 @@
 \subsection{Differential Evolution: Basic Concepts}
 %
-Although that in the literature are present several variants of DE, for simplicity in this work is used the classic DE scheme \cite{das2011differential}
+Although that in the literature are present several variants of DE, for simplicity in this work is used the classic DE scheme \cite{das2011differential}.
 %
 Originally DE was proposed as direct search method for single-objective continuous optimization problems.
 %
@@ -9,7 +9,7 @@ Usually, the parameters governing the system performance are presented in a vect
 Particularly, for real parameter optimization each parameter $x_i$ is a real number.
 %
 
-In single-objective optimization, the aim is to obtain the vector $\vec{X}^*$ which minimizes (or maximize) a defined objective function, mathematically denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$, where $\Omega$ is a non-empty large finite set identified as the domain of the search.
+In single-objective optimization, is aimed to obtain the vector $\vec{X}^*$ which minimizes (or maximize) a defined objective function, mathematically denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$, where $\Omega$ is a non-empty large finite set identified as the domain of the search.
 %
 
 The basic scheme of DE consists that given the target parameter vectors (each vector of the population), a new mutant (or donant) vector is created using a vector generation strategy.
@@ -65,7 +65,7 @@ Accordingly this, the target vector is mixed with the mutated vector to form the
 %
 In the DE-context are present two kinds of crossover methods --\textit{exponential} and \textit{binomial}(or uniform), however in this paper is only considered the binomial crossover.
 %
-In the binomial crossover strategy, the trial vector $\vec{U}_{i,G}$ is generated as follows:
+In the binomial crossover strategy, the \textit{trial} vector $\vec{U}_{i,G}$ is generated as follows:
 %
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
@@ -84,7 +84,7 @@ $CR$ is the crossover constant $\in [0,1]$, which has to be determined by the us
 \subsubsection{Selection}
 Once generated the trial vectors, is performed a greedy selection scheme.
 %
-This selection determine whether the target or the trial vector survives to the next generation, and it is described as follows:
+This selection determines whether the target or the trial vector survives to the next generation, and it is described as follows:
 
 \begin{equation} \label{eqn:selection}
 \vec{X}_{j,i,G+1}= 
@@ -116,7 +116,7 @@ In 2009 James Montgomery \cite{montgomery2009differential} analyses the effect o
 %
 After that in 2010 Montgomery shows a study where are analyzed the DE parameters, principally it shows empirically the effect of the crossover probability.
 %
-In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it prevents the movements that are below a threshold and it decreases over the algorithm's run, however this strategy only slow down the convergence since that only is considered the distance between the base vectors and the trial vectors but the distance between the trial vector and the target vector is not considered.
+In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it dismiss the movements that are below a threshold and it decreases over the algorithm's run, however this strategy only slow down the convergence since that only is considered the distance between the \textit{base} vectors and the \textit{trial} vectors but the distance between the \textit{trial} vector and the \textit{target} vector is not considered.
 %
 After that, in 2013 Antonio Bolufé et al. proposed an adaptive threshold convergence mechanism \cite{bolufe2013differential}.
 %

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  30 APR 2018 13:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  12 MAY 2018 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,28 +462,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 75.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6927) has occurred while \output is active []
 
  [9])
 (./ExperimentalStudy.tex
-Overfull \hbox (9.6961pt too wide) in paragraph at lines 18--29
-\OT1/cmr/m/n/10 peated 51 times with dif-fer-ents seeds. The stop-ping cri-te-r
-ion was set to 25,000,000
+Overfull \hbox (5.75166pt too wide) in paragraph at lines 18--29
+\OT1/cmr/m/n/10 peated 51 times with dif-fer-ent seeds. The stop-ping cri-te-ri
+on was set to 25,000,000
  []
 
 [10] [11] [12]
 Package epstopdf Info: Source file: <img/Tuning_CEC.eps>
-(epstopdf)                    date: 2018-04-22 13:44:00
+(epstopdf)                    date: 2018-04-22 11:56:14
 (epstopdf)                    size: 18442 bytes
 (epstopdf)             Output file: <img/Tuning_CEC-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-22 13:44:00
+(epstopdf)                    date: 2018-04-22 11:56:27
 (epstopdf)                    size: 7238 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/Tuning_CEC-eps-convert
 ed-to.pdf img/Tuning_CEC.eps>
 (epstopdf)             \includegraphics on input line 232.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/Tuning_CEC-eps-converted-to.pdf, id=263, 505.89pt x 722.7pt>
+<img/Tuning_CEC-eps-converted-to.pdf, id=264, 505.89pt x 722.7pt>
 File: img/Tuning_CEC-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/Tuning_CEC-eps-converted-to.pdf>
@@ -507,9 +507,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
  ) 
 Here is how much of TeX's memory you used:
- 7525 strings out of 493304
- 111093 string characters out of 6139871
- 238411 words of memory out of 5000000
+ 7526 strings out of 493304
+ 111106 string characters out of 6139871
+ 238410 words of memory out of 5000000
  10764 multiletter control sequences out of 15000+600000
  11010 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -536,10 +536,10 @@ public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt8.pfb>
-Output written on main.pdf (17 pages, 346833 bytes).
+Output written on main.pdf (17 pages, 347171 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 347 compressed objects within 4 object streams
- 111 named destinations out of 1000 (max. 500000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 348 compressed objects within 4 object streams
+ 112 named destinations out of 1000 (max. 500000)
  54 words of extra memory for PDF output out of 10000 (max. 10000000)
 

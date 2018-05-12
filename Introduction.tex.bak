@@ -1,32 +1,32 @@
 Evolutionary Algorithms (EAs) are built to deal with optimization problems, which are designed from many scientific and application fields, such as science, economic and engineering \cite{noman2008differential, chakraborty2008advances}.
 %
-Principally, EAs can be classified into following categories, such as Genetic Algorithms (GAs) \cite{srinivas1994genetic, schwefel1977numerische} , Evolutionary Strategies (ESs) \cite{john1992holland}, Genetic Programming (GP) \cite{koza1992genetic}, Evolutionary Programing (EP) \cite{fogel1991meta}, Differential Evolution (DE) \cite{storn1997differential} and other natural-inspired algorithms \cite{das2011differential}.
+Principally, EAs can be classified into following categories, Genetic Algorithms (GAs) \cite{srinivas1994genetic, schwefel1977numerische} , Evolutionary Strategies (ESs) \cite{john1992holland}, Genetic Programming (GP) \cite{koza1992genetic}, Evolutionary Programming (EP) \cite{fogel1991meta}, Differential Evolution (DE) \cite{storn1997differential} and other natural-inspired algorithms \cite{das2011differential}.
 %
 %
-DE was introduced by Storn and Price \cite{storn1997differential}, also is cosidered as one of the most effective EAs used to deal with real-world optimization problems, mainly for its convergency properties.
+DE was introduced by Storn and Price \cite{storn1997differential}, also is considered as one of the most effective EAs used to deal with real-world optimization problems, mainly for its convergence properties.
 %
 Similarly than with other EAs, DE follows the natural evolution process which involves mutation, recombination and selection to evolve a population through an iterative progress until the criteria stop is reached.
 %
 However, the peculiarity of DE resides in that it considers the difference between the vectors to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controlled Random Search (CRS) \cite{price1983global}.
 %
-In spite of the popularity and effectiveness of DE, there exists several weakness that had been partially solved througth learning techniques.
+In spite of the popularity and effectiveness of DE, there exists several weakness that had been partially solved through learning techniques.
 %
 One of the first weakness and possibly the most important, is the performance of DE which is very sensitive to choice of the strategy parameters depending in the objective function \cite{gamperle2002parameter}.
 %
-Several strategies as adaptive and self-adaptive have been proposed to alliviate this drawback \cite{brest2006self, zhang2009jade}.
+Several strategies as adaptive and self-adaptive have been proposed to alleviate this drawback \cite{brest2006self, zhang2009jade}.
 %
 However, none of them has shown superior results than the rest.
 %
 
 A second weakness of DE algorithms resides in the reproduction phase.
 %
-In DE this phase involves the distribution of the vector differences, therefore it higly depends on the content of the population provoking premature convergence in some scenarios.
+In DE this phase involves the distribution of the vector differences, therefore it highly depends on the content of the population that migth provoke premature convergence in several scenarios.
 %
 In fact, this issue can lead to the converge into a local optima or the lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
 %
 On the other hand, there exist situations where the search process could not progress and the population remains diverse, this phenomena is known as stagnation \cite{lampinen2000stagnation}.
 %
-Its well known that stagnation ocurrs with a small population size.
+Its well known that stagnation occurs with a small population size.
 %
 Although that large populations are not prone to stagnate, it involves more evaluation functions and in some scenarios might not converge, also in certain situations is not available a large population e.g. expensive optimization problems \cite{chen2014problem}.
 
@@ -35,24 +35,24 @@ The last one drawback is highly related with the diversity of the population.
 %
 Generally speaking, the search process of all the EAs involves two process: exploration and intensification.
 %
-A desirable behavior of an algorithm is to produce a proper balance between both.
+A desirable behavior of an algorithm is to produce a proper balance between both of them.
 %
 So that first it induces an exploration in the search space and subsequently is induced an exploitation based in the knowledge gathered during the search process \cite{zaharie2003control}.
 %
-Both exploration as exploitation are equally important, since that with an excessive exploitation, the population loses its diversity and the populations members can be located in a reduced sub-optimal region of the search space.
+Both exploration and exploitation are equally important, since that with an excessive exploitation, the population loses its diversity and the populations members can be located in a reduced sub-optimal region of the search space.
 %
 On the other hand, if the exploration is dominant, the algorithm waste resources on uninteresting regions, resulting in too slow convergence and in poor quality-solutions.
 %
-Principally, DE algorithms are very likely to prematurely converge, since that introduce a high selection pressure \cite{sa2008exploration}.
+Principally, DE algorithms are very likely to prematurely converge, since it introduces a high selection pressure \cite{sa2008exploration}.
 %
-Several strategies have been proposed in DE to deal with premature convergence, as parameter adaptation based on the idea of controlling the population diversity \cite{zaharie2003control}, autho-enhanced population diversity mechanism \cite{yang2015differential}, alternative selection strategy \cite{sa2008exploration}.
+Several strategies have been proposed in DE to deal with premature convergence through controlling the population diversity, such as parameter adaptation \cite{zaharie2003control}, auto-enhanced population diversity mechanisms \cite{yang2015differential} and alternative selection strategies \cite{sa2008exploration}.
 
 
-Recently, a recient and novel approach to deal with these diversity issues has been proposed, which implements a sopisticated replacement strategy that explictly preserves the diversity \cite{segura2016novel}.
+Over the last years, a novel approach to deal with these diversity issues has been proposed, which implements a sophisticated replacement strategy that explicitly preserves the diversity \cite{segura2016novel}.
 %
-This method transforms a single-objective problem into a multi-objective one, by considereing diversity as an explicit objective, based in the idea of adapting the balance induced between exploration and exploitation to various optimization stages.
+This method transforms a single-objective problem into a multi-objective one, by considering diversity as an explicit objective, based in the idea of adapting the balance induced between exploration and exploitation to various optimization stages.
 %
-Thus, the ideal balance is reached considering the criteria stop of the algorithm.
+Thus, in this way an ideal balance is reached through the criteria stop of the algorithm.
 %
 
 Our proposal follows a similar guideline, where it aims an ideal balance between exploration and exploitation considering the criteria stop.
