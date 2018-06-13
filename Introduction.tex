@@ -17,37 +17,40 @@ In this sense is similar to Nelder-Mead \cite{nelder1965simplex} and the
 Controlled Random Search (CRS) \cite{price1983global} optimizers.
 
 In spite of the popularity and effectiveness of \DE{}, there exists several weaknesses that have been detected and partially
-solved by extending the standard proposal~\cite{das2011differential}.
+solved by extending the standard variant~\cite{das2011differential}.
 %
-Among them, the sensitivity to its parameters~\cite{gamperle2002parameter, zhang2009jade}, the appearance of stagnation due to the reduced exploration 
+Among them, the sensitivity to its parameters~\cite{zhang2009jade}, the appearance of stagnation due to the reduced exploration 
 capabilities~\cite{sa2008exploration,lampinen2000stagnation} and premature convergence~\cite{zaharie2003control} are some of the most well-known
 issues.
 %
-This paper deals with the last one, i.e. with the appearance of premature convergence.
+This last one issue is tackled in this paper.
 %
 Note that, attending to the proper design of population-based metaheuristics~\cite{Talbi:09}, special attention must be
-paid to attain a proper balance between exploration and intensification.
+paid to attain a proper balance between exploration and exploitation.
 %
-An excessive exploitation degree provokes loss of diversity meaning that only a limited number of regions are sampled.
-%
-Differently, a too large exploration degree prevents the proper intensification of the best located regions, usually resulting in a
+A too large exploration degree prevents the proper intensification of the best located regions, usually resulting in a
 too slow convergence.
-
-Since the appearance of \DE{}, its high selection pressure was criticized because of its incapability to maintain a large
-enough diversity~\cite{sa2008exploration}.
 %
-Thus, several extensions of \DE{} to deal with premature convergence have been devised such as parameter adaptation~\cite{zaharie2003control}, 
+Differently, an excessive exploitation degree provokes loss of diversity meaning that only a limited number of regions are sampled.
+
+Since the appearance of \DE{}, some criticism appeared because of its incapability to maintain a large
+enough diversity due to the use of a selection with high pressure~\cite{sa2008exploration}.
+%
+Thus, several extensions of \DE{} to deal with premature convergence have been devised 
+such as parameter adaptation~\cite{zaharie2003control}, 
 auto-enhanced population diversity~\cite{yang2015differential} and selection strategies 
 with a lower selection pressure~\cite{sa2008exploration}.
 %
-Some of the last studies on design of population-based metaheuristics~\cite{Crepinsek:13} show that properly balancing the exploration and intensification
-is particularly useful for avoiding premature convergence in long-term executions.
+Some of the last studies on design of population-based metaheuristics~\cite{Crepinsek:13} show that 
+properly balancing the exploration and intensification
+is particularly useful for avoiding premature convergence.
 %
-Specifically, in the field of combinatorial optimization some novel replacement strategies that dynamically alter the degree between exploration and exploitation 
+Specifically, in the field of combinatorial optimization some novel replacement strategies that dynamically alter 
+the balance between exploration and exploitation 
 have appeared~\cite{segura2016novel}.
 %
-The main principle of such proposals is to use the stopping criterion and elapsed generations to bias the decisions taken by the optimizers with the aim
-of promoting exploration in the initial stages of the optimization and exploitation in the last ones.
+The main principle of such proposals is to use the stopping criterion and elapsed generations to bias the decisions 
+taken by the optimizers with the aim of promoting exploration in the initial stages and exploitation in the last ones.
 %
 Probably their main weakness is that the time required to obtain high-quality solution increases.
 %
