@@ -1,74 +1,72 @@
-Evolutionary Algorithms (EAs) are built to deal with optimization problems, which are designed from many scientific and application fields, such as science, economic and engineering \cite{noman2008differential, chakraborty2008advances}.
+Evolutionary Algorithms (\EAS{}) are one of the most widely used techniques to deal with complex optimization problems.
 %
-Principally, EAs can be classified into following categories, Genetic Algorithms (GAs) \cite{srinivas1994genetic, schwefel1977numerische} , Evolutionary Strategies (ESs) \cite{john1992holland}, Genetic Programming (GP) \cite{koza1992genetic}, Evolutionary Programming (EP) \cite{fogel1991meta}, Differential Evolution (DE) \cite{storn1997differential} and other natural-inspired algorithms \cite{das2011differential}.
+Severals variants of these strategies have been devised~\cite{Talbi:09} and applied in many fields, such as in science, 
+economic and engineering~\cite{chakraborty2008advances}.
 %
+Among them, Differential Evolution (\DE{}) \cite{storn1997differential} is one of the most effective strategies to deal
+with continuous optimization.
 %
-DE was introduced by Storn and Price \cite{storn1997differential}, also is considered as one of the most effective EAs used to deal with real-world optimization problems, mainly for its convergence properties.
+In fact, it has been the winning strategy of several optimization competitions~\cite{das2011differential}.
 %
-Similarly than with other EAs, DE follows the natural evolution process which involves mutation, recombination and selection to evolve a population through an iterative progress until the criteria stop is reached.
+Similarly to other \EAS{}, \DE{} is inspired by the natural evolution process and it involves the application of mutation, recombination and 
+selection.
 %
-However, the peculiarity of DE resides in that it considers the difference between the vectors to explore the search space, being very similar than its precursor algorithms namely the Nelder-Mead \cite{nelder1965simplex} and the Controlled Random Search (CRS) \cite{price1983global}.
+The main peculiarity of \DE{} is that it considers the differences among vectors present in the population to explore the search space.
 %
-In spite of the popularity and effectiveness of DE, there exists several weakness that had been partially solved through learning techniques.
-%
-One of the first weakness and possibly the most important, is the performance of DE which is very sensitive to choice of the strategy parameters depending in the objective function \cite{gamperle2002parameter}.
-%
-Several strategies as adaptive and self-adaptive have been proposed to alleviate this drawback \cite{brest2006self, zhang2009jade}.
-%
-However, none of them has shown superior results than the rest.
-%
+In this sense is similar to Nelder-Mead \cite{nelder1965simplex} and the 
+Controlled Random Search (CRS) \cite{price1983global} optimizers.
 
-A second weakness of DE algorithms resides in the reproduction phase.
+In spite of the popularity and effectiveness of \DE{}, there exists several weaknesses that have been detected and partially
+solved by extending the standard proposal~\cite{das2011differential}.
 %
-In DE this phase involves the distribution of the vector differences, therefore it highly depends on the content of the population that might provoke premature convergence in several scenarios.
+Among them, the sensitivity to its parameters~\cite{gamperle2002parameter, zhang2009jade}, the appearance of stagnation due to the reduced exploration 
+capabilities~\cite{sa2008exploration,lampinen2000stagnation} and premature convergence~\cite{zaharie2003control} are some of the most well-known
+issues.
 %
-In fact, this issue can lead to the converge into a local optima or the lost of diverse solutions better known as premature convergence \cite{sa2008exploration}.
+This paper deals with the last one, i.e. with the appearance of premature convergence.
 %
-On the other hand, there exist situations where the search process could not progress and the population remains diverse, this phenomena is known as stagnation \cite{lampinen2000stagnation}.
+Note that, attending to the proper design of population-based metaheuristics~\cite{Talbi:09}, special attention must be
+paid to attain a proper balance between exploration and intensification.
 %
-Its well known that stagnation occurs with a small population size.
+An excessive exploitation degree provokes loss of diversity meaning that only a limited number of regions are sampled.
 %
-Although that large populations are not prone to stagnate, it involves more evaluation functions and in some scenarios might not converge, also in certain situations is not available a large population e.g. expensive optimization problems \cite{chen2014problem}.
+Differently, a too large exploration degree prevents the proper intensification of the best located regions, usually resulting in a
+too slow convergence.
 
+Since the appearance of \DE{}, its high selection pressure was criticized because of its incapability to maintain a large
+enough diversity~\cite{sa2008exploration}.
 %
-The last one drawback is highly related with the diversity of the population.
+Thus, several extensions of \DE{} to deal with premature convergence have been devised such as parameter adaptation~\cite{zaharie2003control}, 
+auto-enhanced population diversity~\cite{yang2015differential} and selection strategies 
+with a lower selection pressure~\cite{sa2008exploration}.
 %
-Generally speaking, the search process of all the EAs involves two process: exploration and intensification.
+Some of the last studies on design of population-based metaheuristics~\cite{Crepinsek:13} show that properly balancing the exploration and intensification
+is particularly useful for avoiding premature convergence in long-term executions.
 %
-A desirable behavior of an algorithm is to produce a proper balance between both of them.
+Specifically, in the field of combinatorial optimization some novel replacement strategies that dynamically alter the degree between exploration and exploitation 
+have appeared~\cite{segura2016novel}.
 %
-So that first it induces an exploration in the search space and subsequently is induced an exploitation based in the knowledge gathered during the search process \cite{zaharie2003control}.
+The main principle of such proposals is to use the stopping criterion and elapsed generations to bias the decisions taken by the optimizers with the aim
+of promoting exploration in the initial stages of the optimization and exploitation in the last ones.
 %
-Both exploration and exploitation are equally important, since that with an excessive exploitation, the population loses its diversity and the populations members can be located in a reduced sub-optimal region of the search space.
+Probably their main weakness is that the time required to obtain high-quality solution increases.
 %
-On the other hand, if the exploration is dominant, the algorithm waste resources on uninteresting regions, resulting in too slow convergence and in poor quality-solutions.
+Our novel proposal integrates a similar principle into \DE{}.
 %
-Principally, DE algorithms are very likely to prematurely converge, since it introduces a high selection pressure \cite{sa2008exploration}.
-%
-Several strategies have been proposed in DE to deal with premature convergence through controlling the population diversity, such as parameter adaptation \cite{zaharie2003control}, auto-enhanced population diversity mechanisms \cite{yang2015differential} and alternative selection strategies \cite{sa2008exploration}.
-
-
-Over the last years, a novel approach to deal with these diversity issues has been proposed, which implements a sophisticated replacement strategy that explicitly preserves the diversity \cite{segura2016novel}.
-%
-This method transforms a single-objective problem into a multi-objective one, by considering diversity as an explicit objective, based in the idea of adapting the balance induced between exploration and exploitation to various optimization stages.
-%
-Thus, in this way an ideal balance is reached through the criteria stop of the algorithm.
-%
-
-Our proposal follows a similar guideline, where it aims an ideal balance between exploration and exploitation considering the criteria stop.
-%
-However, we keep the single-objective context and focus in DE algorithms.
-
-
+However, in order to avoid the excessive growth of computational requirements typical of diversity-based replacement strategies, 
+the method was extended with the aim of inducing a larger degree of intensification.
 
 The rest of the paper is organized as follows.
 %
-The basic concepts of the classic DE and a review of the related work of diversity with DE is described in the section \ref{sec:Literature}.
+Some basic concepts of \DE{} and a review of works related to diversity within \DE{} are given in section~\ref{sec:Literature}.
 %
-In the section \ref{sec:trends} is showed the tendency of algorithms of the Congress on Evolutionary Computation among the last years.
+Section~\ref{sec:trends} presents an analysis about the algorithms with best performance on the last continuous optimization 
+contests held at the \textsc{ieee} Congress on Evolutionary Computation.
 %
-Our proposal based in diversity is described in the section \ref{sec:Proposal}.
+More emphasis is given on the variants based on \DE{}.
 %
-In the section \ref{sec:Experimental} are showed the experimental results including some of the most popular EAs.
+Our proposal is described in section~\ref{sec:Proposal}.
 %
-Finally, our conclusions and some lines of future work are given in section \ref{sec:Conclusion}.
+The experimental validation, which includes comparisons against state-of-the-art approaches, is shown in section~\ref{sec:Experimental}. 
+%
+Finally, our conclusions and some lines of future work are given in section~\ref{sec:Conclusion}.
