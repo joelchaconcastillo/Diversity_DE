@@ -1,71 +1,88 @@
 \subsection{Differential Evolution: Basic Concepts}
-%
-Although that in the literature are present several variants of DE, for simplicity in this work is used the classic DE scheme \cite{das2011differential}.
-%
-Originally DE was proposed as direct search method for single-objective continuous optimization problems.
-%
-Usually, the parameters governing the system performance are presented in a vector like $\vec{X} = [x_1, x_2, ..., x_D ]^T$, which is identified as an individual.
-%
-Particularly, for real parameter optimization each parameter $x_i$ is a real number.
-%
 
-In single-objective optimization, is aimed to obtain the vector $\vec{X}^*$ which minimizes (or maximize) a defined objective function, mathematically denoted by $f(\vec{X})(f : \Omega \subseteq \Re^D \rightarrow \Re)$, i.e., $f(\vec{X}^*) < f(\vec{X})$ for all $\vec{X} \in \Omega$, where $\Omega$ is a non-empty large finite set identified as the domain of the search.
+Several extensions of \DE{} that affect its exploration capabilities
+have been devised~\cite{das2011differential}.
 %
+In this work, in order to properly show the benefits of our extension, our proposal is applied with the classic \DE{} scheme (\DE{}/rand/1/bin).
+%
+However, our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
+components and even algorithms not belonging to the \DE{} field.
+%
+This section is devoted to summarize the classic \DE{} variants and to introduce some of the most important terms used in the \DE{} field.
 
-The basic scheme of DE consists that given the target parameter vectors (each vector of the population), a new mutant (or donant) vector is created using a vector generation strategy.
+\DE{} was originally proposed as a direct search method for single-objective continuous optimization.
 %
-After that, the mutant vector is combined with the target vector to generate the trial vector.
+The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
+dimensionality of the problem.
 %
-Then, each one of the trial vectors is compared with its corresponding target vector, where the vector with the best fitness is selected to survive as the trial vector of the next generation.
+In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
+upper bound ($b_{i}$) for each variable.
 %
-In case of tie, the new generated trial vector survives.
+The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a defined objective function, mathematically 
+denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
+%
+In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{i}, b_{i}]$.
+
+\DE{} is a population-based stochastic algorithm, so it iteratively evolves a set of candidate solutions.
+%
+In \DE{} such candidate solutions are usually called vectors.
+%
+In the basic \DE{} variant for each member of the population --- they are called \textit{target vectors} --- a new \textit{mutant vector}
+is created.
+%
+Then, the mutant vector is combined with the target vector to generate a \textit{trial vector}.
+%
+Finally, a selection phase is applied to choose the survivors.
+%
+In this way, several generations are evolved until a stopping criterion is reached.
+%
+The $i$th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
+%
+In the following more details are given for each component of \DE{}.
 
 
 \subsubsection{Initialization}
 
-
-The DE algorithms as is usual begins with a randomly initiated population of $NP$ parameter vectors.
+\DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
 %
-Subsequent generations in DE are denoted by $G= 0,1, ..., G_{max}$.
+Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
 %
-The $i$th vector of the population at the current generation is denoted as:
-\begin{equation} 
-\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}].
-\end{equation}
-%
-
-The initial population should cover a bounded range and it is reached by uniformly randomizing individuals within the search space constrained by the prescribed minimum and maximum bounds.
-%
-Hence, each $j$th component of the $i$th vector is initialized as follows:
-\begin{equation}
-X_{j,i,0} = x_{j,min} + rand_{i,j}[0,1] (x_{j,max} - x_{j_min})
-\end{equation}
+Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
 where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
 
 \subsubsection{Mutation}
-The mutation can be seen as a change or perturbation with a random element.
+
+For each target vector a mutant vector is created and several ways of performing
+such a process have been proposed.
 %
-Particularly, in DE a parent vector called \textit{target} vector is combined through a defined strategy to form the \textit{donor} vector.
+In the classic \DE{} variant the rand/1 strategy is applied.
 %
-In one simple form, a mutant vector $V_{i,G}$ is created from the $i$th target vector and is established as follows:
+In this case, the mutant vector $V_{i,G}$ is created as follows:
+
 \begin{equation}\label{eqn:mutation}
-\vec{V}_{i,G} = \vec{X}_{r1, G} + F(\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
+\vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
 \end{equation}
 %
-The indices $r1, r2, r3 \in [1,NP]$ are mutually exclusive integers randomly chosen from the range $[1, NP]$.
+The indices $r1, r2, r3 \in [1,NP]$ are different integers randomly chosen from the range $[1, NP]$.
 %
-It is important to take into account that the difference of any two vectors is scaled by a scalar number F and usually is defined in the interval $[0.4, 1]$, also the scale difference is added to the third one.
+In addition, they are all different from the index $i$.
 %
+It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
+%
+The scaled difference is added to a third vector, meaning that
+when diversity decreases, differences are low and mutant vectors are similar to target vectors.
+%
+As a result, maintaining some degree of diversity is specially important in \DE{}.
 
 \subsubsection{Crossover}
 
-In order to increase the diversity of the perturbed parameter vectors, a crossover operation is applied to the generated donor vector.
+In order to combine information of different candidate solutions and with the aim of increasing diversity, the crossover
+operator is applied.
 %
-Accordingly this, the target vector is mixed with the mutated vector to form the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
+Specifically, each target vector $\vec{X}_{i,G}$ is mixed with its corresponding mutant vector $V_{i,G}$ to 
+generate the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
 %
-In the DE-context are present two kinds of crossover methods --\textit{exponential} and \textit{binomial}(or uniform), however in this paper is only considered the binomial crossover.
-%
-In the binomial crossover strategy, the \textit{trial} vector $\vec{U}_{i,G}$ is generated as follows:
+The most typical crossover is the \textit{binomial} one, which operates as follows:
 %
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
@@ -74,17 +91,15 @@ In the binomial crossover strategy, the \textit{trial} vector $\vec{U}_{i,G}$ is
     \vec{X}_{j,i,G},              & \text{otherwise}
 \end{cases}
 \end{equation}
-where $rand_{i,j}[0,1]$ is a uniformly distributed random number, which is generated for each $j$th component of the $i$th vector parameter.
-%
-$j_{rand}$ is a randomly chosen index, which ensures that $\vec{U}_{i,G}$ has at least one component from $\vec{V}_{i,G}$.
-%
-$CR$ is the crossover constant $\in [0,1]$, which has to be determined by the user.
+where $rand_{i,j}[0,1]$ is a uniformly distributed random number,
+$j_{rand}$ is a randomly chosen index which ensures that $\vec{U}_{i,G}$ inherits at least one component from $\vec{V}_{i,G}$ and
+$CR \in [0,1]$ is the crossover rate.
 
 
 \subsubsection{Selection}
-Once generated the trial vectors, is performed a greedy selection scheme.
+Finally, a greedy selection is performed to determine the survivors of the next generation.
 %
-This selection determines whether the target or the trial vector survives to the next generation, and it is described as follows:
+Each trial vector is compared with its corresponding target vector and the best one survives:
 
 \begin{equation} \label{eqn:selection}
 \vec{X}_{j,i,G+1}= 
@@ -94,47 +109,62 @@ This selection determines whether the target or the trial vector survives to the
 \end{cases}
 \end{equation}
 
-where $f(\vec{X})$ is the objective function to be minimized.
+Hence, each population member either gets better or remains with the same objective value in each generation.
 %
-Hence, the population either gets better or remains the same fitness status, but never deteriorates.
+Since members never deteriorate, it is considered to be a selection with high pressure.
+%
+Note that in case of a tie, the trial vector survives.
 
-The mutation scheme described with the crossover proposed is referred as DE/rand/1/bin.
 %
-The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
+%The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
-\subsection{Differential Evolution and Diversity techniques}
+\subsection{Diversity in Differential Evolution}
 
-DE is highly susceptible to the diversity drawbacks generally seen in EAs.
+\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
 %
-This fact resides in the selection operator due that it is a greedy strategy.
+However, several analyses to better deal with this issue have been carried out.
 %
-However through the last decade has been developing several analyses and strategies to deal with these drawbacks.
+Since the general implications of each parameter on the diversity are known, one of
+the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
 %
-One of them is proposed in 2003 by Zaharie et al.  \cite{zaharie2003control} where is estimated the theoretical variance and is developed a parameter adaptation based in two critical equations oriented on the idea of controlling the population diversity.
+Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
+have also been performed~\cite{montgomery2009differential}.
 %
-In 2009 James Montgomery \cite{montgomery2009differential} analyses the effect of the difference vectors showing that small differences vectors applied to solutions in one cluster can produce improvements, thus movements produced by large difference vectors are wasted.
+Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
+might be disallowed to delay the convergence~\cite{montgomery2012simple}.
 %
-After that in 2010 Montgomery shows a study where are analyzed the DE parameters, principally it shows empirically the effect of the crossover probability.
+In this last study the kind of accepted movements varies along the run.
 %
-In 2012 Montgomery et al. \cite{montgomery2012simple} proposed a strategy that prevents the movements vectors that could provoke premature convergence, specifically it dismiss the movements that are below a threshold and it decreases over the algorithm's run, however this strategy only slow down the convergence since that only is considered the distance between the \textit{base} vectors and the \textit{trial} vectors but the distance between the \textit{trial} vector and the \textit{target} vector is not considered.
+Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
 %
-After that, in 2013 Antonio Bolufé et al. proposed an adaptive threshold convergence mechanism \cite{bolufe2013differential}.
+Other ways of adapting the accepted movements have been proposed~\cite{bolufe2013differential}.
 %
+Note that these kinds of methods have similarity with our proposal in the sense that decisions are biased by the number of elapsed generations.
+%
+However, out method operates on the replacement strategy and not on the reproduction phase.
+%
+Moreover, these methods do not consider explicitly the differences appearing on the whole population.
+%
+Instead, the restrictions apply to the differences appearing in the reproduction phase.
 
-A similar work is proposed  by Angela et al. \cite{sa2008exploration}, which suggests a modification of the selection operator of the classical DE.
+A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
 %
-Particularly,  the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently to allow escape from basin of attraction of local optima, however it considers the fitness in a defined probabilistic selection, thus it depends in the cost function.
+Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
+to allow escaping from basin of attraction of local optima.
 %
-
-Ming Yang et al. (2013) \cite{yang2015differential} proposed a mechanism named \textit{Auto-Enhanced Population Diversity} (AEPD) where are identified the moments when a population becomes converging or stagnating by measuring the distribution of the population in each dimension and diversifying at the dimensional level.
+Since it considers the fitness to establish the acceptance probabilities is very sensitive to scale transformations.
 %
-Similar strategies has been proposed as the one by Zhao Li et al. in 2016 \cite{zhao2016differential} where are varied the assembling positions of the premature individuals by mutation operation.
+In this case, decisions are not biased by the elapsed generations.
 
+Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
+to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
+%
+Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
 
-Our proposal is based in several ideas of the previously mentioned works, specifically the following:
-\begin{itemize}
-\item Is considered a threshold to control explicitly the convergence of the solutions.
-\item This threshold decreases over the algorithm's run.
-\item The selection operator is relaxed. 
-\end{itemize}
+Note that several of the \DE{} variants with best performance in competitions do not apply these modifications
+and that most of these extensions have not been implemented in the most widely used frameworks.
+%
+As a result, these extensions are not so widely used in the community in spite of their important benefits
+for some cases.
+
 
