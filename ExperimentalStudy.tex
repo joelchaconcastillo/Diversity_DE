@@ -31,7 +31,7 @@ The specific parameterization of each one tested algorithm is as follows:
 \item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$.For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Initial population size (N) = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, maximum population size = $N$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Initial population size (N) = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, maximum population size = $N$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{Diversity-DE}: Initial niche radius $D_I = 0.3*\sqrt{D}$, population size = $250$, $F = Cauchy(0.5, nfes/max\_nfes)$.
+\item \textbf{Diversity-DE}: Initial niche radius $D_I = 0.3$, population size = $250$, $F = Cauchy(0.5, nfes/max\_nfes)$.
 \end{itemize}
 %
 
@@ -86,45 +86,78 @@ This is an indicator that the multi-operator algorithms could suffer more of pre
 Probably, this can be caused by the parameterization, which is difficult since that several parameters need to be assigned.
 %
 
-
-
-
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
 \begin{table}[t]
-\begin{scriptsize}
 \centering
 \caption{Summary results - CEC 2016}
 \label{tab:Summary_CEC2016}
-%\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always Solved}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one \\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical tests}} \\ \cline{5-7} 
- &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow$ \\ \hline
-\textbf{UMOEAsII} & 9 & 14 & 41.65 & 5 & 31 & 24 \\ \hline
-\textbf{L-SHADE-Epsilon} & 7 & 13 & 45.84 & 18 & 14 & 28 \\ \hline
-\textbf{Proposal} & 13 & 21 & 100.00 & 31 & 9 & 20 \\ \hline
-\end{tabular}%
-%}
-\end{scriptsize}
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} \\ \cline{5-7} 
+ &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ \\ \hline
+\textbf{EBOwithCMAR} & 8 & 14 & 64.88 & 26 & 2 & 49 \\ \hline
+\textbf{jSO} & 9 & 17 & 51.29 & 38 & 41 & 41 \\ \hline
+\textbf{UMOEAs-II} & 9 & 14 & 51.52 & 14 & 57 & 57 \\ \hline
+\textbf{L-SHADE-Epsilon} & 7 & 13 & 56.10 & 42 & 22 & 56 \\ \hline
+\textbf{Proposal} & 13 & 21 & 100.00 & 64 & 19 & 37 \\ \hline
+\end{tabular}
 \end{table}
 
+%
+%\begin{table}[]
+%\begin{scriptsize}
+%\centering
+%\caption{Summary results - CEC 2016}
+%\label{tab:Summary_CEC2016}
+%\begin{tabular}{|c|c|c|c|c|c|c|}
+%\hline
+%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always Solved}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one \\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical tests}} \\ \cline{5-7} 
+% &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow$ \\ \hline
+%\textbf{UMOEAsII} & 9 & 14 & 41.65 & 5 & 31 & 24 \\ \hline
+%\textbf{L-SHADE-Epsilon} & 7 & 13 & 45.84 & 18 & 14 & 28 \\ \hline
+%\textbf{Proposal} & 13 & 21 & 100.00 & 31 & 9 & 20 \\ \hline
+%\end{tabular}%
+%\end{scriptsize}
+%\end{table}
 
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
 \begin{table}[t]
-\begin{scriptsize}
 \centering
 \caption{Summary results - CEC 2017}
 \label{tab:Summary_CEC2017}
-%\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always Solved}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one \\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical tests}} \\ \cline{5-7} 
- &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow$ \\ \hline
-\textbf{EBOwithCMAR} & 11 & 15 & 30.6792 & 11 & 23 & 26 \\ \hline
-\textbf{JSO} & 8 & 19 & 41.8322 & 8 & 29 & 23 \\ \hline
-\textbf{Proposal} & 21 & 28 & 100.0000 & 36 & 3 & 21 \\ \hline
-\end{tabular}%
-%}
-\end{scriptsize}
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} \\ \cline{5-7} 
+ &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ \\ \hline
+\textbf{EBOwithCMAR} & 11 & 15 & 26.20 & 28 & 36 & 56 \\ \hline
+\textbf{jSO} & 8 & 19 & 36.66 & 27 & 39 & 54 \\ \hline
+\textbf{UMOEAs-II} & 9 & 18 & 40.71 & 37 & 30 & 53 \\ \hline
+\textbf{L-SHADE-Epsilon} & 8 & 15 & 35.37 & 7 & 62 & 51 \\ \hline
+\textbf{Proposal} & 21 & 28 & 100.00 & 73 & 5 & 42 \\ \hline
+\end{tabular}
 \end{table}
+
+%%\begin{table}[t]
+%%\begin{scriptsize}
+%%\centering
+%%\caption{Summary results - CEC 2017}
+%%\label{tab:Summary_CEC2017}
+%%%\resizebox{\textwidth}{!}{%
+%%\begin{tabular}{|c|c|c|c|c|c|c|}
+%%\hline
+%%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always Solved}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one \\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical tests}} \\ \cline{5-7} 
+%% &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow$ \\ \hline
+%%\textbf{EBOwithCMAR} & 11 & 15 & 30.6792 & 11 & 23 & 26 \\ \hline
+%%\textbf{JSO} & 8 & 19 & 41.8322 & 8 & 29 & 23 \\ \hline
+%%\textbf{Proposal} & 21 & 28 & 100.0000 & 36 & 3 & 21 \\ \hline
+%%\end{tabular}%
+%%%}
+%%\end{scriptsize}
+%%\end{table}
 
 The error values between the best fitness values found in each run out of 51 runs and true optimal value are calculated and then best, worst, median, mean, standard deviation and success ratio of the error values are presented in each column in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017}.
 %
@@ -253,5 +286,14 @@ The main conclusions obtained are as follows:
 
 Finally, its important stand out that the solutions are less affected by the population size, however there is still present a relation between the $D_I$ and the population size.
 %
+\begin{figure}[t]
+\centering
+\begin{tabular}{cc}
+   \includegraphics[scale=0.25, angle=-90]{img/Diversity_Elite.eps} 
+   \includegraphics[scale=0.25, angle=-90]{img/Diversity_Trial.eps} 
+\end{tabular}
+\caption{ Average distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (CEC2016 and CEC2017). The initial distance factor considered corresponds to $D_I=0.3$.}
+\label{fig:one}
+\end{figure}
 
 
