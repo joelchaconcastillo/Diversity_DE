@@ -4,7 +4,7 @@ Specifically is showed that controlling the diversity in a classic DE, is a way 
 %
 Particularly, the benchmarks of CEC 2016 and CEC 2017 are considered, each one of them is composed of thirty different problems.
 %
-The state-of-the-art is composed by the algorithms that correspond to the first places of each year.
+The state-of-the-art is conformed by the algorithms that correspond to the first places of each year.
 %
 Thus, the algorithms considered from the CEC 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that are the first and second place respectively.
 %
@@ -79,11 +79,33 @@ Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, namely the
 %
 Based in the final score the results provided for our proposal are superior in both years.
 %
-Moreover, in both years the SHADE's algorithms have a superior score than the multi-operator algorithms, although that the multi-operator algorithms were ranked in the first place.
+Moreover, in both years the multi-operator algorithms have a superior score than the SHADE's algorithms.
 %
-This is an indicator that the multi-operator algorithms could suffer more of premature convergence than SHADE's algorithms in long-term executions.
+However it seems that the EBOwithCMAR algorithm could suffer an over-parametrization, since that it is deteriorated in CEC 2017 considering long-term executions.
 %
-Probably, this can be caused by the parameterization, which is difficult since that several parameters need to be assigned.
+Principally, the winners of the CEC 2016 outperform to the winners of the CEC 2017 in long-term.
+%
+Similarly, the winners of the CEC 2017 outperform to the winners of the CEC2016, this is a highlight that each algorithm is specifically tunned to short-term executions and for each benchmark.
+%
+In the figure \ref{fig:diversity} is showed the diversity of our proposal through the time of the Elite vectors (left side) and Trial vectors (right side).
+%
+Despite the fact that the Elite vectors could lose the diversity, it shows that both in easy functions ($f_1$) and difficult functions ($f_{30}$) is implicitly maintained the diversity.
+%
+On the other hand the trial vectors maintain correctly the diversity until the $95\%$ of the total evaluations.
+
+\begin{figure}[t]
+\centering
+\begin{tabular}{cc}
+   \includegraphics[scale=0.25, angle=-90]{img/Diversity_Elite.eps} 
+   \includegraphics[scale=0.25, angle=-90]{img/Diversity_Trial.eps} 
+\end{tabular}
+\caption{ Average distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (CEC2016 and CEC2017). The initial distance factor considered corresponds to $D_I=0.3$.}
+\label{fig:diversity}
+\end{figure}
+
+
+
+%
 %
 
 % Please add the following required packages to your document preamble:
@@ -120,9 +142,6 @@ Probably, this can be caused by the parameterization, which is difficult since t
 %\end{tabular}%
 %\end{scriptsize}
 %\end{table}
-
-
-
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[t]
@@ -169,7 +188,7 @@ However our proposal has problems solving the multi-modal functions, this can be
 %
 Since that the algorithm finds some niches through the optimization process, the mutation provokes high displacements, that as result some regions are not analyzed properly.
 %
-To deal with the previously issue, we suggest apply a matting restriction or implement a local search, which could further a better convergence.
+To deal with the previously issue, we suggest apply a matting restriction or implement a local search, which could further improve the convergence.
 
 \begin{table}[t]
 \begin{scriptsize}
@@ -281,19 +300,9 @@ The main conclusions obtained are as follows:
 \begin{itemize}
 \item If the diversity is not promoted ($D_I = 0.0 $) the performance of the algorithms is seriously implicated.
 \item In this scenario the ideal configuration is $D_I=0.3$, although that the range $[0.1, 0.4]$ also provides quality solutions.
-\item As the diversity promoted increases the quality of the solutions are implicated.
+\item If the diversity of the solutions increases (after a range) the quality of solutions is implicated.
 \end{itemize}
 
 Finally, its important stand out that the solutions are less affected by the population size, however there is still present a relation between the $D_I$ and the population size.
 %
-\begin{figure}[t]
-\centering
-\begin{tabular}{cc}
-   \includegraphics[scale=0.25, angle=-90]{img/Diversity_Elite.eps} 
-   \includegraphics[scale=0.25, angle=-90]{img/Diversity_Trial.eps} 
-\end{tabular}
-\caption{ Average distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (CEC2016 and CEC2017). The initial distance factor considered corresponds to $D_I=0.3$.}
-\label{fig:one}
-\end{figure}
-
 
