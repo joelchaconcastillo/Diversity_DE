@@ -18,7 +18,7 @@ dimensionality of the problem.
 In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
 upper bound ($b_{i}$) for each variable.
 %
-The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a defined objective function, mathematically 
+The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a given objective function, mathematically 
 denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
 %
 In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{i}, b_{i}]$.
@@ -137,11 +137,11 @@ In this last study the kind of accepted movements varies along the run.
 %
 Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
 %
-Other ways of adapting the accepted movements have been proposed~\cite{bolufe2013differential}.
+Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
 %
 Note that these kinds of methods have similarity with our proposal in the sense that decisions are biased by the number of elapsed generations.
 %
-However, out method operates on the replacement strategy and not on the reproduction phase.
+However, out method operates on the replacement strategy and not on the mutation phase.
 %
 Moreover, these methods do not consider explicitly the differences appearing on the whole population.
 %

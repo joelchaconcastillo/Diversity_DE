@@ -1,31 +1,100 @@
-Principally, our proposal\footnote{The code in C++ can be consulted in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} } is  based in the following two works.
+The proposal that is put forth is this paper is mainly motiviated by two works.
 %
-The first one that is delimited for DE algorithms, it is shown by Montgomery et al. \cite{montgomery2012simple} where is suggested a strategy to prevented the premature caused by the displacement of the mutation operator.
+First, several of the theoretical and empirical studies developed by Montgomery et al.~\cite{montgomery2012simple} show the 
+important issues related to premature convergence that appear in \DE{}.
 %
-The second one is a generalization of EAs, it is proposed by Carlos Segura et al. \cite{segura2016novel} and it transforms the single objective optimization problem to multiple objectives where one of them is the fitness and the other one is a diversity measurement, similarly is used a threshold which is decreased as the criteria stop is reached.
+Second, some works of Segura et al.~\cite{segura2016novel} propose a new replacement strategy (\MULTIDYN{}) to deal with premature 
+convergence in memetic algorithms
+for combinatorial optimization by biasing the decisions of the optimizer in base of the stopping criterion and elapsed generations.
 %
+Given the conclusions of these previous works, the proposal of this paper is a novel \DE{} variant that includes an explicit mechanism 
+that takes into account the stopping criterion and elapsed generations to prevent premature convergence.
+%
+This novel optimizer is called Differential Evolution with Enhanced Diversity Maintenance (\DEEDM{}) and its source
+code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-Particularly, our proposal induces a balance between exploration and exploitation that is automatically adjusted on the given stopping criterion.
+\MULTIDYN{} is a replacement strategy that considers the maximization of the diversity 
+contribution of each individual as an explicit objective.
 %
-Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy.
+Then, the notion of Pareto dominance is used to select the survivors.
 %
-In this way, for shorter stopping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
+It uses a dynamic threshold to prevent the selection of individuals with a too low contribution to diversity.
 %
-To achieve such balance are considered three populations, parent vectors, offspring vectors and elite vectors, being one of the novelties of the new design.
+One of the main weaknesses of this method is that its convergence is highly delayed.
 %
+Thus, executions of several days were required to attain high-quality solutions.
+%
+As a result our proposal incorporates two extensions to alleviate such a drawback.
 
-One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbor (DCN) value-- should not be accepted as be part of the parent vectors, instead it could replace one of the elite vectors.
+\DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
+balance between exploration and exploitation.
 %
+The main principle of the novel replacement strategy is similar to the one used in \MULTIDYN{}, i.e.
+individuals that contribute too little to diversity should not be accepted as target vectors of the next generation.
+%
+The contribution to diversity is estimated with the Distance to Closest Neighbour metric (\DCN{}), i.e. given
+a set of already selected individuals ($Survivors$), the contribution of a non-selected one is calculated as the minimum
+distance to any of the individuals in $Survivors$.
+%
+However, in order to promote a faster convergence than in \MULTIDYN{} two modifications are performed.
+%
+First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
+%
+Second, a new population called the elite population is used.
 
-In our approach, the vectors that contribute too little to the diversity are penalized.
+Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
 %
-The value $D_t$\footnote{Do not confuse the threshold distance $D_t$ with the dimension $D$. } represents the minimum DCN required to avoid being penalized.
+It receives as input the target population, the offspring population and the elite population of the current generation and
+it must generate the next target population.
 %
-Any vector whose DCN value is lower than this threshold value is penalized.
+Additionally, it reaceives the desired minimum distance $D_d$.
 %
-The key principle resides in how to evaluate whether an vector contributes enough or not, i.e., how to set the value $D_t$.
+First, it joins the three populations in a set of current members.
 %
-The value of $D_t$ should depend on the optimization stage.
+The current members set contains vectors that might be selected to survive.
+%
+Then, the set of survivors and penalized individuals are initialized to the empty set.
+%
+In order to select the $NP$ target vectors an iterative process is repeated.
+%
+In each step the best individual in the $Current$ set, i.e. the one with best objective function is selected
+to survive, i.e. moved to the $Survivors$ set.
+%
+Then, individuals in the $Current$ set to the selected individual lower the $D_d$ are transferred to the
+$Penalized$ set.
+%
+In the case that the $Current$ set is empty previous to the selection of $NP$ individuals, the target
+population is filled by selecting in each step the individual with a largest \DCN{} to the survivors set.
+
+
+\begin{algorithm}[H]
+\algsetup{linenosize=\tiny}
+  \scriptsize
+	\caption{Replacement Phase} \label{alg:Replacement}
+	\begin{algorithmic}[1]
+	\STATE Input: $D_d$, $Population$, $Offspring$ and $Elite$
+	\STATE $Current = Population \cup Offspring \cup Elite$.
+	\STATE $Survivors = Penalized = \emptyset$.
+	\WHILE{ $Survivors < NP$ }
+	   \STATE Select the best individual $Current_{best}$ of $Current$ as a new seed.
+	   \STATE Find the other individuals nearest according to Eq. (\ref{eqn:distance}) and move to $Penalized$.
+	   \STATE Move the best individual $Current_{best}$ to $Survivors$.
+	\ENDWHILE
+	\WHILE{ $Survivors < pop\_size$ }
+	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
+	   \STATE Move individual $Penalized$ to $Survivors$.
+	\ENDWHILE
+       \RETURN $Current$
+\end{algorithmic}
+\end{algorithm}
+
+
+In order to complete the description is important to specify the way to calculate $D_d$ and the way to update the 
+elite individuals.
+%
+The remaining steps are maintained as in the classic \DE{} variant.
+%
+The value of $D_d$ should depend on the optimization stage.
 %
 Specifically, this value should be reduced as the stopping criterion is approached.
 %
@@ -44,7 +113,7 @@ According to Segura et al. \cite{segura2016novel} updating $D_t$ is more appropr
 
 
 %
-Specifically, the previously strategy is implemented in the replacement phase (algorithm \ref{alg:Replacement}) where is used a popular niche-strategy known as \textit{Speciation} \cite{yang2017multimodal}.
+Specifically, the previously strategy is implemented in the replacement phase  where is used a popular niche-strategy known as \textit{Speciation} \cite{yang2017multimodal}.
 %
 Initially, based in a niche-radius ($D_t$) and a defined distance\footnote{For simplicity we use euclidean distance, however can be user other distance as the mahalanobis distance.} (equation \ref{eqn:distance}), in an iterative process the seeds (or survivors) are identified, these are the vectors with best fitness and whose minimal DCN is not lower than the one determined by the $D_t$ value.
 %
@@ -69,27 +138,6 @@ Although that in the literature exist several diversity measures, we consider th
 %
 According this, in an iterative process is selected as survivor the penalized vector that has the maximum DCN.
 
-\begin{algorithm}[H]
-\algsetup{linenosize=\tiny}
-  \scriptsize
-	\caption{Replacement Phase} \label{alg:Replacement}
-	\begin{algorithmic}[1]
-	\STATE Input: $D_I$, $Population$, $Offspring$ and $Elite$
-	\STATE $Survivors = Penalized = \emptyset$.
-	\STATE $Current = Population \cup Offspring \cup Elite$.
-	\STATE Sort $Current$ according to fitness.
-	\WHILE{ $Survivors < pop\_size$ }
-	   \STATE Select the best individual $Current_{best}$ of $Current$ as a new seed.
-	   \STATE Find the other individuals nearest according to Eq. (\ref{eqn:distance}) and move to $Penalized$.
-	   \STATE Move the best individual $Current_{best}$ to $Survivors$.
-	\ENDWHILE
-	\WHILE{ $Survivors < pop\_size$ }
-	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
-	   \STATE Move individual $Penalized$ to $Survivors$.
-	\ENDWHILE
-       \RETURN $Current$
-\end{algorithmic}
-\end{algorithm}
 
 On the other hand, since that the diversity in the parent vectors should be kept, the selection operator indicated in the equation (\ref{eqn:selection}) is modified.
 %
@@ -148,3 +196,12 @@ For each vector is sampled a $F$ value with a Cauchy distribution $Cauchy(0.5, 0
 %
 In this way the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
 %
+
+
+Our proposal is based in several ideas of the previously mentioned works, specifically the following:
+\begin{itemize}
+\item Is considered a threshold to control explicitly the convergence of the solutions.
+\item This threshold decreases over the algorithm's run.
+\item The selection operator is relaxed. 
+\end{itemize}
+
