@@ -6,36 +6,14 @@
   \providecommand{\doi}{DOI \discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem{noman2008differential}
-N.~Noman, H.~Iba, Differential evolution for economic load dispatch problems,
-  Electric Power Systems Research \textbf{78}(8), 1322 (2008)
+\bibitem{Talbi:09}
+E.~Talbi, \emph{Metaheuristics: From Design to Implementation}.
+\newblock Wiley Series on Parallel and Distributed Computing (Wiley, 2009).
+\newblock \urlprefix\url{https://books.google.com.mx/books?id=SIsa6zi5XV8C}
 
 \bibitem{chakraborty2008advances}
 U.K. Chakraborty, \emph{Advances in differential evolution}, vol. 143
   (Springer, 2008)
-
-\bibitem{srinivas1994genetic}
-M.~Srinivas, L.M. Patnaik, Genetic algorithms: A survey, computer
-  \textbf{27}(6), 17 (1994)
-
-\bibitem{schwefel1977numerische}
-H.P. Schwefel, Numerische optimierung von computer-modellen (phd thesis),
-  Reprinted by Birkhuser  (1977)
-
-\bibitem{john1992holland}
-H.~John.
-\newblock Holland, adaptation in natural and artificial systems: An
-  introductory analysis with applications to biology, control and artificial
-  intelligence (1992)
-
-\bibitem{koza1992genetic}
-J.R. Koza, \emph{Genetic Programming II, Automatic Discovery of Reusable
-  Subprograms} (MIT Press, Cambridge, MA, 1992)
-
-\bibitem{fogel1991meta}
-D.B. Fogel, L.J. Fogel, J.W. Atmar, in \emph{Signals, systems and computers,
-  1991. 1991 Conference record of the twenty-fifth asilomar conference on}
-  (IEEE, 1991), pp. 540--545
 
 \bibitem{storn1997differential}
 R.~Storn, K.~Price, Differential evolution--a simple and efficient heuristic
@@ -55,17 +33,6 @@ J.A. Nelder, R.~Mead, A simplex method for function minimization, The computer
 W.~Price, Global optimization by controlled random search, Journal of
   Optimization Theory and Applications \textbf{40}(3), 333 (1983)
 
-\bibitem{gamperle2002parameter}
-R.~G{\"a}mperle, S.D. M{\"u}ller, P.~Koumoutsakos, A parameter study for
-  differential evolution, Advances in intelligent systems, fuzzy systems,
-  evolutionary computation \textbf{10}(10), 293 (2002)
-
-\bibitem{brest2006self}
-J.~Brest, S.~Greiner, B.~Boskovic, M.~Mernik, V.~Zumer, Self-adapting control
-  parameters in differential evolution: A comparative study on numerical
-  benchmark problems, IEEE transactions on evolutionary computation
-  \textbf{10}(6), 646 (2006)
-
 \bibitem{zhang2009jade}
 J.~Zhang, A.C. Sanderson, Jade: adaptive differential evolution with optional
   external archive, IEEE Transactions on evolutionary computation
@@ -80,14 +47,6 @@ J.~Zhang, A.C. Sanderson, Jade: adaptive differential evolution with optional
 J.~Lampinen, I.~Zelinka, et~al., in \emph{Proceedings of MENDEL} (2000), pp.
   76--83
 
-\bibitem{chen2014problem}
-Q.~Chen, B.~Liu, Q.~Zhang, J.~Liang, P.~Suganthan, B.~Qu, Problem definition
-  and evaluation criteria for cec 2015 special session and competition on bound
-  constrained single-objective computationally expensive numerical
-  optimization, Computational Intelligence Laboratory, Zhengzhou University,
-  China and Nanyang Technological University, Singapore, Technical report
-  (2014)
-
 \bibitem{zaharie2003control}
 D.~Zaharie, in \emph{Proc. of MENDEL}, vol.~9 (2003), vol.~9, pp. 41--46
 
@@ -95,6 +54,11 @@ D.~Zaharie, in \emph{Proc. of MENDEL}, vol.~9 (2003), vol.~9, pp. 41--46
 M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
   population diversity, IEEE transactions on cybernetics \textbf{45}(2), 302
   (2015)
+
+\bibitem{Crepinsek:13}
+M.~\v{C}repin\v{s}ek, S.H. Liu, M.~Mernik, Exploration and exploitation in
+  evolutionary algorithms: A survey, ACM Computing Surveys \textbf{45}(3), 35:1
+  (2013)
 
 \bibitem{segura2016novel}
 C.~Segura, C.A.C. Coello, E.~Segredo, A.H. Aguirre, A novel diversity-based
