@@ -3,17 +3,55 @@ The proposal that is put forth is this paper is mainly motiviated by two works.
 First, several of the theoretical and empirical studies developed by Montgomery et al.~\cite{montgomery2012simple} show the 
 important issues related to premature convergence that appear in \DE{}.
 %
-Second, some works of Segura et al.~\cite{segura2016novel} propose a new replacement strategy (\MULTIDYN{}) to deal with premature 
-convergence in memetic algorithms
-for combinatorial optimization by biasing the decisions of the optimizer in base of the stopping criterion and elapsed generations.
+Second, in the field of combinatorial optimization, some works of Segura et al.~\cite{segura2016novel} incorporate a novel replacement strategy
+which is called the replacement with multiobjective based dynamic diversity control strategy (\RMDDC{}) to relate the control of diversity
+with the stopping criterion and elapsed generation.
 %
-Given the conclusions of these previous works, the proposal of this paper is a novel \DE{} variant that includes an explicit mechanism 
-that takes into account the stopping criterion and elapsed generations to prevent premature convergence.
+Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
+novel \DE{} variant that includes an explicit mechanism that follows similar principles to \RMDDC{}.
 %
 This novel optimizer is called Differential Evolution with Enhanced Diversity Maintenance (\DEEDM{}) and its source
 code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-\MULTIDYN{} is a replacement strategy that considers the maximization of the diversity 
+The main novelty of \DEEDM{} is the incorporation of a novel replacement strategy.
+%
+The main principle of the novel replacement strategy is similar to the one used in \RMDDC{}, i.e.
+individuals that contribute too little to diversity should not be accepted as target vectors of the next generation.
+%
+Moreover, in order to establish the minimum acceptable diversity contribution the stopping criterion and elapsed
+generations is taken into account.
+
+The contribution to diversity is estimated with the Distance to Closest Neighbour metric (\DCN{}), i.e. given
+a set of already selected individuals ($Survivors$), the contribution of a non-selected one is calculated as the minimum
+distance to any of the individuals in $Survivors$.
+%
+However, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
+%
+First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
+%
+Second, a new population called the elite population is used.
+
+\begin{algorithm}[H]
+\algsetup{linenosize=\tiny}
+  \scriptsize
+	\caption{General scheme of DE considering diversity} 
+	\begin{algorithmic}[1]
+	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
+	\WHILE{ stopping criterion is nor satisfied}
+	   \FOR{ $i=1$ to $NP$} 
+		\STATE Mutation: Generate the donor vector according Eq. (\ref{eqn:mutation})
+		\STATE Crossover: Recombine the mutate vector according Eq. (\ref{eqn:crossover})
+		\STATE Selection: Update the parent vector according  Eq. (\ref{eqn:selection})
+		\STATE Replacement: Select the parent vectors according to algorithm \ref{alg:Replacement}
+	   \ENDFOR
+	\ENDWHILE
+    \label{alg:Fase_Remplazo_VSD-MOEAD}
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\RMDDC{} is a replacement strategy that considers the maximization of the diversity 
 contribution of each individual as an explicit objective.
 %
 Then, the notion of Pareto dominance is used to select the survivors.
@@ -29,18 +67,7 @@ As a result our proposal incorporates two extensions to alleviate such a drawbac
 \DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
 balance between exploration and exploitation.
 %
-The main principle of the novel replacement strategy is similar to the one used in \MULTIDYN{}, i.e.
-individuals that contribute too little to diversity should not be accepted as target vectors of the next generation.
 %
-The contribution to diversity is estimated with the Distance to Closest Neighbour metric (\DCN{}), i.e. given
-a set of already selected individuals ($Survivors$), the contribution of a non-selected one is calculated as the minimum
-distance to any of the individuals in $Survivors$.
-%
-However, in order to promote a faster convergence than in \MULTIDYN{} two modifications are performed.
-%
-First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
-%
-Second, a new population called the elite population is used.
 
 Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
 %
@@ -72,7 +99,8 @@ population is filled by selecting in each step the individual with a largest \DC
   \scriptsize
 	\caption{Replacement Phase} \label{alg:Replacement}
 	\begin{algorithmic}[1]
-	\STATE Input: $D_d$, $Population$, $Offspring$ and $Elite$
+	\STATE Input: $Population$, $Offspring$ and $Elite$
+	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	\STATE $Current = Population \cup Offspring \cup Elite$.
 	\STATE $Survivors = Penalized = \emptyset$.
 	\WHILE{ $Survivors < NP$ }
@@ -146,25 +174,6 @@ Thus, instead of made a comparison between the target or parent vectors and the 
 Hence, the elite vectors record the best individuals obtained among the optimization process.
 %
 
-
-\begin{algorithm}[H]
-\algsetup{linenosize=\tiny}
-  \scriptsize
-	\caption{General scheme of DE considering diversity} 
-	\begin{algorithmic}[1]
-	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
-	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
-	\WHILE{ stopping criterion is nor satisfied}
-	   \FOR{ $i=1$ to $NP$} 
-		\STATE Mutation: Generate the donor vector according Eq. (\ref{eqn:mutation})
-		\STATE Crossover: Recombine the mutate vector according Eq. (\ref{eqn:crossover})
-		\STATE Selection: Update the parent vector according  Eq. (\ref{eqn:selection})
-		\STATE Replacement: Select the parent vectors according to algorithm \ref{alg:Replacement}
-	   \ENDFOR
-	\ENDWHILE
-    \label{alg:Fase_Remplazo_VSD-MOEAD}
-\end{algorithmic}
-\end{algorithm}
 
 
 An advantage of our proposal is that it alleviates one critical weakness of the DE algorithms.
