@@ -1,10 +1,10 @@
 Mainly our proposal is motivated by two remarkable works in the area of diversity-based EAs.
 %
-Firstly, the premature convergence studies developed by Montgomery et al. \cite{montgomery2012simple}.
+First, several studies related with premature convergence, which were developed by Montgomery et al. \cite{montgomery2012simple}.
 %
-They stablished several empirical studies to diagnose the prematura convergence that appear in \DE{}.
+They stablished several empirical studies to diagnose the premature convergence that appear in \DE{}.
 %
-Secondly, providing significant improvements and solid review of the EAs in combinatorial optimization field were considered Segura et al.~\cite{segura2016novel}.
+The second work, which provides significant improvements and solid literature revision of the combinatorial optimization field, were considered by Segura et al.~\cite{segura2016novel}.
 %
 Particularly, they incorporated a novel replacement strategy which is called the replacement with multiobjective based dynamic diversity control strategy (\RMDDC{}) to relate the control of diversity with the stopping criterion and elapsed generation.
 %
@@ -61,14 +61,14 @@ contribution of each individual as an explicit objective.
 %
 Then, the notion of Pareto dominance is used to select the survivors.
 %
-It uses a dynamic threshold to prevent the selection of individuals with a too low contribution to diversity.
+It uses a dynamic threshold to prevent the selection of individuals with low contribution to diversity.
 %
 One of the main weaknesses of this method is that its convergence is highly delayed.
 %
 Thus, executions of several days were required to attain high-quality solutions.
 %
 As a result our proposal incorporates two extensions to alleviate such a drawback.
-
+%
 \DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
 balance between exploration and exploitation.
 %
@@ -76,8 +76,9 @@ balance between exploration and exploitation.
 
 Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
 %
-It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population of the current generation and
-it must select the next parent population (target vectors).
+It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
+%
+In the each generation it must select the next parent population (target vectors).
 %
 Additionally, it calculates the desired minimum distance $D_t$ given the current number of function evaluations.
 %
@@ -90,12 +91,12 @@ Then, the set of survivors and penalized individuals are initialized to the empt
 In order to select the $NP$ survivors (target vectors) an iterative process is repeated.
 %
 In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
-to survive, i.e. moved to the \textit{Survivor set}.
+to survive (i.e. moved to the \textit{Survivor set}).
 %
-Then, the individuals in the \textit{Current set} with minimum \DCN{} to the selected individuals lower than $D_t$ are transferred to the
+Then, the individuals in the \textit{Current set} with a \DCN{} to the selected individuals lower than $D_t$ are transferred to the
 \textit{Penalized set}.
 %
-In the case that the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
+In case were the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
 
 
 \begin{algorithm}[H]
@@ -134,20 +135,20 @@ In our scheme, an initial $D_I$ value must be set.
 %
 Then, a linear reduction of $D_t$ is done.
 %
-Particularly, in this work, the stopping criterion is set by function evaluations (nfes).
+Particularly, in this work, the stopping criterion is set by function evaluations (\textit{nfes}).
 %
 The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
 %
 Therefore, in the rest $5\%$ the behavior is similar to the classical DE.
 %
-Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
+Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
 We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement provides the most stable results.
 %
 
-Principally, the replacement phase considers a defined radius ($D_t$), which for simlicity is considered through the normalized euclidean distance (eqn. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
+Principally, the replacement phase considers a defined radius ($D_t$), which for simlicity is considered through the normalized euclidean distance (Eq. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
 %
-It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies to fix the $D_I$ parameter since tha maximum distance is the unity, which is a fraction of the main space diagonal.
+It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies the setting of the $D_I$ parameter, since that the maximum distance is the unity, which is a fraction of the main space diagonal.
 
 \begin{equation}\label{eqn:distance}
 distance ( x_{seed}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{seed}^d - x_j^d}{max_d - min_d} \right )^2  }} {\sqrt{D}}
@@ -157,7 +158,7 @@ distance ( x_{seed}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{seed}^d 
 %
 Theoretically, the effect of the initial distance factor ($D_I$) affects directively the behavior of the algorithm.
 %
-If this parameter is fixed too large, then essentially at the first optimization stages the algorithm aims to maximize the \DCN{}, thus the problems which need a high level of diversity that usually are the most difficult are properly solved (e.g. deceptive problems).
+If this parameter is fixed too large, then at the first optimization stages the algorithm aims to maximize the \DCN{}, thus the problems that should need a high level of diversity, which usually are the most difficult, are properly solved (e.g. deceptive problems).
 %
 On the other hand, a low initial distance factor results in a lower level exploration, therefore it provokes a high level of exploitation.
 %
@@ -169,22 +170,27 @@ Therefore, when the initial distance factor is setted several factors should be 
 %
 One of them is the maximum number of evaluations, when the problem is setted with few number of evaluations, the initial distance factor should be lower, since the exploitation should be promoted.
 %
-On the other hand, when the problem is allowed with a large number of evaluations, then the initial distance factor should be higher, but also should be considered the number of vectors in the population, since that them are directly realted with the diversity.
+On the other hand, when the problem is configured with a large number of evaluations, then the initial distance factor should be higher.
+%
+Also the number of vectors should be considered, since that they are directly realted with the diversity.
 %
 Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
 %
 
-An advantage of our proposal is that it alleviates one critical weakness of the DE algorithms.
+Our proposal provides several advantages in constrast of the standard DE and some of the state-of-the-art algorithms, perhaps the most important is that it is not over-parametrized.
 %
-These are the control parameters both crossover probability ($CR$) and mutation factor ($F$).
+Although several top-rank algorithms present good enough results, usually these algorithms need a tunning phase to fit the parameters, therefore in real application it could be infeasible.
+
 %
-Based in several studies showed by Montgomery et al. \cite{montgomery2010analysis}, $CR$ is perhaps the most important.
+Specifically, the standard DE recives two parameters, these are the crossover probability ($CR$) and the mutation factor ($F$).
 %
-Extremes $CR$ values leads to vastly different search behaviors.
+The first one is perhaps the most important according to several studies showed by Montgomery et al. \cite{montgomery2010analysis}.
 %
-Low values of $CR$ result in a search that is not just aligned with a small number of search space axes, but which is gradual, slow and robust.
+These authors empirically proved that extremes $CR$ values leads to vastly different search behaviors.
 %
-High values of $CR$ migh generate few quality solutions, however these solutions provoke large displacements and could improve significantly.
+They explained that low $CR$ values result in a search that is not just aligned with a small number of search space axes, it also shows small displacements, which provokes a gradual and slow convergence that in some scenarios migh result in a robust behavior.
+%
+On the other hand, high $CR$ values migh generate few quality solutions, however these solutions provoke large displacements and could improve significantly the solutions.
 %
 According this, we employ both high and low $CR$ values as is showed in the equation \ref{eqn:cr}.
 
@@ -197,18 +203,22 @@ CR =
 \end{equation}
 
 
-On the other hand, the mutation factor $F$ is computed as follows.
+In the same vein, the mutation factor $F$ is computed as follows.
 %
 For each vector is sampled a $F$ value with a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
 %
-In this way the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
+Particularly, it is based in several empirical results, since that at the first optimizaion stages the density function is located in $0.5$.
+%
+While the execution transcurs, the density function changes and the values generated are closest to $0.0$ and to $1.0$, since the Cauchy density function has heavly tails and the values are truncated to $[0.0, 1.0]$, thus it avoids stagnation in different stages of the algorithm.
+%
+% thus the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
 %
 
 
-Our proposal is based in several ideas of the previously mentioned works, specifically the following:
+Principally, our proposal is based in several ideas of the mentioned works, and are listed as follows:
 \begin{itemize}
 \item Is considered a threshold to control explicitly the convergence of the solutions.
 \item This threshold decreases over the algorithm's run.
-\item The selection operator is relaxed. 
+\item The selection operator is relaxed in the sense that it does not provokes premature convergence, all this through an elite population. 
 \end{itemize}
 
