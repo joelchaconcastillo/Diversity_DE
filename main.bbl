@@ -87,18 +87,6 @@ P.N. Suganthan, N.~Hansen, J.J. Liang, K.~Deb, Y.P. Chen, A.~Auger, S.~Tiwari,
   Problem definitions and evaluation criteria for the cec 2005 special session
   on real-parameter optimization, KanGAL report \textbf{2005005}, 2005 (2005)
 
-\bibitem{CEC2006}
-J.~Liang, T.P. Runarsson, E.~Mezura-Montes, M.~Clerc, P.N. Suganthan, C.C.
-  Coello, K.~Deb, Problem definitions and evaluation criteria for the cec 2006
-  special session on constrained real-parameter optimization, Journal of
-  Applied Mechanics \textbf{41}(8) (2006)
-
-\bibitem{CEC2007}
-P.~Suganthan, in \emph{IEEE conference on evolutionary computation special
-  session, competition on performance assessment of multi-objective
-  optimization algorithms. http://www3. ntu. edu.
-  sg/home/EPNSugan/index\_files} (2007)
-
 \bibitem{CEC2008}
 K.~Tang, X.~Y{\'a}o, P.N. Suganthan, C.~MacNish, Y.P. Chen, C.M. Chen, Z.~Yang,
   Benchmark functions for the cec’2008 special session and competition on
@@ -109,11 +97,6 @@ K.~Tang, X.~Y{\'a}o, P.N. Suganthan, C.~MacNish, Y.P. Chen, C.M. Chen, Z.~Yang,
 C.~Segura, C.A.C. Coello, A.G. Hern{\'a}ndez-D{\'\i}az, Improving the vector
   generation strategy of differential evolution for large-scale optimization,
   Information Sciences \textbf{323}, 106 (2015)
-
-\bibitem{CEC2010}
-R.~Mallipeddi, P.N. Suganthan, Problem definitions and evaluation criteria for
-  the cec 2010 competition on constrained real-parameter optimization, Nanyang
-  Technological University, Singapore \textbf{24} (2010)
 
 \bibitem{CEC2011}
 S.~Das, P.N. Suganthan, Problem definitions and evaluation criteria for cec
@@ -146,14 +129,14 @@ G.~Wu, R.~Mallipeddi, P.~Suganthan, Problem definitions and evaluation criteria
   Kyungpook National University, Daegu, South Korea and Nanyang Technological
   University, Singapore, Technical Report  (2016)
 
+\bibitem{montgomery2010analysis}
+J.~Montgomery, S.~Chen, in \emph{Evolutionary Computation (CEC), 2010 IEEE
+  Congress on} (IEEE, 2010), pp. 1--8
+
 \bibitem{yang2017multimodal}
 Q.~Yang, W.N. Chen, Y.~Li, C.P. Chen, X.M. Xu, J.~Zhang, Multimodal estimation
   of distribution algorithms, IEEE transactions on cybernetics \textbf{47}(3),
   636 (2017)
-
-\bibitem{montgomery2010analysis}
-J.~Montgomery, S.~Chen, in \emph{Evolutionary Computation (CEC), 2010 IEEE
-  Congress on} (IEEE, 2010), pp. 1--8
 
 \bibitem{elsayed2016testing}
 S.~Elsayed, N.~Hamza, R.~Sarker, in \emph{Evolutionary Computation (CEC), 2016
