@@ -145,7 +145,7 @@ Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed
 We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement provides the most stable results.
 %
 
-Principally, the replacement phase considers a defined radius ($D_t$), which for simlicity is considered through the normalized euclidean distance (equation \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
+Principally, the replacement phase considers a defined radius ($D_t$), which for simlicity is considered through the normalized euclidean distance (eqn. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
 %
 It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies to fix the $D_I$ parameter since tha maximum distance is the unity, which is a fraction of the main space diagonal.
 
@@ -163,16 +163,16 @@ On the other hand, a low initial distance factor results in a lower level explor
 %
 Depending in the optimization stage and the fitness landscape it could be benefical, principally in multi-modal problems where each basis of attraction seems to be promising and each one of them should have the suitable quantity of computationals efforts.
 %
-It is interesting to take into account that our proposal could be traslated to the multi-modal topic just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
+It is interesting to take into account that our proposal could be traslated to the multi-modal fashion just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
 %
 Therefore, when the initial distance factor is setted several factors should be taken into account.
 %
-One of them is the maximum number of evaluations, when the problem is setted with few evaluations, the initial distance factor should be lower, since the exploitation should be promoted.
+One of them is the maximum number of evaluations, when the problem is setted with few number of evaluations, the initial distance factor should be lower, since the exploitation should be promoted.
 %
-On the other hand, when the problem is allowed with a lot evaluations, then the initial distance factor should be higher, but also should be considered the number of vectors in the population, since that them could mean 
+On the other hand, when the problem is allowed with a large number of evaluations, then the initial distance factor should be higher, but also should be considered the number of vectors in the population, since that them are directly realted with the diversity.
 %
-
-
+Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
+%
 
 An advantage of our proposal is that it alleviates one critical weakness of the DE algorithms.
 %
