@@ -1,6 +1,6 @@
 Principally, our proposal is motivated by two remarkable works in the area of diversity-based EAs.
 %
-First, several studies related with premature convergence, which were developed by Montgomery et al. \cite{montgomery2012simple}.
+Firstly, the empirical studies of premature convergence developed by Montgomery et al. \cite{montgomery2012simple}.
 %
 They stablished several empirical studies to diagnose the premature convergence that appear in \DE{}.
 %
@@ -14,9 +14,7 @@ novel \DE{} variant that includes an explicit mechanism that follows similar pri
 This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-The main novelty of \DEEDM{} is the incorporation of a replacement strategy.
-%
-The main principle of the novel replacement strategy is similar to the one used in \RMDDC{}, i.e.
+The main novelty of \DEEDM{} is the incorporation of a replacement strategy, which is similar to the one used in \RMDDC{}, i.e.
 individuals that contribute too little to diversity should not be accepted as target vectors of the next generation.
 %
 At the same time, the solutions of high quality are recorded in the elite population.
@@ -41,7 +39,7 @@ Second, a new population called the elite population is used.
 	\begin{algorithmic}[1]
 	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
 	\STATE $G=0$
-	\WHILE{ stopping criterion is nor satisfied}
+	\WHILE{ stopping criterion is not satisfied}
 	   \FOR{ $i=1$ to $NP$} 
 		\STATE Mutation: Generate the donor vector ($V_{i,G}$) according Eq. (\ref{eqn:mutation}).
 		\STATE Crossover: Recombine the mutate vector ($U_{i,G}$) according Eq. (\ref{eqn:crossover}).
@@ -72,13 +70,14 @@ As a result our proposal incorporates two extensions to alleviate such a drawbac
 \DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
 balance between exploration and exploitation.
 %
+This modification considers the inclusion of an elite population, which records the individuals with the best fitness.
 %
 
 Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
 %
 It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
 %
-In the each generation it must select the next parent population (target vectors).
+In each generation it must select the next parent population (target vectors).
 %
 Additionally, it calculates the desired minimum distance $D_t$ given the current number of function evaluations.
 %
@@ -93,8 +92,9 @@ In order to select the $NP$ survivors (target vectors) an iterative process is r
 In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
 to survive (i.e. moved to the \textit{Survivor set}).
 %
-Then, the individuals in the \textit{Current set} with a \DCN{} to the selected individuals lower than $D_t$ are transferred to the
-\textit{Penalized set}.
+Then, the individuals in the \textit{Current set} with a lower metric \DCN{} than $D_t$ are transferred to the \textit{Penalized set}.
+%
+The \DCN{} metric taken into account is between the \textit{Current set} to the closest selected individual.
 %
 In case were the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
 
