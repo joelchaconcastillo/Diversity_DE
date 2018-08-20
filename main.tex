@@ -51,6 +51,7 @@ grestore
 \usepackage{mathtools}
 \usepackage{multirow}
 %\usepackage{algpseudocode}
+%\usepackage[none]{hyphenat}
 \usepackage{algorithm}
 \usepackage{hyperref}
 \usepackage[noend]{algorithmic}
@@ -65,6 +66,7 @@ grestore
 \newcommand{\EAS}{{\sc ea}s}
 \newcommand{\EA}{{\sc ea}}
 \newcommand{\RMDDC}{{\sc rmddc}}
+\newcommand{\CEC}{{\sc cec}}
 %
 %%
 %\usepackage{natbib}
@@ -114,7 +116,7 @@ grestore
 \maketitle
 
 \begin{abstract}
-Differential Evolution (\DE{}) is a popular population-based metaheuristic that has been successfully used in complex 
+Differential Evolution (\DE{}) is a popular population-based meta-heuristic that has been successfully used in complex 
 optimization problems.
 %
 Premature convergence is one of the most important drawbacks that affects its performance.
@@ -124,9 +126,10 @@ Premature convergence is one of the most important drawbacks that affects its pe
 %
 %However, this choice it is not usually applied in continuous optimization.
 %
-Principally, in this paper is proposed a replacement strategy and an elite population, which are designed to preserve diversity.
+In this paper is proposed a replacement strategy that with an elite population aims to preserve diversity explicitly.
+%Principally, in this paper is proposed a replacement strategy and an elite population, which are designed to preserve diversity.
 %
-The proposal is extended and integrated with \DE{} to generate the \DE{} with Enhanced Diversity Maintennce (\DEEDM{}).
+The proposal is extended and integrated with \DE{} to generate the \DE{} with Enhanced Diversity Maintenance (\DEEDM{}).
 %
 The main novelty is the use of a dynamic balance between exploration and exploitation to adapt the proposal to the 
 requirements of the different optimization stages.

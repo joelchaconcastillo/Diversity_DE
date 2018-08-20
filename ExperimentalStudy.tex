@@ -1,37 +1,39 @@
 In this section the experimental validation is carried out.
 %
-Specifically is showed that controlling the diversity in a classic DE, is a way to improve further some of the results obtained by the state-of-the-art algorithms.
+Specifically is showed that controlling the diversity in the standard DE is a way to improve further some of the results obtained by the state-of-the-art algorithms.
 %
-Particularly, the benchmarks of CEC 2016 and CEC 2017 are considered, each one of them is composed of thirty different problems.
+Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered, each one of them is composed of thirty different problems.
 %
 The state-of-the-art is conformed by the algorithms that correspond to the first places of each year.
 %
-Thus, the algorithms considered from the CEC 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that are the first and second place respectively.
+Thus, the algorithms considered from the \CEC{} 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that are the first and second place respectively.
 %
-Also the top algorithms from CEC 2017 are EBOwithCMAR \cite{kumar2017improving} and jSO \cite{brest2017single}.
+Similarly, the top algorithms from \CEC{} 2017 are EBOwithCMAR \cite{kumar2017improving} and jSO \cite{brest2017single}.
 %
-It is interesting to take into account that EBOwithCMAR is an improvement of the UMOEAs-II.
+It is interesting to take into account that EBOwithCMAR is considered as an improvement of the UMOEAs-II.
 %
-Also, jSO and L-SHADE-EpSin are considered from the SHADE's family.
+Additionally, jSO and L-SHADE-EpSin are considered from the SHADE's family.
+%
+All the algorithms of the state-of-the-art are proved with the benchmark of both years as is suggested by \cite{molina2017analysis}.
 
 
 Given that all of them are stochastic algorithms, each execution was repeated 51 times with different seeds.
 %
-The stopping criterion was set to 25,000,000 functions evaluations.
+The stopping criterion was set to $25,000,000$ functions evaluations.
 %
-We performed our evaluation following the guidelines of CEC benchmark competitions.
+We performed our evaluation following the guidelines of \CEC{} benchmark competitions.
 %
-According this, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller the error is treated as $0$.
+According this, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller, the error is treated as $0$.
 %
 %The minimal tolerance to consider a determined problem solved is $1e-8$, hence if the difference of the optimal obtained and the true optinal is below this tolerance then the error is zero.
 %
-The specific parameterization of each one tested algorithm is as follows:
+The specific parameterization indicated by the authors in each tested algorithm is as follows:
 \begin{itemize}
 \item \textbf{EBOwithCMAR}: For EBO maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum population size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
-\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$.For local search, $cfe_{ls} = 0.2 * FE_{max}$.
-\item \textbf{jSO}: Initial population size (N) = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, maximum population size = $N$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
-\item \textbf{L-SHADE-EpSin}: Initial population size (N) = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, maximum population size = $N$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{Diversity-DE}: Initial niche radius $D_I = 0.3$, population size = $250$, $F = Cauchy(0.5, nfes/max\_nfes)$.
+\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
+\item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
+\item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
+\item \textbf{ \textsc{DE-EDM} }: Initial niche radius $D_I = 0.3$, population size = $250$, $F = Cauchy(0.5, nfes/max\_nfes)$.
 \end{itemize}
 %
 
@@ -49,19 +51,19 @@ For non-Gaussian distributions, the non parametric Kruskal-Wallis test was used 
 %
 An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, if the mean and median obtained by $X$ are higher than the mean and median achieved by $Y$.
 
-In the tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} are showed the summary of CEC 2016 and CEC 2017 respectively.
+In the tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} are showed the summary of \CEC{} 2016 and \CEC{} 2017 respectively.
 %
 The statistical tests indicate that the diversity DE algorithm provides significantly better results that the state-of-the-art algorithms in both benchmarks.
 %
-Although that our proposal loses with the functions $\{f_6, f_7, f_{13}, f_{14}, f_{28}\}$ in CEC 2016 and $\{ f_{12}, f_{16}, f_{18} \}$ for CEC 2017, it is important to take into account that our proposal provides acceptable and in some problems reach to the optimal.
+Even though out proposal loses with the functions $\{f_6, f_7, f_{13}, f_{14}, f_{28}\}$ and $\{ f_{12}, f_{16}, f_{18} \}$ in \CEC{} 2016 and \CEC{} 2017 respectively,it provides acceptable quality solutions, that in some problems reach the optimal region.
 %
-In fact based in a preliminary study this functions are solved at least one time with different configurations (radius niche and populations).
+Based in a preliminary study these functions were solved at least one time with different configurations (tuning the $D_I$ and population size).
 %
-The column named ``Always Solved'' indicates the number of functions that have a zero error in the 51 runs and the column named ``At least one time solved'' indicates the number of functions that reach to the optimal at least with one run.
+The column named ``Always Solved'' indicates the number of functions that have obtained a zero error in all the 51 runs, and the column named ``At least one time solved'' indicates the number of functions that reach to the optimal at least in one run.
 %
-Almost all functions were solved in CEC 2017 with our proposal (28 functions) and more than a half in CEC 2016, however the state-of-the-art only were able to reach the optimal values in approximately a half of the functions in both years.
+Almost all functions were solved in \CEC{} 2017 with our proposal (28 functions) and more than a half in \CEC{} 2016, however the state-of-the-art only were able to reach the optimal values in approximately a half of the functions in both years.
 
-Based in the guideline of the CEC, the ``Score'' is computed as follows.
+Based in the guideline of the \CEC{}, the ``Score'' is computed as follows.
 %
 The evaluation method combines two scores defined in the equation (\ref{eqn:total_scores}).
 %
@@ -79,19 +81,38 @@ Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, namely the
 %
 Based in the final score the results provided for our proposal are superior in both years.
 %
-Moreover, in both years the multi-operator algorithms have a superior score than the SHADE's algorithms.
+On the other hand, the UMOEAs-II has the second best score in \CEC{} 2017, and the EBOwithCMAR has the second best score in the \CEC{} 2016.
 %
-However it seems that the EBOwithCMAR algorithm could suffer an over-parametrization, since that it is deteriorated in CEC 2017 considering long-term executions.
+The same effect occurs in the third place with the SHADE's algorithms jSO and L-SHADE-EpSin.
 %
-Principally, the winners of the CEC 2016 outperform to the winners of the CEC 2017 in long-term.
+Thus, its evident that the performance of the algorithms is different with long-term executions.
 %
-Similarly, the winners of the CEC 2017 outperform to the winners of the CEC2016, this is a highlight that each algorithm is specifically tunned to short-term executions and for each benchmark.
+Also, this might be a highlight that the SHADE's algorithms are improved by the multi-operator algorithms.
 %
-In the figure \ref{fig:diversity} is showed the diversity of our proposal through the time of the Elite vectors (left side) and Trial vectors (right side).
+However, it seems that the multi-operator could be sensible with the parameterization.
 %
-Despite the fact that the Elite vectors could lose the diversity, it shows that both in easy functions ($f_1$) and difficult functions ($f_{30}$) is implicitly maintained the diversity.
+So, the winners of the \CEC{} 2016 outperform to the winners of the \CEC{} 2017 in long-term, and the winners of the \CEC{} 2017 outperform to the winners of the \CEC{} 2016.
 %
-On the other hand the trial vectors maintain correctly the diversity until the $95\%$ of the total evaluations.
+
+
+Based in several experiments one drawback of the L-SHADE-EpSin and EBOwithCMAR resides in the strategy to adapt the mutation factor $F$.
+%
+These algorithms take into account the elapsed evaluations to adapt the mutation factor, however this strategy does not considers long-term executions.
+%
+Thus, the adaptation of this parameter is unstable.
+%
+In several experiments we try tuning the mutation factor, however the results were not significantly different. 
+%
+Broadly speaking, the results of the state-of-the-art shows that each algorithm was specifically tuned to short-term executions and for their respectively benchmark.
+%
+
+The mechanism of the \DEEDM{} should maintain the diversity properly, with the aim of have a better understanding of the methodology proposed, in the figure \ref{fig:diversity} is showed the diversity through the time elapsed of \DEEDM{} with two functions: $f_1$ and $f_{30}$ respectively.
+%
+While the first function is easily solved, the second is one of the most difficult.
+%
+In the left side are showed the Elite vectors, although there are not constraints in the Elite vector to lost the diversity, it seems that in both functions $f_1$ and $f_{30}$ the diversity is implicitly maintained.
+%
+On the other hand the trial vectors maintain the diversity a is desired ( i.e. until the $95\%$ of the total function evaluations).
 
 \begin{figure}[t]
 \centering
@@ -99,7 +120,7 @@ On the other hand the trial vectors maintain correctly the diversity until the $
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Elite.eps} 
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Trial.eps} 
 \end{tabular}
-\caption{ Average distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (CEC2016 and CEC2017). The initial distance factor considered corresponds to $D_I=0.3$.}
+\caption{ Average \DCN{} of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$.}
 \label{fig:diversity}
 \end{figure}
 
@@ -112,7 +133,7 @@ On the other hand the trial vectors maintain correctly the diversity until the $
 % \usepackage{multirow}
 \begin{table}[t]
 \centering
-\caption{Summary results - CEC 2016}
+\caption{Summary results - \CEC{} 2016}
 \label{tab:Summary_CEC2016}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -122,7 +143,7 @@ On the other hand the trial vectors maintain correctly the diversity until the $
 \textbf{jSO} & 9 & 17 & 51.29 & 38 & 41 & 41 \\ \hline
 \textbf{UMOEAs-II} & 9 & 14 & 51.52 & 14 & 57 & 57 \\ \hline
 \textbf{L-SHADE-Epsilon} & 7 & 13 & 56.10 & 42 & 22 & 56 \\ \hline
-\textbf{Proposal} & 13 & 21 & 100.00 & 64 & 19 & 37 \\ \hline
+\textbf{ \textsc{DE-EDM} } & 13 & 21 & 100.00 & 64 & 19 & 37 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -146,7 +167,7 @@ On the other hand the trial vectors maintain correctly the diversity until the $
 % \usepackage{multirow}
 \begin{table}[t]
 \centering
-\caption{Summary results - CEC 2017}
+\caption{Summary results - \CEC{} 2017}
 \label{tab:Summary_CEC2017}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -156,7 +177,7 @@ On the other hand the trial vectors maintain correctly the diversity until the $
 \textbf{jSO} & 8 & 19 & 36.66 & 27 & 39 & 54 \\ \hline
 \textbf{UMOEAs-II} & 9 & 18 & 40.71 & 37 & 30 & 53 \\ \hline
 \textbf{L-SHADE-Epsilon} & 8 & 15 & 35.37 & 7 & 62 & 51 \\ \hline
-\textbf{Proposal} & 21 & 28 & 100.00 & 73 & 5 & 42 \\ \hline
+\textbf{\textsc{DE-EDM}} & 21 & 28 & 100.00 & 73 & 5 & 42 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -184,16 +205,16 @@ These tables show that the uni-modal functions and almost all the hybrid functio
 %
 Approximately a half of the composition functions are solved with at least one run.
 %
-However our proposal has problems solving the multi-modal functions, this can be provoked since that our proposal does not applies an advanced strategy to deal with the incremented distribution of difference vectors.
+However our proposal seems problematic solving the multi-modal functions, this can be provoked since that it does not applies an advanced strategy to deal with the incremented distribution of difference vectors.
 %
-Since that the algorithm finds some niches through the optimization process, the mutation provokes high displacements, that as result some regions are not analyzed properly.
+Due that the \DEEDM{} some several attraction basis through the optimization process, the mutation provokes high displacements, that as result some regions are not analyzed properly.
 %
 To deal with the previously issue, we suggest apply a matting restriction or implement a local search, which could further improve the convergence.
 
 \begin{table}[t]
 \begin{scriptsize}
 \centering
-\caption{Results for DE based diversity CEC 2016 problems}
+\caption{Results for DE based diversity \CEC{} 2016 problems}
 \label{tab:Results_CEC2016}
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -237,7 +258,7 @@ $f_{30}$ & 1.84E+02 & 1.84E+02 & 1.84E+02 & 1.84E+02 & 3.25E-02 & 0.00E+00 \\ \h
 \begin{table}[t]
 \begin{scriptsize}
 \centering
-\caption{Results for DE based diversity CEC 2017 problems}
+\caption{Results for DE based diversity \CEC{} 2017 problems}
 \label{tab:Results_CEC2017}
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -278,31 +299,31 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \end{scriptsize}
 \end{table}
 
-\subsection{Sensitive analyses of the initial radius niche}
+\subsection{Empirical analyzes of the initial distance factor}
 
-In our proposal the diversity is explicitly promoted through several stages given an initial radius niche or distance factor $D_I$.
+In our proposal the diversity is explicitly promoted through several stages, which are controlled with the initial distance factor$D_I$.
 %
 Therefore, the robustness of this parameter is analyzed as follows.
 %
-Based in the configurations of the experimental validation are executed several distance factors configurations ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+In general, the configuration of the experimental validation is taken into account.
 %
-
+Particularly, several initial distance factor where considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+%
 \begin{figure}[t]
 \centering
   \includegraphics[scale=0.3, angle=-90]{img/Tuning_CEC.eps}
-\caption{Average success rate with different initial distance factors in the benchmark of CEC 2016 and CEC 2017, is considered a population size of 250 and 25000000 function evaluations.}
+\caption{Average success rate with different initial distance factors in the benchmark of \CEC{} 2016 and \CEC{} 2017, is considered a population size of $250$ and $25,000,000$ function evaluations.}
 \label{fig:one}
 \end{figure}
 
 In the figure \ref{fig:one} is showed the average success ratio vs. the initial distance factor $D_I$.
 %
-The main conclusions obtained are as follows:
+The most relevant points are described as follows:
 \begin{itemize}
 \item If the diversity is not promoted ($D_I = 0.0 $) the performance of the algorithms is seriously implicated.
 \item In this scenario the ideal configuration is $D_I=0.3$, although that the range $[0.1, 0.4]$ also provides quality solutions.
 \item If the diversity of the solutions increases (after a range) the quality of solutions is implicated.
 \end{itemize}
-
 Finally, its important stand out that the solutions are less affected by the population size, however there is still present a relation between the $D_I$ and the population size.
 %
 

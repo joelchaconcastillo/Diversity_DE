@@ -1,149 +1,236 @@
-Principally, our proposal\footnote{The code in C++ can be consulted in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} } is  based in the following two works.
+In general, our proposal is motivated by two remarkable works in the area of diversity-based EAs.
 %
-The first one that is delimited for DE algorithms, it is shown by Montgomery et al. \cite{montgomery2012simple} where is suggested a strategy to prevented the premature caused by the displacement of the mutation operator.
+First, the empirical studies of premature convergence developed by Montgomery et al. \cite{montgomery2012simple}.
 %
-The second one that is a generalization of EAs, it is proposed by Carlos Segura et al. \cite{segura2016novel} and it transforms the single objective optimization problem to multiple objectives where one of them is the fitness and the other one is a diversity measurement, similarly is used a threshold which is decreased as the criteria stop is reached.
+They stablished several empirical analyzes to diagnose the premature convergence that appear in \DE{}.
 %
+The second work, provides significant improvements and a solid literature revision in the combinatorial optimization field, it was considered by Segura et al.~\cite{segura2016novel}.
+%
+Particularly, they incorporated a novel replacement strategy called \textit{The Replacement with Multiobjective based Dynamic Diversity Control} (\RMDDC{}) to relate the control of diversity with the stopping criterion and elapsed generations.
+%
+Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
+novel \DE{} variant that includes an explicit mechanism that follows similar principles to \RMDDC{}.
+%
+This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
+code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-Particularly, our proposal induces a balance between exploration and exploitation that is automatically adjusted on the given stopping criterion.
+The main novelty of \DEEDM{} is the incorporation of a replacement strategy, which is similar to the one used in \RMDDC{}, i.e.
+individuals that contribute too little to diversity should not be accepted as target vectors of the next generation.
 %
-Thus, the stopping criterion, as well as the elapsed time or the evaluations already executed, are used as inputs to the replacement strategy.
+At the same time, the solutions of high quality are recorded in the elite population.
 %
-In this way, for shorter stoping criteria the method induces a faster reduction in diversity than for longer stopping criteria.
-%
-To achieve such balance are considered three populations, parent vectors, offspring vectors and elite vectors, being one of the novelties of the new design.
-%
+Moreover, in order to establish the minimum acceptable diversity contribution the stopping criterion and elapsed
+generations are taken into account.
 
-One of the basic principles behind the development of the replacement strategy devised in this paper is that individuals that contribute too little to diversity --the contribution is measured with the Distance to Closest Neighbour (DCN) value-- should not be accepted as be part of the parent vectors, instead it could replace one of the elite vectors.
+The contribution to diversity is estimated with the Distance to Closest Neighbour metric (\DCN{}), i.e. given
+a set of already selected individuals ($Survivors$), the contribution of a non-selected one is calculated as the minimum
+distance to any of the individuals in $Survivors$.
 %
-
-In our approach, the vectors that contribute too little to the diversiy are penalized.
+However, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
 %
-The value $D_t$\footnote{Do not confuse the threshold distance $D_t$ with the dimension $D$. } represent the minimum DCN required to avoid being penalized.
+First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
 %
-Any vector whose DCN value is lower than this threshold value is penalized.
-%
-The key principle resides in how to evaluate wheter an vector contributes enough or not, i.e., how to set the value $D_t$.
-%
-The value of $D_t$ should depend on the optimization stage.
-%
-Specifically, this value should be reduced as the stopping criterion is approached.
-%
-In our scheme, an initial $D_I$ value must be set.
-%
-Then, a linear reduction of $D_t$ is done.
-%
-Particularly, in this work, the stopping criterion is set by function evaluations (nfes).
-%
-The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$, and the rest is present a similar behaviour of the classical DE.
-%
-Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
-%
-According to Segura et al. \cite{segura2016novel} updating $D_t$ is more appropiate through a linear reduction.
-%
-
-
-%
-Specifically, the previously strategy is implemented in the replacement phase (algorithm \ref{alg:Replacement}) where is used a popular niche-strategy known as \textit{Speciation} \cite{yang2017multimodal}.
-%
-Initially, based in a niche-radius ($D_t$) and a defined distance\footnote{For simplicity we use euclidean distance, however can be user other distance as the mahalanobis distance.} (equation \ref{eqn:distance}), in an iterative process the seeds (or survivors) are identified, these are the vectors with best fitness and whose minimal DCN is not lower than the one determined by the $D_t$ value.
-%
-It is important to remark that should be considered the normalized distance in such way that each dimension is equally important and the maximum distance is the unity, and as is suggested in previous works the initial niche-radius ($D_I$) is the fraction of the main space diagonal.
-
-\begin{equation}\label{eqn:distance}
-distance ( x_{seed}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{seed}^d - x_j^d}{max_d - min_d} \right )^2  }} {\sqrt{D}}
-\end{equation}
-
-%
-Therefore, the vectors that have a lowest distance to any seed than $D_t$ are moved to the penalized set.
-%
-In this way are preserved the best fitness vectors and simultaneously the diversity is maintained in some level.
-%
-It is important to take into account that if the niche-radio is too high, just one seed or survivor will be selected.
-%
-In this scenario the rest of parent vectors are selected from the penalized vectors.
-%
-Thus, are selected the penalize vectors that considering the selected seeds vectors have the maximum constribution to diversity.
-%
-Although that in the literature exist several diversity measures, we consider the DCN.
-%
-According this, in an iterative process is selected as survivor the penalized vector that has the maximum DCN.
+Second, a new population called the elite population is cosidered, thus the best solutions with the worst diversity level are considered among the execution.
 
 \begin{algorithm}[H]
 \algsetup{linenosize=\tiny}
   \scriptsize
-	\caption{Replacement Phase} \label{alg:Replacement}
+	\caption{General scheme of DE-EDM} 
 	\begin{algorithmic}[1]
-	\STATE $Survivors = Penalized = \emptyset$.
-	\STATE $Current = Population \cup Offspring \cup Elite$.
-	\STATE Sort $Current$ according to fitness.
-	\WHILE{ $Survivors < pop\_size$ }
-	   \STATE Select the best individual $Current_{best}$ of $Current$ as a new seed.
-	   \STATE Find the other individuals nearest according to Eq. (\ref{eqn:distance}) and move to $Penalized$.
-	   \STATE Move the best individual $Current_{best}$ to $Survivors$.
-	\ENDWHILE
-	\WHILE{ $Survivors < pop\_size$ }
-	   \STATE Select the individual $Penalized$ with maximum distance to closest $Survivor$.
-	   \STATE Move individual $Penalized$ to $Survivors$.
-	\ENDWHILE
-       \RETURN $Current$
-\end{algorithmic}
-\end{algorithm}
-
-On the other hand, since that the diversity in the parent vectors should be kept, the selection operator indicated in the equation (\ref{eqn:selection}) is modified.
-%
-Thus, instead of made a comparison between the target or parent vectors and the trial or offspring vectors, is applied a comparison between the offspring vectors with the elite vectors.
-%
-Hence, the elite vectors record the best individuals obtained among the optimization process.
-%
-
-
-\begin{algorithm}[H]
-\algsetup{linenosize=\tiny}
-  \scriptsize
-	\caption{General scheme of DE considering diversity} 
-	\begin{algorithmic}[1]
-	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distirbuited.
-	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
-	\WHILE{ stopping criterion is nor satisfied}
+	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
+	\STATE $G=0$
+	\WHILE{ stopping criterion is not satisfied}
 	   \FOR{ $i=1$ to $NP$} 
-		\STATE Mutation: Generate the donor vector according Eq. (\ref{eqn:mutation})
-		\STATE Crossover: Recombine the mutate vector according Eq. (\ref{eqn:crossover})
-		\STATE Selection: Update the parent vector according  Eq. (\ref{eqn:selection})
-		\STATE Replacement: Select the parent vectors according to algorithm \ref{alg:Replacement}
+		\STATE Mutation: Generate the donor vector ($V_{i,G}$) according Eq. (\ref{eqn:mutation}).
+		\STATE Crossover: Recombine the mutate vector ($U_{i,G}$) according Eq. (\ref{eqn:crossover}).
+		\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according Eq. (\ref{eqn:selection}).
+		\STATE Replacement: Select the target vectors ($X_{i,G+1}$) according to Algorithm \ref{alg:Replacement} .
 	   \ENDFOR
+	   \STATE $G=G+1$
 	\ENDWHILE
     \label{alg:Fase_Remplazo_VSD-MOEAD}
 \end{algorithmic}
 \end{algorithm}
 
 
-An advantage of our proposal is that it alliviates one critical weakness of the DE algorithms.
+
+\RMDDC{} is a replacement strategy that considers the maximization of the diversity 
+contribution of each individual as an explicit objective.
 %
-These are the control parameters both crossover probability ($CR$) and mutation factor ($F$).
+Then, the notion of Pareto dominance is used to select the survivors.
 %
-Based in several studies showed by Montgomery et al. \cite{montgomery2010analysis}, $CR$ is perhaps the most important.
+It uses a dynamic threshold to prevent the selection of individuals with low contribution to diversity.
 %
-Extremes $CR$ values leads to vastly different search behaviours.
+One of the main weaknesses of this method is that its convergence is highly delayed.
 %
-Low values of $CR$ result in a search that is not just aligned with a small number of search space axes, but which is gradual, slow and robust.
+Thus, executions of several days were required to attain high-quality solutions.
 %
-High values of $CR$ result in searches where fewer generated solutions may be improving, but the improvements can be large.
+As a result our proposal incorporates two extensions to alleviate such a drawback.
 %
-According this, we employ both high and low $CR$ values showed in the equation \ref{eqn:cr}.
+\DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
+balance between exploration and exploitation.
+%
+This modification considers the inclusion of an elite population, which records the individuals with the best fitness.
+%
+
+Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
+%
+It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
+%
+In each generation it must select the next parent population (target vectors).
+%
+Additionally, it calculates the desired minimum distance $D_t$ given the current number of function evaluations.
+%
+First, it joins the three populations in a set of current members.
+%
+The current members set contains vectors that might be selected to survive.
+%
+Then, the set of survivors and penalized individuals are initialized to the empty set.
+%
+In order to select the $NP$ survivors (target vectors) an iterative process is repeated.
+%
+In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
+to survive (i.e. moved to the \textit{Survivor set}).
+%
+Then, the individuals in the \textit{Current set} with a lower metric \DCN{} than $D_t$ are transferred to the \textit{Penalized set}.
+%
+The \DCN{} metric taken into account is between each one \textit{Current set} to its closest selected individual.
+%
+In case were the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
+
+
+\begin{algorithm}[H]
+\algsetup{linenosize=\tiny}
+  \scriptsize
+	\caption{Replacement Phase} \label{alg:Replacement}
+	\begin{algorithmic}[1]
+	\STATE Input: $Population$ ($target$ $vectors$), $Offspring$ ($trial$ $vectors$), and $Elite$
+	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
+	\STATE $Current = Population \cup Offspring \cup Elite$.
+	\STATE $Survivors = Penalized = \emptyset$.
+	\WHILE{ $|Survivors| < NP$ OR $|Current| > 0$ }
+	   \STATE Select the best individual ($Current_{best}$) of $Current$.
+	   \STATE Find the individuals with lowest \DCN{} to $D_t$ between $Current$ and $Current_{best}$ and move them to $Penalized$ (considering the normalized distance of Eq. (\ref{eqn:distance})).
+	   \STATE Move the best individual $Current_{best}$ to $Survivors$.
+	\ENDWHILE
+	\WHILE{ $|Survivors| < pop\_size$ }
+	   \STATE Select the individual $Penalized$ with maximum \DCN{}.
+	   \STATE Move the individual from $Penalized$ to $Survivors$.
+	\ENDWHILE
+       \RETURN $Survivors$
+\end{algorithmic}
+\end{algorithm}
+
+
+In order to complete the description is important to specify the way to calculate $D_t$ and the methodology to update the 
+elite individuals.
+%
+The remaining steps are maintained as in the classic \DE{} variant.
+%
+The value of $D_t$ should depend on the optimization stage.
+%
+Specifically, this value should be reduced as the stopping criterion is reached.
+%
+In our scheme, an initial $D_I$ value must be set.
+%
+Then, a linear reduction of $D_t$ is done.
+%
+Particularly, in this work, the stopping criterion is set by function evaluations (\textit{nfes}).
+%
+The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
+%
+Therefore, in the remaining $5\%$ the behavior is similar to the classical DE.
+%
+Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
+%
+The reduction of this parameter is based in a linear reduction, as is indicated in \cite{segura2016novel}.
+%
+They indicated that a linear decrement generally provides the most stable results.
+%%
+%%We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement generally provides the most stable results.
+%%%
+
+Principally, the replacement phase considers a defined radius ($D_t$), which for simlicity is considered through the normalized euclidean distance (Eq. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
+%
+It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies the setting of the $D_I$ parameter, since that the maximum distance is the unity, which is a fraction of the main space diagonal.
+
+\begin{equation}\label{eqn:distance}
+distance ( x_{seed}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{seed}^d - x_j^d}{max_d - min_d} \right )^2  }} {\sqrt{D}}
+\end{equation}
+
+
+%
+Theoretically, the effect of the initial distance factor ($D_I$) affects directively the behavior of the algorithm.
+%
+If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the \DCN{}, several difficult problems might required high diversity level to properly obtain quality solutions (e.g. deceptive problems).
+%
+Also, the solutions should be disperse if the target vector are initiallt in the same region of the decision variables.
+%
+Thus, this effect alliviate the premature convergence in several scenarios.
+%
+On the other hand, a low initial distance factor results in a lower level exploration, therefore it might provoke exploitation inside of several basis of attraction.
+%
+Depending in the optimization stage and the fitness landscape it could be benefical, principally in multi-modal problems, where each basis of attraction seems to be promising and each one of them should have the suitable quantity of computationals efforts.
+%
+It is interesting to take into account that our proposal could be traslated to the multi-modal fashion just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
+%
+Therefore, when the initial distance factor is setted several factors should be taken into account.
+%
+One of them is the maximum number of evaluations, when the problem is setted with few number of evaluations, the initial distance factor should be low, since the exploitation should be promoted.
+%
+On the other hand, when the problem is configured with a large number of evaluations, then the initial distance factor should be higher.
+%
+Also, the number of vectors (population size) should be considered, since that they are directly related with the diversity.
+%
+Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
+%
+
+Our proposal provides several advantages in constrast of the standard DE and some of the state-of-the-art algorithms, perhaps the most important is that it is not over-parametrized.
+%
+Although several top-rank algorithms present good enough results, usually these algorithms need a tunning phase to fit the parameters, therefore in real application it could be infeasible.
+
+%
+Specifically, the standard DE recives two parameters, these are the crossover probability ($CR$) and the mutation factor ($F$).
+%
+The first one is perhaps the most important according to several studies showed by Montgomery et al. \cite{montgomery2010analysis}.
+%
+These authors empirically proved that extremes $CR$ values leads to vastly different search behaviors.
+%
+They explained that low $CR$ values result in a search that is not just aligned with a small number of search space axes, it also shows small displacements, which provokes a gradual and slow convergence that in some scenarios migh result in a robust behavior.
+%
+On the other hand, high $CR$ values might generate few quality solutions, however these solutions provoke large displacements that could improve significantly the solutions.
+%
+According this, we employ both high and low $CR$ values as is showed in the equation \ref{eqn:cr}.
 
 \begin{equation} \label{eqn:cr}
 CR = 
 \begin{cases}
-     Norm(0.2, 0.1),& \text{if} \quad rand[0,1] \leq 0.5  \\
-     Norm(0.9, 0.1),              & \text{otherwise}
+     Normal(0.2, 0.1),& \text{if} \quad rand[0,1] \leq 0.5  \\
+     Normal(0.9, 0.1),              & \text{otherwise}
 \end{cases}
 \end{equation}
 
 
-On the other hand, the mutation factor $F$ is computed as follows.
+In the same vein, the mutation factor $F$ is computed as follows.
 %
 For each vector is sampled a $F$ value with a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
 %
-In this way the shape of the distribution increases with the function evaluations and therefore are generated more extremal values at the end of execution, this aims avoid stagnation in differents stages of the algorithm.
+Particularly, it is based in several empirical results, since that at the first optimization stages the density function is located in $0.5$.
 %
+While the execution transcurs, the density function changes and the values generated are closest to $0.0$ and to $1.0$.
+%
+This occurs since the Cauchy density function has heavly tails, therefore the values that are generated outside the range $[0.0, 1.0]$ are truncated.
+%
+Thus, more extremal $F$-values are stimulated and a vastly exploration is obtained.
+%
+% thus the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
+%
+
+
+Thus, briefly our proposal is based in several ideas of the mentioned works, and are listed as follows:
+\begin{itemize}
+\item Is considered a threshold to control explicitly the convergence of the solutions.
+\item This threshold decreases over the algorithm's run.
+\item The selection operator is relaxed in the sense that it does not provokes premature convergence, this is attained considering an elite population. 
+\end{itemize}
+
