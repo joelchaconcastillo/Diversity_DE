@@ -1,12 +1,12 @@
-Principally, our proposal is motivated by two remarkable works in the area of diversity-based EAs.
+In general, our proposal is motivated by two remarkable works in the area of diversity-based EAs.
 %
-Firstly, the empirical studies of premature convergence developed by Montgomery et al. \cite{montgomery2012simple}.
+First, the empirical studies of premature convergence developed by Montgomery et al. \cite{montgomery2012simple}.
 %
-They stablished several empirical studies to diagnose the premature convergence that appear in \DE{}.
+They stablished several empirical analyzes to diagnose the premature convergence that appear in \DE{}.
 %
 The second work, provides significant improvements and a solid literature revision in the combinatorial optimization field, it was considered by Segura et al.~\cite{segura2016novel}.
 %
-Particularly, they incorporated a novel replacement strategy called \textit{The Replacement with Multiobjective based Dynamic Diversity Control} (\RMDDC{}) to relate the control of diversity with the stopping criterion and elapsed generation.
+Particularly, they incorporated a novel replacement strategy called \textit{The Replacement with Multiobjective based Dynamic Diversity Control} (\RMDDC{}) to relate the control of diversity with the stopping criterion and elapsed generations.
 %
 Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
 novel \DE{} variant that includes an explicit mechanism that follows similar principles to \RMDDC{}.
@@ -30,7 +30,7 @@ However, in order to promote a faster convergence than in \RMDDC{} two modificat
 %
 First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
 %
-Second, a new population called the elite population is used.
+Second, a new population called the elite population is cosidered, thus the best solutions with the worst diversity level are considered among the execution.
 
 \begin{algorithm}[H]
 \algsetup{linenosize=\tiny}
@@ -94,7 +94,7 @@ to survive (i.e. moved to the \textit{Survivor set}).
 %
 Then, the individuals in the \textit{Current set} with a lower metric \DCN{} than $D_t$ are transferred to the \textit{Penalized set}.
 %
-The \DCN{} metric taken into account is between the \textit{Current set} to the closest selected individual.
+The \DCN{} metric taken into account is between the each one \textit{Current set} to its closest selected individual.
 %
 In case were the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
 
@@ -143,7 +143,7 @@ Therefore, in the rest $5\%$ the behavior is similar to the classical DE.
 %
 Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
-We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement provides the most stable results.
+We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement generally provides the most stable results.
 %
 
 Principally, the replacement phase considers a defined radius ($D_t$), which for simlicity is considered through the normalized euclidean distance (Eq. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
@@ -158,11 +158,13 @@ distance ( x_{seed}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{seed}^d 
 %
 Theoretically, the effect of the initial distance factor ($D_I$) affects directively the behavior of the algorithm.
 %
-If this parameter is fixed too large, then at the first optimization stages the algorithm aims to maximize the \DCN{}, thus the problems that should need a high level of diversity, which usually are the most difficult, are properly solved (e.g. deceptive problems).
+If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the \DCN{}, several difficult problems might required high diversity level to propoerly obtain quality solutions (e.g. deceptive problems).
 %
-On the other hand, a low initial distance factor results in a lower level exploration, therefore it provokes a high level of exploitation.
+As well it could disperse the solutions if they are initially located in the same region of the variable space, this usually is diagnosted as premature convergence.
 %
-Depending in the optimization stage and the fitness landscape it could be benefical, principally in multi-modal problems where each basis of attraction seems to be promising and each one of them should have the suitable quantity of computationals efforts.
+On the other hand, a low initial distance factor results in a lower level exploration, therefore it might provoke exploitation inside of several basis of attraction.
+%
+Depending in the optimization stage and the fitness landscape it could be benefical, principally in multi-modal problems, where each basis of attraction seems to be promising and each one of them should have the suitable quantity of computationals efforts.
 %
 It is interesting to take into account that our proposal could be traslated to the multi-modal fashion just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
 %
@@ -172,7 +174,7 @@ One of them is the maximum number of evaluations, when the problem is setted wit
 %
 On the other hand, when the problem is configured with a large number of evaluations, then the initial distance factor should be higher.
 %
-Also the number of vectors should be considered, since that they are directly realted with the diversity.
+Also, the number of vectors (population size) should be considered, since that they are directly related with the diversity.
 %
 Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
 %
@@ -190,7 +192,7 @@ These authors empirically proved that extremes $CR$ values leads to vastly diffe
 %
 They explained that low $CR$ values result in a search that is not just aligned with a small number of search space axes, it also shows small displacements, which provokes a gradual and slow convergence that in some scenarios migh result in a robust behavior.
 %
-On the other hand, high $CR$ values migh generate few quality solutions, however these solutions provoke large displacements and could improve significantly the solutions.
+On the other hand, high $CR$ values might generate few quality solutions, however these solutions provoke large displacements and could improve significantly the solutions.
 %
 According this, we employ both high and low $CR$ values as is showed in the equation \ref{eqn:cr}.
 
@@ -215,10 +217,10 @@ While the execution transcurs, the density function changes and the values gener
 %
 
 
-Principally, our proposal is based in several ideas of the mentioned works, and are listed as follows:
+Thus, briefly our proposal is based in several ideas of the mentioned works, and are listed as follows:
 \begin{itemize}
 \item Is considered a threshold to control explicitly the convergence of the solutions.
 \item This threshold decreases over the algorithm's run.
-\item The selection operator is relaxed in the sense that it does not provokes premature convergence, all this through an elite population. 
+\item The selection operator is relaxed in the sense that it does not provokes premature convergence, this is attained considering an elite population. 
 \end{itemize}
 
