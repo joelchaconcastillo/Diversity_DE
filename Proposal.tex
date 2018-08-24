@@ -86,16 +86,23 @@ The current members set contains vectors that might be selected to survive.
 %
 Then, the set of survivors and penalized individuals are initialized to the empty set (line 4).
 %
-In order to select the $NP$ survivors (next parent population) an iterative process is repeated (lines 5 - 11).
+In order to select the $NP$ survivors (next parent population) an iterative process is repeated (lines 5 - 13).
 %
 In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
 to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
 %
-Then, the individuals in the \textit{Current set} with a \DCN{} metric lower than $D_t$ are transferred to the \textit{Penalized set}
+Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
 %
-The \DCN{} metric taken into account is between each one \textit{Current set} to its closest selected individual.
+The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
 %
-In case were the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
+%TODO: explicar la fómrula
+%
+In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
+the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set}.
+
+\begin{equation}\label{eqn:distance}
+distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{max_d - min_d} \right )^2  }} {\sqrt{D}}
+\end{equation}
 
 
 \begin{algorithm}[t]
@@ -111,10 +118,10 @@ In case were the \textit{Current set} is empty previous to the selection of $NP$
 	   \STATE $Selected$ = Select the best individual of $Current$.
 		 \STATE Remove $Selected$ from $Current$.
 	   \STATE Copy $Selected$ to $Survivors$.
-	   \STATE Find the individuals from $Current$ with \DCN{} to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
+	   \STATE Find the individuals from $Current$ with a distance to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
 	\ENDWHILE
-	\WHILE{ $|Survivors| < pop\_size$ }
-	   \STATE $Selected$ = Select the individual from $Penalized$ with maximum \DCN{} to $Survivors$.
+	\WHILE{ $|Survivors| < NP$ }
+	   \STATE $Selected$ = Select the individual from $Penalized$ with the largest distance to the closest individual in $Survivors$.
 		 \STATE Remove $Selected$ from $Penalized$.
 	   \STATE Copy $Selected$ to $Survivors$.
 	\ENDWHILE
@@ -126,82 +133,88 @@ In case were the \textit{Current set} is empty previous to the selection of $NP$
 In order to complete the description is important to specify the way to calculate $D_t$ and the methodology to update the 
 elite individuals.
 %
-The remaining steps are maintained as in the classic \DE{} variant.
+All the remaining steps are maintained as in the classic \DE{} variant.
 %
-The value of $D_t$ should depend on the optimization stage.
+The value of $D_t$ is used to alter the degree between exploration and explotation so it should depend on the optimization stage.
 %
-Specifically, this value should be reduced as the stopping criterion is reached.
+Specifically, this value should be reduced as the stopping criterion is reached with the aim of promoting explotation.
 %
-In our scheme, an initial $D_I$ value must be set.
+In our scheme, an initial value for $D_t$ ($D_I$) must be set.
 %
-Then, a linear reduction of $D_t$ is done.
+Then, similarly than in~\cite{segura2016novel}, a linear reduction of $D_t$ is performed by taking into account the elepased function evaluations and stopping criterion.
 %
 Particularly, in this work, the stopping criterion is set by function evaluations (\textit{nfes}).
 %
 The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
 %
-Therefore, in the remaining $5\%$ the behavior is similar to the classical DE.
+Therefore, in the remaining $5\%$ diversity is not considered at all.
 %
 Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
-The reduction of this parameter is based in a linear reduction, as is indicated in \cite{segura2016novel}.
+%The reduction of this parameter is based in a linear reduction, as is indicated in .
 %
-They indicated that a linear decrement generally provides the most stable results.
+%They indicated that a linear decrement generally provides the most stable results.
 %%
 %%We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement generally provides the most stable results.
 %%%
 
-Principally, the replacement phase considers a defined radius ($D_t$), which for simplicity is considered through the normalized euclidean distance (Eq. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
+%Principally, the replacement phase considers a defined radius ($D_t$), which for simplicity is considered through the normalized euclidean distance (Eq. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
 %
-It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies the setting of the $D_I$ parameter, since that the maximum distance is the unity, which is a fraction of the main space diagonal.
-
-\begin{equation}\label{eqn:distance}
-distance ( x_{seed}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{seed}^d - x_j^d}{max_d - min_d} \right )^2  }} {\sqrt{D}}
-\end{equation}
+%It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies the setting of the $D_I$ parameter, since that the maximum distance is the unity, which is a fraction of the main space diagonal.
 
 
+The initial distance ($D_I$) heavily affects the performance of \DEEDM{}.
 %
-Theoretically, the effect of the initial distance factor ($D_I$) affects directively the behavior of the algorithm.
+If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the diversity of the population, 
+so a proper exploration is performed which is very important in some kinds of problems such as highly multimodal and deceptive ones.
 %
-If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the \DCN{}, several difficult problems might required high diversity level to properly obtain quality solutions (e.g. deceptive problems).
+Thus, the effect of premature convergence might be alleviated.
 %
-Also, the solutions should be disperse if the target vector are initially in the same region of the decision variables.
+A too large $D_I$ might induce too much exploration so a proper exploitation phase is not performed.
 %
-Thus, this effect alleviate the premature convergence in several scenarios.
+In the opposite case, a too low $D_I$ might avoid the exploration phase, so avoiding local optima is more difficult.
 %
-On the other hand, a low initial distance factor results in a lower level exploration, therefore it might provoke exploitation inside of several basis of attraction.
+Depending on the kind of fitness landscape and stopping criterion, the optimal $D_I$ might vary.
 %
-Depending in the optimization stage and the fitness landscape it could be beneficial, principally in multi-modal problems, where each basis of attraction seems to be promising and each one of them should have the suitable quantity of computational efforts.
+For instance, deceptive and highly multi-modal problems usually require larger values than unimodal problems.
 %
-It is interesting to take into account that our proposal could be translated to the multi-modal fashion just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
+However, in our proposal, $D_I$ is not adapted to each problem, instead an experimental study to check the robustness
+of different $D_I$ value is attached in the experimental validation section. 
 %
-Therefore, when the initial distance factor is setted several factors should be taken into account.
+%It is interesting to take into account that our proposal could be translated to the multi-modal fashion just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
 %
-One of them is the maximum number of evaluations, when the problem is setted with few number of evaluations, the initial distance factor should be low, since the exploitation should be promoted.
+%Therefore, when the initial distance factor is setted several factors should be taken into account.
 %
-On the other hand, when the problem is configured with a large number of evaluations, then the initial distance factor should be higher.
+%One of them is the maximum number of evaluations, when the problem is setted with few number of evaluations, the initial distance factor should be low, since the exploitation should be promoted.
 %
-Also, the number of vectors (population size) should be considered, since that they are directly related with the diversity.
+%On the other hand, when the problem is configured with a large number of evaluations, then the initial distance factor should be higher.
 %
-Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
+%Also, the number of vectors (population size) should be considered, since that they are directly related with the diversity.
 %
+%Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
+%
+%Our proposal provides several advantages in contrast of the standard DE and some of the state-of-the-art algorithms, perhaps the most important is that it is not over-parameterized.
+%
+%Although several top-rank algorithms present good enough results, usually these algorithms need a tuning phase to fit the parameters, therefore in real application it could be infeasible.
 
-Our proposal provides several advantages in contrast of the standard DE and some of the state-of-the-art algorithms, perhaps the most important is that it is not over-parameterized.
 %
-Although several top-rank algorithms present good enough results, usually these algorithms need a tuning phase to fit the parameters, therefore in real application it could be infeasible.
-
+Similarly that the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
 %
-Specifically, the standard DE receives two parameters, these are the crossover probability ($CR$) and the mutation factor ($F$).
-%
-The first one is perhaps the most important according to several studies showed by Montgomery et al. \cite{montgomery2010analysis}.
+The first one is perhaps the most important for the performance according to several studies developed by Montgomery 
+et al. \cite{montgomery2010analysis}.
 %
 These authors empirically proved that extremes $CR$ values leads to vastly different search behaviors.
 %
-They explained that low $CR$ values result in a search that is not just aligned with a small number of search space axes, it also shows small displacements, which provokes a gradual and slow convergence that in some scenarios might result in a robust behavior.
+They explained that low $CR$ values result in a search that is aligned with a small number of search space axes and
+induce small displacements.
 %
-On the other hand, high $CR$ values might generate few quality solutions, however these solutions provoke large displacements that could improve significantly the solutions.
+This provokes a gradual and slow convergence that in some scenarios might result in a robust behavior.
 %
-According this, we employ both high and low $CR$ values as is showed in the equation \ref{eqn:cr}.
+Additionally, high $CR$ values might generate quality solutions with a lower probability.
+%
+However, these transformations provoke large displacements that could improve significantly the solutions.
+%
+According to this, we employ both high and low $CR$ values as it is showed in eq. \ref{eqn:cr}.
 
 \begin{equation} \label{eqn:cr}
 CR = 
@@ -212,11 +225,12 @@ CR =
 \end{equation}
 
 
-In the same vein, the mutation factor $F$ is computed as follows.
+%TODO: reescribir
+Following the principles of SHADE, the mutation factor $F$ is computed as follows. %TODO: poner cita a un SHADE que lo haga similar
 %
-For each vector is sampled a $F$ value with a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
+For each vector, $F$ is sampled with a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
 %
-Particularly, it is based in several empirical results, since that at the first optimization stages the density function is located in $0.5$.
+Particularly, at the first optimization stages the density function is located in $0.5$.
 %
 While the execution elapses, the density function changes and the values generated are closest to $0.0$ and to $1.0$.
 %
@@ -228,10 +242,10 @@ Thus, more extreme $F$-values are stimulated and a vastly exploration is obtaine
 %
 
 
-Thus, briefly our proposal is based in several ideas of the mentioned works, and are listed as follows:
-\begin{itemize}
-\item Is considered a threshold to control explicitly the convergence of the solutions.
-\item This threshold decreases over the algorithm's run.
-\item The selection operator is relaxed in the sense that it does not provokes premature convergence, this is attained considering an elite population. 
-\end{itemize}
+%Thus, briefly our proposal is based in several ideas of the mentioned works, and are listed as follows:
+%\begin{itemize}
+%\item Is considered a threshold to control explicitly the convergence of the solutions.
+%\item This threshold decreases over the algorithm's run.
+%\item The selection operator is relaxed in the sense that it does not provokes premature convergence, this is attained considering an elite population. 
+%\end{itemize}
 
