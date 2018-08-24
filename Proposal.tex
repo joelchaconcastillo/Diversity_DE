@@ -1,12 +1,12 @@
-In general, our proposal is motivated by two remarkable works in the area of diversity-based EAs.
+Our proposal is motivated by two main works in the area of diversity-based EAs.
 %
-First, the empirical studies of premature convergence developed by Montgomery et al. \cite{montgomery2012simple}.
+First, the empirical studies developed by Montgomery et al~\cite{montgomery2012simple},
+which presents several empirical analyses to confirm issues related to premature convergence in \DE{}.
 %
-They established several empirical analyzes to diagnose the premature convergence that appear in \DE{}.
+The second work, by Segura et al.~\cite{segura2016novel}, provides significant improvements in the combinatorial optimization field.
 %
-The second work, provides significant improvements and a solid literature revision in the combinatorial optimization field, it was considered by Segura et al.~\cite{segura2016novel}.
-%
-Particularly, they incorporated a novel replacement strategy called \textit{The Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) to relate the control of diversity with the stopping criterion and elapsed generations.
+Particularly, they incorporated a novel replacement strategy called \textit{The Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
+to relate the control of diversity with the stopping criterion and elapsed generations.
 %
 Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
 novel \DE{} variant that includes an explicit mechanism that follows similar principles to \RMDDC{}.
@@ -14,25 +14,26 @@ novel \DE{} variant that includes an explicit mechanism that follows similar pri
 This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-The main novelty of \DEEDM{} is the incorporation of a replacement strategy, which is similar to the one used in \RMDDC{}, i.e.
-individuals that contribute too little to diversity should not be accepted as target vectors of the next generation.
+The novelty of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is the incorporation of a replacement strategy that follows some of the principles of the one used in \RMDDC{}, i.e.
+individuals that contribute too little to diversity should not be accepted as members of the next generation.
 %
-At the same time, the solutions of high quality are recorded in the elite population.
+In this way, the greedy selection strategy of \DE{} is not used to maintain the parent population ($X$).
 %
-Moreover, in order to establish the minimum acceptable diversity contribution the stopping criterion and elapsed
+However, an additional population, which is called the elite population ($E$), is incorporated and this one is managed in a similar way than 
+the population of \DE{}, i.e. with a greedy replacement.
+%
+Moreover, in order to establish the minimum acceptable diversity contribution to be selected, the stopping criterion and elapsed
 generations are taken into account.
-
-The contribution to diversity is estimated with the Distance to Closest Neighbor metric (\DCN{}), i.e. given
-a set of already selected individuals ($Survivors$), the contribution of a non-selected one is calculated as the minimum
-distance to any of the individuals in $Survivors$.
 %
-However, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
+One of the main weaknesses of this method is that its convergence is highly delayed.
+%
+Thus, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
 %
 First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
 %
-Second, a new population called the elite population is considered, thus the best solutions with the worst diversity level are considered among the execution.
+Second, the elite population is also considered as an input of the replacement strategy.
 
-\begin{algorithm}[H]
+\begin{algorithm}[t]
 \algsetup{linenosize=\tiny}
   \scriptsize
 	\caption{General scheme of DE-EDM} 
@@ -48,58 +49,56 @@ Second, a new population called the elite population is considered, thus the bes
 	   \ENDFOR
 	   \STATE $G=G+1$
 	\ENDWHILE
-    \label{alg:Fase_Remplazo_VSD-MOEAD}
+    \label{alg:DEEDM}
 \end{algorithmic}
 \end{algorithm}
 
-
-
-\RMDDC{} is a replacement strategy that considers the maximization of the diversity 
-contribution of each individual as an explicit objective.
+%\DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
+%balance between exploration and exploitation by extending \RMDDC{}.
 %
-Then, the notion of Pareto dominance is used to select the survivors.
+%The principles of the \RMDDC{} are as follows.
 %
-It uses a dynamic threshold to prevent the selection of individuals with low contribution to diversity.
+%It considers the maximization of the diversity contribution of each individual as an explicit objective.
 %
-One of the main weaknesses of this method is that its convergence is highly delayed.
+%Then, the notion of Pareto dominance is used to select the survivors.
 %
-Thus, executions of several days were required to attain high-quality solutions.
+%It uses a dynamic threshold to prevent the selection of individuals with low contribution to diversity.
 %
-As a result our proposal incorporates two extensions to alleviate such a drawback.
 %
-\DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
-balance between exploration and exploitation.
+%Thus, executions of several days were required to attain high-quality solutions in many of the tested problems.
 %
-This modification considers the inclusion of an elite population, which records the individuals with the best fitness.
+%As a result our proposal incorporates two extensions to alleviate such a drawback.
+%
+%This modification considers the inclusion of an elite population, which records the individuals with the best fitness.
 %
 
 Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
 %
 It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
 %
-In each generation it must select the next parent population (target vectors).
+In each generation it must select the $NP$ vectors of the next parent population.
 %
-Additionally, it calculates the desired minimum distance $D_t$ given the current number of function evaluations.
+First, it calculates the desired minimum distance $D_t$ given the current number of elapsed function evaluations (line 2).
 %
-First, it joins the three populations in a set of current members.
+Then, it joins the three populations in a set of current members (line 3).
 %
 The current members set contains vectors that might be selected to survive.
 %
-Then, the set of survivors and penalized individuals are initialized to the empty set.
+Then, the set of survivors and penalized individuals are initialized to the empty set (line 4).
 %
-In order to select the $NP$ survivors (target vectors) an iterative process is repeated.
+In order to select the $NP$ survivors (next parent population) an iterative process is repeated (lines 5 - 11).
 %
 In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
-to survive (i.e. moved to the \textit{Survivor set}).
+to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
 %
-Then, the individuals in the \textit{Current set} with a lower metric \DCN{} than $D_t$ are transferred to the \textit{Penalized set}.
+Then, the individuals in the \textit{Current set} with a \DCN{} metric lower than $D_t$ are transferred to the \textit{Penalized set}
 %
 The \DCN{} metric taken into account is between each one \textit{Current set} to its closest selected individual.
 %
 In case were the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step the Penalized individuals with the largest \DCN{} to the \textit{Survivor set}.
 
 
-\begin{algorithm}[H]
+\begin{algorithm}[t]
 \algsetup{linenosize=\tiny}
   \scriptsize
 	\caption{Replacement Phase} \label{alg:Replacement}
@@ -108,16 +107,18 @@ In case were the \textit{Current set} is empty previous to the selection of $NP$
 	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	\STATE $Current = Population \cup Offspring \cup Elite$.
 	\STATE $Survivors = Penalized = \emptyset$.
-	\WHILE{ $|Survivors| < NP$ OR $|Current| > 0$ }
-	   \STATE Select the best individual ($Current_{best}$) of $Current$.
-	   \STATE Find the individuals with lowest \DCN{} to $D_t$ between $Current$ and $Current_{best}$ and move them to $Penalized$ (considering the normalized distance of Eq. (\ref{eqn:distance})).
-	   \STATE Move the best individual $Current_{best}$ to $Survivors$.
+	\WHILE{ $|Survivors| < NP$ And $|Current| > 0$ }
+	   \STATE $Selected$ = Select the best individual of $Current$.
+		 \STATE Remove $Selected$ from $Current$.
+	   \STATE Copy $Selected$ to $Survivors$.
+	   \STATE Find the individuals from $Current$ with \DCN{} to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
 	\ENDWHILE
 	\WHILE{ $|Survivors| < pop\_size$ }
-	   \STATE Select the individual $Penalized$ with maximum \DCN{}.
-	   \STATE Move the individual from $Penalized$ to $Survivors$.
+	   \STATE $Selected$ = Select the individual from $Penalized$ with maximum \DCN{} to $Survivors$.
+		 \STATE Remove $Selected$ from $Penalized$.
+	   \STATE Copy $Selected$ to $Survivors$.
 	\ENDWHILE
-       \RETURN $Survivors$
+  \RETURN $Survivors$
 \end{algorithmic}
 \end{algorithm}
 
