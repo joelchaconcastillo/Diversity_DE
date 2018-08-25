@@ -93,15 +93,15 @@ to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
 %
 Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
 %
-The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
+%%The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
+The way to calculate the distance between two individuals is by using the normalized Euclidean distance decribed in the equation~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
 %
-%TODO: explicar la fómrula
 %
 In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
 the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set}.
 
 \begin{equation}\label{eqn:distance}
-distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{max_d - min_d} \right )^2  }} {\sqrt{D}}
+distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{b_d - a_d} \right )^2  }} {\sqrt{D}}
 \end{equation}
 
 
@@ -226,18 +226,22 @@ CR =
 
 
 %TODO: reescribir
-Following the principles of SHADE, the mutation factor $F$ is computed as follows. %TODO: poner cita a un SHADE que lo haga similar
+Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the function evaluations are considered in the random generation of the mutation factor $F$.
 %
-For each vector, $F$ is sampled with a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
+Particularly, each $F$ is sampled through a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
 %
-Particularly, at the first optimization stages the density function is located in $0.5$.
+Therefore, at the first optimization stages are generated more values near of $0.5$.
 %
-While the execution elapses, the density function changes and the values generated are closest to $0.0$ and to $1.0$.
+However, as the execution transcurs, the density function is affected, thus the variance is increased.
 %
-This occurs since the Cauchy density function has heavily tails, therefore the values that are generated outside the range $[0.0, 1.0]$ are truncated.
+It shows a bias to sample values outside the interval $[0.0, 1.0]$.
 %
-Thus, more extreme $F$-values are stimulated and a vastly exploration is obtained.
+Where the values larger that $1.0$ are trucated, and the negative values are sampled again (until it generates a positive factor).
 %
+Particularly, the aim of this to generate small $F$-values at the first optimization stages, and at the end largest $F$-values ($F=1$) in such way that a fast convergence is avoided.
+%
+%
+
 % thus the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
 %
 
