@@ -1,31 +1,35 @@
-Our proposal is motivated by two main works in the area of diversity-based EAs.
+Our proposal is motivated by two main works in the area of control of diversity in EAs.
 %
-First, the empirical studies developed by Montgomery et al~\cite{montgomery2012simple},
-which presents several empirical analyses to confirm issues related to premature convergence in \DE{}.
+The first one is the empirical study developed by Montgomery et al~\cite{montgomery2012simple},
+which presents several empirical analyses that confirm issues related to premature convergence in \DE{}.
 %
-The second work, by Segura et al.~\cite{segura2016novel}, provides significant improvements in the combinatorial optimization field.
-%
-Particularly, they incorporated a novel replacement strategy called \textit{The Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
-to relate the control of diversity with the stopping criterion and elapsed generations.
+The second work, by Segura et al.~\cite{segura2016novel}, provides significant improvements in the combinatorial optimization field
+by developing a novel replacement strategy called \textit{The Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
+that relates the control of diversity with the stopping criterion and elapsed generations.
 %
 Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
-novel \DE{} variant that includes an explicit mechanism that follows similar principles to \RMDDC{}.
+novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
 %
 This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-The novelty of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is the incorporation of a replacement strategy that follows some of the principles of the one used in \RMDDC{}, i.e.
-individuals that contribute too little to diversity should not be accepted as members of the next generation.
+The core of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is quite similar to the standard \DE{}.
+%
+In fact the way of creating new trial solutions is not modified at all (lines 5 and 6).
+%
+The novelty is the incorporation of an elite population ($E$) and a novel diversity-based replacement strategy.
+%
+In order to select the members of the elite population, the original greedy replacement of \DE{} is used (line 7).
+%
+On the other way, the replacement strategy (line 8) follows the same principle that guided the 
+design of \RMDDC{}, i.e. individuals that contribute too little to diversity should not be accepted as members of the next generation.
 %
 In this way, the greedy selection strategy of \DE{} is not used to maintain the parent population ($X$).
 %
-However, an additional population, which is called the elite population ($E$), is incorporated and this one is managed in a similar way than 
-the population of \DE{}, i.e. with a greedy replacement.
-%
-Moreover, in order to establish the minimum acceptable diversity contribution to be selected, the stopping criterion and elapsed
+In order to establish the minimum acceptable diversity contribution to be selected, the stopping criterion and elapsed
 generations are taken into account.
 %
-One of the main weaknesses of this method is that its convergence is highly delayed.
+One of the main weaknesses of \RMDDC{} is that its convergence is highly delayed.
 %
 Thus, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
 %
@@ -49,8 +53,8 @@ Second, the elite population is also considered as an input of the replacement s
 	   \ENDFOR
 	   \STATE $G=G+1$
 	\ENDWHILE
-    \label{alg:DEEDM}
 \end{algorithmic}
+    \label{alg:DEEDM}
 \end{algorithm}
 
 %\DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
@@ -214,7 +218,7 @@ Additionally, high $CR$ values might generate quality solutions with a lower pro
 %
 However, these transformations provoke large displacements that could improve significantly the solutions.
 %
-According to this, we employ both high and low $CR$ values as it is showed in eq. \ref{eqn:cr}.
+According to this, we employ both high and low $CR$ values as it is showed in Eq. \ref{eqn:cr}.
 
 \begin{equation} \label{eqn:cr}
 CR = 
@@ -224,26 +228,25 @@ CR =
 \end{cases}
 \end{equation}
 
-
-%TODO: reescribir
 Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the function evaluations are considered in the random generation of the mutation factor $F$.
 %
-Particularly, each $F$ is sampled through a Cauchy distribution (eq. \ref{eqn:cauchy}).
+Particularly, each $F$ is sampled through a Cauchy distribution (Eq. \ref{eqn:cauchy}).
 \begin{equation}\label{eqn:cauchy}
  Cauchy(0.5, 0.5*nfes/max\_nfes)
 \end{equation}
 %
-Therefore, at the first optimization stages are generated values near of $0.5$.
+Therefore, at the first optimization stages, F values near to $0.5$ are generated.
 %
-However, as the execution transcurs, the density function suffer a gradual transformation, thus the variance is increased.
+Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
+that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
 %
-It shows a bias to sample values outside the interval $[0.0, 1.0]$.
+In the cases when values larger than $1.0$ are generated, the value $1.0$ is used.
 %
-Where the values larger than $1.0$ are trucated, and the negative values are sampled again (until it generates a positive factor).
+In the case of generating a negative value, the $F$ is resampled.
 %
-Particularly, the aim of this is to generate small $F$-values at the first optimization stages, and at the end larger $F$-values ($F=1$), in such way that the fast convergence can be avoided.
-%
-%
+One of the effects of this approach is to increase the probability of generating large $F$-values as the execution progresses
+with the aim of avoiding a fast convergence.
+
 
 % thus the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
 %

@@ -1,43 +1,46 @@
-In this section the experimental validation is carried out.
+In this section the experimental validation is presented.
 %
-Specifically is showed that controlling the diversity in the standard DE is a way to improve further some of the results obtained by the state-of-the-art algorithms.
+Specifically, we show that by explicitly controlling the diversity in DE, results of state-of-the-art algorithms
+are improved further.
 %
-Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered, each one of them is composed of thirty different problems.
+Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
 %
-The state-of-the-art is conformed by the algorithms that correspond to the first places of each year.
+Each one of them is composed of thirty different problems.
 %
-Thus, the algorithms considered from the \CEC{} 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that are the first and second place respectively.
+The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
+%
+Thus, the algorithms considered from the \CEC{} 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that achieved 
+the first and second place respectively.
 %
 Similarly, the top algorithms from \CEC{} 2017 are EBOwithCMAR \cite{kumar2017improving} and jSO \cite{brest2017single}.
 %
-It is interesting to take into account that EBOwithCMAR is considered as an improvement of the UMOEAs-II.
+It is interesting to remark that EBOwithCMAR is considered as an improvement of the UMOEAs-II.
 %
-Additionally, jSO and L-SHADE-EpSin are considered from the SHADE's family.
+Additionally, jSO and L-SHADE-EpSin belong to the SHADE's family.
 %
-All the algorithms of the state-of-the-art are proved with the benchmark of both years as is suggested by \cite{molina2017analysis}.
-
+All these algorithms are tested with both benchmarks as it is suggested by \cite{molina2017analysis}.
 
 Given that all of them are stochastic algorithms, each execution was repeated 51 times with different seeds.
 %
-The stopping criterion was set to $25,000,000$ functions evaluations.
+In every case, the stopping criterion was set to $25,000,000$ functions evaluations.
 %
 We performed our evaluation following the guidelines of \CEC{} benchmark competitions.
 %
-According this, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller, the error is treated as $0$.
+Thus, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller, the error is treated as $0$.
 %
 %The minimal tolerance to consider a determined problem solved is $1e-8$, hence if the difference of the optimal obtained and the true optinal is below this tolerance then the error is zero.
 %
-The specific parameterization indicated by the authors in each tested algorithm is as follows:
+The parameterization indicated by the authors was used in every algorithm and it is as follows:
 \begin{itemize}
-\item \textbf{EBOwithCMAR}: For EBO maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum population size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
+\item \textbf{EBOwithCMAR}: For EBO, the maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum population size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
 \item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{ \textsc{DE-EDM} }: Initial niche radius $D_I = 0.3$, population size = $250$, $F = Cauchy(0.5, nfes/max\_nfes)$.
+\item \textbf{ \textsc{DE-EDM} }: $D_I = 0.3$, population size = $250$.
 \end{itemize}
 %
 
-Our experimental analyzes has been performed in base of the error between the true optimal and the optimal obtained.
+Our experimental analyses have been performed in base of the difference between the optimal solution and the best obtained solution.
 %
 In order to statistically compare the results, a similar guideline than the one proposed in~\cite{Joel:StatisticalTest} was used. 
 %
@@ -49,19 +52,41 @@ If samples had equal variance, an ANOVA test was done; if not, a Welch test was 
 %
 For non-Gaussian distributions, the non parametric Kruskal-Wallis test was used to test whether samples are drawn from the same distribution. 
 %
-An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, if the mean and median obtained by $X$ are higher than the mean and median achieved by $Y$.
+An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, and the mean and median obtained by $X$ are higher 
+than the mean and median achieved by $Y$.
 
-In the tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} are showed the summary of \CEC{} 2016 and \CEC{} 2017 respectively.
+In tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} a summary of the results obtained for \CEC{} 2016 and \CEC{} 2017 are shown, respectively.
 %
-The statistical tests indicate that the diversity DE algorithm provides significantly better results that the state-of-the-art algorithms in both benchmarks.
+The column tagged with ``Always Solved'' shows the number of functions where a zero error was obtained in the 51 runs.
 %
-Even though out proposal loses with the functions $\{f_6, f_7, f_{13}, f_{14}, f_{28}\}$ and $\{ f_{12}, f_{16}, f_{18} \}$ in \CEC{} 2016 and \CEC{} 2017 respectively,it provides acceptable quality solutions, that in some problems reach the optimal region.
+Additionally, column tagged with ``At least one time solved'' shows the number of functions that were solved to optimality at least in one run.
 %
-Based in a preliminary study these functions were solved at least one time with different configurations (tuning the $D_I$ and population size).
+Practically all functions (28 of them) of the \CEC{} 2017 benchmark were solved with our proposal at least one time.
 %
-The column named ``Always Solved'' indicates the number of functions that have obtained a zero error in all the 51 runs, and the column named ``At least one time solved'' indicates the number of functions that reach to the optimal at least in one run.
+Additionally, 21 functions of the \CEC{} 2016 were also solved.
 %
-Almost all functions were solved in \CEC{} 2017 with our proposal (28 functions) and more than a half in \CEC{} 2016, however the state-of-the-art only were able to reach the optimal values in approximately a half of the functions in both years.
+This constrast with the results obtained by state-of-the-art algorithms.
+%
+They were able to reach optimal values in significantly less functions.
+%
+In order to confirm the superioriy of \DEEDM{}, pair-wise statisticall test were used.
+%
+The column tagged with the symbol $\uparrow$ shows the number of times that the superiority of each method could be confirmed, whereas
+the column tagged with the symbol $\downarrow$ count the number of cases where the method was inferior.
+%
+Finally, the number comparisons where differences were not significant are shown in the column tagged with the symbol $\longleftrightarrow$.
+
+%TODO: Poner frases del tipo que fue el que mas veces ganó y el que menos veces perdió
+%The statistical tests indicate that the diversity DE algorithm provides significantly better results that the state-of-the-art algorithms in both benchmarks.
+%
+%Even though out proposal loses with the functions $\{f_6, f_7, f_{13}, f_{14}, f_{28}\}$ and $\{ f_{12}, f_{16}, f_{18} \}$ in \CEC{} 2016 and \CEC{} 2017 respectively,it provides acceptable quality solutions, that in some problems reach the optimal region.
+%
+%Based in a preliminary study these functions were solved at least one time with different configurations (tuning the $D_I$ and population size).
+
+%TODO: pasar el score a la última columna y decir que además del análisis se realizó el análisis propuesto en la competición, que se base
+%en calcular un score...
+%TODO: remarcar que la nueva propuesta consigue score 100 en ambos casos, confirmando la superioridad que se vio con el resto de análisis realizados, decir
+%que significa tener score 100
 
 Based in the guideline of the \CEC{}, the ``Score'' is computed as follows.
 %
@@ -94,7 +119,8 @@ However, it seems that the multi-operator could be sensible with the parameteriz
 So, the winners of the \CEC{} 2016 outperform to the winners of the \CEC{} 2017 in long-term, and the winners of the \CEC{} 2017 outperform to the winners of the \CEC{} 2016.
 %
 
-
+%TODO: quitar todo lo que tenga que ver con análisis de lo que hacen internamente los otros algoritmos. No estamos cambiando nada asi
+%que en eso no nos metemos. Vamos al grano!
 Based in several experiments one drawback of the L-SHADE-EpSin and EBOwithCMAR resides in the strategy to adapt the mutation factor $F$.
 %
 These algorithms take into account the elapsed evaluations to adapt the mutation factor, however this strategy does not considers long-term executions.
@@ -105,6 +131,8 @@ In several experiments we try tuning the mutation factor, however the results we
 %
 Broadly speaking, the results of the state-of-the-art shows that each algorithm was specifically tuned to short-term executions and for their respectively benchmark.
 %
+
+%TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 
 The mechanism of the \DEEDM{} should maintain the diversity properly, with the aim of have a better understanding of the methodology proposed, in the figure \ref{fig:diversity} is showed the diversity through the time elapsed of \DEEDM{} with two functions: $f_1$ and $f_{30}$ respectively.
 %
@@ -198,6 +226,8 @@ On the other hand the trial vectors maintain the diversity a is desired ( i.e. u
 %%%}
 %%\end{scriptsize}
 %%\end{table}
+
+%TODO: Con el fin de que otros autores se puedan comparar con los resultados, reportamos el error alcanzado
 
 The error values between the best fitness values found in each run out of 51 runs and true optimal value are calculated and then best, worst, median, mean, standard deviation and success ratio of the error values are presented in each column in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017}.
 %
