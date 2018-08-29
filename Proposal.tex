@@ -228,17 +228,20 @@ CR =
 %TODO: reescribir
 Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the function evaluations are considered in the random generation of the mutation factor $F$.
 %
-Particularly, each $F$ is sampled through a Cauchy distribution $Cauchy(0.5, 0.5*nfes/max\_nfes)$.
+Particularly, each $F$ is sampled through a Cauchy distribution (eq. \ref{eqn:cauchy}).
+\begin{equation}\label{eqn:cauchy}
+ Cauchy(0.5, 0.5*nfes/max\_nfes)
+\end{equation}
 %
-Therefore, at the first optimization stages are generated more values near of $0.5$.
+Therefore, at the first optimization stages are generated values near of $0.5$.
 %
-However, as the execution transcurs, the density function is affected, thus the variance is increased.
+However, as the execution transcurs, the density function suffer a gradual transformation, thus the variance is increased.
 %
 It shows a bias to sample values outside the interval $[0.0, 1.0]$.
 %
-Where the values larger that $1.0$ are trucated, and the negative values are sampled again (until it generates a positive factor).
+Where the values larger than $1.0$ are trucated, and the negative values are sampled again (until it generates a positive factor).
 %
-Particularly, the aim of this to generate small $F$-values at the first optimization stages, and at the end largest $F$-values ($F=1$) in such way that a fast convergence is avoided.
+Particularly, the aim of this is to generate small $F$-values at the first optimization stages, and at the end larger $F$-values ($F=1$), in such way that the fast convergence can be avoided.
 %
 %
 
