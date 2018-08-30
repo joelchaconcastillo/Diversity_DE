@@ -11,9 +11,9 @@ In fact, it has been the winning strategy of several optimization competitions~\
 Similarly to other \EAS{}, \DE{} is inspired by the natural evolution process and it involves the application of mutation, recombination and 
 selection.
 %
-The main peculiarity of \DE{} is that it considers the differences among vectors, which are present in the population to explore the search space.
+The main peculiarity of \DE{} is that it considers the differences among vectors that are present in the population to explore the search space.
 %
-In this sense is similar to Nelder-Mead \cite{nelder1965simplex} and the 
+In this sense it is similar to the Nelder-Mead~\cite{nelder1965simplex} and the 
 Controlled Random Search (CRS) \cite{price1983global} optimizers.
 
 In spite of the effectiveness of \DE{}, there exists several weaknesses that have been detected and partially
@@ -42,8 +42,8 @@ auto-enhanced population diversity~\cite{yang2015differential} and selection str
 with a lower selection pressure~\cite{sa2008exploration}.
 %
 Some of the last studies on design of population-based meta-heuristics~\cite{Crepinsek:13} show that 
-properly balancing the exploration and intensification
-is particularly useful for avoiding premature convergence.
+explicitly controlling the diversity to properly balance the exploration and intensification degree
+is particularly useful.
 %
 Specifically, in the field of combinatorial optimization some novel replacement strategies that dynamically alter 
 the balance between exploration and exploitation 
@@ -57,7 +57,7 @@ Probably their main weakness is that the time required to obtain high-quality so
 Our novel proposal, which is called \DE{} with Enhanced Diversity Maintenance (\DEEDM{}), integrates a similar principle into \DE{}.
 %
 However, in order to avoid the excessive growth of computational requirements typical of diversity-based replacement strategies, 
-the method was extended with the aim of inducing a larger degree of intensification.
+the method was designed with the aim of inducing a larger degree of intensification.
 
 The rest of the paper is organized as follows.
 %

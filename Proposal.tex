@@ -4,7 +4,7 @@ The first one is the empirical study developed by Montgomery et al~\cite{montgom
 which presents several empirical analyses that confirm issues related to premature convergence in \DE{}.
 %
 The second work, by Segura et al.~\cite{segura2016novel}, provides significant improvements in the combinatorial optimization field
-by developing a novel replacement strategy called \textit{The Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
+by developing a novel replacement strategy called \textit{Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
 that relates the control of diversity with the stopping criterion and elapsed generations.
 %
 Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
@@ -21,7 +21,8 @@ The novelty is the incorporation of an elite population ($E$) and a novel divers
 %
 In order to select the members of the elite population, the original greedy replacement of \DE{} is used (line 7).
 %
-On the other way, the replacement strategy (line 8) follows the same principle that guided the 
+On the other way, the replacement strategy (line 8), which is in charge of selecting the next population members,
+follows the same principle that guided the 
 design of \RMDDC{}, i.e. individuals that contribute too little to diversity should not be accepted as members of the next generation.
 %
 In this way, the greedy selection strategy of \DE{} is not used to maintain the parent population ($X$).
@@ -46,11 +47,11 @@ Second, the elite population is also considered as an input of the replacement s
 	\STATE $G=0$
 	\WHILE{ stopping criterion is not satisfied}
 	   \FOR{ $i=1$ to $NP$} 
-		\STATE Mutation: Generate the donor vector ($V_{i,G}$) according Eq. (\ref{eqn:mutation}).
-		\STATE Crossover: Recombine the mutate vector ($U_{i,G}$) according Eq. (\ref{eqn:crossover}).
-		\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according Eq. (\ref{eqn:selection}).
-		\STATE Replacement: Select the target vectors ($X_{i,G+1}$) according to Algorithm \ref{alg:Replacement} .
+		\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
+		\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
+		\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
 	   \ENDFOR
+		\STATE Replacement: Select the target vectors ($X_{G+1}$) according to Algorithm \ref{alg:Replacement} .
 	   \STATE $G=G+1$
 	\ENDWHILE
 \end{algorithmic}
@@ -98,11 +99,11 @@ to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
 Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
 %
 %%The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
-The way to calculate the distance between two individuals is by using the normalized Euclidean distance decribed in the equation~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
+The way to calculate the distance between two individuals is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
 %
 %
 In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
-the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set}.
+the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set} (lines 10 - 13).
 
 \begin{equation}\label{eqn:distance}
 distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{b_d - a_d} \right )^2  }} {\sqrt{D}}
@@ -134,7 +135,7 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 \end{algorithm}
 
 
-In order to complete the description is important to specify the way to calculate $D_t$ and the methodology to update the 
+In order to complete the description it is important to specify the way to calculate $D_t$ and the methodology to update the 
 elite individuals.
 %
 All the remaining steps are maintained as in the classic \DE{} variant.
@@ -145,11 +146,11 @@ Specifically, this value should be reduced as the stopping criterion is reached 
 %
 In our scheme, an initial value for $D_t$ ($D_I$) must be set.
 %
-Then, similarly than in~\cite{segura2016novel}, a linear reduction of $D_t$ is performed by taking into account the elepased function evaluations and stopping criterion.
+Then, similarly than in~\cite{segura2016novel}, a linear reduction of $D_t$ is performed by taking into account the elapsed function evaluations and stopping criterion.
 %
-Particularly, in this work, the stopping criterion is set by function evaluations (\textit{nfes}).
+Particularly, in this work, the stopping criterion is set by function evaluations.
 %
-The reduction is calculated in such way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
+The reduction is calculated in such a way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
 %
 Therefore, in the remaining $5\%$ diversity is not considered at all.
 %
@@ -214,9 +215,9 @@ induce small displacements.
 %
 This provokes a gradual and slow convergence that in some scenarios might result in a robust behavior.
 %
-Additionally, high $CR$ values might generate quality solutions with a lower probability.
+Additionally, high $CR$ values might generate higher quality solutions with a lower probability.
 %
-However, these transformations provoke large displacements that could improve significantly the solutions.
+However, these transformations provoke large displacements that could improve significantly the solutions when successful.
 %
 According to this, we employ both high and low $CR$ values as it is showed in Eq. \ref{eqn:cr}.
 

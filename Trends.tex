@@ -14,10 +14,10 @@ However, they performed poorly with more than 30 dimensions.
 Subsequently, in the 2008 competition on large scale global optimization~\cite{CEC2008}, a self-adaptive \DE{} (jDEdynNP-F) 
 reached the third place, confirming the importance of parameter adaptation.
 %
-In fact, in other kinds of competitions such as in the 2006 constrained optimization, the benefits of adaptation 
+In fact, in other kinds of competitions such as in the 2006 constrained optimization one, the benefits of adaptation 
 was also shown, where SaDE obtained the third place.
 %
-In subsequent competition in large-scale optimization (\CEC{} 2010), \DE{} variants did not reach the top rank.
+In a subsequent competition in large-scale optimization (\CEC{} 2010), \DE{} variants did not reach the top rank.
 %
 This, together with the fact that the performance of several \DE{} variants performed properly only in low-dimensionality, 
 is an indicator of the weaknesses of \DE{} in large scale problems.
@@ -26,8 +26,8 @@ In fact, some of the reasons of the curse of dimensionality were analyzed in~\ci
 %
 Thus, it is known that there is room for improvement in terms of scalability, although dealing with large-scale optimization is out of 
 the scope of this paper.
-
-In \CEC{} 2011 competition with real world optimization problems~\cite{CEC2011}, hybrid algorithms including \DE{} have performed
+%
+Finally, in \CEC{} 2011 competition with real world optimization problems~\cite{CEC2011}, hybrid algorithms including \DE{} have performed
 properly.
 %
 For instance, the second place was obtained by the hybrid \DE{} called DE-$\Lambda_{CR}$.
@@ -76,8 +76,8 @@ Attending to the features of the different approaches, the following trend is de
 
 \begin{itemize}
 	\item Typically, the parameters are altered during the run with the aim of adapting the optimizer to the requirements of the different optimization stages. 
-	\item In some of the last algorithms, the adaptation considers the stopping criterion and elapsed generations to bias the decisions taken the optimizer.
-	For instance, some proposals decrease the population size and in other cases the \DE{} are modified to intensify further in last stages.
+	\item In some of the last algorithms, the adaptation considers the stopping criterion and elapsed generations to bias the decisions taken by the optimizer.
+	For instance, some proposals decrease the population size and in other cases \DE{} is modified to further intensify in last stages.
 	\item The overall complexity of the winners have increased significantly. Particularly, several variants include modifications to perform promising
 	movements with a higher probability, for instance by including the principles of the Covariance Matrix Adaptation scheme.
 \end{itemize}

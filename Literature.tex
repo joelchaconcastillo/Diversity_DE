@@ -1,14 +1,14 @@
 \subsection{Differential Evolution: Basic Concepts}
 
-Several extensions of \DE{} that affect its exploration capabilities
-have been devised~\cite{das2011differential}.
+This section is devoted to summarize the classic \DE{} variant and to introduce some of the most important terms used in the \DE{} field.
 %
-In this work, in order to properly show the benefits of our extension, our proposal is applied with the classic \DE{} scheme (\DE{}/rand/1/bin).
+The classic \DE{} scheme is called the \DE{}/rand/1/bin and it has been extensively used to generate more complex \DE{} variants~\cite{das2011differential}.
 %
-However, our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
+In fact, our proposal also extends the classic variant.
+%
+However, in order to perform fair comparisons,
+our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
 components and even algorithms not belonging to the \DE{} field.
-%
-This section is devoted to summarize the classic \DE{} variants and to introduce some of the most important terms used in the \DE{} field.
 
 \DE{} was originally proposed as a direct search method for single-objective continuous optimization.
 %
@@ -70,7 +70,7 @@ In addition, they are all different from the index $i$.
 It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
 %
 The scaled difference is added to a third vector, meaning that
-when diversity decreases, differences are low and mutant vectors are similar to target vectors.
+when diversity decreases and consequently differences are low, mutant vectors are similar to target vectors.
 %
 As a result, maintaining some degree of diversity is specially important in \DE{}.
 
@@ -139,7 +139,7 @@ Specifically, it discards movements with a size below a threshold and this thres
 %
 Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
 %
-Note that these kinds of methods have similarity with our proposal in the sense that decisions are biased by the number of elapsed generations.
+Note that these kinds of methods have similarities with our proposal in the sense that decisions are biased by the number of elapsed generations.
 %
 However, our method operates on the replacement strategy and not on the mutation phase.
 %
@@ -152,7 +152,7 @@ A different alternative operates by altering the selection operator~\cite{sa2008
 Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
 to allow escaping from basin of attraction of local optima.
 %
-Since it considers the fitness to establish the acceptance probabilities is very sensitive to scale transformations.
+Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
 %
 In this case, decisions are not biased by the elapsed generations.
 
@@ -161,7 +161,7 @@ to diversify the population when a too low diversity is detected~\cite{yang2015d
 %
 Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
 
-Note that several of the \DE{} variants with best performance in competitions do not apply these modifications
+Note that \DE{} variants with best performance in competitions do not apply these modifications
 and that most of these extensions have not been implemented in the most widely used frameworks.
 %
 As a result, these extensions are not so widely used in the community in spite of their important benefits
