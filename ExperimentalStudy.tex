@@ -9,6 +9,8 @@ Each one of them is composed of thirty different problems.
 %
 The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
 %
+Additionally, the standard \DE{} was included.
+%
 Thus, the algorithms considered from the \CEC{} 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that achieved 
 the first and second place respectively.
 %
@@ -36,7 +38,8 @@ The parameterization indicated by the authors was used in every algorithm and it
 \item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{ \textsc{DE-EDM} }: $D_I = 0.3$, population size = $250$.
+\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$.
+\item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}).
 \end{itemize}
 %
 
@@ -74,23 +77,24 @@ In order to confirm the superioriy of \DEEDM{}, pair-wise statisticall test were
 The column tagged with the symbol $\uparrow$ shows the number of times that the superiority of each method could be confirmed, whereas
 the column tagged with the symbol $\downarrow$ count the number of cases where the method was inferior.
 %
-Finally, the number comparisons where differences were not significant are shown in the column tagged with the symbol $\longleftrightarrow$.
-
+Finally, the number comparisons whose differences were not significant are shown in the column tagged with the symbol $\longleftrightarrow$.
+%
 %TODO: Poner frases del tipo que fue el que mas veces ganó y el que menos veces perdió
-%The statistical tests indicate that the diversity DE algorithm provides significantly better results that the state-of-the-art algorithms in both benchmarks.
+The statistical tests indicate that the \DEEDM{} attained the best results in both years.
 %
-%Even though out proposal loses with the functions $\{f_6, f_7, f_{13}, f_{14}, f_{28}\}$ and $\{ f_{12}, f_{16}, f_{18} \}$ in \CEC{} 2016 and \CEC{} 2017 respectively,it provides acceptable quality solutions, that in some problems reach the optimal region.
+The number of wins in \CEC{} 2016 and \CEC{} 2017 were $77$ and $88$ respectively.
 %
-%Based in a preliminary study these functions were solved at least one time with different configurations (tuning the $D_I$ and population size).
-
+Also the number of losts were of $25$ and $6$ respectively.
+%
+Additionally, the last place attained in both years was by the L-SHADE-Epsilon with $20$ wins in 2016 and $7$ wins in 2017.
+%
+%
+The last column tagget with ``Score'' shows the analyses proposed in the \CEC{}'s competitions.
+%
+Particularly, the evaluation method combines two scores defined in the equation (\ref{eqn:total_scores}).
+%
 %TODO: pasar el score a la última columna y decir que además del análisis se realizó el análisis propuesto en la competición, que se base
 %en calcular un score...
-%TODO: remarcar que la nueva propuesta consigue score 100 en ambos casos, confirmando la superioridad que se vio con el resto de análisis realizados, decir
-%que significa tener score 100
-
-Based in the guideline of the \CEC{}, the ``Score'' is computed as follows.
-%
-The evaluation method combines two scores defined in the equation (\ref{eqn:total_scores}).
 %
 Thus the final score is composed by the sum $Score = Score_1 + Score_2$.
 %
@@ -104,43 +108,37 @@ Here, $SE_{min}$ is the minimal sum of errors from all the algorithms, and $SE$ 
 %
 Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, namely the sum of each rank in each function for the considered algorithms $SE = \sum_{i=1}^{30} error\_f_i$.
 %
-Based in the final score the results provided for our proposal are superior in both years.
+%TODO: remarcar que la nueva propuesta consigue score 100 en ambos casos, confirmando la superioridad que se vio con el resto de análisis realizados, decir
+%que significa tener score 100
+% 
+Principally, our proposal attained the best scores ($100.00$) in both years, showing its superiority.
 %
-On the other hand, the UMOEAs-II has the second best score in \CEC{} 2017, and the EBOwithCMAR has the second best score in the \CEC{} 2016.
+Additionally, the Standard-DE attained good enough results, in fact it got the third and second places in \CEC{} 2016 and \CEC{} 2017 respectively.
 %
-The same effect occurs in the third place with the SHADE's algorithms jSO and L-SHADE-EpSin.
+This shows that the performance of the state-of-the-art algorithms is different considering long-term executions.
 %
-Thus, its evident that the performance of the algorithms is different with long-term executions.
+Specifically, although that in \CEC{} 2017 the L-SHADE-Epsilon algorithm got the lowest number of wins in the statistical test it showed a competitive score.
 %
-Also, this might be a highlight that the SHADE's algorithms are improved by the multi-operator algorithms.
+This might occurs since that the statistical scores considers both mean and median errors.
 %
-However, it seems that the multi-operator could be sensible with the parameterization.
-%
-So, the winners of the \CEC{} 2016 outperform to the winners of the \CEC{} 2017 in long-term, and the winners of the \CEC{} 2017 outperform to the winners of the \CEC{} 2016.
-%
-
-%TODO: quitar todo lo que tenga que ver con análisis de lo que hacen internamente los otros algoritmos. No estamos cambiando nada asi
-%que en eso no nos metemos. Vamos al grano!
-Based in several experiments one drawback of the L-SHADE-EpSin and EBOwithCMAR resides in the strategy to adapt the mutation factor $F$.
-%
-These algorithms take into account the elapsed evaluations to adapt the mutation factor, however this strategy does not considers long-term executions.
-%
-Thus, the adaptation of this parameter is unstable.
-%
-In several experiments we try tuning the mutation factor, however the results were not significantly different. 
-%
-Broadly speaking, the results of the state-of-the-art shows that each algorithm was specifically tuned to short-term executions and for their respectively benchmark.
+Morever, the score considers a rank and mean based in the error.
 %
 
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 
-The mechanism of the \DEEDM{} should maintain the diversity properly, with the aim of have a better understanding of the methodology proposed, in the figure \ref{fig:diversity} is showed the diversity through the time elapsed of \DEEDM{} with two functions: $f_1$ and $f_{30}$ respectively.
+Giving that our proposal is based in the explicitly control of the diversity and with the aim of a better understanding of its behavior in the figure \ref{fig:diversity} is showed the diversity through the elapsed function evaluatons.
 %
-While the first function is easily solved, the second is one of the most difficult.
+Particularly, the \DEEDM{} was executed with the functions $f_1$ and $f_{30}$.
 %
-In the left side are showed the Elite vectors, although there are not constraints in the Elite vector to lost the diversity, it seems that in both functions $f_1$ and $f_{30}$ the diversity is implicitly maintained.
+Specifically, based in their properties the first function is easily solved (unimodal) and the second is one of the most difficult (hybrid).
 %
-On the other hand the trial vectors maintain the diversity a is desired ( i.e. until the $95\%$ of the total function evaluations).
+In the left side is showed the diversity of the Elite population.
+%
+Although there are not constraints in the Elite population to lost the diversity, it seems that in both functions $f_1$ and $f_{30}$ the diversity is implicitly maintained.
+%
+Similarly, in the right side is showed the diversity of the trial vectors.
+%
+It shows that the diversity is explicitly maintained as is desired ( i.e. until the $95\%$ of the total function evaluations).
 
 \begin{figure}[t]
 \centering
@@ -153,10 +151,6 @@ On the other hand the trial vectors maintain the diversity a is desired ( i.e. u
 \end{figure}
 
 
-
-%
-%
-
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[t]
@@ -165,32 +159,18 @@ On the other hand the trial vectors maintain the diversity a is desired ( i.e. u
 \label{tab:Summary_CEC2016}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} \\ \cline{5-7} 
- &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ \\ \hline
-\textbf{EBOwithCMAR} & 8 & 14 & 64.88 & 26 & 2 & 49 \\ \hline
-\textbf{jSO} & 9 & 17 & 51.29 & 38 & 41 & 41 \\ \hline
-\textbf{UMOEAs-II} & 9 & 14 & 51.52 & 14 & 57 & 57 \\ \hline
-\textbf{L-SHADE-Epsilon} & 7 & 13 & 56.10 & 42 & 22 & 56 \\ \hline
-\textbf{ \textsc{DE-EDM} } & 13 & 21 & 100.00 & 64 & 19 & 37 \\ \hline
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+ &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
+\textbf{EBOwithCMAR} & 8 & 14 & 35 & 56 & 59 & 50.28 \\ \hline
+\textbf{jSO} & 9 & 17 & 47 & 51 & 52 & 55.43 \\ \hline
+\textbf{UMOEAs-II} & 9 & 14 & 51 & 31 & 68 & 62.45 \\ \hline
+\textbf{L-SHADE-Epsilon} & 7 & 13 & 20 & 71 & 59 & 50.12 \\ \hline
+\textbf{DE-EDM} & 13 & 21 & 77 & 25 & 48 & 100.00 \\ \hline
+\textbf{Standard-DE} & 11 & 19 & 50 & 46 & 54 & 56.29 \\ \hline
 \end{tabular}
 \end{table}
 
-%
-%\begin{table}[]
-%\begin{scriptsize}
-%\centering
-%\caption{Summary results - CEC 2016}
-%\label{tab:Summary_CEC2016}
-%\begin{tabular}{|c|c|c|c|c|c|c|}
-%\hline
-%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always Solved}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one \\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical tests}} \\ \cline{5-7} 
-% &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow$ \\ \hline
-%\textbf{UMOEAsII} & 9 & 14 & 41.65 & 5 & 31 & 24 \\ \hline
-%\textbf{L-SHADE-Epsilon} & 7 & 13 & 45.84 & 18 & 14 & 28 \\ \hline
-%\textbf{Proposal} & 13 & 21 & 100.00 & 31 & 9 & 20 \\ \hline
-%\end{tabular}%
-%\end{scriptsize}
-%\end{table}
+
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[t]
@@ -199,48 +179,28 @@ On the other hand the trial vectors maintain the diversity a is desired ( i.e. u
 \label{tab:Summary_CEC2017}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} \\ \cline{5-7} 
- &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ \\ \hline
-\textbf{EBOwithCMAR} & 11 & 15 & 26.20 & 28 & 36 & 56 \\ \hline
-\textbf{jSO} & 8 & 19 & 36.66 & 27 & 39 & 54 \\ \hline
-\textbf{UMOEAs-II} & 9 & 18 & 40.71 & 37 & 30 & 53 \\ \hline
-\textbf{L-SHADE-Epsilon} & 8 & 15 & 35.37 & 7 & 62 & 51 \\ \hline
-\textbf{\textsc{DE-EDM}} & 21 & 28 & 100.00 & 73 & 5 & 42 \\ \hline
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+ &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
+\textbf{EBOwithCMAR} & 9 & 18 & 34 & 46 & 70 & 37.14 \\ \hline
+\textbf{jSO} & 8 & 15 & 29 & 55 & 66 & 29.30 \\ \hline
+\textbf{UMOEAs-II} & 11 & 15 & 43 & 40 & 67 & 26.89 \\ \hline
+\textbf{L-SHADE-Epsilon} & 8 & 19 & 7 & 81 & 62 & 32.78 \\ \hline
+\textbf{DE-EDM} & 21 & 28 & 88 & 6 & 56 & 100.00 \\ \hline
+\textbf{Standard-DE} & 12 & 21 & 56 & 29 & 65 & 42.91 \\ \hline
 \end{tabular}
 \end{table}
 
-%%\begin{table}[t]
-%%\begin{scriptsize}
-%%\centering
-%%\caption{Summary results - CEC 2017}
-%%\label{tab:Summary_CEC2017}
-%%%\resizebox{\textwidth}{!}{%
-%%\begin{tabular}{|c|c|c|c|c|c|c|}
-%%\hline
-%%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always Solved}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one \\ time solved\end{tabular}}} & \multirow{2}{*}{\textbf{Score}} & \multicolumn{3}{c|}{\textbf{Statistical tests}} \\ \cline{5-7} 
-%% &  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow$ \\ \hline
-%%\textbf{EBOwithCMAR} & 11 & 15 & 30.6792 & 11 & 23 & 26 \\ \hline
-%%\textbf{JSO} & 8 & 19 & 41.8322 & 8 & 29 & 23 \\ \hline
-%%\textbf{Proposal} & 21 & 28 & 100.0000 & 36 & 3 & 21 \\ \hline
-%%\end{tabular}%
-%%%}
-%%\end{scriptsize}
-%%\end{table}
+
 
 %TODO: Con el fin de que otros autores se puedan comparar con los resultados, reportamos el error alcanzado
-
-The error values between the best fitness values found in each run out of 51 runs and true optimal value are calculated and then best, worst, median, mean, standard deviation and success ratio of the error values are presented in each column in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017}.
+In order, to provide comparable results of our proposal, in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017} are reported the best, worst, median, mean, standard deviation and success ratio.
 %
-These tables show that the uni-modal functions and almost all the hybrid functions were solved.
+Particularly, these tables show that the uni-modal were solved by our proposal.
 %
-Approximately a half of the composition functions are solved with at least one run.
+Also, several simple multi-modal functions were adequatelly approximated.
 %
-However our proposal seems problematic solving the multi-modal functions, this can be provoked since that it does not applies an advanced strategy to deal with the incremented distribution of difference vectors.
+Principally, our proposal solved several complex functions (e.g. Composition Functions) that were not solved by the state-of-the-art.
 %
-Due that the \DEEDM{} some several attraction basis through the optimization process, the mutation provokes high displacements, that as result some regions are not analyzed properly.
-%
-To deal with the previously issue, we suggest apply a matting restriction or implement a local search, which could further improve the convergence.
-
 \begin{table}[t]
 \begin{scriptsize}
 \centering
@@ -329,15 +289,15 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \end{scriptsize}
 \end{table}
 
-\subsection{Empirical analyzes of the initial distance factor}
+\subsection{Empirical analyses of the initial distance factor}
 
-In our proposal the diversity is explicitly promoted through several stages, which are controlled with the initial distance factor$D_I$.
+In our proposal the diversity is explicitly promoted through several stages, which are controlled with the initial distance factor $D_I$.
 %
-Therefore, the robustness of this parameter is analyzed as follows.
+Therefore, the effect of this parameter is analysed in detail.
 %
-In general, the configuration of the experimental validation is taken into account.
+Particularly, the general configuration of the experimental validation is taken into account.
 %
-Particularly, several initial distance factor where considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+Thus, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
 %
 \begin{figure}[t]
 \centering
