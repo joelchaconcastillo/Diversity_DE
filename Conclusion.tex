@@ -1,27 +1,31 @@
-Based in the experimental results carried out in this work, the next conclusions can be drawn.
+Premature convergence is one of the most important drawbacks of \DE{}.
 %
-Principally, the premature convergence can be treated adequately through an advanced replacement phase and considering an elite population.
+This paper proposes a novel variant of \DE{}, the \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}),
+which incorporates a novel replacement strategy that is based on a recently proposed replacement (\RMDDC{}) that was successfully
+used with memetic algorithms in the combinatorial optimization field.
 %
-Also, our proposal is able to enhance the performance of the state-of-the-art, as well the standard-DE in long-term executions.
+In order to attain a faster convergence than in \RMDDC{} two modifications are proposed.
 %
-Additionally, the \DEEDM{} only requires the population size and the initial distance factor, 
-which is considered an advantage since that several recient algorithms are over-parameterized.
+First, no concepts of the multi-objective field are applied, meaning that a more greedy strategy is devised.
 %
-Finally, differently to the \DE{} algorithms, our proposal is not extremely affected by small population sizes.
+Second, an elite population is incorporated.
+%
+Experimental validation shows the important benefits obtained in long-term executions both when compared with a classic \DE{} variant and with
+the state-of-the-art proposals.
+%
+\DEEDM{} incorporates a new parameter, which is called the initial distance factor.
+%
+The obtained quality highly depends on the proper specification of this parameter.
+%
+However, a fixed value could be used for properly dealing with benchmarks of the CEC 2016 and CEC 2017 competitions,
+meaning that a quite robust proposal is obtained.
 
-
-Several extesions could be explored as alternateive or to further improve our proposal, the most important are described as follows.
+Several extensions might be explored to further improve our proposal.
 %
-Firstly, some strategies that involves the expensive optimization field should be analysed, thus several functions evaluations could be avoided to save resources.
+First, with the aim of facilitating the application of \DEEDM{}, adaptive and/or self-adaptive schemes might be applied for setting the initial distance
+factor, as well as for other \DE{} parameters.
 %
-Additionally, a self-adaptive scheme of the initial distance factor should be develop to provide a stable behavior.
+Second, with the aim of reducing the number of evaluations required to attain high-quality solutions, some of the strategies that are used in the
+field of optimization with expensive functions might be incorporated into our proposal.
 %
-Aslo, to explore the possibility of involve a local search scheme. 
-%
-Thus, the irregular fitness landscapes could be solved adequately (e.g. multi-modal problems).
-%
-Applying our proposal to real-world problems could provide high quality solutions (e.g. deal with combinatorial problems).
-%
-Generate a theoretical model to select the adequately population size given a initial distance factor.
-%
-Finally, implement the replacement procedure to the Estimation of Distribution Algorithms seems a promising field.
+Finally, the incorporation of a local search engine mainly in the last stages of the optimization might bring additional benefits.
