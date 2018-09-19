@@ -1,19 +1,19 @@
 Premature convergence is one of the most important drawbacks of \DE{}.
 %
 This paper proposes a novel variant of \DE{}, the \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}),
-which incorporates a novel replacement strategy that is based on a recently proposed replacement (\RMDDC{}) that was successfully
+which incorporates a novel replacement phase that is based on a recently proposed strategy (\RMDDC{}) that was successfully
 used with memetic algorithms in the combinatorial optimization field.
 %
-In order to attain a faster convergence than in \RMDDC{} two modifications are proposed.
+In order to attain a faster convergence than in \RMDDC{} two modifications are proposed for the integration with \DE{}.
 %
 First, no concepts of the multi-objective field are applied, meaning that a more greedy strategy is devised.
 %
 Second, an elite population is incorporated.
 %
-Experimental validation shows the important benefits obtained in long-term executions both when compared with a classic \DE{} variant and with
+Experimental validation shows the important benefits obtained by \DEEDM{} in long-term executions both when compared with a classic \DE{} variant and with
 the state-of-the-art proposals.
 %
-\DEEDM{} incorporates a new parameter, which is called the initial distance factor.
+\DEEDM{} requires setting a new parameter, which is called the initial distance factor.
 %
 The obtained quality highly depends on the proper specification of this parameter.
 %
@@ -26,6 +26,6 @@ First, with the aim of facilitating the application of \DEEDM{}, adaptive and/or
 factor, as well as for other \DE{} parameters.
 %
 Second, with the aim of reducing the number of evaluations required to attain high-quality solutions, some of the strategies that are used in the
-field of optimization with expensive functions might be incorporated into our proposal.
+field of optimization with expensive functions might be integrated into our proposal.
 %
 Finally, the incorporation of a local search engine mainly in the last stages of the optimization might bring additional benefits.
