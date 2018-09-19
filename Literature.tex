@@ -6,10 +6,10 @@ The classic \DE{} scheme is called the \DE{}/rand/1/bin and it has been extensiv
 %
 In fact, our proposal also extends the classic variant.
 %
-However, in order to perform fair comparisons,
-our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
-components and even algorithms not belonging to the \DE{} field.
-
+%However, in order to perform fair comparisons,
+%our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
+%components and even algorithms not belonging to the \DE{} field.
+%
 \DE{} was originally proposed as a direct search method for single-objective continuous optimization.
 %
 The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
@@ -63,7 +63,7 @@ In this case, the mutant vector $V_{i,G}$ is created as follows:
 \vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
 \end{equation}
 %
-The indices $r1, r2, r3 \in [1,NP]$ are different integers randomly chosen from the range $[1, NP]$.
+The indices $r1, r2, r3 \in [1,NP]$ are mutually different integers randomly chosen from the range $[1, NP]$.
 %
 In addition, they are all different from the index $i$.
 %
@@ -124,7 +124,7 @@ Note that in case of a tie, the trial vector survives.
 %
 However, several analyses to better deal with this issue have been carried out.
 %
-Since the general implications of each parameter on the diversity are known, one of
+Since the general implications of each \DE{} parameter on the diversity are known, one of
 the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
 %
 Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
@@ -135,7 +135,7 @@ might be disallowed to delay the convergence~\cite{montgomery2012simple}.
 %
 In this last study the kind of accepted movements varies along the run.
 %
-Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
+Specifically, it discards movements with a norm below a threshold and this threshold decreases taking into account the elapsed generations.
 %
 Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
 %
@@ -162,7 +162,7 @@ to diversify the population when a too low diversity is detected~\cite{yang2015d
 Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
 
 Note that \DE{} variants with best performance in competitions do not apply these modifications
-and that most of these extensions have not been implemented in the most widely used frameworks.
+and that most of these extensions have not been implemented in the most widely used optimization frameworks.
 %
 As a result, these extensions are not so widely used in the community in spite of their important benefits
 for some cases.

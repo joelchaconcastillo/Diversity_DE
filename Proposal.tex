@@ -15,7 +15,7 @@ code is freely available~\footnote{The code in C++ can be downloaded in the next
 
 The core of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is quite similar to the standard \DE{}.
 %
-In fact the way of creating new trial solutions is not modified at all (lines 5 and 6).
+In fact, the way of creating new trial solutions is not modified at all (lines 5 and 6).
 %
 The novelty is the incorporation of an elite population ($E$) and a novel diversity-based replacement strategy.
 %
@@ -83,7 +83,7 @@ It receives as input the parent population (target vectors), the offspring popul
 %
 In each generation it must select the $NP$ vectors of the next parent population.
 %
-First, it calculates the desired minimum distance $D_t$ given the current number of elapsed function evaluations (line 2).
+First, it calculates a desired minimum distance between selected individuals ($D_t$) given the current number of elapsed function evaluations (line 2).
 %
 Then, it joins the three populations in a set of current members (line 3).
 %
@@ -96,7 +96,7 @@ In order to select the $NP$ survivors (next parent population) an iterative proc
 In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
 to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
 %
-Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
+Then, individuals in the \textit{Current set} with a distance lower than $D_t$ to the selected individual are transferred to the \textit{Penalized set} (line 9).
 %
 %%The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
 The way to calculate the distance between two individuals is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
@@ -135,14 +135,14 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 \end{algorithm}
 
 
-In order to complete the description it is important to specify the way to calculate $D_t$ and the methodology to update the 
+In order to complete the description it is important to specify the logic behind the way of calculating $D_t$ and the methodology to update the 
 elite individuals.
 %
 All the remaining steps are maintained as in the classic \DE{} variant.
 %
-The value of $D_t$ is used to alter the degree between exploration and explotation so it should depend on the optimization stage.
+The value of $D_t$ is used to alter the degree between exploration and exploitation so it should depend on the optimization stage.
 %
-Specifically, this value should be reduced as the stopping criterion is reached with the aim of promoting explotation.
+Specifically, this value should be reduced as the stopping criterion is reached with the aim of promoting exploitation.
 %
 In our scheme, an initial value for $D_t$ ($D_I$) must be set.
 %
@@ -152,7 +152,7 @@ Particularly, in this work, the stopping criterion is set by function evaluation
 %
 The reduction is calculated in such a way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
 %
-Therefore, in the remaining $5\%$ diversity is not considered at all.
+Therefore, in the remaining $5\%$ diversity is not considered at all, meaning that intensification is promoted.
 %
 Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
@@ -175,9 +175,9 @@ so a proper exploration is performed which is very important in some kinds of pr
 %
 Thus, the effect of premature convergence might be alleviated.
 %
-A too large $D_I$ might induce too much exploration so a proper exploitation phase is not performed.
+However, a too large $D_I$ might induce too much exploration resulting in an improper exploitation phase.
 %
-In the opposite case, a too low $D_I$ might avoid the exploration phase, so avoiding local optima is more difficult.
+In the opposite case, a too low $D_I$ might result in an improper exploration phase, thus hindering the avoidance of local optima.
 %
 Depending on the kind of fitness landscape and stopping criterion, the optimal $D_I$ might vary.
 %
@@ -203,7 +203,7 @@ of different $D_I$ value is attached in the experimental validation section.
 %Although several top-rank algorithms present good enough results, usually these algorithms need a tuning phase to fit the parameters, therefore in real application it could be infeasible.
 
 %
-Similarly that the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
+Similarly than in the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
 %
 The first one is perhaps the most important for the performance according to several studies developed by Montgomery 
 et al. \cite{montgomery2010analysis}.
@@ -245,8 +245,9 @@ In the cases when values larger than $1.0$ are generated, the value $1.0$ is use
 %
 In the case of generating a negative value, the $F$ is resampled.
 %
-One of the effects of this approach is to increase the probability of generating large $F$-values as the execution progresses
-with the aim of avoiding a fast convergence.
+This means that the probability of generating large $F$-values increases as the execution progresses.
+%
+The principle behind this decision is to help in the avoidance of fast convergence.
 
 
 % thus the shape of the distribution increases with the function evaluations and therefore are generated more extreme values at the end of execution, this aims avoid stagnation in different stages of the algorithm.
