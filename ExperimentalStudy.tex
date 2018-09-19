@@ -28,6 +28,12 @@ In every case, the stopping criterion was set to $25,000,000$ functions evaluati
 %
 We performed our evaluation following the guidelines of \CEC{} benchmark competitions.
 %
+Also, we took into account statistical tests.
+%
+The first one, considers a composed score between the mean of difference error and the rank of the algorithms.
+%
+The second one, follows a statistical scheme, which applies comparisons of the algorithms between pairs that are structured in the distribution of the errors.
+%
 Thus, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller, the error is treated as $0$.
 %
 %The minimal tolerance to consider a determined problem solved is $1e-8$, hence if the difference of the optimal obtained and the true optinal is below this tolerance then the error is zero.
