@@ -202,7 +202,7 @@ As expected, diversity decreases in a gradual way and a degree of diversity is m
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Elite.eps} 
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Target.eps} 
 \end{tabular}
-\caption{Average distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
+\caption{Mean distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
 \label{fig:diversity}
 \end{figure}
 
@@ -212,7 +212,7 @@ As expected, diversity decreases in a gradual way and a degree of diversity is m
 
 
 Finally, in order to provide comparable results of our proposal, Tables~\ref{tab:Results_CEC2016} and~\ref{tab:Results_CEC2017} report the best, worst, median, 
-mean, standard deviation and success ratio for both benchmarks.
+mean, standard deviation and success rate for both benchmarks.
 %
 These tables show that all the uni-modal problems were solved by our proposal.
 %
@@ -228,7 +228,7 @@ In fact, several complex functions that had never been solved by state-of-the-ar
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
- & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
+ & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std.} & \textbf{Succ. Ratio} \\ \hline
 $f_1$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_2$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_3$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
@@ -272,7 +272,7 @@ $f_{30}$ & 1.84E+02 & 1.84E+02 & 1.84E+02 & 1.84E+02 & 3.25E-02 & 0.00E+00 \\ \h
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
- & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
+ & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std.} & \textbf{Succ. Ratio} \\ \hline
 $f_1$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_2$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_3$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
@@ -311,7 +311,7 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \begin{figure}[t]
 \centering
   \includegraphics[scale=0.6]{img/Tuning_CEC.eps}
-\caption{Average success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
+\caption{Mean success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
 \label{fig:one}
 \end{figure}
 
@@ -327,7 +327,7 @@ Particularly, the same global parameterization than the one used in the previous
 However, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
 
 
-Fig. \ref{fig:one} shows the average success ratio attained for both benchmarks when considering different $D_I$ values.
+Fig. \ref{fig:one} shows the mean success rate attained for both benchmarks when considering different $D_I$ values.
 %
 The most relevant conclusions are:
 \begin{itemize}
