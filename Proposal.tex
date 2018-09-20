@@ -233,7 +233,7 @@ Particularly, each $F$ is sampled from a Cauchy distribution (Eq. \ref{eqn:cauch
  Cauchy(0.5, 0.5*nfes/max\_nfes)
 \end{equation}
 %
-Therefore, at the first optimization stages, F values near to $0.5$ are generated.
+Therefore, at the first optimization stages, F values near to $0.5$ are generated with a high probability.
 %
 Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
 that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
