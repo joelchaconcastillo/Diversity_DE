@@ -116,7 +116,7 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 	\caption{Replacement Phase} \label{alg:Replacement}
 	\begin{algorithmic}[1]
 	\STATE Input: $Population$ ($target$ $vectors$), $Offspring$ ($trial$ $vectors$), and $Elite$
-	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
+	\STATE Update $D_t = D_I - D_I *(nfes/(0.90*max\_nfes)) $ 
 	\STATE $Current = Population \cup Offspring \cup Elite$.
 	\STATE $Survivors = Penalized = \emptyset$.
 	\WHILE{ $|Survivors| < NP$ And $|Current| > 0$ }
@@ -150,11 +150,11 @@ Then, similarly than in~\cite{segura2016novel}, a linear reduction of $D_t$ is p
 %
 Particularly, in this work, the stopping criterion is set by function evaluations.
 %
-The reduction is calculated in such a way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
+The reduction is calculated in such a way that by the $90\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
 %
-Therefore, in the remaining $5\%$ diversity is not considered at all, meaning that intensification is promoted.
+Therefore, in the remaining $10\%$ diversity is not considered at all, meaning that intensification is promoted.
 %
-Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
+Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.90*max\_nfes))$.
 %
 %The reduction of this parameter is based in a linear reduction, as is indicated in .
 %

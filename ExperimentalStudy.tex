@@ -25,7 +25,7 @@ Following the recommendations given in~\cite{molina2017analysis}, all these algo
 
 Given that the optimizers taken into account are stochastic algorithms, each execution was repeated 51 times with different seeds.
 %
-In every case, the stopping criterion was set to $25,000,000$ functions evaluations.
+In every case, the stopping criterion was set to $25 \times 10^6$ functions evaluations.
 %
 The validation follows the guidelines of \CEC{} benchmark competitions and the statistical tests proposed in~\cite{Joel:StatisticalTest} are also included.
 %
@@ -194,13 +194,13 @@ are established --- the diversity is implicitly maintained.
 %
 The right side shows the diversity of the target vectors.
 %
-As expected, diversity decreases in a gradual way and a degree of diversity is maintained until the $95\%$ of the total function evaluations is reached.
+As expected, diversity decreases in a gradual way and a degree of diversity is maintained until the $90\%$ of the total function evaluations is reached.
 
 \begin{figure}[t]
 \centering
 \begin{tabular}{cc}
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Elite.eps} 
-   \includegraphics[scale=0.23, angle=-90]{img/Diversity_Trial.eps} 
+   \includegraphics[scale=0.23, angle=-90]{img/Diversity_Target.eps} 
 \end{tabular}
 \caption{Average \DCN{} of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
 \label{fig:diversity}
@@ -321,8 +321,8 @@ However, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.
 
 \begin{figure}[t]
 \centering
-  \includegraphics[scale=0.3, angle=-90]{img/Tuning_CEC.eps}
-\caption{Average success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25,000,000$ function evaluations}
+  \includegraphics[scale=0.6]{img/Tuning_CEC.eps}
+\caption{Average success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
 \label{fig:one}
 \end{figure}
 
