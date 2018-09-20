@@ -308,6 +308,13 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \end{scriptsize}
 \end{table}
 
+\begin{figure}[t]
+\centering
+  \includegraphics[scale=0.6]{img/Tuning_CEC.eps}
+\caption{Average success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
+\label{fig:one}
+\end{figure}
+
 \subsection{Empirical analyses of the initial distance factor}
 
 In our proposal the diversity is explicitly promoted and the total amount of diversity maintained in the population 
@@ -319,12 +326,6 @@ Particularly, the same global parameterization than the one used in the previous
 %
 However, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
 
-\begin{figure}[t]
-\centering
-  \includegraphics[scale=0.6]{img/Tuning_CEC.eps}
-\caption{Average success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
-\label{fig:one}
-\end{figure}
 
 Fig. \ref{fig:one} shows the average success ratio attained for both benchmarks when considering different $D_I$ values.
 %
