@@ -183,7 +183,7 @@ This implies that the performance of the state-of-the-art algorithms is not so g
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 
 Since our proposal is based on the explicit control of diversity, Fig. \ref{fig:diversity} shows the evolution of the mean of the diversity calculated
-as the mean distance between individuals with the aim of better understanding its behavior.
+as the mean distance to the closest individual with the aim of better understanding its behavior.
 %
 Particularly, functions $f_1$ and $f_{30}$ were selected for this analysis because they have quite different features (easy uni-modal vs. complex multi-modal).
 %
@@ -216,7 +216,7 @@ mean, standard deviation and success rate for both benchmarks.
 %
 These tables show that all the uni-modal problems were solved by our proposal.
 %
-Additionally, several simple and even some of the most complex multi-modal functions were optimally solved .
+Additionally, several simple and even some of the most complex multi-modal functions were optimally solved.
 %
 In fact, several complex functions that had never been solved by state-of-the-art could be solved by \DEEDM{}.
 %
@@ -318,7 +318,7 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \subsection{Empirical analyses of the initial distance factor}
 
 In our proposal the diversity is explicitly promoted and the total amount of diversity maintained in the population 
-is controlled with the initial distance factor $D_I$.
+depends on the initial distance factor $D_I$.
 %
 Therefore, the effect of this parameter on the quality is analyzed in this section.
 %
@@ -333,10 +333,11 @@ The most relevant conclusions are:
 \begin{itemize}
 \item If diversity is not promoted ($D_I = 0.0 $) there is an important degradation in the performance. 
 \item Performance is quite robust in the sense that a large range of $D_I$ values provide proper performance. For instance values
-in the range $[0.1, 0.5]$ provide high-quality solutions.
-\item If $D_I$ is too large (values larger than $0.5$), the quality of solutions decreases. This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
+in the range $[0.2, 0.6]$ provide high-quality solutions.
+\item If $D_I$ is too large (values larger than $0.6$), the quality of solutions decreases. This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
 \end{itemize}
 
 To summarize, \DEEDM{} incorporates a novel parameter which is important for performance.
 %
-However, results are quite robust in the sense that even if it is not tuned for each problem, high-quality results can be obtained.
+However, results are quite robust in the sense that even if it is not tuned for each problem, high-quality results can be obtained and that
+a large range of values provide competitive results.
