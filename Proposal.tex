@@ -48,7 +48,7 @@ Second, the elite population is also considered as an input of the replacement s
 	\WHILE{ stopping criterion is not satisfied}
 	   \FOR{ $i=1$ to $NP$} 
 		\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
-		\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
+		\STATE Crossover: Use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
 		\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
 	   \ENDFOR
 		\STATE Replacement: Select the target vectors ($X_{G+1}$) according to Algorithm \ref{alg:Replacement} .
