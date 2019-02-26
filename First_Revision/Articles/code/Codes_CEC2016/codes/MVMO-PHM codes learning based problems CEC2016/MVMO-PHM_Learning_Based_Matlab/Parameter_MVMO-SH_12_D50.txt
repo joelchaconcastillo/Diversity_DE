@@ -1,0 +1,17 @@
+ P1=              0.14200E+03                ! Number of particles                                                         
+ P2=              0.83186E+00                ! Initial portion of good particles                                           
+ P3=              0.45223E+00                ! Final portion of good particles                                             
+ P4=              0.60000E+01                ! Archive size                                                                
+ P5=              0.13000E+02                ! Initial number for variables selected for mutation                          
+ P6=              0.10000E+02                ! Final number for variables selected for mutation                            
+ P7=              0.20744E+01                ! Initial fs-factor                                                           
+ P8=              0.55874E+02                ! Final fs-factor                                                             
+ P9=              0.10000E+03                ! Local search probability factor                                             
+ P10=             0.42918E+00                ! Begin of local search                                                       
+ P11=             0.12200E+03                ! max number of local search                                                  
+ P12=             0.16208E+00                ! alpha-factor                                                                
+ P13=             0.20000E+01                ! method of num. derivative,  1 single side or 2 both side                    
+ P14=             0.10000E+01                ! yes or no to Pre-Local Search using only one iteration step                 
+ P15=             0.26702E+00                ! Begin of Pre-Local Search using only one iteration step                     
+ P16=             0.60000E+01                ! max number of Pre-Local Search runs                                         
+ P17=             0.00000E+00                ! Repetition of local search (0 - not limited; yes if number>0)                                               

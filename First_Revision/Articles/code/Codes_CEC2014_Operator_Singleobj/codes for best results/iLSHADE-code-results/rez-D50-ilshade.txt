@@ -1,0 +1,1710 @@
+
+-------------------------------------------------------
+Function = 1, Dimension size = 50
+
+1th run, error value = 3.40723469e+03
+2th run, error value = 1.86916172e+03
+3th run, error value = 1.85462959e+03
+4th run, error value = 8.57983773e+01
+5th run, error value = 4.16034191e+03
+6th run, error value = 2.74263566e+02
+7th run, error value = 3.94483544e+03
+8th run, error value = 3.09237295e+02
+9th run, error value = 1.95435255e+03
+10th run, error value = 7.07025960e+02
+11th run, error value = 7.25795275e+03
+12th run, error value = 1.65847398e+03
+13th run, error value = 2.61132839e+02
+14th run, error value = 1.32881669e+03
+15th run, error value = 7.66385913e+02
+16th run, error value = 1.40202108e+03
+17th run, error value = 5.06725664e+02
+18th run, error value = 1.02504752e+03
+19th run, error value = 2.31937499e+03
+20th run, error value = 9.66541818e+02
+21th run, error value = 2.34595835e+01
+22th run, error value = 5.18589903e+03
+23th run, error value = 4.27510365e+03
+24th run, error value = 1.45280917e+03
+25th run, error value = 2.11293334e+02
+26th run, error value = 6.45687272e+02
+27th run, error value = 2.51141171e+03
+28th run, error value = 3.44448495e+02
+29th run, error value = 1.06934466e+03
+30th run, error value = 8.21337576e+03
+31th run, error value = 1.68972388e+03
+32th run, error value = 4.05345914e+03
+33th run, error value = 4.78925434e+02
+34th run, error value = 1.24067470e+02
+35th run, error value = 1.08901611e+03
+36th run, error value = 3.55906129e+02
+37th run, error value = 3.48208142e+02
+38th run, error value = 2.08334153e+03
+39th run, error value = 2.42576305e+03
+40th run, error value = 8.13853269e+03
+41th run, error value = 1.56331963e+03
+42th run, error value = 1.00579785e+03
+43th run, error value = 1.80420039e+02
+44th run, error value = 3.40777887e+03
+45th run, error value = 2.85573505e+03
+46th run, error value = 6.84222514e+02
+47th run, error value = 2.43937524e+02
+48th run, error value = 3.91712460e+02
+49th run, error value = 5.48351304e+03
+50th run, error value = 6.68510302e+02
+51th run, error value = 2.88632419e+02
+
+Function = 1, Dimension size = 50,  mean = 1.91279824e+03, std = 2.03634276e+03
+
+-------------------------------------------------------
+Function = 2, Dimension size = 50
+
+1th run, error value = 0.00000000e+00
+2th run, error value = 0.00000000e+00
+3th run, error value = 0.00000000e+00
+4th run, error value = 0.00000000e+00
+5th run, error value = 0.00000000e+00
+6th run, error value = 0.00000000e+00
+7th run, error value = 0.00000000e+00
+8th run, error value = 0.00000000e+00
+9th run, error value = 0.00000000e+00
+10th run, error value = 0.00000000e+00
+11th run, error value = 0.00000000e+00
+12th run, error value = 0.00000000e+00
+13th run, error value = 0.00000000e+00
+14th run, error value = 0.00000000e+00
+15th run, error value = 0.00000000e+00
+16th run, error value = 0.00000000e+00
+17th run, error value = 0.00000000e+00
+18th run, error value = 0.00000000e+00
+19th run, error value = 0.00000000e+00
+20th run, error value = 0.00000000e+00
+21th run, error value = 0.00000000e+00
+22th run, error value = 0.00000000e+00
+23th run, error value = 0.00000000e+00
+24th run, error value = 0.00000000e+00
+25th run, error value = 0.00000000e+00
+26th run, error value = 0.00000000e+00
+27th run, error value = 0.00000000e+00
+28th run, error value = 0.00000000e+00
+29th run, error value = 0.00000000e+00
+30th run, error value = 0.00000000e+00
+31th run, error value = 0.00000000e+00
+32th run, error value = 0.00000000e+00
+33th run, error value = 0.00000000e+00
+34th run, error value = 0.00000000e+00
+35th run, error value = 0.00000000e+00
+36th run, error value = 0.00000000e+00
+37th run, error value = 0.00000000e+00
+38th run, error value = 0.00000000e+00
+39th run, error value = 0.00000000e+00
+40th run, error value = 0.00000000e+00
+41th run, error value = 0.00000000e+00
+42th run, error value = 0.00000000e+00
+43th run, error value = 0.00000000e+00
+44th run, error value = 0.00000000e+00
+45th run, error value = 0.00000000e+00
+46th run, error value = 0.00000000e+00
+47th run, error value = 0.00000000e+00
+48th run, error value = 0.00000000e+00
+49th run, error value = 0.00000000e+00
+50th run, error value = 0.00000000e+00
+51th run, error value = 0.00000000e+00
+
+Function = 2, Dimension size = 50,  mean = 0.00000000e+00, std = 0.00000000e+00
+
+-------------------------------------------------------
+Function = 3, Dimension size = 50
+
+1th run, error value = 0.00000000e+00
+2th run, error value = 0.00000000e+00
+3th run, error value = 0.00000000e+00
+4th run, error value = 0.00000000e+00
+5th run, error value = 0.00000000e+00
+6th run, error value = 0.00000000e+00
+7th run, error value = 0.00000000e+00
+8th run, error value = 0.00000000e+00
+9th run, error value = 0.00000000e+00
+10th run, error value = 0.00000000e+00
+11th run, error value = 0.00000000e+00
+12th run, error value = 0.00000000e+00
+13th run, error value = 0.00000000e+00
+14th run, error value = 0.00000000e+00
+15th run, error value = 0.00000000e+00
+16th run, error value = 0.00000000e+00
+17th run, error value = 0.00000000e+00
+18th run, error value = 0.00000000e+00
+19th run, error value = 0.00000000e+00
+20th run, error value = 0.00000000e+00
+21th run, error value = 0.00000000e+00
+22th run, error value = 0.00000000e+00
+23th run, error value = 0.00000000e+00
+24th run, error value = 0.00000000e+00
+25th run, error value = 0.00000000e+00
+26th run, error value = 0.00000000e+00
+27th run, error value = 0.00000000e+00
+28th run, error value = 0.00000000e+00
+29th run, error value = 0.00000000e+00
+30th run, error value = 0.00000000e+00
+31th run, error value = 0.00000000e+00
+32th run, error value = 0.00000000e+00
+33th run, error value = 0.00000000e+00
+34th run, error value = 0.00000000e+00
+35th run, error value = 0.00000000e+00
+36th run, error value = 0.00000000e+00
+37th run, error value = 0.00000000e+00
+38th run, error value = 0.00000000e+00
+39th run, error value = 0.00000000e+00
+40th run, error value = 0.00000000e+00
+41th run, error value = 0.00000000e+00
+42th run, error value = 0.00000000e+00
+43th run, error value = 0.00000000e+00
+44th run, error value = 0.00000000e+00
+45th run, error value = 0.00000000e+00
+46th run, error value = 0.00000000e+00
+47th run, error value = 0.00000000e+00
+48th run, error value = 0.00000000e+00
+49th run, error value = 0.00000000e+00
+50th run, error value = 0.00000000e+00
+51th run, error value = 0.00000000e+00
+
+Function = 3, Dimension size = 50,  mean = 0.00000000e+00, std = 0.00000000e+00
+
+-------------------------------------------------------
+Function = 4, Dimension size = 50
+
+1th run, error value = 9.83970669e+01
+2th run, error value = 2.17424240e-01
+3th run, error value = 9.81031117e+01
+4th run, error value = 9.81031117e+01
+5th run, error value = 9.81031117e+01
+6th run, error value = 1.60459892e-02
+7th run, error value = 1.42856290e-02
+8th run, error value = 1.86752064e-01
+9th run, error value = 9.81031117e+01
+10th run, error value = 4.65501937e-01
+11th run, error value = 5.59632277e-01
+12th run, error value = 9.83970669e+01
+13th run, error value = 9.81031117e+01
+14th run, error value = 9.81031117e+01
+15th run, error value = 9.81031117e+01
+16th run, error value = 5.23556100e-01
+17th run, error value = 7.50530714e-01
+18th run, error value = 9.81031117e+01
+19th run, error value = 9.81031117e+01
+20th run, error value = 9.81031117e+01
+21th run, error value = 9.81031117e+01
+22th run, error value = 9.81031117e+01
+23th run, error value = 7.19714633e-01
+24th run, error value = 9.81031117e+01
+25th run, error value = 9.83970669e+01
+26th run, error value = 9.81031117e+01
+27th run, error value = 3.60541564e-01
+28th run, error value = 9.81031117e+01
+29th run, error value = 5.63218061e-01
+30th run, error value = 7.27096131e-01
+31th run, error value = 9.81031117e+01
+32th run, error value = 9.81031117e+01
+33th run, error value = 3.12679378e-02
+34th run, error value = 2.77113029e-03
+35th run, error value = 9.83970669e+01
+36th run, error value = 9.81031117e+01
+37th run, error value = 2.48238937e-02
+38th run, error value = 9.81031117e+01
+39th run, error value = 9.81031117e+01
+40th run, error value = 9.81031117e+01
+41th run, error value = 3.65620025e-03
+42th run, error value = 9.81031117e+01
+43th run, error value = 1.01296412e-01
+44th run, error value = 9.81031117e+01
+45th run, error value = 9.81031117e+01
+46th run, error value = 9.81031117e+01
+47th run, error value = 9.81031117e+01
+48th run, error value = 5.63052061e-01
+49th run, error value = 1.44894171e-01
+50th run, error value = 9.81031117e+01
+51th run, error value = 9.81031117e+01
+
+Function = 4, Dimension size = 50,  mean = 6.16951266e+01, std = 4.72972823e+01
+
+-------------------------------------------------------
+Function = 5, Dimension size = 50
+
+1th run, error value = 1.99999987e+01
+2th run, error value = 2.02172779e+01
+3th run, error value = 2.02415152e+01
+4th run, error value = 2.00960290e+01
+5th run, error value = 2.00579623e+01
+6th run, error value = 2.03037491e+01
+7th run, error value = 2.00037633e+01
+8th run, error value = 1.99999991e+01
+9th run, error value = 2.10961504e+01
+10th run, error value = 2.00000396e+01
+11th run, error value = 1.99999992e+01
+12th run, error value = 2.00001117e+01
+13th run, error value = 2.03868064e+01
+14th run, error value = 2.00343809e+01
+15th run, error value = 2.04240829e+01
+16th run, error value = 1.99999993e+01
+17th run, error value = 2.00000001e+01
+18th run, error value = 2.00000082e+01
+19th run, error value = 2.00056103e+01
+20th run, error value = 2.00262415e+01
+21th run, error value = 2.03037455e+01
+22th run, error value = 2.00000005e+01
+23th run, error value = 2.00035127e+01
+24th run, error value = 2.04653479e+01
+25th run, error value = 2.00138070e+01
+26th run, error value = 1.99999957e+01
+27th run, error value = 1.99999839e+01
+28th run, error value = 2.02365548e+01
+29th run, error value = 1.99999992e+01
+30th run, error value = 1.99999995e+01
+31th run, error value = 1.99999910e+01
+32th run, error value = 2.00000047e+01
+33th run, error value = 1.99999996e+01
+34th run, error value = 1.99999974e+01
+35th run, error value = 2.00000596e+01
+36th run, error value = 2.00707908e+01
+37th run, error value = 2.01891135e+01
+38th run, error value = 1.99999929e+01
+39th run, error value = 2.05979880e+01
+40th run, error value = 1.99999992e+01
+41th run, error value = 1.99999986e+01
+42th run, error value = 1.99999578e+01
+43th run, error value = 2.01782289e+01
+44th run, error value = 2.00000023e+01
+45th run, error value = 1.99999997e+01
+46th run, error value = 2.00707742e+01
+47th run, error value = 1.99999997e+01
+48th run, error value = 2.00180850e+01
+49th run, error value = 1.99999960e+01
+50th run, error value = 2.00420185e+01
+51th run, error value = 2.00143074e+01
+
+Function = 5, Dimension size = 50,  mean = 2.00999603e+01, std = 1.99809908e-01
+
+-------------------------------------------------------
+Function = 6, Dimension size = 50
+
+1th run, error value = 6.41728544e-04
+2th run, error value = 6.35442655e-05
+3th run, error value = 0.00000000e+00
+4th run, error value = 6.84871793e-04
+5th run, error value = 4.74346247e-03
+6th run, error value = 7.83980746e-05
+7th run, error value = 4.58934527e-04
+8th run, error value = 0.00000000e+00
+9th run, error value = 7.22998630e-03
+10th run, error value = 4.51874544e-04
+11th run, error value = 3.51446079e-06
+12th run, error value = 1.41208917e-05
+13th run, error value = 5.45520348e-04
+14th run, error value = 2.25937267e-04
+15th run, error value = 0.00000000e+00
+16th run, error value = 2.47118141e-04
+17th run, error value = 0.00000000e+00
+18th run, error value = 0.00000000e+00
+19th run, error value = 1.41208918e-05
+20th run, error value = 1.04276515e-03
+21th run, error value = 7.05998173e-06
+22th run, error value = 9.81404531e-01
+23th run, error value = 2.93908409e-02
+24th run, error value = 9.31991166e-04
+25th run, error value = 2.89396981e-02
+26th run, error value = 1.03798111e-03
+27th run, error value = 0.00000000e+00
+28th run, error value = 4.96121532e-04
+29th run, error value = 5.35521219e-01
+30th run, error value = 6.30494551e-04
+31th run, error value = 7.87455133e-06
+32th run, error value = 1.60049082e-05
+33th run, error value = 1.64581855e-02
+34th run, error value = 8.22914368e-03
+35th run, error value = 1.30693216e-03
+36th run, error value = 4.51874544e-04
+37th run, error value = 4.55073385e-03
+38th run, error value = 4.12460787e-05
+39th run, error value = 1.50003531e+00
+40th run, error value = 1.41208917e-05
+41th run, error value = 3.51445942e-06
+42th run, error value = 0.00000000e+00
+43th run, error value = 7.87455235e-06
+44th run, error value = 6.36760065e-04
+45th run, error value = 1.49549909e-03
+46th run, error value = 5.78917099e-02
+47th run, error value = 1.15436534e-03
+48th run, error value = 1.41532848e-04
+49th run, error value = 5.92207554e-03
+50th run, error value = 7.87455247e-06
+51th run, error value = 3.64323775e-03
+
+Function = 6, Dimension size = 50,  mean = 6.26827785e-02, std = 2.54574022e-01
+
+-------------------------------------------------------
+Function = 7, Dimension size = 50
+
+1th run, error value = 0.00000000e+00
+2th run, error value = 0.00000000e+00
+3th run, error value = 0.00000000e+00
+4th run, error value = 0.00000000e+00
+5th run, error value = 0.00000000e+00
+6th run, error value = 0.00000000e+00
+7th run, error value = 0.00000000e+00
+8th run, error value = 0.00000000e+00
+9th run, error value = 0.00000000e+00
+10th run, error value = 0.00000000e+00
+11th run, error value = 0.00000000e+00
+12th run, error value = 0.00000000e+00
+13th run, error value = 0.00000000e+00
+14th run, error value = 0.00000000e+00
+15th run, error value = 0.00000000e+00
+16th run, error value = 0.00000000e+00
+17th run, error value = 0.00000000e+00
+18th run, error value = 0.00000000e+00
+19th run, error value = 0.00000000e+00
+20th run, error value = 0.00000000e+00
+21th run, error value = 0.00000000e+00
+22th run, error value = 0.00000000e+00
+23th run, error value = 0.00000000e+00
+24th run, error value = 0.00000000e+00
+25th run, error value = 0.00000000e+00
+26th run, error value = 0.00000000e+00
+27th run, error value = 0.00000000e+00
+28th run, error value = 0.00000000e+00
+29th run, error value = 0.00000000e+00
+30th run, error value = 0.00000000e+00
+31th run, error value = 0.00000000e+00
+32th run, error value = 0.00000000e+00
+33th run, error value = 0.00000000e+00
+34th run, error value = 0.00000000e+00
+35th run, error value = 0.00000000e+00
+36th run, error value = 0.00000000e+00
+37th run, error value = 0.00000000e+00
+38th run, error value = 0.00000000e+00
+39th run, error value = 0.00000000e+00
+40th run, error value = 0.00000000e+00
+41th run, error value = 0.00000000e+00
+42th run, error value = 0.00000000e+00
+43th run, error value = 0.00000000e+00
+44th run, error value = 0.00000000e+00
+45th run, error value = 0.00000000e+00
+46th run, error value = 0.00000000e+00
+47th run, error value = 0.00000000e+00
+48th run, error value = 0.00000000e+00
+49th run, error value = 0.00000000e+00
+50th run, error value = 0.00000000e+00
+51th run, error value = 0.00000000e+00
+
+Function = 7, Dimension size = 50,  mean = 0.00000000e+00, std = 0.00000000e+00
+
+-------------------------------------------------------
+Function = 8, Dimension size = 50
+
+1th run, error value = 0.00000000e+00
+2th run, error value = 0.00000000e+00
+3th run, error value = 0.00000000e+00
+4th run, error value = 0.00000000e+00
+5th run, error value = 0.00000000e+00
+6th run, error value = 0.00000000e+00
+7th run, error value = 0.00000000e+00
+8th run, error value = 0.00000000e+00
+9th run, error value = 0.00000000e+00
+10th run, error value = 0.00000000e+00
+11th run, error value = 0.00000000e+00
+12th run, error value = 0.00000000e+00
+13th run, error value = 0.00000000e+00
+14th run, error value = 0.00000000e+00
+15th run, error value = 0.00000000e+00
+16th run, error value = 0.00000000e+00
+17th run, error value = 0.00000000e+00
+18th run, error value = 0.00000000e+00
+19th run, error value = 0.00000000e+00
+20th run, error value = 0.00000000e+00
+21th run, error value = 0.00000000e+00
+22th run, error value = 0.00000000e+00
+23th run, error value = 0.00000000e+00
+24th run, error value = 0.00000000e+00
+25th run, error value = 0.00000000e+00
+26th run, error value = 0.00000000e+00
+27th run, error value = 0.00000000e+00
+28th run, error value = 0.00000000e+00
+29th run, error value = 0.00000000e+00
+30th run, error value = 0.00000000e+00
+31th run, error value = 0.00000000e+00
+32th run, error value = 0.00000000e+00
+33th run, error value = 0.00000000e+00
+34th run, error value = 0.00000000e+00
+35th run, error value = 0.00000000e+00
+36th run, error value = 0.00000000e+00
+37th run, error value = 0.00000000e+00
+38th run, error value = 0.00000000e+00
+39th run, error value = 0.00000000e+00
+40th run, error value = 0.00000000e+00
+41th run, error value = 0.00000000e+00
+42th run, error value = 0.00000000e+00
+43th run, error value = 0.00000000e+00
+44th run, error value = 0.00000000e+00
+45th run, error value = 0.00000000e+00
+46th run, error value = 0.00000000e+00
+47th run, error value = 0.00000000e+00
+48th run, error value = 0.00000000e+00
+49th run, error value = 0.00000000e+00
+50th run, error value = 0.00000000e+00
+51th run, error value = 0.00000000e+00
+
+Function = 8, Dimension size = 50,  mean = 0.00000000e+00, std = 0.00000000e+00
+
+-------------------------------------------------------
+Function = 9, Dimension size = 50
+
+1th run, error value = 8.95484159e+00
+2th run, error value = 1.19395087e+01
+3th run, error value = 1.19395106e+01
+4th run, error value = 1.29354784e+01
+5th run, error value = 9.94967849e+00
+6th run, error value = 1.49248388e+01
+7th run, error value = 9.94966355e+00
+8th run, error value = 7.95968557e+00
+9th run, error value = 1.39294392e+01
+10th run, error value = 1.09445516e+01
+11th run, error value = 8.95463160e+00
+12th run, error value = 1.29344682e+01
+13th run, error value = 1.19399497e+01
+14th run, error value = 1.39294282e+01
+15th run, error value = 8.95463705e+00
+16th run, error value = 1.29344779e+01
+17th run, error value = 8.95463153e+00
+18th run, error value = 1.59193517e+01
+19th run, error value = 9.94959057e+00
+20th run, error value = 1.09502252e+01
+21th run, error value = 1.59193597e+01
+22th run, error value = 7.95972166e+00
+23th run, error value = 8.95464444e+00
+24th run, error value = 1.49243809e+01
+25th run, error value = 9.94959355e+00
+26th run, error value = 1.29344800e+01
+27th run, error value = 7.95973522e+00
+28th run, error value = 1.29344948e+01
+29th run, error value = 1.19395087e+01
+30th run, error value = 1.39333817e+01
+31th run, error value = 1.69143046e+01
+32th run, error value = 1.09449956e+01
+33th run, error value = 1.19395387e+01
+34th run, error value = 5.96975437e+00
+35th run, error value = 1.19395116e+01
+36th run, error value = 1.09445519e+01
+37th run, error value = 9.94960132e+00
+38th run, error value = 8.95464138e+00
+39th run, error value = 1.19395551e+01
+40th run, error value = 5.96975741e+00
+41th run, error value = 1.29344811e+01
+42th run, error value = 1.29344745e+01
+43th run, error value = 8.95485185e+00
+44th run, error value = 1.09446548e+01
+45th run, error value = 1.59239794e+01
+46th run, error value = 1.09445496e+01
+47th run, error value = 1.19395266e+01
+48th run, error value = 5.96975463e+00
+49th run, error value = 1.39312849e+01
+50th run, error value = 1.19395093e+01
+51th run, error value = 1.19395088e+01
+
+Function = 9, Dimension size = 50,  mean = 1.13741309e+01, std = 2.57870525e+00
+
+-------------------------------------------------------
+Function = 10, Dimension size = 50
+
+1th run, error value = 1.02435433e-01
+2th run, error value = 5.00102145e-02
+3th run, error value = 7.49915737e-02
+4th run, error value = 5.00232158e-02
+5th run, error value = 7.85994780e-02
+6th run, error value = 1.00005447e-01
+7th run, error value = 1.30679934e-01
+8th run, error value = 8.01107234e-02
+9th run, error value = 9.99807907e-02
+10th run, error value = 1.37427440e-01
+11th run, error value = 9.89351006e-02
+12th run, error value = 4.20304651e-02
+13th run, error value = 6.24770093e-02
+14th run, error value = 3.16416069e-02
+15th run, error value = 1.26582304e-01
+16th run, error value = 6.26735393e-02
+17th run, error value = 5.05580598e-02
+18th run, error value = 1.00151663e-01
+19th run, error value = 1.75090055e-01
+20th run, error value = 7.49712295e-02
+21th run, error value = 2.49931327e-02
+22th run, error value = 2.50123202e-02
+23th run, error value = 1.00805456e-01
+24th run, error value = 4.99867011e-02
+25th run, error value = 7.55011724e-02
+26th run, error value = 5.33580813e-02
+27th run, error value = 8.74476053e-02
+28th run, error value = 7.52801728e-02
+29th run, error value = 8.89358669e-02
+30th run, error value = 9.65124216e-02
+31th run, error value = 8.76952048e-02
+32th run, error value = 1.24929684e-01
+33th run, error value = 4.45260394e-02
+34th run, error value = 4.99802195e-02
+35th run, error value = 1.00787487e-01
+36th run, error value = 6.25614778e-02
+37th run, error value = 4.99752805e-02
+38th run, error value = 2.76372795e-02
+39th run, error value = 6.40531517e-02
+40th run, error value = 7.57477343e-02
+41th run, error value = 8.86671382e-02
+42th run, error value = 1.01619708e-01
+43th run, error value = 8.77045660e-02
+44th run, error value = 1.14703121e-01
+45th run, error value = 9.20145068e-02
+46th run, error value = 7.49800406e-02
+47th run, error value = 1.10775719e-01
+48th run, error value = 5.00142111e-02
+49th run, error value = 8.29025983e-02
+50th run, error value = 8.78044302e-02
+51th run, error value = 1.15414613e-01
+
+Function = 10, Dimension size = 50,  mean = 8.04255377e-02, std = 3.09394035e-02
+
+-------------------------------------------------------
+Function = 11, Dimension size = 50
+
+1th run, error value = 2.98474034e+03
+2th run, error value = 3.12485644e+03
+3th run, error value = 2.08091928e+03
+4th run, error value = 3.59993393e+03
+5th run, error value = 2.91607640e+03
+6th run, error value = 3.33681041e+03
+7th run, error value = 2.77015763e+03
+8th run, error value = 2.98555647e+03
+9th run, error value = 3.42912460e+03
+10th run, error value = 2.89166091e+03
+11th run, error value = 3.14062368e+03
+12th run, error value = 2.80858804e+03
+13th run, error value = 2.58509462e+03
+14th run, error value = 2.79276841e+03
+15th run, error value = 3.49535243e+03
+16th run, error value = 3.30363279e+03
+17th run, error value = 3.14253353e+03
+18th run, error value = 3.23170777e+03
+19th run, error value = 3.27598914e+03
+20th run, error value = 2.68441588e+03
+21th run, error value = 3.00034052e+03
+22th run, error value = 3.47992282e+03
+23th run, error value = 2.88968540e+03
+24th run, error value = 2.95886589e+03
+25th run, error value = 3.01087342e+03
+26th run, error value = 3.46519635e+03
+27th run, error value = 2.95595912e+03
+28th run, error value = 2.56562877e+03
+29th run, error value = 2.79876064e+03
+30th run, error value = 3.22090312e+03
+31th run, error value = 3.66255122e+03
+32th run, error value = 2.83421473e+03
+33th run, error value = 3.54760162e+03
+34th run, error value = 3.25433559e+03
+35th run, error value = 2.27647319e+03
+36th run, error value = 3.12014016e+03
+37th run, error value = 2.09036347e+03
+38th run, error value = 2.88618076e+03
+39th run, error value = 1.82341169e+03
+40th run, error value = 3.07027371e+03
+41th run, error value = 3.30120992e+03
+42th run, error value = 3.25404092e+03
+43th run, error value = 3.20210750e+03
+44th run, error value = 2.49727635e+03
+45th run, error value = 2.55203914e+03
+46th run, error value = 2.88434342e+03
+47th run, error value = 3.09956504e+03
+48th run, error value = 2.94051608e+03
+49th run, error value = 2.87276818e+03
+50th run, error value = 2.58164591e+03
+51th run, error value = 2.22346887e+03
+
+Function = 11, Dimension size = 50,  mean = 2.95884718e+03, std = 4.00297210e+02
+
+-------------------------------------------------------
+Function = 12, Dimension size = 50
+
+1th run, error value = 1.29705969e-01
+2th run, error value = 2.03668619e-01
+3th run, error value = 2.27675171e-01
+4th run, error value = 1.26933101e-01
+5th run, error value = 2.23427833e-01
+6th run, error value = 1.86080442e-01
+7th run, error value = 1.23758279e-01
+8th run, error value = 1.98724018e-01
+9th run, error value = 1.63609238e-01
+10th run, error value = 1.46023321e-01
+11th run, error value = 2.20614879e-01
+12th run, error value = 1.72059762e-01
+13th run, error value = 1.72644738e-01
+14th run, error value = 1.47586959e-01
+15th run, error value = 1.52342028e-01
+16th run, error value = 1.34331002e-01
+17th run, error value = 8.79779972e-02
+18th run, error value = 1.64994899e-01
+19th run, error value = 1.29952571e-01
+20th run, error value = 1.92945246e-01
+21th run, error value = 2.38469024e-01
+22th run, error value = 3.43646711e-01
+23th run, error value = 2.06654679e-01
+24th run, error value = 1.90797212e-01
+25th run, error value = 3.39906899e-01
+26th run, error value = 2.05415691e-01
+27th run, error value = 2.17285002e-01
+28th run, error value = 1.50685929e-01
+29th run, error value = 2.21814848e-01
+30th run, error value = 2.24382832e-01
+31th run, error value = 1.54523406e-01
+32th run, error value = 9.08469165e-02
+33th run, error value = 1.77644415e-01
+34th run, error value = 1.49738052e-01
+35th run, error value = 1.70564673e-01
+36th run, error value = 1.28861646e-01
+37th run, error value = 2.06424667e-01
+38th run, error value = 1.84214535e-01
+39th run, error value = 1.42878109e-01
+40th run, error value = 2.28232439e-01
+41th run, error value = 2.18363087e-01
+42th run, error value = 1.14798654e-01
+43th run, error value = 1.46707260e-01
+44th run, error value = 1.66696826e-01
+45th run, error value = 1.37887260e-01
+46th run, error value = 2.01353042e-01
+47th run, error value = 1.01205190e-01
+48th run, error value = 1.39542563e-01
+49th run, error value = 1.95920857e-01
+50th run, error value = 1.95022808e-01
+51th run, error value = 1.06395575e-01
+
+Function = 12, Dimension size = 50,  mean = 1.76508566e-01, std = 5.13128291e-02
+
+-------------------------------------------------------
+Function = 13, Dimension size = 50
+
+1th run, error value = 1.45060556e-01
+2th run, error value = 1.14478875e-01
+3th run, error value = 1.22496861e-01
+4th run, error value = 1.29390080e-01
+5th run, error value = 7.66652160e-02
+6th run, error value = 1.34979264e-01
+7th run, error value = 1.48334407e-01
+8th run, error value = 1.44548052e-01
+9th run, error value = 1.23864293e-01
+10th run, error value = 1.08558645e-01
+11th run, error value = 1.54072155e-01
+12th run, error value = 1.18806318e-01
+13th run, error value = 1.44709443e-01
+14th run, error value = 1.36174880e-01
+15th run, error value = 1.05406583e-01
+16th run, error value = 1.69491166e-01
+17th run, error value = 1.61564854e-01
+18th run, error value = 1.96388045e-01
+19th run, error value = 1.38011566e-01
+20th run, error value = 1.88903607e-01
+21th run, error value = 1.57822935e-01
+22th run, error value = 1.25961383e-01
+23th run, error value = 1.55373874e-01
+24th run, error value = 1.30122369e-01
+25th run, error value = 1.02806725e-01
+26th run, error value = 1.47507671e-01
+27th run, error value = 2.04969096e-01
+28th run, error value = 1.44650967e-01
+29th run, error value = 1.53716314e-01
+30th run, error value = 1.28974121e-01
+31th run, error value = 1.59289080e-01
+32th run, error value = 2.01505372e-01
+33th run, error value = 1.23933461e-01
+34th run, error value = 9.54151488e-02
+35th run, error value = 1.25788518e-01
+36th run, error value = 1.55163167e-01
+37th run, error value = 1.06383015e-01
+38th run, error value = 2.01452384e-01
+39th run, error value = 1.43916903e-01
+40th run, error value = 1.67222521e-01
+41th run, error value = 1.42924114e-01
+42th run, error value = 9.72069294e-02
+43th run, error value = 1.40076885e-01
+44th run, error value = 1.18554349e-01
+45th run, error value = 1.45476337e-01
+46th run, error value = 1.44221733e-01
+47th run, error value = 1.32564045e-01
+48th run, error value = 1.54292030e-01
+49th run, error value = 1.75258215e-01
+50th run, error value = 1.35642282e-01
+51th run, error value = 1.56704331e-01
+
+Function = 13, Dimension size = 50,  mean = 1.41898062e-01, std = 2.74979408e-02
+
+-------------------------------------------------------
+Function = 14, Dimension size = 50
+
+1th run, error value = 2.45712373e-01
+2th run, error value = 2.69058028e-01
+3th run, error value = 3.33615747e-01
+4th run, error value = 2.21632159e-01
+5th run, error value = 2.28545442e-01
+6th run, error value = 2.48729443e-01
+7th run, error value = 2.00340986e-01
+8th run, error value = 2.75420279e-01
+9th run, error value = 2.63319289e-01
+10th run, error value = 2.61716055e-01
+11th run, error value = 3.31196010e-01
+12th run, error value = 3.41043781e-01
+13th run, error value = 2.63917600e-01
+14th run, error value = 2.55465012e-01
+15th run, error value = 2.42974495e-01
+16th run, error value = 2.80928772e-01
+17th run, error value = 3.07988938e-01
+18th run, error value = 2.89882182e-01
+19th run, error value = 2.46043777e-01
+20th run, error value = 2.70762670e-01
+21th run, error value = 2.76539669e-01
+22th run, error value = 2.67233870e-01
+23th run, error value = 2.24815329e-01
+24th run, error value = 2.66620100e-01
+25th run, error value = 2.66616592e-01
+26th run, error value = 2.45242414e-01
+27th run, error value = 2.62598598e-01
+28th run, error value = 2.49690703e-01
+29th run, error value = 1.88509286e-01
+30th run, error value = 2.29096980e-01
+31th run, error value = 3.34634011e-01
+32th run, error value = 1.92412953e-01
+33th run, error value = 2.62657759e-01
+34th run, error value = 2.86853025e-01
+35th run, error value = 2.77276082e-01
+36th run, error value = 2.37452547e-01
+37th run, error value = 2.74142953e-01
+38th run, error value = 2.45287046e-01
+39th run, error value = 2.72440356e-01
+40th run, error value = 2.42409778e-01
+41th run, error value = 2.54589615e-01
+42th run, error value = 2.24212266e-01
+43th run, error value = 2.57898066e-01
+44th run, error value = 2.56094708e-01
+45th run, error value = 2.17894153e-01
+46th run, error value = 2.57992965e-01
+47th run, error value = 2.73114226e-01
+48th run, error value = 3.17506069e-01
+49th run, error value = 2.46099813e-01
+50th run, error value = 2.47725555e-01
+51th run, error value = 2.51831894e-01
+
+Function = 14, Dimension size = 50,  mean = 2.60505538e-01, std = 3.30173474e-02
+
+-------------------------------------------------------
+Function = 15, Dimension size = 50
+
+1th run, error value = 4.29393781e+00
+2th run, error value = 4.00899819e+00
+3th run, error value = 4.15441295e+00
+4th run, error value = 3.93914096e+00
+5th run, error value = 4.59524836e+00
+6th run, error value = 5.03137078e+00
+7th run, error value = 5.01144335e+00
+8th run, error value = 4.69596450e+00
+9th run, error value = 5.19873280e+00
+10th run, error value = 3.36732585e+00
+11th run, error value = 4.66853315e+00
+12th run, error value = 4.38364724e+00
+13th run, error value = 3.93839407e+00
+14th run, error value = 4.14312080e+00
+15th run, error value = 3.84138125e+00
+16th run, error value = 4.30875461e+00
+17th run, error value = 3.64605466e+00
+18th run, error value = 3.62254044e+00
+19th run, error value = 4.11630833e+00
+20th run, error value = 2.97770612e+00
+21th run, error value = 4.28944236e+00
+22th run, error value = 4.08072724e+00
+23th run, error value = 4.48296184e+00
+24th run, error value = 3.67111645e+00
+25th run, error value = 3.89455895e+00
+26th run, error value = 4.47290542e+00
+27th run, error value = 4.16556037e+00
+28th run, error value = 3.86272093e+00
+29th run, error value = 3.75479247e+00
+30th run, error value = 3.95494221e+00
+31th run, error value = 4.48696708e+00
+32th run, error value = 3.95955941e+00
+33th run, error value = 4.53356828e+00
+34th run, error value = 4.02811727e+00
+35th run, error value = 3.52022598e+00
+36th run, error value = 3.75829895e+00
+37th run, error value = 3.79934558e+00
+38th run, error value = 3.55932813e+00
+39th run, error value = 3.61173580e+00
+40th run, error value = 4.22762851e+00
+41th run, error value = 5.17017718e+00
+42th run, error value = 3.83310227e+00
+43th run, error value = 3.92159025e+00
+44th run, error value = 4.47031340e+00
+45th run, error value = 5.00180454e+00
+46th run, error value = 4.33045068e+00
+47th run, error value = 3.88102606e+00
+48th run, error value = 4.26214940e+00
+49th run, error value = 3.36705514e+00
+50th run, error value = 3.98843893e+00
+51th run, error value = 3.66610053e+00
+
+Function = 15, Dimension size = 50,  mean = 4.11666133e+00, std = 4.77021950e-01
+
+-------------------------------------------------------
+Function = 16, Dimension size = 50
+
+1th run, error value = 1.60563032e+01
+2th run, error value = 1.68116065e+01
+3th run, error value = 1.63090528e+01
+4th run, error value = 1.55837640e+01
+5th run, error value = 1.62640709e+01
+6th run, error value = 1.67249226e+01
+7th run, error value = 1.88778313e+01
+8th run, error value = 1.74105095e+01
+9th run, error value = 1.69226287e+01
+10th run, error value = 1.59111199e+01
+11th run, error value = 1.59516628e+01
+12th run, error value = 1.74414030e+01
+13th run, error value = 1.53497735e+01
+14th run, error value = 1.64525526e+01
+15th run, error value = 1.58122023e+01
+16th run, error value = 1.51382108e+01
+17th run, error value = 1.69539116e+01
+18th run, error value = 1.62323903e+01
+19th run, error value = 1.56328713e+01
+20th run, error value = 1.59535529e+01
+21th run, error value = 1.46712686e+01
+22th run, error value = 1.59794770e+01
+23th run, error value = 1.53226921e+01
+24th run, error value = 1.69888771e+01
+25th run, error value = 1.63545050e+01
+26th run, error value = 1.55713782e+01
+27th run, error value = 1.63142093e+01
+28th run, error value = 1.79226998e+01
+29th run, error value = 1.67136735e+01
+30th run, error value = 1.49734156e+01
+31th run, error value = 1.89419548e+01
+32th run, error value = 1.57156130e+01
+33th run, error value = 1.60123457e+01
+34th run, error value = 1.53380115e+01
+35th run, error value = 1.64903899e+01
+36th run, error value = 1.53872411e+01
+37th run, error value = 1.58898958e+01
+38th run, error value = 1.78681476e+01
+39th run, error value = 1.64781601e+01
+40th run, error value = 1.63752171e+01
+41th run, error value = 1.83150963e+01
+42th run, error value = 1.65801184e+01
+43th run, error value = 1.62939083e+01
+44th run, error value = 1.64800952e+01
+45th run, error value = 1.55350401e+01
+46th run, error value = 1.65796215e+01
+47th run, error value = 1.58622316e+01
+48th run, error value = 1.62576984e+01
+49th run, error value = 1.68639886e+01
+50th run, error value = 1.61760043e+01
+51th run, error value = 1.63035863e+01
+
+Function = 16, Dimension size = 50,  mean = 1.63597432e+01, std = 8.93280691e-01
+
+-------------------------------------------------------
+Function = 17, Dimension size = 50
+
+1th run, error value = 9.12364996e+02
+2th run, error value = 8.00612958e+02
+3th run, error value = 9.17640464e+02
+4th run, error value = 6.65853182e+02
+5th run, error value = 3.82152446e+02
+6th run, error value = 9.77380428e+02
+7th run, error value = 9.95417841e+02
+8th run, error value = 7.92084284e+02
+9th run, error value = 6.96779632e+02
+10th run, error value = 3.47140164e+02
+11th run, error value = 3.38534777e+02
+12th run, error value = 6.62866469e+02
+13th run, error value = 4.23133195e+02
+14th run, error value = 8.74443579e+02
+15th run, error value = 6.73810906e+02
+16th run, error value = 5.12704574e+02
+17th run, error value = 1.09792574e+03
+18th run, error value = 3.93706230e+02
+19th run, error value = 5.00083566e+02
+20th run, error value = 9.91769888e+02
+21th run, error value = 8.41524283e+02
+22th run, error value = 7.11211858e+02
+23th run, error value = 7.97727077e+02
+24th run, error value = 6.39069249e+02
+25th run, error value = 8.73504529e+02
+26th run, error value = 6.96189109e+02
+27th run, error value = 6.60166803e+02
+28th run, error value = 7.59940065e+02
+29th run, error value = 7.62964971e+02
+30th run, error value = 9.30183292e+02
+31th run, error value = 5.64030696e+02
+32th run, error value = 1.14139145e+03
+33th run, error value = 9.15422255e+02
+34th run, error value = 7.54459214e+02
+35th run, error value = 5.44371551e+02
+36th run, error value = 9.69159183e+02
+37th run, error value = 3.63858761e+02
+38th run, error value = 6.95234623e+02
+39th run, error value = 7.86444431e+02
+40th run, error value = 6.60202104e+02
+41th run, error value = 6.09219038e+02
+42th run, error value = 3.35638047e+02
+43th run, error value = 7.20000716e+02
+44th run, error value = 5.39661821e+02
+45th run, error value = 7.02127727e+02
+46th run, error value = 4.02458659e+02
+47th run, error value = 5.72949047e+02
+48th run, error value = 7.36435156e+02
+49th run, error value = 9.92314477e+02
+50th run, error value = 5.38436886e+02
+51th run, error value = 1.36186658e+03
+
+Function = 17, Dimension size = 50,  mean = 7.16364098e+02, std = 2.24495134e+02
+
+-------------------------------------------------------
+Function = 18, Dimension size = 50
+
+1th run, error value = 2.51990123e+01
+2th run, error value = 2.53043631e+01
+3th run, error value = 3.11257993e+01
+4th run, error value = 4.80997910e+01
+5th run, error value = 2.92140592e+01
+6th run, error value = 2.22987059e+01
+7th run, error value = 3.10777864e+01
+8th run, error value = 1.81760898e+01
+9th run, error value = 2.72522333e+01
+10th run, error value = 4.11257253e+01
+11th run, error value = 2.71485683e+01
+12th run, error value = 4.30384894e+01
+13th run, error value = 2.41815772e+01
+14th run, error value = 4.10414268e+01
+15th run, error value = 4.05199936e+01
+16th run, error value = 2.01785210e+01
+17th run, error value = 2.42266649e+01
+18th run, error value = 4.52248120e+01
+19th run, error value = 2.22905019e+01
+20th run, error value = 2.62242068e+01
+21th run, error value = 5.10688824e+01
+22th run, error value = 4.10694491e+01
+23th run, error value = 2.51767633e+01
+24th run, error value = 1.51020130e+01
+25th run, error value = 3.02218547e+01
+26th run, error value = 2.02122081e+01
+27th run, error value = 2.01340812e+01
+28th run, error value = 2.70132801e+01
+29th run, error value = 2.32364347e+01
+30th run, error value = 1.34030155e+01
+31th run, error value = 2.91674277e+01
+32th run, error value = 4.81402799e+01
+33th run, error value = 9.43238747e+00
+34th run, error value = 4.10822670e+01
+35th run, error value = 6.29705444e+01
+36th run, error value = 3.42160651e+01
+37th run, error value = 2.81547533e+01
+38th run, error value = 2.70771354e+01
+39th run, error value = 2.52160449e+01
+40th run, error value = 2.63052233e+01
+41th run, error value = 2.17581040e+01
+42th run, error value = 2.12669200e+01
+43th run, error value = 2.81296288e+01
+44th run, error value = 2.51830289e+01
+45th run, error value = 2.71407094e+01
+46th run, error value = 3.10803816e+01
+47th run, error value = 1.71949324e+01
+48th run, error value = 2.42242167e+01
+49th run, error value = 3.10928661e+01
+50th run, error value = 2.61373684e+01
+51th run, error value = 3.31196044e+01
+
+Function = 18, Dimension size = 50,  mean = 2.93662000e+01, std = 1.02257410e+01
+
+-------------------------------------------------------
+Function = 19, Dimension size = 50
+
+1th run, error value = 8.92043532e+00
+2th run, error value = 9.80880455e+00
+3th run, error value = 6.77073657e+00
+4th run, error value = 6.81709360e+00
+5th run, error value = 8.13903963e+00
+6th run, error value = 8.91171772e+00
+7th run, error value = 7.83828375e+00
+8th run, error value = 7.08730178e+00
+9th run, error value = 6.81040629e+00
+10th run, error value = 9.46434128e+00
+11th run, error value = 7.46259983e+00
+12th run, error value = 6.17980690e+00
+13th run, error value = 8.36957298e+00
+14th run, error value = 8.71800732e+00
+15th run, error value = 6.77779093e+00
+16th run, error value = 7.21201211e+00
+17th run, error value = 7.98103155e+00
+18th run, error value = 9.85243250e+00
+19th run, error value = 1.07014185e+01
+20th run, error value = 8.42554462e+00
+21th run, error value = 7.73462410e+00
+22th run, error value = 7.75603693e+00
+23th run, error value = 6.65972577e+00
+24th run, error value = 6.95177787e+00
+25th run, error value = 9.41377559e+00
+26th run, error value = 6.56120000e+00
+27th run, error value = 9.23370669e+00
+28th run, error value = 8.95020214e+00
+29th run, error value = 1.03831311e+01
+30th run, error value = 7.33420807e+00
+31th run, error value = 9.73600392e+00
+32th run, error value = 1.03024778e+01
+33th run, error value = 7.76994382e+00
+34th run, error value = 8.15934735e+00
+35th run, error value = 6.38924664e+00
+36th run, error value = 5.56981808e+00
+37th run, error value = 6.95974865e+00
+38th run, error value = 1.04893041e+01
+39th run, error value = 9.23509730e+00
+40th run, error value = 9.14980594e+00
+41th run, error value = 7.13305722e+00
+42th run, error value = 8.13440097e+00
+43th run, error value = 1.03280002e+01
+44th run, error value = 7.10780339e+00
+45th run, error value = 7.60793756e+00
+46th run, error value = 8.03014685e+00
+47th run, error value = 8.04489259e+00
+48th run, error value = 8.71717625e+00
+49th run, error value = 7.39030721e+00
+50th run, error value = 1.02010871e+01
+51th run, error value = 6.37825102e+00
+
+Function = 19, Dimension size = 50,  mean = 8.15805137e+00, std = 1.30209596e+00
+
+-------------------------------------------------------
+Function = 20, Dimension size = 50
+
+1th run, error value = 7.79278796e+00
+2th run, error value = 1.35943604e+01
+3th run, error value = 8.07542461e+00
+4th run, error value = 1.21394231e+01
+5th run, error value = 7.24794049e+00
+6th run, error value = 1.25624644e+01
+7th run, error value = 1.16885188e+01
+8th run, error value = 9.01195844e+00
+9th run, error value = 8.25773808e+00
+10th run, error value = 1.07719913e+01
+11th run, error value = 8.93050558e+00
+12th run, error value = 9.23751934e+00
+13th run, error value = 4.91732700e+00
+14th run, error value = 1.07360735e+01
+15th run, error value = 7.93647837e+00
+16th run, error value = 7.06820067e+00
+17th run, error value = 6.54708159e+00
+18th run, error value = 7.53676472e+00
+19th run, error value = 1.84960882e+01
+20th run, error value = 7.96256907e+00
+21th run, error value = 9.59831984e+00
+22th run, error value = 7.89974099e+00
+23th run, error value = 9.45251086e+00
+24th run, error value = 1.07465967e+01
+25th run, error value = 8.77425540e+00
+26th run, error value = 8.00382352e+00
+27th run, error value = 5.75905722e+00
+28th run, error value = 1.28531517e+01
+29th run, error value = 7.43839487e+00
+30th run, error value = 1.08023308e+01
+31th run, error value = 6.54682509e+00
+32th run, error value = 7.97960445e+00
+33th run, error value = 8.13692226e+00
+34th run, error value = 7.72165308e+00
+35th run, error value = 9.42140412e+00
+36th run, error value = 8.61531700e+00
+37th run, error value = 9.43940350e+00
+38th run, error value = 3.14352903e+00
+39th run, error value = 1.00411659e+01
+40th run, error value = 9.21504130e+00
+41th run, error value = 1.13205845e+01
+42th run, error value = 5.15435085e+00
+43th run, error value = 9.09902519e+00
+44th run, error value = 1.18875584e+01
+45th run, error value = 1.45233910e+01
+46th run, error value = 9.93955475e+00
+47th run, error value = 1.32305530e+01
+48th run, error value = 1.07015048e+01
+49th run, error value = 9.91970100e+00
+50th run, error value = 1.07233039e+01
+51th run, error value = 1.32838475e+01
+
+Function = 20, Dimension size = 50,  mean = 9.44869878e+00, std = 2.65266104e+00
+
+-------------------------------------------------------
+Function = 21, Dimension size = 50
+
+1th run, error value = 2.56916920e+02
+2th run, error value = 5.19163039e+02
+3th run, error value = 5.06247779e+02
+4th run, error value = 2.48519139e+02
+5th run, error value = 5.17189484e+02
+6th run, error value = 4.89353635e+02
+7th run, error value = 2.51474129e+02
+8th run, error value = 3.86773394e+02
+9th run, error value = 4.35324140e+02
+10th run, error value = 3.84252578e+02
+11th run, error value = 4.89134588e+02
+12th run, error value = 4.81259857e+02
+13th run, error value = 3.81843691e+02
+14th run, error value = 2.44195639e+02
+15th run, error value = 3.59015188e+02
+16th run, error value = 6.42104188e+02
+17th run, error value = 3.66360067e+02
+18th run, error value = 2.45905400e+02
+19th run, error value = 2.48199413e+02
+20th run, error value = 6.07774825e+02
+21th run, error value = 2.67252918e+02
+22th run, error value = 4.93504338e+02
+23th run, error value = 3.64050749e+02
+24th run, error value = 3.69920588e+02
+25th run, error value = 2.43633687e+02
+26th run, error value = 4.99851007e+02
+27th run, error value = 2.61145394e+02
+28th run, error value = 3.74126344e+02
+29th run, error value = 2.73807888e+02
+30th run, error value = 2.48328546e+02
+31th run, error value = 3.70675212e+02
+32th run, error value = 2.48657313e+02
+33th run, error value = 2.63359317e+02
+34th run, error value = 4.97075035e+02
+35th run, error value = 3.83569396e+02
+36th run, error value = 2.65575594e+02
+37th run, error value = 2.56739367e+02
+38th run, error value = 3.88065220e+02
+39th run, error value = 5.24374301e+02
+40th run, error value = 4.78224442e+02
+41th run, error value = 3.68969110e+02
+42th run, error value = 3.77586384e+02
+43th run, error value = 2.64610590e+02
+44th run, error value = 3.86326568e+02
+45th run, error value = 6.21783576e+02
+46th run, error value = 3.65847670e+02
+47th run, error value = 3.62337172e+02
+48th run, error value = 2.56122891e+02
+49th run, error value = 2.51988757e+02
+50th run, error value = 2.49285449e+02
+51th run, error value = 3.74999192e+02
+
+Function = 21, Dimension size = 50,  mean = 3.72800022e+02, std = 1.11950520e+02
+
+-------------------------------------------------------
+Function = 22, Dimension size = 50
+
+1th run, error value = 2.98768100e+01
+2th run, error value = 2.95516187e+01
+3th run, error value = 4.07714082e+01
+4th run, error value = 2.79859875e+02
+5th run, error value = 5.45378517e+01
+6th run, error value = 1.45082238e+02
+7th run, error value = 1.54631720e+02
+8th run, error value = 1.45889942e+02
+9th run, error value = 1.49977409e+02
+10th run, error value = 1.67165672e+02
+11th run, error value = 3.77479870e+01
+12th run, error value = 3.02471098e+01
+13th run, error value = 2.92716093e+01
+14th run, error value = 8.78172296e+01
+15th run, error value = 1.52543200e+02
+16th run, error value = 2.58278677e+02
+17th run, error value = 1.58760605e+02
+18th run, error value = 4.05634442e+01
+19th run, error value = 2.97637579e+01
+20th run, error value = 3.05057374e+01
+21th run, error value = 1.46470484e+02
+22th run, error value = 3.89321018e+01
+23th run, error value = 2.66236143e+01
+24th run, error value = 1.41657023e+02
+25th run, error value = 1.54847062e+02
+26th run, error value = 2.45721933e+02
+27th run, error value = 2.39635503e+02
+28th run, error value = 3.57884032e+01
+29th run, error value = 1.40904467e+02
+30th run, error value = 1.52347127e+02
+31th run, error value = 1.46701534e+02
+32th run, error value = 4.07664535e+01
+33th run, error value = 1.44284530e+02
+34th run, error value = 2.69237418e+01
+35th run, error value = 1.56147255e+02
+36th run, error value = 3.26936361e+01
+37th run, error value = 4.09711080e+01
+38th run, error value = 2.44727927e+02
+39th run, error value = 2.75064299e+01
+40th run, error value = 3.88845619e+01
+41th run, error value = 1.54799039e+02
+42th run, error value = 4.38254695e+01
+43th run, error value = 1.53856260e+02
+44th run, error value = 1.71526481e+02
+45th run, error value = 3.59527813e+02
+46th run, error value = 4.02723141e+01
+47th run, error value = 2.29879836e+01
+48th run, error value = 3.67306147e+02
+49th run, error value = 2.45351163e+02
+50th run, error value = 1.46602068e+02
+51th run, error value = 1.48920777e+02
+
+Function = 22, Dimension size = 50,  mean = 1.20203026e+02, std = 8.93468606e+01
+
+-------------------------------------------------------
+Function = 23, Dimension size = 50
+
+1th run, error value = 3.44004501e+02
+2th run, error value = 3.44004501e+02
+3th run, error value = 3.44004501e+02
+4th run, error value = 3.44004501e+02
+5th run, error value = 3.44004501e+02
+6th run, error value = 3.44004501e+02
+7th run, error value = 3.44004501e+02
+8th run, error value = 3.44004501e+02
+9th run, error value = 3.44004501e+02
+10th run, error value = 3.44004501e+02
+11th run, error value = 3.44004501e+02
+12th run, error value = 3.44004501e+02
+13th run, error value = 3.44004501e+02
+14th run, error value = 3.44004501e+02
+15th run, error value = 3.44004501e+02
+16th run, error value = 3.44004501e+02
+17th run, error value = 3.44004501e+02
+18th run, error value = 3.44004501e+02
+19th run, error value = 3.44004501e+02
+20th run, error value = 3.44004501e+02
+21th run, error value = 3.44004501e+02
+22th run, error value = 3.44004501e+02
+23th run, error value = 3.44004501e+02
+24th run, error value = 3.44004501e+02
+25th run, error value = 3.44004501e+02
+26th run, error value = 3.44004501e+02
+27th run, error value = 3.44004501e+02
+28th run, error value = 3.44004501e+02
+29th run, error value = 3.44004501e+02
+30th run, error value = 3.44004501e+02
+31th run, error value = 3.44004501e+02
+32th run, error value = 3.44004501e+02
+33th run, error value = 3.44004501e+02
+34th run, error value = 3.44004501e+02
+35th run, error value = 3.44004501e+02
+36th run, error value = 3.44004501e+02
+37th run, error value = 3.44004501e+02
+38th run, error value = 3.44004501e+02
+39th run, error value = 3.44004501e+02
+40th run, error value = 3.44004501e+02
+41th run, error value = 3.44004501e+02
+42th run, error value = 3.44004501e+02
+43th run, error value = 3.44004501e+02
+44th run, error value = 3.44004501e+02
+45th run, error value = 3.44004501e+02
+46th run, error value = 3.44004501e+02
+47th run, error value = 3.44004501e+02
+48th run, error value = 3.44004501e+02
+49th run, error value = 3.44004501e+02
+50th run, error value = 3.44004501e+02
+51th run, error value = 3.44004501e+02
+
+Function = 23, Dimension size = 50,  mean = 3.44004501e+02, std = 4.54398912e-13
+
+-------------------------------------------------------
+Function = 24, Dimension size = 50
+
+1th run, error value = 2.74138361e+02
+2th run, error value = 2.74713015e+02
+3th run, error value = 2.74606306e+02
+4th run, error value = 2.73488499e+02
+5th run, error value = 2.75594921e+02
+6th run, error value = 2.74279533e+02
+7th run, error value = 2.74279533e+02
+8th run, error value = 2.73951955e+02
+9th run, error value = 2.73288926e+02
+10th run, error value = 2.75419489e+02
+11th run, error value = 2.74979782e+02
+12th run, error value = 2.75715760e+02
+13th run, error value = 2.74833711e+02
+14th run, error value = 2.74589168e+02
+15th run, error value = 2.75613420e+02
+16th run, error value = 2.75288682e+02
+17th run, error value = 2.75715760e+02
+18th run, error value = 2.72946998e+02
+19th run, error value = 2.74729652e+02
+20th run, error value = 2.72347142e+02
+21th run, error value = 2.70897327e+02
+22th run, error value = 2.75289138e+02
+23th run, error value = 2.74589168e+02
+24th run, error value = 2.74713015e+02
+25th run, error value = 2.73059175e+02
+26th run, error value = 2.74330727e+02
+27th run, error value = 2.74993324e+02
+28th run, error value = 2.72637100e+02
+29th run, error value = 2.74987067e+02
+30th run, error value = 2.74713015e+02
+31th run, error value = 2.74215699e+02
+32th run, error value = 2.71869453e+02
+33th run, error value = 2.74138361e+02
+34th run, error value = 2.73908992e+02
+35th run, error value = 2.74138361e+02
+36th run, error value = 2.73908992e+02
+37th run, error value = 2.71598062e+02
+38th run, error value = 2.75220260e+02
+39th run, error value = 2.74589168e+02
+40th run, error value = 2.76270234e+02
+41th run, error value = 2.73849868e+02
+42th run, error value = 2.74770186e+02
+43th run, error value = 2.74589168e+02
+44th run, error value = 2.76103428e+02
+45th run, error value = 2.72134075e+02
+46th run, error value = 2.75629849e+02
+47th run, error value = 2.74286352e+02
+48th run, error value = 2.68712237e+02
+49th run, error value = 2.73833803e+02
+50th run, error value = 2.73128895e+02
+51th run, error value = 2.68906590e+02
+
+Function = 24, Dimension size = 50,  mean = 2.74049641e+02, std = 1.55892918e+00
+
+-------------------------------------------------------
+Function = 25, Dimension size = 50
+
+1th run, error value = 2.05236863e+02
+2th run, error value = 2.04943266e+02
+3th run, error value = 2.05145678e+02
+4th run, error value = 2.04864248e+02
+5th run, error value = 2.04896154e+02
+6th run, error value = 2.05655492e+02
+7th run, error value = 2.04921603e+02
+8th run, error value = 2.05210253e+02
+9th run, error value = 2.05157068e+02
+10th run, error value = 2.04932639e+02
+11th run, error value = 2.05115958e+02
+12th run, error value = 2.05541166e+02
+13th run, error value = 2.04938059e+02
+14th run, error value = 2.05034877e+02
+15th run, error value = 2.05447047e+02
+16th run, error value = 2.04861766e+02
+17th run, error value = 2.05149171e+02
+18th run, error value = 2.05060315e+02
+19th run, error value = 2.05965194e+02
+20th run, error value = 2.05889062e+02
+21th run, error value = 2.04932299e+02
+22th run, error value = 2.04881998e+02
+23th run, error value = 2.05560674e+02
+24th run, error value = 2.05071467e+02
+25th run, error value = 2.05143219e+02
+26th run, error value = 2.05177218e+02
+27th run, error value = 2.04999022e+02
+28th run, error value = 2.05186213e+02
+29th run, error value = 2.05122865e+02
+30th run, error value = 2.04840979e+02
+31th run, error value = 2.05219081e+02
+32th run, error value = 2.05253821e+02
+33th run, error value = 2.05429575e+02
+34th run, error value = 2.04884136e+02
+35th run, error value = 2.05560805e+02
+36th run, error value = 2.04926540e+02
+37th run, error value = 2.05147096e+02
+38th run, error value = 2.05057105e+02
+39th run, error value = 2.05394303e+02
+40th run, error value = 2.04880273e+02
+41th run, error value = 2.04874513e+02
+42th run, error value = 2.05682987e+02
+43th run, error value = 2.05353650e+02
+44th run, error value = 2.05070021e+02
+45th run, error value = 2.04847763e+02
+46th run, error value = 2.04986626e+02
+47th run, error value = 2.06146423e+02
+48th run, error value = 2.05411927e+02
+49th run, error value = 2.05294005e+02
+50th run, error value = 2.05040361e+02
+51th run, error value = 2.05136442e+02
+
+Function = 25, Dimension size = 50,  mean = 2.05185868e+02, std = 3.02001847e-01
+
+-------------------------------------------------------
+Function = 26, Dimension size = 50
+
+1th run, error value = 1.00154066e+02
+2th run, error value = 1.00117954e+02
+3th run, error value = 1.00191575e+02
+4th run, error value = 1.00121872e+02
+5th run, error value = 1.00133851e+02
+6th run, error value = 1.00156041e+02
+7th run, error value = 2.00000000e+02
+8th run, error value = 1.00133208e+02
+9th run, error value = 1.00137498e+02
+10th run, error value = 1.00153219e+02
+11th run, error value = 1.00128808e+02
+12th run, error value = 1.00143754e+02
+13th run, error value = 1.00097532e+02
+14th run, error value = 1.00149616e+02
+15th run, error value = 1.00141821e+02
+16th run, error value = 1.00131761e+02
+17th run, error value = 1.00132142e+02
+18th run, error value = 1.00185682e+02
+19th run, error value = 1.00132990e+02
+20th run, error value = 1.00184063e+02
+21th run, error value = 1.00146406e+02
+22th run, error value = 1.00137917e+02
+23th run, error value = 1.00125811e+02
+24th run, error value = 1.00129710e+02
+25th run, error value = 1.00159491e+02
+26th run, error value = 1.00135538e+02
+27th run, error value = 1.00140183e+02
+28th run, error value = 1.00140546e+02
+29th run, error value = 1.00151942e+02
+30th run, error value = 1.00139933e+02
+31th run, error value = 1.00185851e+02
+32th run, error value = 1.00180124e+02
+33th run, error value = 2.00000000e+02
+34th run, error value = 1.00151862e+02
+35th run, error value = 1.00119734e+02
+36th run, error value = 1.00093940e+02
+37th run, error value = 1.00150301e+02
+38th run, error value = 1.00171815e+02
+39th run, error value = 1.00147434e+02
+40th run, error value = 1.00151295e+02
+41th run, error value = 1.00131796e+02
+42th run, error value = 1.00133996e+02
+43th run, error value = 1.00128272e+02
+44th run, error value = 1.00112871e+02
+45th run, error value = 1.00176226e+02
+46th run, error value = 1.00311718e+02
+47th run, error value = 1.00139718e+02
+48th run, error value = 1.00153643e+02
+49th run, error value = 1.00125019e+02
+50th run, error value = 1.00136096e+02
+51th run, error value = 1.00085763e+02
+
+Function = 26, Dimension size = 50,  mean = 1.04061224e+02, std = 1.93825865e+01
+
+-------------------------------------------------------
+Function = 27, Dimension size = 50
+
+1th run, error value = 3.00000197e+02
+2th run, error value = 3.33414624e+02
+3th run, error value = 3.00051821e+02
+4th run, error value = 3.31159884e+02
+5th run, error value = 3.31508924e+02
+6th run, error value = 3.00000000e+02
+7th run, error value = 3.27079118e+02
+8th run, error value = 3.45324149e+02
+9th run, error value = 3.13260188e+02
+10th run, error value = 3.00000177e+02
+11th run, error value = 3.55761367e+02
+12th run, error value = 3.48600170e+02
+13th run, error value = 3.00138030e+02
+14th run, error value = 3.00000000e+02
+15th run, error value = 3.60243476e+02
+16th run, error value = 3.47251907e+02
+17th run, error value = 3.33393770e+02
+18th run, error value = 3.33392310e+02
+19th run, error value = 3.33392046e+02
+20th run, error value = 3.00000177e+02
+21th run, error value = 3.38506165e+02
+22th run, error value = 3.47259807e+02
+23th run, error value = 3.00000429e+02
+24th run, error value = 3.47253318e+02
+25th run, error value = 3.00001813e+02
+26th run, error value = 3.47255820e+02
+27th run, error value = 3.00049007e+02
+28th run, error value = 3.38504931e+02
+29th run, error value = 3.38504755e+02
+30th run, error value = 3.38504578e+02
+31th run, error value = 3.47264769e+02
+32th run, error value = 3.00006059e+02
+33th run, error value = 3.00000000e+02
+34th run, error value = 3.00000197e+02
+35th run, error value = 3.38603728e+02
+36th run, error value = 3.46702417e+02
+37th run, error value = 3.49286811e+02
+38th run, error value = 3.00000000e+02
+39th run, error value = 3.00002119e+02
+40th run, error value = 3.45369030e+02
+41th run, error value = 3.67986459e+02
+42th run, error value = 3.00000000e+02
+43th run, error value = 3.08176486e+02
+44th run, error value = 3.00007853e+02
+45th run, error value = 3.61394673e+02
+46th run, error value = 3.00011320e+02
+47th run, error value = 3.00000197e+02
+48th run, error value = 3.00000353e+02
+49th run, error value = 3.00045465e+02
+50th run, error value = 3.33392752e+02
+51th run, error value = 3.00045741e+02
+
+Function = 27, Dimension size = 50,  mean = 3.23296263e+02, std = 2.24219996e+01
+
+-------------------------------------------------------
+Function = 28, Dimension size = 50
+
+1th run, error value = 1.12353668e+03
+2th run, error value = 1.11085047e+03
+3th run, error value = 1.14099701e+03
+4th run, error value = 1.16061500e+03
+5th run, error value = 1.08163339e+03
+6th run, error value = 1.14032508e+03
+7th run, error value = 1.12262655e+03
+8th run, error value = 1.18291038e+03
+9th run, error value = 1.09832482e+03
+10th run, error value = 1.05291062e+03
+11th run, error value = 1.12970133e+03
+12th run, error value = 1.18570960e+03
+13th run, error value = 1.17411845e+03
+14th run, error value = 1.12371415e+03
+15th run, error value = 1.15440708e+03
+16th run, error value = 1.25226353e+03
+17th run, error value = 1.13752750e+03
+18th run, error value = 1.13353994e+03
+19th run, error value = 1.09105707e+03
+20th run, error value = 1.08813005e+03
+21th run, error value = 1.11474075e+03
+22th run, error value = 1.15233709e+03
+23th run, error value = 1.13396552e+03
+24th run, error value = 1.12545385e+03
+25th run, error value = 1.15077109e+03
+26th run, error value = 1.16181567e+03
+27th run, error value = 1.14870717e+03
+28th run, error value = 1.12905468e+03
+29th run, error value = 1.08807680e+03
+30th run, error value = 1.12319243e+03
+31th run, error value = 1.08107241e+03
+32th run, error value = 1.11241378e+03
+33th run, error value = 1.12713797e+03
+34th run, error value = 1.19313290e+03
+35th run, error value = 1.15706855e+03
+36th run, error value = 1.10544880e+03
+37th run, error value = 1.09464055e+03
+38th run, error value = 1.15166422e+03
+39th run, error value = 1.20521396e+03
+40th run, error value = 1.10812725e+03
+41th run, error value = 1.14178183e+03
+42th run, error value = 1.12016156e+03
+43th run, error value = 1.08227098e+03
+44th run, error value = 1.15983383e+03
+45th run, error value = 1.13417092e+03
+46th run, error value = 1.11245401e+03
+47th run, error value = 1.19052023e+03
+48th run, error value = 1.08711991e+03
+49th run, error value = 1.14493530e+03
+50th run, error value = 1.13688989e+03
+51th run, error value = 1.12350650e+03
+
+Function = 28, Dimension size = 50,  mean = 1.13299175e+03, std = 3.62524127e+01
+
+-------------------------------------------------------
+Function = 29, Dimension size = 50
+
+1th run, error value = 7.78663800e+02
+2th run, error value = 7.33303681e+02
+3th run, error value = 9.01172350e+02
+4th run, error value = 9.00632462e+02
+5th run, error value = 8.92525494e+02
+6th run, error value = 8.09036590e+02
+7th run, error value = 7.82340646e+02
+8th run, error value = 7.85082251e+02
+9th run, error value = 8.89155711e+02
+10th run, error value = 7.77564811e+02
+11th run, error value = 7.90915659e+02
+12th run, error value = 7.80561465e+02
+13th run, error value = 7.77782103e+02
+14th run, error value = 8.94299098e+02
+15th run, error value = 8.86729596e+02
+16th run, error value = 7.87098979e+02
+17th run, error value = 7.70665184e+02
+18th run, error value = 7.91425046e+02
+19th run, error value = 7.76193136e+02
+20th run, error value = 7.95994683e+02
+21th run, error value = 8.82665671e+02
+22th run, error value = 8.96272085e+02
+23th run, error value = 7.93404668e+02
+24th run, error value = 8.99021669e+02
+25th run, error value = 7.87391450e+02
+26th run, error value = 7.88099916e+02
+27th run, error value = 7.81832741e+02
+28th run, error value = 7.83934381e+02
+29th run, error value = 7.75370287e+02
+30th run, error value = 8.92135772e+02
+31th run, error value = 7.91602946e+02
+32th run, error value = 7.76380553e+02
+33th run, error value = 8.89908925e+02
+34th run, error value = 7.89092353e+02
+35th run, error value = 7.93567280e+02
+36th run, error value = 7.84665992e+02
+37th run, error value = 7.80443574e+02
+38th run, error value = 7.88556027e+02
+39th run, error value = 7.90186906e+02
+40th run, error value = 7.90986248e+02
+41th run, error value = 7.94189564e+02
+42th run, error value = 7.89935098e+02
+43th run, error value = 8.95002374e+02
+44th run, error value = 7.82745731e+02
+45th run, error value = 7.88613329e+02
+46th run, error value = 7.95405524e+02
+47th run, error value = 7.61691286e+02
+48th run, error value = 7.98945256e+02
+49th run, error value = 9.00460194e+02
+50th run, error value = 7.84974075e+02
+51th run, error value = 7.92186404e+02
+
+Function = 29, Dimension size = 50,  mean = 8.12564922e+02, std = 4.87260589e+01
+
+-------------------------------------------------------
+Function = 30, Dimension size = 50
+
+1th run, error value = 8.50280294e+03
+2th run, error value = 8.30330651e+03
+3th run, error value = 8.40665650e+03
+4th run, error value = 8.92191101e+03
+5th run, error value = 9.15252912e+03
+6th run, error value = 8.56525280e+03
+7th run, error value = 8.69565894e+03
+8th run, error value = 8.27342864e+03
+9th run, error value = 8.47696244e+03
+10th run, error value = 8.96954259e+03
+11th run, error value = 9.47256147e+03
+12th run, error value = 8.05267417e+03
+13th run, error value = 8.55783856e+03
+14th run, error value = 8.71584455e+03
+15th run, error value = 8.55901826e+03
+16th run, error value = 8.63032029e+03
+17th run, error value = 7.83816658e+03
+18th run, error value = 8.80399770e+03
+19th run, error value = 8.83392778e+03
+20th run, error value = 7.88354559e+03
+21th run, error value = 8.89186276e+03
+22th run, error value = 9.06139109e+03
+23th run, error value = 8.97408134e+03
+24th run, error value = 8.78671916e+03
+25th run, error value = 8.05262611e+03
+26th run, error value = 8.55967948e+03
+27th run, error value = 8.30171810e+03
+28th run, error value = 8.02529221e+03
+29th run, error value = 8.69623916e+03
+30th run, error value = 8.30160496e+03
+31th run, error value = 8.45945436e+03
+32th run, error value = 8.92849427e+03
+33th run, error value = 8.95326120e+03
+34th run, error value = 8.85409588e+03
+35th run, error value = 8.82770241e+03
+36th run, error value = 9.07061685e+03
+37th run, error value = 8.63038531e+03
+38th run, error value = 8.74311994e+03
+39th run, error value = 8.05275305e+03
+40th run, error value = 8.69498924e+03
+41th run, error value = 8.13105706e+03
+42th run, error value = 8.27506395e+03
+43th run, error value = 8.71083861e+03
+44th run, error value = 8.50406737e+03
+45th run, error value = 9.29409945e+03
+46th run, error value = 8.37918548e+03
+47th run, error value = 8.55921212e+03
+48th run, error value = 8.09159653e+03
+49th run, error value = 8.30339961e+03
+50th run, error value = 9.17481270e+03
+51th run, error value = 8.13652786e+03
+
+Function = 30, Dimension size = 50,  mean = 8.58905675e+03, std = 3.72008286e+02

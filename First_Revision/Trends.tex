@@ -1,0 +1,108 @@
+In recent years, several contests have been organized at the \textsc{ieee cec} to facilitate comparisons among optimizers.
+%
+Such contests define set of optimization functions with different features and complexities, so analyzing the results
+through the years offers insights about which are the principles and algorithms that offer more advantages.
+%
+This section is devoted to summarize the methods and ideas with more contributions, focusing the efforts
+on \DE{} variants with the aim of detecting design tendencies on the \DE{} field. 
+
+In \CEC{} 2005 competition on real parameter optimization~\cite{CEC2005}, classical \DE{} attained the second rank and 
+the self-adaptive \DE{} variant called SaDE obtained the third rank in 10 dimensions.
+%
+However, they performed poorly with more than 30 dimensions.
+%
+Subsequently, in the 2008 competition on large scale global optimization~\cite{CEC2008}, a self-adaptive \DE{} (jDEdynNP-F) 
+reached the third place, confirming the importance of parameter adaptation.
+%
+In fact, in other kinds of competitions such as in the 2006 constrained optimization one, the benefits of adaptation 
+was also shown, where SaDE obtained the third place.
+%
+In a subsequent competition in large-scale optimization (\CEC{} 2010), \DE{} variants did not reach top ranks.
+%
+This, together with the fact that several \DE{} variants performed properly only in low-dimensionality, 
+is an indicator of the weaknesses of \DE{} in large scale problems.
+%
+In fact, some of the reasons of the curse of dimensionality were analyzed in~\cite{segura2015improving}.
+%
+Thus, it is known that there is room for improvement in terms of scalability, although dealing with large-scale optimization is out of 
+the scope of this paper.
+%
+Finally, in \CEC{} 2011 competition with real world optimization problems~\cite{CEC2011}, hybrid algorithms including \DE{} have performed
+properly.
+%
+For instance, the second place was obtained by the hybrid \DE{} called DE-$\Lambda_{CR}$.
+%
+Again a Self-adaptive Multi-Operator \DE{} (SAMODE) performed properly and obtained the third place.
+
+In recent years, adaptive variants have also stood out.
+%
+However, the complexity of the best schemes has increased considerably.
+%
+In the 2014 competition on real parameter optimization~\cite{CEC2014}, the first place was reached by the Linear Population Size 
+Reduction Success-History Based Adaptive \DE{} (L-SHADE).
+%
+Similarly to other adaptive variants, this proposal adapts the internal parameters of \DE{} and the success-history based variants
+are currently very well-known strategies.
+%
+Additionally, in order to get a better degree between exploration and exploitation it dynamically reduces the population size.
+%
+In the 2015 competition based on learning~\cite{CEC2015}, a variant of the previous approach obtained the first place.
+%
+Additionally, two \DE{} variants with parameter adaptation attained the second and third place.
+
+In this paper, experimental validation is focused on the \CEC{} 2016 and \CEC{} 2017 competitions in real parameter optimization.
+%
+In the case of 2016~\cite{CEC2015}, the first place was reached with the United Multi-Operator Evolutionary Algorithm (UMOEAs-II).
+%
+This approach is not a \DE{} scheme but some of the \DE{} operators are taken into account.
+%
+The second place was reached by Ensemble Sinusoidal Differential Covariance Matrix Adaptation with Euclidean Neighborhood (L-SHADE-EpSin) 
+and the third place was attained by the Improved L-SHADE (iL-SHADE).
+%
+Note that these two approaches were again variants of SHADE.
+%
+In fact, variants of SHADE have also excelled in the learning-based competitions~\cite{CEC2016_learn}.
+
+In the \CEC{} 2017 case~\cite{CEC2017}, the first place was obtained by the Effective Butterfly Optimizer with Covariance 
+Matrix Adapted Retreat Phase (EBOwithCMAR), which is not a \DE{} variant.
+%
+EBOwithCMAR is an extension of UMOEAs-II.
+%
+The second place was reached by jSO, which is an improvement of iL-SHADE.
+%
+Finally, the L-SHADE-EpSin, again a variant of SHADE, attained the third place.
+
+Attending to the features of the different approaches, the following trend is detected:
+
+\begin{itemize}
+	\item Typically, the parameters are altered during the run with the aim of adapting the optimizer to the requirements of the different optimization stages. 
+	\item In some of the last algorithms, the adaptation considers the stopping criterion and elapsed generations to bias the decisions taken by the optimizer.
+	For instance, some proposals decrease the population size and in other cases \DE{} is modified to further intensify in last stages.
+	\item The overall complexity of the winners has increased significantly. Particularly, several variants include modifications to perform promising
+	movements with a higher probability, for instance by including the principles of the Covariance Matrix Adaptation scheme.
+\end{itemize}
+
+Our proposal takes the previous conclusions into consideration.
+%
+However, our hypothesis is that for long-term executions simpler variants with explicit control of diversity are enough to excel and 
+that some of the proposed modifications might be counter-productive.
+%
+For instance, it is known that the parameter adaptation might provoke some improper movements that might affect performance in the
+long term~\cite{montgomery2010analysis}.
+%
+Note that by controlling the diversity, the degree between exploration and exploitation can be properly altered automatically.
+%
+As a result, parameter adaptation is not included in our proposal.
+%
+Instead, taking into account the performance of some SHADE variants, a dynamic parameterization that relates the parameter values with 
+the elapsed function evaluations is taken into account.
+%
+We consider that incorporating an adaptive parameterization might be beneficial but it should be included carefully.
+
+
+%In the competitions of the last years SHADE's family algorithms seems to be more participatory, however based in that the ability exploration of DE is highly affected by the population size, usually the search is complemented with a Covariance Matrix Adaptation variant as is showed in the UMOEAs-II and L-SHADE-EpSin algorithms.
+%
+%It is also interesting to note that the variants of DE continued to secure front ranks in the subsequent CEC competitions like CEC 2006 competition on constrained real parameter optimization (first rank), CEC 2007 competition on multi-objective optimization (second rank), CEC 2008 competition on large scale global optimization (third rank), CEC 2009 competition on multi-objective optimization (first rank was taken by a DE-based algorithm MOEA/D for unconstrained problems), and CEC 2009 competition on evolutionary computation in dynamic and uncertain environments (first rank).
+%
+
+

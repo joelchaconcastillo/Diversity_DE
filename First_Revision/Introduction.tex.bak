@@ -1,0 +1,75 @@
+Evolutionary Algorithms (\EAS{}) are one of the most widely used techniques to deal with complex optimization problems.
+%
+Severals variants of these strategies have been devised~\cite{Talbi:09} and applied in many fields, such as in science, 
+economic and engineering~\cite{chakraborty2008advances}.
+%
+Among them, Differential Evolution (\DE{}) \cite{storn1997differential} is one of the most effective strategies to deal
+with continuous optimization.
+%
+In fact, it has been the winning strategy of several optimization competitions~\cite{das2011differential}.
+%
+Similarly to other \EAS{}, \DE{} is inspired by the natural evolution process and it involves the application of mutation, recombination and 
+selection.
+%
+The main peculiarity of \DE{} is that it considers the differences among vectors, which are present in the population to explore the search space.
+%
+In this sense is similar to Nelder-Mead \cite{nelder1965simplex} and the 
+Controlled Random Search (CRS) \cite{price1983global} optimizers.
+
+In spite of the effectiveness of \DE{}, there exists several weaknesses that have been detected and partially
+solved by extending the standard variant~\cite{das2011differential}.
+%
+Among them, the sensitivity to its parameters~\cite{zhang2009jade}, the appearance of stagnation due to the reduced exploration 
+capabilities~\cite{sa2008exploration,lampinen2000stagnation} and premature convergence~\cite{zaharie2003control} are some of the most well-known
+issues.
+%
+This last one issue is tackled in this paper.
+%
+Note that, attending to the proper design of population-based metaheuristics~\cite{Talbi:09}, special attention must be
+paid to attain a proper balance between exploration and exploitation.
+%
+A too large exploration degree prevents the proper intensification of the best located regions, usually resulting in a
+too slow convergence.
+%
+Differently, an excessive exploitation degree provokes loss of diversity meaning that only a limited number of regions are sampled.
+
+Since the appearance of \DE{}, some criticism appeared because of its incapability to maintain a large
+enough diversity due to the use of a selection with high pressure~\cite{sa2008exploration}.
+%
+Thus, several extensions of \DE{} to deal with premature convergence have been devised 
+such as parameter adaptation~\cite{zaharie2003control}, 
+auto-enhanced population diversity~\cite{yang2015differential} and selection strategies 
+with a lower selection pressure~\cite{sa2008exploration}.
+%
+Some of the last studies on design of population-based metaheuristics~\cite{Crepinsek:13} show that 
+properly balancing the exploration and intensification
+is particularly useful for avoiding premature convergence.
+%
+Specifically, in the field of combinatorial optimization some novel replacement strategies that dynamically alter 
+the balance between exploration and exploitation 
+have appeared~\cite{segura2016novel}.
+%
+The main principle of such proposals is to use the stopping criterion and elapsed generations to bias the decisions 
+taken by the optimizers with the aim of promoting exploration in the initial stages and exploitation in the last ones.
+%
+Probably their main weakness is that the time required to obtain high-quality solution increases.
+%
+Our novel proposal, which is called \DE{} with Enhanced Diversity Maintenance (\DEEDM{}), integrates a similar principle into \DE{}.
+%
+However, in order to avoid the excessive growth of computational requirements typical of diversity-based replacement strategies, 
+the method was extended with the aim of inducing a larger degree of intensification.
+
+The rest of the paper is organized as follows.
+%
+Some basic concepts of \DE{} and a review of works related to diversity within \DE{} are given in section~\ref{sec:Literature}.
+%
+Section~\ref{sec:trends} presents an analysis about the algorithms with best performance on the last continuous optimization 
+contests held at the \textsc{ieee} Congress on Evolutionary Computation.
+%
+More emphasis is given on the variants based on \DE{}.
+%
+Our proposal is described in section~\ref{sec:Proposal}.
+%
+The experimental validation, which includes comparisons against state-of-the-art approaches, is shown in section~\ref{sec:Experimental}. 
+%
+Finally, our conclusions and some lines of future work are given in section~\ref{sec:Conclusion}.

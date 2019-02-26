@@ -1,0 +1,170 @@
+\subsection{Differential Evolution: Basic Concepts}
+
+Several extensions of \DE{} that affect its exploration capabilities
+have been devised~\cite{das2011differential}.
+%
+In this work, in order to properly show the benefits of our extension, our proposal is applied with the classic \DE{} scheme (\DE{}/rand/1/bin).
+%
+However, our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
+components and even algorithms not belonging to the \DE{} field.
+%
+This section is devoted to summarize the classic \DE{} variants and to introduce some of the most important terms used in the \DE{} field.
+
+\DE{} was originally proposed as a direct search method for single-objective continuous optimization.
+%
+The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
+dimensionality of the problem.
+%
+In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
+upper bound ($b_{i}$) for each variable.
+%
+The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a given objective function, mathematically 
+denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
+%
+In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{i}, b_{i}]$.
+
+\DE{} is a population-based stochastic algorithm, so it iteratively evolves a set of candidate solutions.
+%
+In \DE{} such candidate solutions are usually called vectors.
+%
+In the basic \DE{} variant for each member of the population --- they are called \textit{target vectors} --- a new \textit{mutant vector}
+is created.
+%
+Then, the mutant vector is combined with the target vector to generate a \textit{trial vector}.
+%
+Finally, a selection phase is applied to choose the survivors.
+%
+In this way, several generations are evolved until a stopping criterion is reached.
+%
+The $i$th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
+%
+In the following more details are given for each component of \DE{}.
+
+
+\subsubsection{Initialization}
+
+\DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
+%
+Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
+%
+Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
+where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
+
+\subsubsection{Mutation}
+
+For each target vector a mutant vector is created and several ways of performing
+such a process have been proposed.
+%
+In the classic \DE{} variant the rand/1 strategy is applied.
+%
+In this case, the mutant vector $V_{i,G}$ is created as follows:
+
+\begin{equation}\label{eqn:mutation}
+\vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
+\end{equation}
+%
+The indices $r1, r2, r3 \in [1,NP]$ are different integers randomly chosen from the range $[1, NP]$.
+%
+In addition, they are all different from the index $i$.
+%
+It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
+%
+The scaled difference is added to a third vector, meaning that
+when diversity decreases, differences are low and mutant vectors are similar to target vectors.
+%
+As a result, maintaining some degree of diversity is specially important in \DE{}.
+
+\subsubsection{Crossover}
+
+In order to combine information of different candidate solutions and with the aim of increasing diversity, the crossover
+operator is applied.
+%
+Specifically, each target vector $\vec{X}_{i,G}$ is mixed with its corresponding mutant vector $V_{i,G}$ to 
+generate the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
+%
+The most typical crossover is the \textit{binomial} one, which operates as follows:
+%
+\begin{equation} \label{eqn:crossover}
+\vec{U}_{j,i,G}= 
+\begin{cases}
+    \vec{V}_{j,i,G},& \text{if} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
+    \vec{X}_{j,i,G},              & \text{otherwise}
+\end{cases}
+\end{equation}
+where $rand_{i,j}[0,1]$ is a uniformly distributed random number,
+$j_{rand}$ is a randomly chosen index which ensures that $\vec{U}_{i,G}$ inherits at least one component from $\vec{V}_{i,G}$ and
+$CR \in [0,1]$ is the crossover rate.
+
+
+\subsubsection{Selection}
+Finally, a greedy selection is performed to determine the survivors of the next generation.
+%
+Each trial vector is compared with its corresponding target vector and the best one survives:
+
+\begin{equation} \label{eqn:selection}
+\vec{X}_{j,i,G+1}= 
+\begin{cases}
+    \vec{U}_{i,G},& \text{if} \quad f(\vec{U}_{i,G}) \leq f(\vec{X}_{i,G})  \\
+    \vec{X}_{i,G},              & \text{otherwise}
+\end{cases}
+\end{equation}
+
+Hence, each population member either gets better or remains with the same objective value in each generation.
+%
+Since members never deteriorate, it is considered to be a selection with high pressure.
+%
+Note that in case of a tie, the trial vector survives.
+
+%
+%The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
+
+\subsection{Diversity in Differential Evolution}
+
+\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
+%
+However, several analyses to better deal with this issue have been carried out.
+%
+Since the general implications of each parameter on the diversity are known, one of
+the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
+%
+Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
+have also been performed~\cite{montgomery2009differential}.
+%
+Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
+might be disallowed to delay the convergence~\cite{montgomery2012simple}.
+%
+In this last study the kind of accepted movements varies along the run.
+%
+Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
+%
+Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
+%
+Note that these kinds of methods have similarity with our proposal in the sense that decisions are biased by the number of elapsed generations.
+%
+However, our method operates on the replacement strategy and not on the mutation phase.
+%
+Moreover, these methods do not consider explicitly the differences appearing on the whole population.
+%
+Instead, the restrictions apply to the differences appearing in the reproduction phase.
+
+A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
+%
+Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
+to allow escaping from basin of attraction of local optima.
+%
+Since it considers the fitness to establish the acceptance probabilities is very sensitive to scale transformations.
+%
+In this case, decisions are not biased by the elapsed generations.
+
+Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
+to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
+%
+Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
+
+Note that several of the \DE{} variants with best performance in competitions do not apply these modifications
+and that most of these extensions have not been implemented in the most widely used frameworks.
+%
+As a result, these extensions are not so widely used in the community in spite of their important benefits
+for some cases.
+
+

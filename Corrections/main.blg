@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: spmpsci.bst
+Database file #1: example.bib
+Warning--empty journal in montgomery2009differential
+You've used 33 entries,
+            2945 wiz_defined-function locations,
+            794 strings with 11645 characters,
+and the built_in function-call counts, 17613 in all, are:
+= -- 1450
+> -- 586
+< -- 17
++ -- 246
+- -- 208
+* -- 1049
+:= -- 2301
+add.period$ -- 42
+call.type$ -- 33
+change.case$ -- 228
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 1556
+empty$ -- 1575
+format.name$ -- 236
+if$ -- 3806
+int.to.chr$ -- 0
+int.to.str$ -- 33
+missing$ -- 345
+newline$ -- 139
+num.names$ -- 66
+pop$ -- 660
+preamble$ -- 1
+purify$ -- 169
+quote$ -- 0
+skip$ -- 480
+stack$ -- 0
+substring$ -- 854
+swap$ -- 853
+text.length$ -- 17
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 128
+warning$ -- 1
+while$ -- 126
+width$ -- 35
+write$ -- 339
+(There was 1 warning)
