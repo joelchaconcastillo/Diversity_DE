@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  20 SEP 2018 11:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  26 FEB 2019 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,8 +440,6 @@ LaTeX Info: Redefining \nameref on input line 86.
 SVJour3 warning: Missing \journalname
 Missing character: There is no Ã in font cmr8!
 Missing character: There is no ¡ in font cmr8!
-Missing character: There is no Ã in font cmr8!
-Missing character: There is no ¡ in font cmr8!
 (./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 (./Literature.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -468,10 +466,10 @@ Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 44.
  [8] [9]) (./ExperimentalStudy.tex [10] [11] [12]
 Package epstopdf Info: Source file: <img/Diversity_Elite.eps>
-(epstopdf)                    date: 2018-08-20 08:21:45
-(epstopdf)                    size: 21957 bytes
+(epstopdf)                    date: 2019-02-26 16:12:26
+(epstopdf)                    size: 21955 bytes
 (epstopdf)             Output file: <img/Diversity_Elite-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-08-20 08:21:45
+(epstopdf)                    date: 2019-02-26 16:12:26
 (epstopdf)                    size: 10305 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/Diversity_Elite-eps-co
 nverted-to.pdf img/Diversity_Elite.eps>
@@ -486,11 +484,11 @@ Package pdftex.def Info: img/Diversity_Elite-eps-converted-to.pdf used on input
  line 202.
 (pdftex.def)             Requested size: 116.35225pt x 166.2175pt.
 Package epstopdf Info: Source file: <img/Diversity_Target.eps>
-(epstopdf)                    date: 2018-09-20 08:51:24
-(epstopdf)                    size: 22027 bytes
+(epstopdf)                    date: 2019-02-26 16:12:26
+(epstopdf)                    size: 22025 bytes
 (epstopdf)             Output file: <img/Diversity_Target-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2018-09-20 08:51:28
+(epstopdf)                    date: 2019-02-26 16:12:26
 (epstopdf)                    size: 10255 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/Diversity_Target-eps-c
 onverted-to.pdf img/Diversity_Target.eps>
@@ -510,10 +508,10 @@ Overfull \hbox (9.26837pt too wide) in paragraph at lines 201--205
  []
 
 Package epstopdf Info: Source file: <img/Tuning_CEC.eps>
-(epstopdf)                    date: 2018-09-20 10:09:09
+(epstopdf)                    date: 2019-02-26 16:12:26
 (epstopdf)                    size: 20766 bytes
 (epstopdf)             Output file: <img/Tuning_CEC-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-09-20 10:09:12
+(epstopdf)                    date: 2019-02-26 16:12:26
 (epstopdf)                    size: 8727 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/Tuning_CEC-eps-convert
 ed-to.pdf img/Tuning_CEC.eps>
@@ -560,7 +558,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
 Here is how much of TeX's memory you used:
  7530 strings out of 493304
  111238 string characters out of 6139871
- 229353 words of memory out of 5000000
+ 229346 words of memory out of 5000000
  10772 multiletter control sequences out of 15000+600000
  11260 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -587,7 +585,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt8.pfb>
-Output written on main.pdf (18 pages, 360251 bytes).
+Output written on main.pdf (18 pages, 360391 bytes).
 PDF statistics:
  408 PDF objects out of 1000 (max. 8388607)
  352 compressed objects within 4 object streams

@@ -43,10 +43,10 @@ Second, the elite population is also considered as an input of the replacement s
   \scriptsize
 	\caption{General scheme of DE-EDM} 
 	\begin{algorithmic}[1]
-	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
+	\STATE Randomly initialize the population of $N$ individuals, where each one is uniformly distributed.
 	\STATE $G=0$
 	\WHILE{ stopping criterion is not satisfied}
-	   \FOR{ $i=1$ to $NP$} 
+	   \FOR{ $i=1$ to $N$} 
 		\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
 		\STATE Crossover: Use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
 		\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
@@ -81,7 +81,7 @@ Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follo
 %
 It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
 %
-In each generation it must select the $NP$ vectors of the next parent population.
+In each generation it must select the $N$ vectors of the next parent population.
 %
 First, it calculates a desired minimum distance between selected individuals ($D_t$) given the current number of elapsed function evaluations (line 2).
 %
@@ -91,7 +91,7 @@ The current members set contains vectors that might be selected to survive.
 %
 Then, the set of survivors and penalized individuals are initialized to the empty set (line 4).
 %
-In order to select the $NP$ survivors (next parent population) an iterative process is repeated (lines 5 - 13).
+In order to select the $N$ survivors (next parent population) an iterative process is repeated (lines 5 - 13).
 %
 In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
 to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
@@ -102,7 +102,7 @@ Then, individuals in the \textit{Current set} with a distance lower than $D_t$ t
 The way to calculate the distance between two individuals is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of dimension $d$.
 %
 %
-In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
+In cases where the \textit{Current set} is empty previous to the selection of $N$ individuals, the \textit{Survivor set} is filled by selecting in each step 
 the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set} (lines 10 - 13).
 
 \begin{equation}\label{eqn:distance}
@@ -119,13 +119,13 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 	\STATE Update $D_t = D_I - D_I *(nfes/(0.90*max\_nfes)) $ 
 	\STATE $Current = Population \cup Offspring \cup Elite$.
 	\STATE $Survivors = Penalized = \emptyset$.
-	\WHILE{ $|Survivors| < NP$ And $|Current| > 0$ }
+	\WHILE{ $|Survivors| < N$ And $|Current| > 0$ }
 	   \STATE $Selected$ = Select the best individual of $Current$.
 		 \STATE Remove $Selected$ from $Current$.
 	   \STATE Copy $Selected$ to $Survivors$.
 	   \STATE Find the individuals from $Current$ with a distance to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
 	\ENDWHILE
-	\WHILE{ $|Survivors| < NP$ }
+	\WHILE{ $|Survivors| < N$ }
 	   \STATE $Selected$ = Select the individual from $Penalized$ with the largest distance to the closest individual in $Survivors$.
 		 \STATE Remove $Selected$ from $Penalized$.
 	   \STATE Copy $Selected$ to $Survivors$.
@@ -200,7 +200,7 @@ of different $D_I$ value is attached in the experimental validation section.
 %Although several top-rank algorithms present good enough results, usually these algorithms need a tuning phase to fit the parameters, therefore in real application it could be infeasible.
 
 %
-Similarly than in the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
+In the same way that in the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
 %
 The first one is perhaps the most important for the performance according to several studies developed by Montgomery 
 et al. \cite{montgomery2010analysis}.
@@ -216,7 +216,7 @@ Additionally, high $CR$ values might generate higher quality solutions with a lo
 %
 However, these transformations provoke large displacements that could improve significantly the solutions when successful.
 %
-According to this, we employ both high and low $CR$ values as it is showed in Eq. \ref{eqn:cr}.
+According to this, we employ both high and low $CR$ values as is indicated in Eq. \ref{eqn:cr}.
 
 \begin{equation} \label{eqn:cr}
 CR = 

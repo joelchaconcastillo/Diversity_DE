@@ -23,7 +23,7 @@ denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
 %
 In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
 
-\DE{} is a population-based stochastic algorithm, so it iteratively evolves a set of candidate solutions.
+\DE{} is a population-based stochastic algorithm, so it iteratively evolves a multi-set of candidate solutions.
 %
 In \DE{} such candidate solutions are usually called vectors.
 %
@@ -43,7 +43,7 @@ In the following more details are given for each component of \DE{}.
 
 \subsubsection{Initialization}
 
-\DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
+\DE{} usually starts the optimization process with a randomly initiated population of $N$ vectors.
 %
 Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
 %
@@ -60,10 +60,10 @@ In the classic \DE{} variant the rand/1 strategy is applied.
 In this case, the mutant vector $V_{i,G}$ is created as follows:
 
 \begin{equation}\label{eqn:mutation}
-\vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
+\vec{V}_{i,G} = \vec{X}_{r_1, G} + F \times (\vec{X}_{r_2, G} - \vec{X}_{r_3, G}) \quad r_1 \neq r_2 \neq r_3
 \end{equation}
 %
-The indices $r1, r2, r3 \in [1,NP]$ are mutually different integers randomly chosen from the range $[1, NP]$.
+The indices $r_1, r_2, r_3 \in [1,N]$ are mutually different integers randomly chosen from the range $[1, N]$.
 %
 In addition, they are all different from the index $i$.
 %

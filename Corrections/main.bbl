@@ -10,7 +10,7 @@
 Awad, N.H., Ali, M.Z., Suganthan, P.N., Reynolds, R.G.: An ensemble sinusoidal
   parameter adaptation incorporated with l-shade for solving cec2014 benchmark
   problems.
-\newblock In: Evolutionary Computation (CEC), 2016 IEEE Congress on, pp.
+\newblock In: 2016 IEEE Congress on Evolutionary Computation (CEC'16), pp.
   2958--2965. IEEE (2016)
 
 \bibitem{bolufe2013differential}
@@ -22,13 +22,13 @@ Boluf{\'e}-R{\"o}hler, A., Est{\'e}vez-Velarde, S., Piad-Morffis, A., Chen, S.,
 \bibitem{brest2016shade}
 Brest, J., Mau{\v{c}}ec, M.S., Bo{\v{s}}kovi{\'c}, B.: il-shade: Improved
   l-shade algorithm for single objective real-parameter optimization.
-\newblock In: Evolutionary Computation (CEC), 2016 IEEE Congress on, pp.
+\newblock In: 2016 IEEE Congress on Evolutionary Computation (CEC'16), pp.
   1188--1195. IEEE (2016)
 
 \bibitem{brest2017single}
 Brest, J., Mau{\v{c}}ec, M.S., Bo{\v{s}}kovi{\'c}, B.: Single objective
   real-parameter optimization: Algorithm jso.
-\newblock In: Evolutionary Computation (CEC), 2017 IEEE Congress on, pp.
+\newblock In: 2017 IEEE Congress on Evolutionary Computation (CEC'17), pp.
   1311--1318. IEEE (2017)
 
 \bibitem{chakraborty2008advances}
@@ -58,13 +58,13 @@ Durillo, J.J., Nebro, A.J., Coello, C.A.C., Garcia-Nieto, J., Luna, F., Alba,
 \bibitem{elsayed2016testing}
 Elsayed, S., Hamza, N., Sarker, R.: Testing united multi-operator evolutionary
   algorithms-ii on single objective optimization problems.
-\newblock In: Evolutionary Computation (CEC), 2016 IEEE Congress on, pp.
+\newblock In: 2016 IEEE Congress on Evolutionary Computation (CEC'16), pp.
   2966--2973. IEEE (2016)
 
 \bibitem{kumar2017improving}
 Kumar, A., Misra, R.K., Singh, D.: Improving the local search capability of
   effective butterfly optimizer using covariance matrix adapted retreat phase.
-\newblock In: Evolutionary Computation (CEC), 2017 IEEE Congress on, pp.
+\newblock In: 2017 IEEE Congress on Evolutionary Computation (CEC'17), pp.
   1835--1842. IEEE (2017)
 
 \bibitem{lampinen2000stagnation}
@@ -97,12 +97,15 @@ Liu, B., Chen, Q., Zhang, Q., Liang, J., Suganthan, P., Qu, B.: Problem
 Molina, D., Moreno-Garc{\'\i}a, F., Herrera, F.: Analysis among winners of
   different ieee cec competitions on real-parameters optimization: Is there
   always improvement?
-\newblock In: Evolutionary Computation (CEC), 2017 IEEE Congress on, pp.
+\newblock In: 2017 IEEE Congress on Evolutionary Computation (CEC'17), pp.
   805--812. IEEE (2017)
 
 \bibitem{montgomery2009differential}
 Montgomery, J.: Differential evolution: Difference vectors and movement in
-  solution space pp. 2833--2840 (2009)
+  solution space.
+\newblock In: 2009 IEEE Congress on Evolutionary Computation, pp. 2833--2840
+  (2009).
+\newblock \doi{10.1109/CEC.2009.4983298}
 
 \bibitem{montgomery2010analysis}
 Montgomery, J., Chen, S.: An analysis of the operation of differential
