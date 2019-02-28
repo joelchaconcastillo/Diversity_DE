@@ -21,7 +21,7 @@ In fact, the way of creating new trial vectors is not modified at all (lines 5 a
 %
 The novelty is the incorporation of an elite vectors ($E$) and a novel diversity-based replacement strategy.
 %
-The former, records the vector that has the best finess of each target vector, therefore there are $N$ elite vectors, which can be considered as multi-set since that they could be identical.
+The former, records the vectors that have the best objective function value in relation with each target vector, therefore there are $N$ elite vectors, which can be considered as multi-set since that they could be identical.
 %
 In order to select the members of the elite vectors, the original greedy replacement of \DE{} is used (line 7).
 %
@@ -237,7 +237,7 @@ Particularly, each $F$ is sampled from a Cauchy distribution (Eq. \ref{eqn:cauch
  Cauchy(0.5, 0.5*nfes/max\_nfes)
 \end{equation}
 %
-Therefore, at the first optimization stages, F values near to $0.5$ are generated with a high probability.
+Therefore, at the first optimization stages, the F values near to $0.5$ are generated with a high probability.
 %
 Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
 that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
