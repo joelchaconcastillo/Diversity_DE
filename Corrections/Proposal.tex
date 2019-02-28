@@ -19,6 +19,8 @@ In fact, the way of creating new trial solutions is not modified at all (lines 5
 %
 The novelty is the incorporation of an elite population ($E$) and a novel diversity-based replacement strategy.
 %
+The former records the vector with the best finess of each Target vector, therefore there are $N$ elite vectors, which can be considered as multi-set since that they could be the same.
+%
 In order to select the members of the elite population, the original greedy replacement of \DE{} is used (line 7).
 %
 On the other way, the replacement strategy (line 8), which is in charge of selecting the next population members,
@@ -106,7 +108,7 @@ In cases where the \textit{Current set} is empty previous to the selection of $N
 the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set} (lines 10 - 13).
 
 \begin{equation}\label{eqn:distance}
-distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{b^d - a^d} \right )^2  }} {\sqrt{D}}
+distance ( X, Y ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{X_d - Y_d}{b_d - a_d} \right )^2  }} {\sqrt{D}}
 \end{equation}
 
 

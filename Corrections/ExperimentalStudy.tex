@@ -8,6 +8,8 @@ Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
 Each one of them is composed of thirty different problems, meaning that the validation is performed with a set of large and diverse
 functions.
 %
+The kind of problems of each benchmark are divided in uni-modal, simple multi-modal, hybrid and composition functions.
+%
 The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
 %
 Additionally, the standard \DE{} was included.
@@ -44,8 +46,8 @@ The parameterization indicated by the authors was used in every algorithm and it
 \item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$.
-\item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}).
+\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$, CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cuachy(0.5, 0.5*nfes/max_{nfes})$.
+\item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}), CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cauchy(0.5, 0.5*nfes/max_{nfes})$.
 \end{itemize}
 %
 
@@ -169,7 +171,9 @@ This happens when a given approach obtains both $SR_{min}$ and $SE_{min}$.
 %
 Additionally, standard \DE{} attained quite promising results.
 %
-In fact it attained the third and second places in \CEC{} 2016 and \CEC{} 2017 respectively.
+In fact it attained the third and second places in the problems of the \CEC{} 2016 and \CEC{} 2017 respectively.
+%
+Whereas that the proposed modification of DE attained the first places in both years.
 %
 This implies that the performance of the state-of-the-art algorithms is not so good in long-term executions.
 %
