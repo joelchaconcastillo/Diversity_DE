@@ -1,4 +1,0 @@
-*Revisar trabajos de montgomery
-*Generar plots
-*Desarrollar la sección "historical"
-*Desarrollar "Proposal"

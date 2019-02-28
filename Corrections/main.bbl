@@ -61,6 +61,17 @@ Elsayed, S., Hamza, N., Sarker, R.: Testing united multi-operator evolutionary
 \newblock In: 2016 IEEE Congress on Evolutionary Computation (CEC'16), pp.
   2966--2973. IEEE (2016)
 
+\bibitem{eshelman1993real}
+Eshelman, L.J., Schaffer, J.D.: Real-coded genetic algorithms and
+  interval-schemata.
+\newblock In: Foundations of genetic algorithms, vol.~2, pp. 187--202. Elsevier
+  (1993)
+
+\bibitem{harik1995finding}
+Harik, G.R.: Finding multimodal solutions using restricted tournament
+  selection.
+\newblock In: ICGA, pp. 24--31 (1995)
+
 \bibitem{kumar2017improving}
 Kumar, A., Misra, R.K., Singh, D.: Improving the local search capability of
   effective butterfly optimizer using covariance matrix adapted retreat phase.
@@ -170,6 +181,12 @@ Tang, K., Y{\'a}o, X., Suganthan, P.N., MacNish, C., Chen, Y.P., Chen, C.M.,
 \v{C}repin\v{s}ek, M., Liu, S.H., Mernik, M.: Exploration and exploitation in
   evolutionary algorithms: A survey.
 \newblock ACM Computing Surveys \textbf{45}(3), 35:1--35:33 (2013)
+
+\bibitem{vidal2013hybrid}
+Vidal, T., Crainic, T.G., Gendreau, M., Prins, C.: A hybrid genetic algorithm
+  with adaptive diversity management for a large class of vehicle routing
+  problems with time-windows.
+\newblock Computers \& operations research \textbf{40}(1), 475--489 (2013)
 
 \bibitem{CEC2017}
 Wu, G., Mallipeddi, R., Suganthan, P.: Problem definitions and evaluation

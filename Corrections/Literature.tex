@@ -118,6 +118,45 @@ Note that in case of a tie, the trial vector survives.
 %
 %The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
+
+
+\subsection{Diversity Preservation in Evolutionary Algorithms}
+
+Since that premature convergence is a common drawback in  \EAS{}, several variants to deal with this issue have been designed \cite{eshelman1993real}.
+%
+Some of them start with a set of diverse candidate solutions, and as the generations evolve, such a diversity is reduced \cite{Crepinsek:13}.
+%
+Principally, --depending on the component of the \EA{} that is modified-- these methods are classified in groups as follows \cite{Crepinsek:13}: \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
+%
+Recently, the replacement-based strategies have attained quite good performance, therefore this section is devoted to this line.
+%
+One of the first techniques categorized as replacement-based are the \textit{crowding} methods.
+%
+One of the most popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (RTS) strategy.
+%
+In RTS after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
+%
+Then, $C$ and its most similar individual --from those in the selected set-- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
+%
+
+Similarly, in other strategies the diversity is considered to calculate a fitness value for the replacement stage.
+%
+Specifically, in the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (HGSADC) \cite{vidal2013hybrid}, the individuals --union of parents and offspring-- are sorted by their contribution to diversity and by their original cost.
+%
+In order, to calculate the contribution to diversity, the mean distance to the closest $N_{Close}$ individuals is calculated.
+%
+For an individual $I$, the ranking in terms of diversity is denotes ad $RD(I)$ whereas the ranking for the original cost is denoted as $RC(I)$.
+%
+Then, the rankings are combined to generate the biased fitness value $BF(I)$ using the Eq. \ref{eqn:biased}.
+%
+In each step of the replacement phase, the individual with the lowest fitness is erased and the ranks are re-calculated.
+%
+This process is performed until the desired population size is attained.
+%
+It is importat to remark that this sche requires the setting of the parameters: $N_{Close}$ and $N_{Elite}$
+\begin{equation}\label{eqn:biased}
+ BF(I) = RC(I) + \left(1- \frac{N_{Elite}}{N_{population}} \right) RC(I)
+\end{equation}
 \subsection{Diversity in Differential Evolution}
 
 \DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
@@ -167,5 +206,4 @@ and that most of these extensions have not been implemented in the most widely u
 %
 As a result, these extensions are not so widely used in the community in spite of their important benefits
 for some cases.
-
 

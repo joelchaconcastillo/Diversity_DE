@@ -8,7 +8,30 @@ Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
 Each one of them is composed of thirty different problems, meaning that the validation is performed with a set of large and diverse
 functions.
 %
-The kind of problems of each benchmark are divided in uni-modal, simple multi-modal, hybrid and composition functions.
+The kind of problems of each benchmark (Table \ref{tab:category}) is divided in uni-modal , simple multi-modal, hybrid and composition functions.
+%
+Principally, considering that in the real-world optimization problems, different sub-components of the variables may have different properties.
+%
+In the hybrid functions, the variables are randomly divided into some sub-components and each one is related to basic functions.
+%
+In the same line, the composition functions merge the properties of several sub-functions and maintains continuity around each local optima.
+%
+Also the local optima which has the smallest bias value is the global optimum.
+%
+The search space is bounded by the range $\Omega = \prod_{j=1}^D[-100, 100]^D$.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Type Function} & \textbf{CEC 2016} & \textbf{CEC 2017} \\ \hline
+\textbf{Uni-modal} & $f_1$ - $f_3$ & $f_1$ - $f_3$ \\ \hline
+\textbf{Simple multi-modal} & $f_4$ - $f_{16}$ & $f_4$ - $f_{10}$ \\ \hline
+\textbf{Hybrid} & $f_{17}$ - $f_{22}$ & $f_{11}$ - $f_{20}$ \\ \hline
+\textbf{Composition} & $f_{23}$ - $f_{30}$ & $f_{21}$ - $f_{30}$ \\ \hline
+\end{tabular}
+\caption{Problems grouped by properties.}\label{tab:category}
+\end{table}
 %
 The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
 %
@@ -28,6 +51,8 @@ Following the recommendations given in~\cite{molina2017analysis}, all these algo
 Given that the optimizers taken into account are stochastic algorithms, each execution was repeated 51 times with different seeds.
 %
 In every case, the stopping criterion was set to $25 \times 10^6$ functions evaluations.
+%
+In addition, ten dimensions of the search space were take into account.
 %
 The validation follows the guidelines of \CEC{} benchmark competitions and the statistical tests proposed in~\cite{Joel:StatisticalTest} are also included.
 %
@@ -187,7 +212,7 @@ This implies that the performance of the state-of-the-art algorithms is not so g
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 
 Since our proposal is based on the explicit control of diversity, Fig. \ref{fig:diversity} shows the evolution of the mean of the diversity calculated
-as the mean distance to the closest individual with the aim of better understanding its behavior.
+as the mean distance to the closest vector with the aim of better understanding its behavior.
 %
 Particularly, functions $f_1$ and $f_{30}$ were selected for this analysis because they have quite different features (easy uni-modal vs. complex multi-modal).
 %
@@ -206,7 +231,7 @@ As expected, diversity decreases in a gradual way and a degree of diversity is m
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Elite.eps} 
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Target.eps} 
 \end{tabular}
-\caption{Mean distance to the closest individual of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
+\caption{Mean distance to the closest vector of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
 \label{fig:diversity}
 \end{figure}
 
