@@ -132,20 +132,20 @@ Recently, the replacement-based strategies have attained quite good performance,
 %
 One of the first techniques categorized as replacement-based are the \textit{crowding} methods.
 %
-One of the most popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (RTS) strategy.
+A quite popular popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (RTS) strategy.
 %
 In RTS after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
 %
 Then, $C$ and its most similar individual --from those in the selected set-- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
 %
 
-Similarly, in other strategies the diversity is considered to calculate a fitness value for the replacement stage.
+Similarly, other strategies considers the diversity to calculate a fitness value for the replacement stage.
 %
 Specifically, in the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (HGSADC) \cite{vidal2013hybrid}, the individuals --union of parents and offspring-- are sorted by their contribution to diversity and by their original cost.
 %
 In order, to calculate the contribution to diversity, the mean distance to the closest $N_{Close}$ individuals is calculated.
 %
-For an individual $I$, the ranking in terms of diversity is denotes ad $RD(I)$ whereas the ranking for the original cost is denoted as $RC(I)$.
+For an individual $I$, the ranking in terms of diversity is denoted as $RD(I)$, whereas the ranking for the original cost is denoted as $RC(I)$.
 %
 Then, the rankings are combined to generate the biased fitness value $BF(I)$ using the Eq. \ref{eqn:biased}.
 %
@@ -153,7 +153,7 @@ In each step of the replacement phase, the individual with the lowest fitness is
 %
 This process is performed until the desired population size is attained.
 %
-It is importat to remark that this sche requires the setting of the parameters: $N_{Close}$ and $N_{Elite}$
+It is important to remark that this scheme requires the setting of the parameters: $N_{Close}$ and $N_{Elite}$
 \begin{equation}\label{eqn:biased}
  BF(I) = RC(I) + \left(1- \frac{N_{Elite}}{N_{population}} \right) RC(I)
 \end{equation}

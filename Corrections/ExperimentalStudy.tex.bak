@@ -8,6 +8,31 @@ Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
 Each one of them is composed of thirty different problems, meaning that the validation is performed with a set of large and diverse
 functions.
 %
+The kind of problems of each benchmark (Table \ref{tab:category}) is divided in uni-modal, simple multi-modal, hybrid and composition functions.
+%
+%Principally,  in the real-world optimization problems, different sub-components of the variables may have different properties.
+%
+In the hybrid functions, the variables are randomly divided into some sub-components and each one is related to basic functions.
+%
+In the same line, the composition functions merge the properties of several sub-functions and maintains continuity around each local optima.
+%
+Also the local optima which has the smallest bias value is the global optimum.
+%
+The search space is bounded by the range $\Omega = \prod_{j=1}^D[-100, 100]^D$.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Type Function} & \textbf{CEC 2016} & \textbf{CEC 2017} \\ \hline
+\textbf{Uni-modal} & $f_1$ - $f_3$ & $f_1$ - $f_3$ \\ \hline
+\textbf{Simple multi-modal} & $f_4$ - $f_{16}$ & $f_4$ - $f_{10}$ \\ \hline
+\textbf{Hybrid} & $f_{17}$ - $f_{22}$ & $f_{11}$ - $f_{20}$ \\ \hline
+\textbf{Composition} & $f_{23}$ - $f_{30}$ & $f_{21}$ - $f_{30}$ \\ \hline
+\end{tabular}
+\caption{Problems grouped by properties.}\label{tab:category}
+\end{table}
+%
 The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
 %
 Additionally, the standard \DE{} was included.
@@ -27,6 +52,8 @@ Given that the optimizers taken into account are stochastic algorithms, each exe
 %
 In every case, the stopping criterion was set to $25 \times 10^6$ functions evaluations.
 %
+In addition, ten dimensions of the search space were take into account.
+%
 The validation follows the guidelines of \CEC{} benchmark competitions and the statistical tests proposed in~\cite{Joel:StatisticalTest} are also included.
 %
 %The first, considers a composed score between the mean of difference error and the rank of the algorithms.
@@ -44,8 +71,8 @@ The parameterization indicated by the authors was used in every algorithm and it
 \item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$.
-\item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}).
+\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$, CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cuachy(0.5, 0.5*nfes/max_{nfes})$.
+\item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}), CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cauchy(0.5, 0.5*nfes/max_{nfes})$.
 \end{itemize}
 %
 
@@ -81,7 +108,7 @@ They were able to reach optimal values in significantly less functions.
 In order to confirm the superiority of \DEEDM{}, the pair-wise statistical tests already described were used.
 %
 The column tagged with the symbol $\uparrow$ shows the number of cases where the superiority of each method could be confirmed, whereas
-the column tagged with the symbol $\downarrow$ count the number of cases where the method was inferior.
+the column tagged with the symbol $\downarrow$ counts the number of cases where the method was inferior.
 %
 Finally, the number comparisons with not significant differences are shown in the column tagged with the symbol $\longleftrightarrow$.
 %
@@ -99,14 +126,14 @@ The last column --- tagged with ``Score'' --- considers the official score of \C
 %
 Particularly, the raking of the algorithms is attained by taking into account the two scores defined in Eq. (\ref{eqn:total_scores}).
 %
-Particularly, the final score is composed by the sum $Score = Score_1 + Score_2$.
+Then, the final score is calculated as the sum $Score = Score_1 + Score_2$.
 %
 In Eq.~(\ref{eqn:total_scores}), the $SE$ of an algorithm is the sum of the mean error values obtained in the $30$ benchmark functions, i.e. 
 $SE = \sum_{i=1}^{30} error\_f_i$ .
 %
 Then, $SE_{min}$ is the minimal $SE$ from all the algorithms. 
 %
-In order to calculate $SR$ and $SR_{min}$, algorithms are sorted in each function in base of the attained error.
+In order to calculate $SR$ and $SR_{min}$, algorithms are sorted in each function in base of the attained mean error.
 %
 Then, a rank is assigned to each algorithm in base of such an ordering.
 %
@@ -115,7 +142,7 @@ Finally, the $SR$ of a method is the sum of the ranks obtained for each function
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[t]
-\begin{scriptsize}
+%\begin{scriptsize}
 \centering
 \caption{Summary results - \CEC{} 2016}
 \label{tab:Summary_CEC2016}
@@ -130,13 +157,13 @@ Finally, the $SR$ of a method is the sum of the ranks obtained for each function
 \textbf{EBOwithCMAR} & 8 & 14 & 35 & 56 & 59 & 50.28 \\ \hline
 \textbf{L-SHADE-Epsilon} & 7 & 13 & 20 & 71 & 59 & 50.12 \\ \hline
 \end{tabular}
-\end{scriptsize}
+%\end{scriptsize}
 \end{table}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[t]
-\begin{scriptsize}
+%\begin{scriptsize}
 \centering
 \caption{Summary results - \CEC{} 2017}
 \label{tab:Summary_CEC2017}
@@ -151,7 +178,7 @@ Finally, the $SR$ of a method is the sum of the ranks obtained for each function
 \textbf{jSO} & 8 & 15 & 29 & 55 & 66 & 29.30 \\ \hline
 \textbf{UMOEAs-II} & 11 & 15 & 43 & 40 & 67 & 26.89 \\ \hline
 \end{tabular}
-\end{scriptsize}
+%\end{scriptsize}
 \end{table}
 
 \begin{equation}\label{eqn:total_scores}
@@ -167,9 +194,9 @@ This happens when a given approach obtains both $SR_{min}$ and $SE_{min}$.
 %
 \DEEDM{} attained the best attainable score in both years, which confirms its clear superiority when compared both with state-of-the-art and standard \DE{}.
 %
-Additionally, standard \DE{} attained quite promising results.
+In the same scheme (long-term executions) the standard \DE{} attained the third and second places in the problems of the \CEC{} 2016 and \CEC{} 2017 respectively.
 %
-In fact it attained the third and second places in \CEC{} 2016 and \CEC{} 2017 respectively.
+Whereas that the proposed modification of DE attained the first places in both years.
 %
 This implies that the performance of the state-of-the-art algorithms is not so good in long-term executions.
 %
@@ -183,9 +210,9 @@ This implies that the performance of the state-of-the-art algorithms is not so g
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 
 Since our proposal is based on the explicit control of diversity, Fig. \ref{fig:diversity} shows the evolution of the mean of the diversity calculated
-as the mean distance between individuals with the aim of better understanding its behavior.
+as the mean distance to the closest vector with the aim of better understanding its behavior.
 %
-Particularly, functions $f_1$ and $f_{30}$ were selected for this analysis because they have quite different features (easy unimodal vs. complex multimodal).
+Particularly, functions $f_1$ and $f_{30}$ were selected for this analysis because they have quite different features (easy uni-modal vs. complex multi-modal).
 %
 The left side shows the diversity of the Elite population.
 %
@@ -202,21 +229,18 @@ As expected, diversity decreases in a gradual way and a degree of diversity is m
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Elite.eps} 
    \includegraphics[scale=0.23, angle=-90]{img/Diversity_Target.eps} 
 \end{tabular}
-\caption{Average \DCN{} of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
+\caption{Mean distance to the closest vector of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$}
 \label{fig:diversity}
 \end{figure}
 
 
 
-
-
-
 Finally, in order to provide comparable results of our proposal, Tables~\ref{tab:Results_CEC2016} and~\ref{tab:Results_CEC2017} report the best, worst, median, 
-mean, standard deviation and success ratio for both benchmarks.
+mean, standard deviation and success rate for both benchmarks.
 %
 These tables show that all the uni-modal problems were solved by our proposal.
 %
-Additionally, several simple and even some of the most complex multi-modal functions were solved to optimality.
+Additionally, several simple and even some of the most complex multi-modal functions were optimally solved.
 %
 In fact, several complex functions that had never been solved by state-of-the-art could be solved by \DEEDM{}.
 %
@@ -228,7 +252,7 @@ In fact, several complex functions that had never been solved by state-of-the-ar
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
- & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
+ & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std.} & \textbf{Succ. Rate} \\ \hline
 $f_1$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_2$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_3$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
@@ -272,7 +296,7 @@ $f_{30}$ & 1.84E+02 & 1.84E+02 & 1.84E+02 & 1.84E+02 & 3.25E-02 & 0.00E+00 \\ \h
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
- & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
+ & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std.} & \textbf{Succ. Ratio} \\ \hline
 $f_1$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_2$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_3$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
@@ -308,34 +332,108 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \end{scriptsize}
 \end{table}
 
-\subsection{Empirical analyses of the initial distance factor}
-
-In our proposal the diversity is explicitly promoted and the total amount of diversity maintained in the population 
-is controlled with the initial distance factor $D_I$.
-%
-Therefore, the effect of this parameter on the quality is analyzed in this section.
-%
-Particularly, the same global parameterization than the one used in the previous analyses was taken into account.
-%
-However, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
-
 \begin{figure}[t]
 \centering
   \includegraphics[scale=0.6]{img/Tuning_CEC.eps}
-\caption{Average success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
+\caption{Mean success rate for different $D_I$ in the \CEC{} 2016 and \CEC{} 2017 benchmarks with a population size equal to $250$ and $25 \times 10^6$ function evaluations}
 \label{fig:one}
 \end{figure}
 
-Fig. \ref{fig:one} shows the average success ratio attained for both benchmarks when considering different $D_I$ values.
+\subsection{Validation of the Strategies of the Replacement-Based Category in \DE{}}
+
+In this section the performance of the replacement strategy used by our proposal is compared with two popular replacement-based state-of-the-art strategies.
+%
+Particularly, the replacement-based methods taken into consideration are the \textit{Restricted Tournament Selection} (\RTS{}) and \textit{ Hybrid Genetic Search with Adaptive Diversity Control} (\HGSADC{}).
+%
+These replacement-based strategies are incorpored to the stantandard \DE{} using the same operators, i.e. mutation, crossover and selection.
+%
+To have fairly comparison, the three variants are considered with the same parameterization.
+%
+In addition, based in several analyses the \RTS{} was fixed with a sample size $CF=25$, and the \HGSADC{} with $N_{Close} = 1$, $N_{Elite}=8$.
+%
+The remaining configuration follows the same guideline previously defined.
+%
+In the Tables \ref{tab:Summary_CEC2016_Replacement} and \ref{tab:Summary_CEC2017_Replacement} the results of the replacement-based strategies of each year are shown.
+%
+Specifically, the \DEEDM{} attainted the best results in both years, the second place is attained by the \HGSADC{}.
+%
+However, the \DEEDM{} attained a significant highly $Score$ in relation with the remaining methods.
+%
+In General, the \RTS{} and \HGSADC{} attained bad quality solutions, this might occurs mainly for two aspects.
+%
+Firstly, the replacement-based strategies of the state-of-the-art only delays the premature convergence, in consequence the search process is stagnated in sub-optimal regions.
+%
+Secondly, the incorporation of those methods seems to be in conflict with the implicit mechanism of \DE{} to promote the diversity.
+%
+Particularly, the diversity in \DE{} is managed through the order preserved by the target vectors \cite{lampinen2000stagnation}, given that the replacement strategies mixes the target and trial vectors, the order is also affected, therefore there are not guarante to avoid the premature convergence.
+%
+%
+However those drawbacks are not present in our replacement-strategy method.
+%
+The main difference between our proposal and remaining strategies, is that the former takes into account the criteria stop to avoid the premature convergence.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[t]
+\centering
+\caption{Summary results replacement algorithms - \CEC{} 2016}
+\label{tab:Summary_CEC2016_Replacement}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always solved}} & \multirow{2}{*}{\textbf{At least one time solved}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+ &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
+\textbf{DE-EDM} & 13 & 21 & 51 & 1 & 8 & 100.00 \\ \hline
+\textbf{RTS} & 2 & 7 & 3 & 47 & 10 & 19.74 \\ \hline
+\textbf{HGSADC} & 3 & 15 & 21 & 27 & 12 & 44.12 \\ \hline
+\end{tabular}
+\end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[t]
+\centering
+\caption{Summary results replacement algorithms - \CEC{} 2017}
+\label{tab:Summary_CEC2017_Replacement}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{Always solved}} & \multirow{2}{*}{\textbf{At least one time solved}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+ &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
+\textbf{DE-EDM} & 21 & 28 & 49 & 0 & 11 & 100.00 \\ \hline
+\textbf{RTS} & 4 & 12 & 2 & 49 & 9 & 30.91 \\ \hline
+\textbf{HGSADC} & 6 & 18 & 23 & 25 & 12 & 40.86 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Empirical analyses of the initial distance factor}
+
+In our proposal the diversity is explicitly promoted and the total amount of diversity maintained in the population 
+depends on the initial distance factor $D_I$.
+%
+Therefore, the effect of this parameter on the quality is analyzed in this section.
+%
+Particularly, the same scheme previously mentioned was taken into account.
+%Particularly, the same scheme taken into accoun in the previous analyses was taken into account.
+%
+However, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+
+
+Fig. \ref{fig:one} shows the mean success rate attained for both benchmarks when considering different $D_I$ values.
 %
 The most relevant conclusions are:
 \begin{itemize}
 \item If diversity is not promoted ($D_I = 0.0 $) there is an important degradation in the performance. 
 \item Performance is quite robust in the sense that a large range of $D_I$ values provide proper performance. For instance values
-in the range $[0.1, 0.5]$ provide high-quality solutions.
-\item If $D_I$ is too large (values larger than $0.5$), the quality of solutions decreases. This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
+in the range $[0.2, 0.6]$ provide high-quality solutions.
+\item If $D_I$ is too large (values larger than $0.6$), the quality of solutions decreases. This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
 \end{itemize}
 
 To summarize, \DEEDM{} incorporates a novel parameter which is important for performance.
 %
-However, results are quite robust in the sense that even if it is not tuned for each problem, high-quality results can be obtained.
+However, results are quite robust in the sense that even if it is not tuned for each problem, high-quality results can be obtained and that
+a large range of values provide competitive results.
+

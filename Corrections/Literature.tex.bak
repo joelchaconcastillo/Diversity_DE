@@ -1,19 +1,19 @@
 \subsection{Differential Evolution: Basic Concepts}
 
-Several extensions of \DE{} that affect its exploration capabilities
-have been devised~\cite{das2011differential}.
+This section is devoted to summarize the classic \DE{} variant and to introduce some of the most important terms used in the \DE{} field.
 %
-In this work, in order to properly show the benefits of our extension, our proposal is applied with the classic \DE{} scheme (\DE{}/rand/1/bin).
+The classic \DE{} scheme is called the \DE{}/rand/1/bin and it has been extensively used to generate more complex \DE{} variants~\cite{das2011differential}.
 %
-However, our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
-components and even algorithms not belonging to the \DE{} field.
+In fact, our proposal also extends the classic variant.
 %
-This section is devoted to summarize the classic \DE{} variants and to introduce some of the most important terms used in the \DE{} field.
-
+%However, in order to perform fair comparisons,
+%our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
+%components and even algorithms not belonging to the \DE{} field.
+%
 \DE{} was originally proposed as a direct search method for single-objective continuous optimization.
 %
 The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
-dimensionality of the problem.
+dimension of the problem.
 %
 In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
 upper bound ($b_{i}$) for each variable.
@@ -21,9 +21,9 @@ upper bound ($b_{i}$) for each variable.
 The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a given objective function, mathematically 
 denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
 %
-In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{i}, b_{i}]$.
+In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
 
-\DE{} is a population-based stochastic algorithm, so it iteratively evolves a set of candidate solutions.
+\DE{} is a population-based stochastic algorithm, so it iteratively evolves a multi-set of candidate solutions.
 %
 In \DE{} such candidate solutions are usually called vectors.
 %
@@ -43,7 +43,7 @@ In the following more details are given for each component of \DE{}.
 
 \subsubsection{Initialization}
 
-\DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
+\DE{} usually starts the optimization process with a randomly initiated population of $N$ vectors.
 %
 Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
 %
@@ -60,17 +60,17 @@ In the classic \DE{} variant the rand/1 strategy is applied.
 In this case, the mutant vector $V_{i,G}$ is created as follows:
 
 \begin{equation}\label{eqn:mutation}
-\vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
+\vec{V}_{i,G} = \vec{X}_{r_1, G} + F \times (\vec{X}_{r_2, G} - \vec{X}_{r_3, G}) \quad r_1 \neq r_2 \neq r_3
 \end{equation}
 %
-The indices $r1, r2, r3 \in [1,NP]$ are different integers randomly chosen from the range $[1, NP]$.
+The indices $r_1, r_2, r_3 \in [1,N]$ are mutually different integers randomly chosen from the range $[1, N]$.
 %
 In addition, they are all different from the index $i$.
 %
 It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
 %
 The scaled difference is added to a third vector, meaning that
-when diversity decreases, differences are low and mutant vectors are similar to target vectors.
+when diversity decreases and consequently differences are low, mutant vectors are similar to target vectors.
 %
 As a result, maintaining some degree of diversity is specially important in \DE{}.
 
@@ -118,28 +118,68 @@ Note that in case of a tie, the trial vector survives.
 %
 %The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
+
+
+\subsection{Diversity Preservation in Evolutionary Algorithms}
+
+Since that premature convergence is a common drawback in  \EAS{}, several variants to deal with this issue have been designed \cite{eshelman1993real}.
+%
+Some of them start with a set of diverse candidate solutions, and as the generations evolve, such a diversity is reduced \cite{Crepinsek:13}.
+%
+Principally, --depending on the component of the \EA{} that is modified-- these methods are classified in groups as follows \cite{Crepinsek:13}: \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
+%
+Recently, the replacement-based strategies have attained quite good performance, therefore this section is devoted to this line.
+%
+One of the first techniques categorized as replacement-based are the \textit{crowding} methods.
+%
+A quite popular popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (RTS) strategy.
+%
+In RTS after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
+%
+Then, $C$ and its most similar individual --from those in the selected set-- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
+%
+
+Similarly, other strategies considers the diversity to calculate a fitness value for the replacement stage.
+%
+Specifically, in the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (HGSADC) \cite{vidal2013hybrid}, the individuals --union of parents and offspring-- are sorted by their contribution to diversity and by their original cost.
+%
+In order, to calculate the contribution to diversity, the mean distance to the closest $N_{Close}$ individuals is calculated.
+%
+For an individual $I$, the ranking in terms of diversity is denoted as $RD(I)$, whereas the ranking for the original cost is denoted as $RC(I)$.
+%
+Then, the rankings are combined to generate the biased fitness value $BF(I)$ using the Eq. \ref{eqn:biased}.
+%
+In each step of the replacement phase, the individual with the lowest fitness is erased and the ranks are re-calculated.
+%
+This process is performed until the desired population size is attained.
+%
+It is importat to remark that this sche requires the setting of the parameters: $N_{Close}$ and $N_{Elite}$
+\begin{equation}\label{eqn:biased}
+ BF(I) = RC(I) + \left(1- \frac{N_{Elite}}{N_{population}} \right) RC(I)
+\end{equation}
 \subsection{Diversity in Differential Evolution}
 
 \DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
 %
 However, several analyses to better deal with this issue have been carried out.
 %
-Since the general implications of each parameter on the diversity are known, one of
+Since the general implications of each \DE{} parameter on the diversity are known, one of
 the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
 %
-Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
+Differently, some analyses regarding the effects of the magnitude of the difference vectors used in the mutation
+%Differently, some analyses regarding the effects of the Euclidean norm of the difference vectors used in the mutation
 have also been performed~\cite{montgomery2009differential}.
 %
 Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
-might be disallowed to delay the convergence~\cite{montgomery2012simple}.
+should be disallowed to delay the convergence~\cite{montgomery2012simple}.
 %
 In this last study the kind of accepted movements varies along the run.
 %
-Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
+Specifically, it discards movements with a norm below a threshold and this threshold decreases taking into account the elapsed generations.
 %
 Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
 %
-Note that these kinds of methods have similarity with our proposal in the sense that decisions are biased by the number of elapsed generations.
+Note that these kinds of methods have similarities with our proposal in the sense that decisions are biased by the number of elapsed generations.
 %
 However, our method operates on the replacement strategy and not on the mutation phase.
 %
@@ -152,7 +192,7 @@ A different alternative operates by altering the selection operator~\cite{sa2008
 Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
 to allow escaping from basin of attraction of local optima.
 %
-Since it considers the fitness to establish the acceptance probabilities is very sensitive to scale transformations.
+Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
 %
 In this case, decisions are not biased by the elapsed generations.
 
@@ -161,10 +201,9 @@ to diversify the population when a too low diversity is detected~\cite{yang2015d
 %
 Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
 
-Note that several of the \DE{} variants with best performance in competitions do not apply these modifications
-and that most of these extensions have not been implemented in the most widely used frameworks.
+Note that \DE{} variants with best performance in competitions do not apply these modifications
+and that most of these extensions have not been implemented in the most widely used optimization frameworks.
 %
 As a result, these extensions are not so widely used in the community in spite of their important benefits
 for some cases.
-
 

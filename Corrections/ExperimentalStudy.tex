@@ -8,9 +8,9 @@ Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
 Each one of them is composed of thirty different problems, meaning that the validation is performed with a set of large and diverse
 functions.
 %
-The kind of problems of each benchmark (Table \ref{tab:category}) is divided in uni-modal , simple multi-modal, hybrid and composition functions.
+The kind of problems of each benchmark (Table \ref{tab:category}) is divided in uni-modal, simple multi-modal, hybrid and composition functions.
 %
-Principally, considering that in the real-world optimization problems, different sub-components of the variables may have different properties.
+%Principally,  in the real-world optimization problems, different sub-components of the variables may have different properties.
 %
 In the hybrid functions, the variables are randomly divided into some sub-components and each one is related to basic functions.
 %
@@ -27,8 +27,8 @@ The search space is bounded by the range $\Omega = \prod_{j=1}^D[-100, 100]^D$.
 \textbf{Type Function} & \textbf{CEC 2016} & \textbf{CEC 2017} \\ \hline
 \textbf{Uni-modal} & $f_1$ - $f_3$ & $f_1$ - $f_3$ \\ \hline
 \textbf{Simple multi-modal} & $f_4$ - $f_{16}$ & $f_4$ - $f_{10}$ \\ \hline
-\textbf{Hybrid} & $f_{17}$ - $f_{22}$ & $f_{11}$ - $f_{20}$ \\ \hline
-\textbf{Composition} & $f_{23}$ - $f_{30}$ & $f_{21}$ - $f_{30}$ \\ \hline
+\textbf{Hybrid (multi-modal)} & $f_{17}$ - $f_{22}$ & $f_{11}$ - $f_{20}$ \\ \hline
+\textbf{Composition (multi-modal)} & $f_{23}$ - $f_{30}$ & $f_{21}$ - $f_{30}$ \\ \hline
 \end{tabular}
 \caption{Problems grouped by properties.}\label{tab:category}
 \end{table}
@@ -71,7 +71,7 @@ The parameterization indicated by the authors was used in every algorithm and it
 \item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$, CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cuachy(0.5, 0.5*nfes/max_{nfes})$.
+\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$, CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cauchy(0.5, 0.5*nfes/max_{nfes})$.
 \item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}), CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cauchy(0.5, 0.5*nfes/max_{nfes})$.
 \end{itemize}
 %
@@ -194,9 +194,7 @@ This happens when a given approach obtains both $SR_{min}$ and $SE_{min}$.
 %
 \DEEDM{} attained the best attainable score in both years, which confirms its clear superiority when compared both with state-of-the-art and standard \DE{}.
 %
-Additionally, standard \DE{} attained quite promising results.
-%
-In fact it attained the third and second places in the problems of the \CEC{} 2016 and \CEC{} 2017 respectively.
+In the same scheme (long-term executions) the standard \DE{} attained the third and second places in the problems of the \CEC{} 2016 and \CEC{} 2017 respectively.
 %
 Whereas that the proposed modification of DE attained the first places in both years.
 %
@@ -341,29 +339,38 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \label{fig:one}
 \end{figure}
 
-\subsection{Validation of the Algorithms Belonging to the \textit{Replacement-Based} Category}
+\subsection{Validation of the Strategies of the Replacement-Based Category in \DE{}}
 
-In this section the performance replacement strategy used by our proposal is compared with two popular replacement-based state-of-the-art strategies.
+In this section the performance of the replacement strategy used by our proposal is compared with two popular replacement-based state-of-the-art strategies.
 %
-Particularly, the replacement-based methods taken into consideration are the \textit{Restricted Tournament Selection (\RTS{})} and \textit{ Hybrid Genetic Search with Adaptive Diversity Control  (\HGSADC{})}.
+Particularly, the replacement-based methods taken into consideration are the \textit{Restricted Tournament Selection} (\RTS{}) and \textit{ Hybrid Genetic Search with Adaptive Diversity Control} (\HGSADC{}).
 %
-Those replacement-based strategies are incorpored to the stantandard \DE{}, therefore the \DE{} components are used, i.e. mutation, crossover and selection.
+These replacement-based strategies are incorporated to the standard \DE{} using the same operators, i.e. mutation, crossover and selection.
 %
 To have fairly comparison, the three variants are considered with the same parameterization.
 %
-Principally, the same guideline previously defined is taken into consideration.
+In addition, based in several analyses the \RTS{} was fixed with a sample size $CF=25$, and the \HGSADC{} with $N_{Close} = 1$, $N_{Elite}=8$.
 %
-In the tables \ref{tab:Summary_CEC2016_Replacement} and \ref{tab:Summary_CEC2017_Replacement} the results of the replacement-based strategies of each year are shown.%.
+The remaining configuration follows the same guideline previously defined.
 %
-Specifically, the \DEEDM{} attainted the best results in the two years, also the second place is atteined by the \HGSADC{}.
+In the Tables \ref{tab:Summary_CEC2016_Replacement} and \ref{tab:Summary_CEC2017_Replacement} the results of the replacement-based strategies of each year are shown.
 %
-However, the \DEEDM{} attained a significant highly $Score$ in relation with the remainint methods.
+Specifically, the \DEEDM{} attained the best results in both years, the second place is attained by the \HGSADC{}.
 %
-In General, the \RTS{} and \HGSADC{} attained bad results, this might occurs mainly for two aspects.
+However, the \DEEDM{} attained a significant highly $Score$ in relation with the remaining methods.
 %
-Firstly, the replacement-based strategies of the state-of-the-art only delays the premature convergency, as results bad quality solutions are attained.
+In General, the \RTS{} and \HGSADC{} attained bad quality solutions, this might occurs mainly for two aspects.
 %
-Secondly, the incorporation of those methods in \DE{} seems to be contradictory with the greedy selection of the \DE{}, this drawback is not present in our replacement-strategy method.
+Firstly, the replacement-based strategies of the state-of-the-art only delays the premature convergence, in consequence the search process is stagnated in sub-optimal regions.
+%
+Secondly, the incorporation of those methods seems to be in conflict with the implicit mechanism of \DE{} to promote the diversity.
+%
+Particularly, the diversity in \DE{} is managed through the order preserved by the target vectors \cite{lampinen2000stagnation}, given that the replacement strategies mixes the target and trial vectors, the order is also affected, therefore there are not guarantee to avoid the premature convergence.
+%
+%
+However those drawbacks are not present in our replacement-strategy method.
+%
+The main difference between our proposal and remaining strategies, is that the former takes into account the criteria stop to avoid the premature convergence.
 
 
 % Please add the following required packages to your document preamble:
