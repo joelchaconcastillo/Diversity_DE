@@ -36,7 +36,7 @@ Finally, a selection phase is applied to choose the survivors.
 %
 In this way, several generations are evolved until a stopping criterion is reached.
 %
-The $i$-th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
+The $i$-th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., x_{D,i, G}]$.
 %
 In the following more details are given for each component of \DE{}.
 
@@ -87,8 +87,8 @@ The most typical crossover is the \textit{binomial} one, which operates as follo
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
 \begin{cases}
-    \vec{V}_{j,i,G},& \text{if} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
-    \vec{X}_{j,i,G},              & \text{otherwise}
+    v_{j,i,G},& \text{if} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
+    v_{j,i,G},              & \text{otherwise}
 \end{cases}
 \end{equation}
 where $rand_{i,j}[0,1]$ is a uniformly distributed random number,
@@ -102,7 +102,7 @@ Finally, a greedy selection is performed to determine the survivors of the next 
 Each trial vector is compared with its corresponding target vector and the best one survives:
 
 \begin{equation} \label{eqn:selection}
-\vec{X}_{j,i,G+1}= 
+\vec{X}_{i,G+1}= 
 \begin{cases}
     \vec{U}_{i,G},& \text{if} \quad f(\vec{U}_{i,G}) \leq f(\vec{X}_{i,G})  \\
     \vec{X}_{i,G},              & \text{otherwise}
