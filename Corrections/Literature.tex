@@ -36,7 +36,7 @@ Finally, a selection phase is applied to choose the survivors.
 %
 In this way, several generations are evolved until a stopping criterion is reached.
 %
-The $i$th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
+The $i$-th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
 %
 In the following more details are given for each component of \DE{}.
 
@@ -47,7 +47,7 @@ In the following more details are given for each component of \DE{}.
 %
 Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
 %
-Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
+Hence, the $j$-th component of the $i$-th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
 where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
 
 \subsubsection{Mutation}
@@ -122,46 +122,52 @@ Note that in case of a tie, the trial vector survives.
 
 \subsection{Diversity Preservation in Evolutionary Algorithms}
 
-Since that premature convergence is a common drawback in  \EAS{}, several variants to deal with this issue have been designed \cite{eshelman1993real}.
+Given that premature convergence is a common drawback in  \EAS{}, several variants to deal with this issue have been designed \cite{eshelman1993real}.
 %
 Some of them start with a set of diverse candidate solutions, and as the generations evolve, such a diversity is reduced \cite{Crepinsek:13}.
 %
-Principally, --depending on the component of the \EA{} that is modified-- these methods are classified in groups as follows \cite{Crepinsek:13}: \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
+Depending on the component of the \EA{} that is modified, these methods are usually classified in one the following groups~\cite{Crepinsek:13}: \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
 %
-Recently, the replacement-based strategies have attained quite good performance, therefore this section is devoted to this line.
+Recently, the replacement-based strategies have attained quite good performance, therefore this section is devoted to this kind
+of methods.
+%
+Particularly, two different strategies that are used to validate our proposal are discussed.
 %
 One of the first techniques categorized as replacement-based are the \textit{crowding} methods.
 %
-A quite popular popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (RTS) strategy.
+A quite popular popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (\RTS{}) strategy.
 %
-In RTS after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
+In \RTS{} after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
 %
 Then, $C$ and its most similar individual --from those in the selected set-- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
 %
 
-Similarly, other strategies considers the diversity to calculate a fitness value for the replacement stage.
+Other strategies are based on considering the diversity to calculate a fitness value for the replacement stage.
 %
-Specifically, in the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (HGSADC) \cite{vidal2013hybrid}, the individuals --union of parents and offspring-- are sorted by their contribution to diversity and by their original cost.
+Specifically, in the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (\HGSADC{}) \cite{vidal2013hybrid}, the individuals --union of parents and offspring-- are sorted by their contribution to diversity and by their original cost.
 %
-In order, to calculate the contribution to diversity, the mean distance to the closest $N_{Close}$ individuals is calculated.
+In order to calculate the contribution to diversity of an individual, its mean distance to the closest 
+$N_{Close}$ individuals is calculated.
 %
 For an individual $I$, the ranking in terms of diversity is denoted as $RD(I)$, whereas the ranking for the original cost is denoted as $RC(I)$.
 %
 Then, the rankings are combined to generate the biased fitness value $BF(I)$ using the Eq. \ref{eqn:biased}.
 %
-In each step of the replacement phase, the individual with the lowest fitness is erased and the ranks are re-calculated.
+In each step of the replacement phase, the individual with the lowest biased fitness is erased and the ranks are re-calculated.
 %
 This process is performed until the desired population size is attained.
 %
-It is important to remark that this scheme requires the setting of the parameters: $N_{Close}$ and $N_{Elite}$
+It is important to remark that this scheme requires the setting of the parameters: $N_{Close}$ and $N_{Elite}$,
+whereas $N_{population}$ refers to the number of individuals that has not been erased yet by the replacement scheme.
+
 \begin{equation}\label{eqn:biased}
- BF(I) = RC(I) + \left(1- \frac{N_{Elite}}{N_{population}} \right) RC(I)
+ BF(I) = RC(I) + \left(1- \frac{N_{Elite}}{N_{population}} \right) RD(I)
 \end{equation}
 \subsection{Diversity in Differential Evolution}
 
 \DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
 %
-However, several analyses to better deal with this issue have been carried out.
+Thus, several analyses to better deal with this issue have been carried out.
 %
 Since the general implications of each \DE{} parameter on the diversity are known, one of
 the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.

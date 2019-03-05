@@ -10,7 +10,8 @@ that relates the control of diversity with the stopping criterion and elapsed ge
 Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
 novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
 %
-Therefore, in this context a parent population and offspring population are referred as target vectors and trial vectors respectively, as well a vector can be interpreted as an individual.
+Since this is applied in the context of \DE{}, the parent population and offspring population are referred to as 
+target vectors and trial vectors respectively, and the term vector is used with the same meaning as individual.
 %
 This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
@@ -19,14 +20,14 @@ The core of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is quite similar to the sta
 %
 In fact, the way of creating new trial vectors is not modified at all (lines 5 and 6).
 %
-The novelty is the incorporation of an elite vectors ($E$) and a novel diversity-based replacement strategy.
+The novelty is the incorporation of elite vectors ($E$) and a novel diversity-based replacement strategy.
 %
-The former, records the vectors that have the best objective function value in relation with each target vector, therefore there are $N$ elite vectors, which can be considered as multi-set since that they could be identical.
+The former, records the vectors that have the best objective function value in relation with each target vector, therefore there are $N$ elite vectors, which must be considered as a multi-set since repeated individuals might appear.
 %
 In order to select the members of the elite vectors, the original greedy replacement of \DE{} is used (line 7).
 %
-On the other way, the replacement strategy (line 8), which is in charge of selecting the next target vectors,
-follows the same principle that guided the 
+In the case of the replacement strategy (line 8), which is in charge of selecting the next target vectors,
+it follows the same principle that guided the 
 design of \RMDDC{}, i.e. vectors that contribute too little to diversity should not be accepted as members of the next generation.
 %
 In this way, the greedy selection strategy of \DE{} is not used to maintain the target vectors ($X$).
@@ -47,7 +48,7 @@ Second, the elite vectors are also considered as an input of the replacement str
   \scriptsize
 	\caption{General scheme of DE-EDM} 
 	\begin{algorithmic}[1]
-	\STATE Randomly initialize the target $N$ vectors, where each one is uniformly distributed.
+	\STATE Randomly initialize the $N$ target vectors, where each one is uniformly distributed.
 	\STATE $G=0$
 	\WHILE{ stopping criterion is not satisfied}
 	   \FOR{ $i=1$ to $N$} 
@@ -85,29 +86,28 @@ Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follo
 %
 It receives as input the target vectors, the trial vectors, and the elite vectors.
 %
-In each generation it must select the $N$ vectors to be the next trial vectors.
+In each generation it must select the $N$ trial vectors of the next generation.
 %
 First, it calculates a desired minimum distance between selected vectors ($D_t$) given the current number of elapsed function evaluations (line 2).
 %
-Then, it joins the three set of vectors in a set of current vectors (line 3).
+Then, it joins the three multi-set of vectors in a multi-set of current vectors (line 3).
 %
-The current vectors might be selected to survive.
-%
-Then, the set of survivors and penalized vectors are initialized to the empty set (line 4).
+Then, the multi-set of survivors and penalized vectors are initialized to the empty set (line 4).
 %
 In order to select the $N$ survivors (next target vectors) an iterative process is repeated (lines 5 - 13).
 %
-In each step the best vector in the \textit{Current set}, i.e. the one with best objective function is selected
-to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
+In each step the best vector in \textit{Current}, i.e. the one with best objective function is selected
+to survive, i.e. it is moved to \textit{Survivors} (line 6 - 8).
 %
-Then, the vectors in the \textit{Current set} with a distance lower than $D_t$ to the selected vectors are transferred to the \textit{Penalized set} (line 9).
+Then, the vectors in \textit{Current} with a distance lower than $D_t$ to the selected vector are transferred to 
+\textit{Penalized} (line 9).
 %
 %%The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
 The way to calculate the distance between two vectors is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of dimension $d$.
 %
 %
-In cases where the \textit{Current set} is empty previous to the selection of $N$ vectors, the \textit{Survivor set} is filled by selecting in each step 
-the vector in $Penalized$ with the largest distance to the closest vector in the \textit{Survivor set} (lines 10 - 13).
+In cases where \textit{Current} is empty previous to the selection of $N$ vectors, \textit{Survivor} is filled by selecting in each step 
+the vector in $Penalized$ with the largest distance to the closest vector in \textit{Survivor} (lines 10 - 13).
 
 \begin{equation}\label{eqn:distance}
 distance ( X, Y ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{X_d - Y_d}{b_d - a_d} \right )^2  }} {\sqrt{D}}
@@ -155,7 +155,7 @@ The reduction is calculated in such a way that by the $90\%$ of maximum number o
 %
 Therefore, in the remaining $10\%$ diversity is not considered at all, meaning that intensification is promoted.
 %
-Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.90*max\_nfes))$.
+Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ is calculated as $D_t=D_I - D_I *(nfes/(0.90*max\_nfes))$.
 %
 %The reduction of this parameter is based in a linear reduction, as is indicated in .
 %
@@ -171,7 +171,8 @@ Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elap
 
 The initial distance ($D_I$) affects the performance of \DEEDM{}.
 %
-If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the diversity in the set of target vectors, 
+If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the diversity 
+of the target vectors, 
 so a proper exploration is performed which is very important in some kinds of problems such as highly multi-modal and deceptive ones.
 %
 Thus, the effect of premature convergence might be alleviated.
@@ -230,14 +231,15 @@ CR =
 \end{cases}
 \end{equation}
 
-Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the function evaluations are considered in the random generation of the mutation factor $F$.
+Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the elapsed
+function evaluations are considered in the random generation of the mutation factor $F$.
 %
 Particularly, each $F$ is sampled from a Cauchy distribution (Eq. \ref{eqn:cauchy}).
 \begin{equation}\label{eqn:cauchy}
  Cauchy(0.5, 0.5*nfes/max\_nfes)
 \end{equation}
 %
-Therefore, at the first optimization stages, the F values near to $0.5$ are generated with a high probability.
+Therefore, at the initial optimization stages, F values near to $0.5$ are generated with a high probability.
 %
 Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
 that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
