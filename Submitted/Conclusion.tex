@@ -1,0 +1,31 @@
+Premature convergence is one of the most important drawbacks of \DE{}.
+%
+This paper proposes a novel variant of \DE{}, the \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}),
+which incorporates a novel replacement phase that is based on a recently proposed strategy (\RMDDC{}) that was successfully
+used with memetic algorithms in the combinatorial optimization field.
+%
+In order to attain a faster convergence than in \RMDDC{} two modifications are proposed for the integration with \DE{}.
+%
+First, no concepts of the multi-objective field are applied, meaning that a more greedy strategy is devised.
+%
+Second, an elite population is incorporated.
+%
+Experimental validation shows the important benefits obtained by \DEEDM{} in long-term executions both when compared with a classic \DE{} variant and with
+state-of-the-art proposals.
+%
+\DEEDM{} requires setting a new parameter, which is called the initial distance factor.
+%
+The obtained quality depends on the proper specification of this parameter.
+%
+However, fixed values in a large range could be used for properly dealing with benchmarks of the CEC 2016 and CEC 2017 competitions,
+meaning that a quite robust proposal is obtained.
+
+Several extensions might be explored to further improve our proposal.
+%
+First, with the aim of facilitating the application of \DEEDM{}, adaptive and/or self-adaptive schemes might be applied for setting the initial distance
+factor, as well as for other \DE{} parameters.
+%
+Second, with the aim of reducing the number of evaluations required to attain high-quality solutions, some of the strategies that are used in the
+field of optimization with expensive functions might be integrated into our proposal.
+%
+Finally, the incorporation of a local search engine mainly in the last stages of the optimization might bring additional benefits.
