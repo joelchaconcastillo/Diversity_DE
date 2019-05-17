@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  17 MAY 2019 09:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  17 MAY 2019 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,8 +434,6 @@ LaTeX Info: Redefining \nameref on input line 89.
 
 
 SVJour3 warning: Missing \journalname
-Missing character: There is no Ã in font cmr8!
-Missing character: There is no ¡ in font cmr8!
 (./Introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 (./Literature.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -603,7 +601,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt8.pfb>
-Output written on main.pdf (20 pages, 375607 bytes).
+Output written on main.pdf (20 pages, 375558 bytes).
 PDF statistics:
  438 PDF objects out of 1000 (max. 8388607)
  380 compressed objects within 4 object streams

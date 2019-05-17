@@ -73,7 +73,7 @@ the error is treated as $0$.
 The parameterization indicated by the authors was used in every algorithm and it is as follows:
 \begin{itemize}
 \item \textbf{EBOwithCMAR}: For EBO, the maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum population size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
-\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
+\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{N}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
 \item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
 \item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
 \item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$, CR $\sim Normal( \{0.2, 0.9\}, 0.1)$, F $\sim Cauchy(0.5, 0.5*nfes/max_{nfes})$.
@@ -351,7 +351,7 @@ In order to better validate the advantages provided by the replacement phase pro
 Particularly, the replacement-based methods taken into consideration are the \textit{Restricted Tournament Selection} (\RTS{}) 
 and the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (\HGSADC{}).
 %
-These replacement-based strategies were incorporated to the standard \DE{} framework previously explained.
+These replacement-based strategies were incorporated to the standard \DE{} framework.% previously explained.
 % using the same operators, i.e. mutation, 
 %crossover and selection than in \DEEDM{}.
 %
@@ -367,11 +367,11 @@ The remaining configuration follows the same parameterization previously defined
 Tables \ref{tab:Summary_CEC2016_Replacement} and \ref{tab:Summary_CEC2017_Replacement} summarize the results attained
 for both years with the same meaning that in the previous experiment.
 %
-Again, \DEEDM{} attained the best results in both years and in this case, the second place was attained by \HGSADC{}.
+Again, \DEEDM{} attained the best results in both years, also the second place was attained by \HGSADC{}.
 %
 It is clear that \DEEDM{} attained a significantly higher $Score$ than the remaining diversity-based methods.
 %
-Note that the main difference among our proposal in constrast to the schemes \RTS{} and \HGSADC{} is that \RTS{} and \HGSADC{} provide modifications
+Note that the main difference among our proposal in constrast to the schemes \RTS{} and \HGSADC{} is that they provide modifications
 with the aim of delaying convergence.
 %
 However, this is performed in an indirect way, meaning that premature convergence might not always be avoided, so 
@@ -447,7 +447,7 @@ in the range $[0.2, 0.6]$ provide high-quality solutions.
 \item If $D_I$ is too large (values larger than $0.6$), the quality of solutions decreases. This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
 \end{itemize}
 
-To summarize, \DEEDM{} incorporates a novel parameter which is important for performance.
+To summarize, \DEEDM{} incorporates a novel parameter which is important in its performance.
 %
 However, results are quite robust in the sense that even if it is not tuned for each problem, high-quality results can be obtained and that
 a large range of values provide competitive results.
