@@ -104,6 +104,11 @@ Liu, B., Chen, Q., Zhang, Q., Liang, J., Suganthan, P., Qu, B.: Problem
   definitions and evaluation criteria for computational expensive optimization.
 \newblock In: Technical Report (2013)
 
+\bibitem{locatelli2015non}
+Locatelli, M., Vasile, M.: (non) convergence results for the differential
+  evolution method.
+\newblock Optimization Letters \textbf{9}(3), 413--425 (2015)
+
 \bibitem{molina2017analysis}
 Molina, D., Moreno-Garc{\'\i}a, F., Herrera, F.: Analysis among winners of
   different ieee cec competitions on real-parameters optimization: Is there
