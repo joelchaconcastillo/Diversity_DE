@@ -351,7 +351,8 @@ In order to better validate the advantages provided by the replacement phase pro
 Particularly, the replacement-based methods taken into consideration are the \textit{Restricted Tournament Selection} (\RTS{}) 
 and the \textit{Hybrid Genetic Search with Adaptive Diversity Control} (\HGSADC{}).
 %
-These replacement-based strategies were incorporated to the standard \DE{} framework.% previously explained.
+These replacement-based strategies were incorporated to the standard \DE{} framework.
+% previously explained.
 % using the same operators, i.e. mutation, 
 %crossover and selection than in \DEEDM{}.
 %
@@ -442,9 +443,10 @@ Fig. \ref{fig:one} shows the mean success rate attained for both benchmarks when
 The most relevant conclusions are:
 \begin{itemize}
 \item If diversity is not promoted ($D_I = 0.0 $) there is an important degradation in the performance. 
-\item Performance is quite robust in the sense that a large range of $D_I$ values provide proper performance. For instance values
+\item The performance is quite robust in the sense that a large range of $D_I$ values provide good enough results. For instance, values
 in the range $[0.2, 0.6]$ provide high-quality solutions.
-\item If $D_I$ is too large (values larger than $0.6$), the quality of solutions decreases. This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
+\item To a certain extent, if the initial distance factor ($D_I$) is very large (values larger than $0.6$), the quality of solutions is affected.% Therefore, as $D_I$ is increases the quality of solutions is gradually decreased.
+%	This decrease of quality is gradual, i.e. as $D_I$ increases the quality slowly decreases.
 \end{itemize}
 
 To summarize, \DEEDM{} incorporates a novel parameter which is important in its performance.
