@@ -142,7 +142,7 @@ One of the first techniques categorized as replacement-based are the \textit{cro
 %
 A quite popular realization is the \textit{Restricted Tournament Selection} \cite{harik1995finding} (\RTS{}) strategy.
 %
-In \RTS{} after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
+In \RTS{} after a new individual ($C$) is created, $CF$ individuals from the current population are randomly selected.
 %
 Then, $C$ and its most similar individual ---from those in the selected set--- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
 %
@@ -156,7 +156,7 @@ $N_{Close}$ individuals is calculated.
 %
 For an individual $I$, the ranking in terms of diversity is denoted as $RD(I)$, whereas the ranking for the original cost is denoted as $RC(I)$.
 %
-Then, the rankings are combined to generate the biased fitness value $BF(I)$ using the Eq. \ref{eqn:biased}.
+Then, the rankings are combined to generate the biased fitness value $BF(I)$ using Eq. \ref{eqn:biased}.
 %
 In each step of the replacement phase, the individual with the lowest biased fitness is erased and the ranks are re-calculated.
 %
@@ -170,7 +170,7 @@ whereas $N_{population}$ refers to the number of individuals that has not been e
 \end{equation}
 \subsection{Diversity in Differential Evolution}
 
-\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
+\DE{} is highly susceptible to the loss of diversity, partially due to the greedy strategy applied in the selection phase.
 %
 Thus, several analyses to better deal with this issue have been carried out.
 %
@@ -196,7 +196,7 @@ However, our method operates on the replacement strategy and not on the mutation
 %
 Moreover, these methods do not consider explicitly the differences appearing on the whole population.
 %
-Instead, the restrictions apply to the differences appearing in the reproduction phase.
+Instead, restrictions apply to the differences appearing in the reproduction phase.
 
 A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
 %
@@ -206,7 +206,7 @@ to allow escaping from basin of attraction of local optima.
 Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
 %
 In this case, decisions are not biased by the elapsed generations.
-
+%
 Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
 to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
 %
