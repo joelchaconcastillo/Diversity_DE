@@ -124,10 +124,12 @@ Note that in case of a tie, the trial vector survives.
 
 \subsection{Diversity Preservation in Evolutionary Algorithms}
 
-Given that premature convergence is a common drawback in  \EAS{}, several variants to deal with this issue have been designed \cite{eshelman1993real}.
-%
-Usually, \EAS{} start with a set of diverse candidate solutions, and as the generations evolve, such a diversity 
+Most \EAS{} start with a set of diverse candidate solutions, and as the generations evolve, such a diversity 
 is reduced \cite{Crepinsek:13}.
+%
+This reduction on diversity might lead to premature convergence, which in fact is a common drawback in \EAS{}.
+%
+Thus, several variants to deal with this issue have been designed \cite{eshelman1993real}.
 %
 Depending on the component of the \EA{} that is modified, these methods are usually classified in one the following groups~\cite{Crepinsek:13}: \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
 %
@@ -142,7 +144,7 @@ A quite popular realization is the \textit{Restricted Tournament Selection} \cit
 %
 In \RTS{} after a new individual ($C$) is created, then $CF$ individuals from the current population are randomly selected.
 %
-Then, $C$ and its most similar individual --from those in the selected set-- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
+Then, $C$ and its most similar individual ---from those in the selected set--- compete for a place in the population using a traditional binary tournament, i.e. the best one survives.
 %
 
 Other strategies are based on considering the diversity to calculate a fitness value for the replacement stage.
