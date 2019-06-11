@@ -87,11 +87,11 @@ The most typical crossover is the \textit{binomial} one, which operates as follo
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
 \begin{cases}
-    v_{j,i,G},& \text{if} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
-    v_{j,i,G},              & \text{otherwise}
+    v_{j,i,G},& \text{if} (rand[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
+    x_{j,i,G},              & \text{otherwise}
 \end{cases}
 \end{equation}
-where $rand_{i,j}[0,1]$ is a uniformly distributed random number,
+where $rand[0,1]$ is a uniformly distributed random number,
 $j_{rand}$ is a randomly chosen index which ensures that $\vec{U}_{i,G}$ inherits at least one component from $\vec{V}_{i,G}$ and
 $CR \in [0,1]$ is the crossover rate.
 
