@@ -52,7 +52,9 @@ where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between 
 
 \subsubsection{Mutation}
 
-For each target vector a mutant vector is created and several ways of performing
+For each target vector a mutant vector is created.
+%
+Several ways of performing
 such a process have been proposed.
 %
 In the classic \DE{} variant the rand/1 strategy is applied.
@@ -124,7 +126,8 @@ Note that in case of a tie, the trial vector survives.
 
 Given that premature convergence is a common drawback in  \EAS{}, several variants to deal with this issue have been designed \cite{eshelman1993real}.
 %
-Some of them start with a set of diverse candidate solutions, and as the generations evolve, such a diversity is reduced \cite{Crepinsek:13}.
+Usually, \EAS{} start with a set of diverse candidate solutions, and as the generations evolve, such a diversity 
+is reduced \cite{Crepinsek:13}.
 %
 Depending on the component of the \EA{} that is modified, these methods are usually classified in one the following groups~\cite{Crepinsek:13}: \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
 %
